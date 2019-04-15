@@ -34,7 +34,7 @@ Google Play: [https://play.google.com/store/apps/details?id=com.client.tok](http
 set your own Key when you want to build a release apk
 
 ## FAQ
-You can find answers to a number of frequently asked questions on our [FAQ](https://www.tok.life/#) site.
+You can find answers to a number of frequently asked questions on our [FAQ](https://www.tok.life/) site.
 
 ## Contributing Bug reports
 We use GitHub for bug tracking. Please search the existing issues for your bug and create a new one if the issue is not yet tracked!
@@ -48,8 +48,6 @@ Have something you want to say about Tok or want to be part of the conversation?
 website: [https://www.tok.life/](https://www.tok.life/)
 
 twitter: [https://twitter.com/TokMessenger](https://twitter.com/TokMessenger)
-
-github: [https://github.com/TokMonkey/TokAndroid)
 
 facebook: [https://www.facebook.com/TokMessenger](https://www.facebook.com/TokMessenger)
 
