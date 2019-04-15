@@ -1,7 +1,7 @@
 # Tok Android
 
 
-** Make the world connect freely! **
+> Make the world connect freely!
 
 Tok was born with the sole mission of making our communication easier via modern technology. We assume that you would use Tok to share personal or special moments with extreme privacy, so we adopt peer-to-peer communication, end-to-end encryption in our application, which ensure your information with absolute privacy.
 
