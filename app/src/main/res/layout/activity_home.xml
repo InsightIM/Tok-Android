@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_ffffff">
+
+    <LinearLayout
+        android:id="@+id/id_home_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white_absolute"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/spacing_6"
+        android:paddingBottom="@dimen/spacing_4">
+
+        <com.client.tok.widget.BottomTabView
+            android:id="@+id/id_home_msg_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:tag="0"
+            tab:iconId="@drawable/tab_message_selector"
+            tab:isSelected="true"
+            tab:txtId="@string/message" />
+
+        <com.client.tok.widget.BottomTabView
+            android:id="@+id/id_home_contacts_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:tag="1"
+            tab:iconId="@drawable/tab_contacts_selector"
+            tab:txtId="@string/contacts" />
+
+        <com.client.tok.widget.BottomTabView
+            android:id="@+id/id_home_mine_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:tag="2"
+            tab:iconId="@drawable/tab_mine_selector"
+            tab:txtId="@string/mine" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/id_home_bottom_line"
+        style="@style/PageBlockDividerLine"
+        android:layout_alignTop="@id/id_home_rg" />
+
+    <View
+        android:id="@+id/id_home_top_line"
+        style="@style/PageBlockDividerLine"
+        android:layout_alignParentTop="true" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/id_home_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/id_home_bottom_line"
+        android:layout_below="@id/id_home_top_line"
+        android:background="@color/c_ffffff" />
+
+</RelativeLayout>

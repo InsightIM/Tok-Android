@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_dialog_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_common_bottom_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/id_dialog_title_tv"
+        style="@style/StyleLevelInfo1Big"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_10"
+        android:paddingStart="@dimen/s_12"
+        android:paddingEnd="@dimen/s_12"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:text="@string/oops"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/id_dialog_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_10"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/s_12"
+        android:paddingEnd="@dimen/s_12"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/id_dialog_content_tv"
+            style="@style/StyleLevelInfo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            tools:text="content" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/id_dialog_custom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/id_dialog_btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/s_12">
+
+        <Button
+            android:id="@+id/id_dialog_left_bt"
+            style="@style/BtBgWhiteFontBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_rect_bgffffff_stroked2d2d2_r2"
+            android:paddingTop="@dimen/spacing_10"
+            android:paddingBottom="@dimen/spacing_10"
+            android:text="@string/cancel"
+            android:textSize="@dimen/font_16" />
+
+        <View
+            android:layout_width="@dimen/spacing_16"
+            android:layout_height="@dimen/spacing_10" />
+
+        <Button
+            android:id="@+id/id_dialog_right_bt"
+            style="@style/BtBgBlueFontWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/spacing_10"
+            android:paddingBottom="@dimen/spacing_10"
+            android:text="@string/confirm"
+            android:textSize="@dimen/font_16" />
+    </LinearLayout>
+</LinearLayout>

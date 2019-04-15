@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_fefffe"
+        android:paddingStart="@dimen/s_10"
+        android:paddingTop="@dimen/s_12"
+        android:paddingEnd="@dimen/s_10"
+        android:paddingBottom="@dimen/s_12">
+
+        <ImageView
+            android:id="@+id/id_send_msg_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/id_input_record_layout"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/msg_send" />
+
+        <FrameLayout
+            android:id="@+id/id_input_record_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/s_8"
+            android:layout_toStartOf="@+id/id_send_msg_tv"
+            android:layout_toEndOf="@+id/id_keyboard_record_switcher_btn">
+
+            <EditText
+                android:id="@+id/id_input_msg_et"
+                style="@style/ChatInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_chat_input_et"
+                android:cursorVisible="false"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:maxHeight="@dimen/s_118"
+                android:minHeight="@dimen/s_32"
+                android:singleLine="false" />
+
+            <com.client.tok.widget.RecorderBtn
+                android:id="@+id/id_record_tv"
+                style="@style/FunctionPrompt2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s_32"
+                android:background="@drawable/selector_chat_record_tv"
+                android:gravity="center"
+                android:text="@string/hold_to_talk"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+
+        <ImageView
+            android:id="@+id/id_add_file_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/id_input_record_layout"
+            android:layout_marginEnd="@dimen/s_8"
+            android:layout_toEndOf="@+id/id_add_emotion_iv"
+            android:background="@drawable/chat_ripple"
+            android:src="@drawable/add_file" />
+
+        <com.client.tok.widget.KeyboardRecordSwitchView
+            android:id="@+id/id_keyboard_record_switcher_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/id_input_record_layout"
+            android:layout_marginEnd="@dimen/s_8"
+            android:layout_toEndOf="@+id/id_add_file_iv"
+            android:background="@drawable/chat_ripple" />
+
+        <ImageView
+            android:id="@+id/id_add_emotion_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/spacing_10"
+            android:src="@drawable/ic_emotion"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/sel_file_bg">
+
+        <com.client.tok.widget.ExtendFileView
+            android:id="@+id/id_extend_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

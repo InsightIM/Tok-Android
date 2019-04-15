@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.client.tok.widget.PortraitView
+        android:id="@+id/id_member_portrait_iv"
+        android:layout_width="@dimen/portrait_width"
+        android:layout_height="@dimen/portrait_height"
+        android:layout_marginStart="@dimen/s_16"
+        android:layout_marginTop="@dimen/s_10"
+        android:layout_marginEnd="@dimen/s_10"
+        android:layout_marginBottom="@dimen/s_10"
+        tools:src="@drawable/invite_friend" />
+
+    <TextView
+        android:id="@+id/id_member_name_tv"
+        style="@style/ContactName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/id_member_portrait_iv"
+        android:gravity="center_horizontal"
+        android:singleLine="true"
+        tools:text="Member Name" />
+
+    <View
+        style="@style/ItemDividerLine"
+        android:layout_below="@id/id_member_portrait_iv" />
+
+</RelativeLayout>
+

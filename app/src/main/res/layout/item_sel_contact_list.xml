@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/s_10"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.client.tok.widget.PortraitView
+        android:id="@+id/id_sel_contact_portrait_iv"
+        android:layout_width="@dimen/contact_portrait_width"
+        android:layout_height="@dimen/contact_portrait_width"
+        tools:src="@drawable/invite_friend" />
+
+    <TextView
+        android:id="@+id/id_sel_contact_name_tv"
+        style="@style/SelContactName"
+        android:layout_width="@dimen/contact_portrait_width"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_mine_tok_id_iiv"
+        android:layout_marginTop="@dimen/s_4"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:singleLine="true"
+        tools:text="@string/add_friends" />
+
+</LinearLayout>
+

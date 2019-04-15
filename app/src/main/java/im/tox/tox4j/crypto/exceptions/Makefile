@@ -1,0 +1,2 @@
+all: ../../mkexceptions exceptions.json
+	$+

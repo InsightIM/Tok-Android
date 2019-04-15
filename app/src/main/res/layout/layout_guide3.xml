@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:guide="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.client.tok.widget.GuideView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        guide:gContentId="@string/guide_content3"
+        guide:gImgId="@drawable/guide3"
+        guide:gTitleId="@string/guide_title3" />
+
+    <TextView
+        android:id="@+id/id_guide_enter_btn"
+        style="@style/BtBgBlueFontWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/s_30"
+        android:layout_marginEnd="@dimen/s_30"
+        android:layout_marginBottom="@dimen/s_24"
+        android:gravity="center"
+        android:text="@string/enter_app" />
+
+</RelativeLayout>

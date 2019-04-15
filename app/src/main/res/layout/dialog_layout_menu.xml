@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/app_main_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/id_menu_title"
+        style="@style/DialogTitleNormal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s_90"
+        android:background="@drawable/item_ripple_stoke_bottom_bg"
+        android:gravity="center"
+        tools:text="Title" />
+
+    <TextView
+        android:id="@+id/id_menu1_tv"
+        style="@style/DialogMenuNormal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_item_height"
+        android:background="@drawable/item_ripple_stoke_bottom_bg"
+        android:gravity="center"
+        tools:text="@string/add_member" />
+
+    <TextView
+        android:id="@+id/id_menu2_tv"
+        style="@style/DialogMenuNormal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_item_height"
+        android:background="@drawable/item_ripple_bg"
+        android:gravity="center"
+        tools:text="@string/remove_member" />
+
+    <TextView
+        android:id="@+id/id_menu_cancel_tv"
+        style="@style/DialogMenuNormal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_item_height"
+        android:layout_marginTop="@dimen/s_6"
+        android:background="@drawable/item_ripple_bg"
+        android:gravity="center"
+        tools:text="@string/cancel" />
+</LinearLayout>

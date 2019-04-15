@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/id_contact_first_letter_tv"
+        style="@style/ItemTypeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/s_16"
+        android:paddingTop="@dimen/s_4"
+        android:paddingEnd="@dimen/s_16"
+        android:paddingBottom="@dimen/s_4"
+        android:textColor="@color/black_light"
+        android:visibility="visible"
+        tools:text="T" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_ripple_bg"
+        android:paddingStart="@dimen/s_16"
+        android:paddingTop="@dimen/s_12"
+        android:paddingEnd="@dimen/s_16"
+        android:paddingBottom="@dimen/s_12">
+
+        <RelativeLayout
+            android:id="@+id/id_contact_portrait_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <com.client.tok.widget.PortraitView
+                android:id="@+id/id_contact_portrait_iv"
+                android:layout_width="@dimen/contact_portrait_width"
+                android:layout_height="@dimen/contact_portrait_height" />
+
+            <ImageView
+                android:id="@+id/id_contact_line_status_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/status_list_selector"
+                tools:src="@drawable/circle_online"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/id_contact_name_tv"
+            style="@style/StyleLevelInfo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_mine_tok_id_iiv"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/spacing_14"
+            android:layout_toEndOf="@+id/id_contact_portrait_layout"
+            tools:text="@string/add_friends" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/ItemDividerLine"
+        android:layout_below="@id/id_contact_portrait_layout"
+        android:layout_marginStart="@dimen/s_16" />
+
+</LinearLayout>
+

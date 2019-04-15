@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:guide="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.client.tok.widget.GuideView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        guide:gContentId="@string/guide_content1"
+        guide:gImgId="@drawable/guide1"
+        guide:gTitleId="@string/guide_title1" />
+
+</FrameLayout>

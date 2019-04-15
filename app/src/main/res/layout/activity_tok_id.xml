@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_30"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/s_14"
+            android:text="@string/tok_id"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_16" />
+
+        <TextView
+            android:id="@+id/id_chat_id_copy_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:paddingLeft="@dimen/s_14"
+            android:paddingRight="@dimen/s_14"
+            android:text="@string/copy"
+            android:textColor="@color/brand_primary"
+            android:textSize="@dimen/font_16" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_2px"
+        android:layout_marginTop="@dimen/s_6"
+        android:background="@color/grey" />
+
+    <TextView
+        android:id="@+id/id_chat_id_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_absolute"
+        android:gravity="center"
+        android:padding="@dimen/s_8"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_16" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_2px"
+        android:background="@color/grey" />
+
+    <ImageView
+        android:id="@+id/id_chat_id_qrcode_iv"
+        android:layout_width="@dimen/s_170"
+        android:layout_height="@dimen/s_170"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/s_40" />
+</LinearLayout>

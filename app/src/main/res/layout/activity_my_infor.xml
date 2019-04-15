@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fc="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_10">
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_my_info_portrait_iiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            fc:promptId="@string/my_avatar"
+            fc:rightIconVisible="0" />
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_my_info_nick_name_iiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_my_info_portrait_iiv"
+            fc:promptId="@string/nick_name"
+            fc:rightIconVisible="0" />
+
+        <View
+            style="@style/StyleDividerLine"
+            android:layout_below="@id/id_my_info_portrait_iiv"
+            android:layout_marginLeft="@dimen/spacing_60" />
+    </RelativeLayout>
+
+
+    <com.client.tok.widget.ItemInfoView
+        android:id="@+id/id_my_info_signature_iiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_20"
+        fc:promptId="@string/bio"
+        fc:rightIconVisible="0" />
+</LinearLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_86"
+        android:src="@drawable/introduce_place_holder" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/s_100"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/id_empty_main_content_tv"
+            style="@style/SafeContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            tools:text="@string/p2p_encryp_chat" />
+
+        <TextView
+            android:id="@+id/id_empty_sub_content_tv"
+            style="@style/IntroduceContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/s_6"
+            android:gravity="center_horizontal"
+            tools:text="@string/friend_chat_safe" />
+
+        <TextView
+            android:id="@+id/id_empty_btn1_tv"
+            style="@style/BtBgBlueFontWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/s_50"
+            android:layout_marginTop="@dimen/s_22"
+            android:layout_marginEnd="@dimen/s_50"
+            android:textSize="@dimen/f_16"
+            tools:text="@string/invite_friend" />
+
+        <TextView
+            android:id="@+id/id_empty_btn2_tv"
+            style="@style/BtBgBlueFontWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/s_50"
+            android:layout_marginTop="@dimen/s_22"
+            android:layout_marginEnd="@dimen/s_50"
+            android:textSize="@dimen/f_16"
+            tools:text="@string/add_friends" />
+    </LinearLayout>
+
+</LinearLayout>

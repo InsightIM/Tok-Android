@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/id_friend_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_10"
+        android:background="@drawable/item_ripple_bg"
+        android:paddingStart="@dimen/spacing_10"
+        android:paddingTop="@dimen/spacing_10"
+        android:paddingEnd="@dimen/spacing_20"
+        android:paddingBottom="@dimen/spacing_10">
+
+        <com.client.tok.widget.PortraitView
+            android:id="@+id/id_friend_info_portrait_civ"
+            android:layout_width="@dimen/portrait_width"
+            android:layout_height="@dimen/portrait_height"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/spacing_10"
+            android:layout_marginRight="@dimen/spacing_10"
+            android:layout_toEndOf="@+id/id_friend_info_portrait_civ"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/id_friend_info_nick_name_tv"
+                style="@style/StyleLevelInfo1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="NickName" />
+
+            <TextView
+                android:id="@+id/id_friend_info_name_tv"
+                style="@style/StyleLevelInfo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Tok name" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/info_item_arrow" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/s_6"
+        android:layout_toEndOf="@+id/id_friend_info_portrait_civ"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/StyleLevelInfo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/s_14"
+            android:text="@string/bio" />
+
+        <TextView
+            android:id="@+id/id_friend_bio_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/s_6"
+            android:background="@color/white_absolute"
+            android:paddingStart="@dimen/s_14"
+            android:paddingTop="@dimen/s_8"
+            android:paddingEnd="@dimen/s_14"
+            android:paddingBottom="@dimen/s_8"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_16"
+            tools:text="Tok name" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_16"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/s_14"
+            android:text="@string/public_key"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_16" />
+
+        <TextView
+            android:id="@+id/id_friend_info_fid_copy_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:paddingLeft="@dimen/s_14"
+            android:paddingRight="@dimen/s_14"
+            android:text="@string/copy"
+            android:textColor="@color/brand_primary"
+            android:textSize="@dimen/font_16" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/id_friend_info_fid_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_6"
+        android:background="@color/white_absolute"
+        android:gravity="center"
+        android:padding="@dimen/s_8"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_16"
+        tools:text="pk" />
+
+    <TextView
+        android:id="@+id/id_friend_info_msg_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_30"
+        android:layout_marginTop="@dimen/spacing_40"
+        android:layout_marginRight="@dimen/spacing_30"
+        android:gravity="center"
+        android:text="@string/message"
+        android:theme="@style/BtBgBlueFontWhite" />
+</LinearLayout>

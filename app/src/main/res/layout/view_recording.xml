@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/id_record_prompt_tv"
+        style="@style/FunctionPrompt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_rect_bg30000000_r4"
+        android:paddingStart="@dimen/s_10"
+        android:paddingTop="@dimen/s_4"
+        android:paddingEnd="@dimen/s_10"
+        android:paddingBottom="@dimen/s_4"
+        android:text="@string/slide_up_to_cancel" />
+
+    <RelativeLayout
+        android:layout_width="@dimen/s_64"
+        android:layout_height="@dimen/s_64"
+        android:layout_below="@+id/id_record_prompt_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/s_10"
+        android:background="@drawable/recording_bg"
+        android:padding="@dimen/s_10">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/id_loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="loading.json"
+            app:lottie_loop="true" />
+
+        <ImageView
+            android:id="@+id/id_record_cancel_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/record_cancel"
+            android:visibility="gone" />
+    </RelativeLayout>
+</RelativeLayout>

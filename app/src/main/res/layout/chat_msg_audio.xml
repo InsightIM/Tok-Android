@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/chat_content_padding"
+    android:paddingEnd="@dimen/chat_content_padding">
+
+    <TextView
+        android:id="@+id/id_msg_time_tv"
+        style="@style/ChatTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/interval_sp_msg"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        tools:text="8月17 6:00"
+        tools:visibility="gone" />
+
+
+    <RelativeLayout
+        android:id="@+id/id_msg_friend_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_msg_time_tv"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="@dimen/interval_sp_msg"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.client.tok.widget.PortraitView
+            android:id="@+id/id_msg_friend_portrait_iv"
+            android:layout_width="@dimen/portrait_width"
+            android:layout_height="@dimen/portrait_height"
+            android:layout_alignParentStart="true"
+            tools:src="@drawable/unread_indicator_red" />
+
+
+        <LinearLayout
+            android:id="@+id/id_msg_friend_layout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/s_4"
+            android:layout_toEndOf="@+id/id_msg_friend_portrait_iv"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/id_msg_sender_name_tv"
+                style="@style/SenderName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:text="Sender" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/id_msg_friend_audio_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/audio_height"
+                    android:background="@drawable/selector_msg_receive"
+                    android:paddingStart="@dimen/s_10"
+                    android:paddingEnd="@dimen/s_10"
+                    android:scaleType="centerCrop">
+
+                    <ImageView
+                        android:id="@+id/id_msg_friend_audio_icon_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/audio_level3_left" />
+
+
+                    <TextView
+                        android:id="@+id/id_msg_friend_audio_time_tv"
+                        style="@style/AudioTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/s_10"
+                        android:layout_toStartOf="@+id/id_msg_friend_audio_icon_iv"
+                        android:singleLine="true"
+                        tools:text="10 ''" />
+
+                    <com.client.tok.widget.ProgressView
+                        android:id="@+id/id_msg_friend_status_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:src="@drawable/msg_sending" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/id_friend_audio_unread_iv"
+                    android:layout_width="@dimen/unread_width"
+                    android:layout_height="@dimen/unread_height"
+                    android:layout_marginStart="-4dp"
+                    android:layout_toEndOf="@id/id_msg_friend_audio_layout"
+                    android:background="@drawable/unread_num_indicator_red"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/id_friend_audio_error_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/s_10"
+            android:layout_toEndOf="@id/id_msg_friend_layout2"
+            android:src="@drawable/msg_fail"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/id_msg_mine_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_msg_time_tv"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/interval_sp_msg"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <com.client.tok.widget.PortraitView
+            android:id="@+id/id_msg_mine_portrait_iv"
+            android:layout_width="@dimen/portrait_width"
+            android:layout_height="@dimen/portrait_height"
+            android:layout_alignParentEnd="true"
+            tools:src="@drawable/unread_indicator_red" />
+
+        <RelativeLayout
+            android:id="@+id/id_msg_mine_audio_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/audio_height"
+            android:layout_marginEnd="@dimen/s_4"
+            android:layout_toStartOf="@+id/id_msg_mine_portrait_iv"
+            android:background="@drawable/selector_msg_send"
+            android:paddingStart="@dimen/s_10"
+            android:paddingEnd="@dimen/s_10">
+
+            <ImageView
+                android:id="@+id/id_msg_my_audio_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/audio_level3_right" />
+
+            <TextView
+                android:id="@+id/id_msg_mine_audio_time_tv"
+                style="@style/AudioTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/s_10"
+                android:layout_toEndOf="@+id/id_msg_my_audio_icon_iv"
+                android:singleLine="true"
+                tools:text="10 ''" />
+
+            <com.client.tok.widget.ProgressView
+                android:id="@+id/id_msg_mine_status_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/msg_sending" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/id_mine_audio_error_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/s_10"
+            android:layout_toStartOf="@+id/id_msg_mine_audio_layout"
+            android:src="@drawable/msg_fail"
+            android:visibility="gone" />
+    </RelativeLayout>
+</RelativeLayout>

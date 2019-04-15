@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fc="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/id_about_logo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_4"
+        android:background="@color/white_absolute"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/s_20"
+        android:paddingBottom="@dimen/s_20">
+
+        <ImageView
+            android:layout_width="@dimen/s_80"
+            android:layout_height="@dimen/s_80"
+            android:src="@drawable/logo" />
+
+        <TextView
+            style="@style/StyleLevelInfo1Big"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/s_20"
+            android:text="@string/slogon" />
+    </LinearLayout>
+
+    <com.client.tok.widget.ItemInfoView
+        android:id="@+id/id_about_contact_iiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_about_logo_layout"
+        android:layout_marginTop="@dimen/s_6"
+        fc:promptId="@string/contact_us" />
+
+    <TextView
+        android:id="@+id/id_about_us_version_tv"
+        style="@style/IntroduceContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/spacing_20"
+        tools:text="version:1.0.0" />
+
+</RelativeLayout>

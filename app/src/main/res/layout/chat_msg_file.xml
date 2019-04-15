@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/chat_content_padding"
+    android:paddingEnd="@dimen/chat_content_padding">
+
+    <TextView
+        android:id="@+id/id_msg_time_tv"
+        style="@style/ChatTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        tools:text="8月17 6:00"
+        tools:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/id_msg_friend_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_msg_time_tv"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="@dimen/interval_sp_msg"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.client.tok.widget.PortraitView
+            android:id="@+id/id_msg_friend_portrait_iv"
+            android:layout_width="@dimen/portrait_width"
+            android:layout_height="@dimen/portrait_height"
+            android:layout_alignParentStart="true" />
+
+        <LinearLayout
+            android:id="@+id/id_msg_friend_file_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/s_4"
+            android:layout_toEndOf="@+id/id_msg_friend_portrait_iv"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/id_msg_sender_name_tv"
+                style="@style/SenderName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:text="Sender" />
+
+            <RelativeLayout
+                android:layout_width="@dimen/chat_file_width"
+                android:layout_height="@dimen/chat_file_height"
+
+                android:background="@drawable/selector_msg_receive"
+                android:paddingStart="@dimen/s_16"
+                android:paddingTop="@dimen/s_8"
+                android:paddingEnd="@dimen/s_10"
+                android:paddingBottom="@dimen/s_8">
+
+                <com.client.tok.widget.FileIconView
+                    android:id="@+id/id_msg_friend_file_icon_iv"
+                    android:layout_width="@dimen/file_icon_width"
+                    android:layout_height="@dimen/file_icon_height"
+                    android:layout_centerVertical="true" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/id_msg_friend_file_icon_iv"
+                    android:layout_alignBottom="@+id/id_msg_friend_file_icon_iv"
+                    android:layout_marginStart="@dimen/s_10"
+                    android:layout_toEndOf="@+id/id_msg_friend_file_icon_iv"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/id_msg_friend_file_name_tv"
+                        style="@style/FileTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        tools:text="text.file" />
+
+                    <TextView
+                        android:id="@+id/id_msg_friend_file_size_tv"
+                        style="@style/FileSubTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        tools:text="5.99m" />
+                </RelativeLayout>
+
+                <com.client.tok.widget.ProgressView
+                    android:id="@+id/id_msg_friend_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/s_6"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/id_friend_img_err_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/s_10"
+            android:layout_toEndOf="@+id/id_msg_friend_file_layout"
+            android:src="@drawable/msg_fail"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/id_msg_mine_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_msg_time_tv"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/interval_sp_msg"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <com.client.tok.widget.PortraitView
+            android:id="@+id/id_msg_mine_portrait_iv"
+            android:layout_width="@dimen/portrait_width"
+            android:layout_height="@dimen/portrait_height"
+            android:layout_alignParentEnd="true" />
+
+        <RelativeLayout
+            android:id="@+id/id_msg_mine_file_layout"
+            android:layout_width="@dimen/chat_file_width"
+            android:layout_height="@dimen/chat_file_height"
+            android:layout_marginEnd="@dimen/s_4"
+            android:layout_toStartOf="@+id/id_msg_mine_portrait_iv"
+            android:background="@drawable/selector_msg_send"
+            android:paddingStart="@dimen/s_10"
+            android:paddingTop="@dimen/s_8"
+            android:paddingEnd="@dimen/s_10"
+            android:paddingBottom="@dimen/s_8">
+
+
+            <com.client.tok.widget.FileIconView
+                android:id="@+id/id_msg_my_file_icon_iv"
+                android:layout_width="@dimen/file_icon_width"
+                android:layout_height="@dimen/file_icon_height"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/id_msg_my_file_icon_iv"
+                android:layout_alignBottom="@+id/id_msg_my_file_icon_iv"
+                android:layout_marginStart="@dimen/s_10"
+                android:layout_toEndOf="@+id/id_msg_my_file_icon_iv"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/id_msg_mine_file_name_tv"
+                    style="@style/FileTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    tools:text="text.file" />
+
+                <TextView
+                    android:id="@+id/id_msg_mine_file_size_tv"
+                    style="@style/FileSubTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    tools:text="5.99m" />
+            </RelativeLayout>
+
+            <com.client.tok.widget.ProgressView
+                android:id="@+id/id_msg_mine_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/s_6"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/id_mine_img_err_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/s_10"
+            android:layout_toStartOf="@+id/id_msg_mine_file_layout"
+            android:src="@drawable/msg_fail"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </RelativeLayout>
+</RelativeLayout>

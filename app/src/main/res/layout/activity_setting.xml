@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fc="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.client.tok.widget.ItemInfoView
+        android:id="@+id/id_setting_change_pwd_iiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_12"
+        fc:promptId="@string/setting_pwd" />
+
+    <View
+        style="@style/ItemDividerLine"
+        android:layout_marginStart="@dimen/s_14"
+        android:layout_marginEnd="@dimen/s_14" />
+
+    <com.client.tok.widget.ItemInfoView
+        android:id="@+id/id_setting_export_file_iiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fc:promptId="@string/export_profile" />
+
+
+    <com.client.tok.widget.ItemInfoView
+        android:id="@+id/id_setting_reset_id_iiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_12"
+        fc:promptId="@string/reset_tox_id" />
+
+    <View
+        style="@style/ItemDividerLine"
+        android:layout_marginStart="@dimen/s_14"
+        android:layout_marginEnd="@dimen/s_14"
+        android:visibility="gone" />
+
+    <com.client.tok.widget.ItemInfoView
+        android:id="@+id/id_setting_auto_file_iiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        fc:promptId="@string/auto_receive_file"
+        fc:rightIconVisible="0"
+        fc:tbVisible="1" />
+
+    <com.client.tok.widget.ItemInfoView
+        android:id="@+id/id_setting_clear_chat_logout_iiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_12"
+        fc:promptId="@string/logout_clear_msg"
+        fc:rightIconVisible="0"
+        fc:tbVisible="1" />
+
+    <View
+        style="@style/ItemDividerLine"
+        android:layout_marginStart="@dimen/s_14"
+        android:layout_marginEnd="@dimen/s_14" />
+
+    <com.client.tok.widget.ItemInfoView
+        android:id="@+id/id_setting_clear_chat_iiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fc:promptId="@string/clear_chat_history" />
+
+    <com.client.tok.widget.ItemInfoView
+        android:id="@+id/id_setting_del_profile_iiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_12"
+        fc:promptId="@string/del_profile" />
+
+
+    <Button
+        android:id="@+id/id_setting_logout_btn"
+        style="@style/CommonBigBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/s_16"
+        android:layout_marginTop="@dimen/s_50"
+        android:layout_marginEnd="@dimen/s_16"
+        android:enabled="true"
+        android:padding="@dimen/s_10"
+        android:text="@string/logout" />
+
+</LinearLayout>

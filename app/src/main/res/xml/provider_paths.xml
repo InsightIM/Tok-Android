@@ -1,0 +1,8 @@
+<paths>
+    <external-path
+        name="froot"
+        path="Tok/" />
+    <external-path
+        name="external_files"
+        path="." />
+</paths>

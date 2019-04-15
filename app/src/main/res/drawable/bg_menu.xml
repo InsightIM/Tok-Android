@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:shape="rectangle">
+    <solid android:color="@color/pop_window_bg" />
+    <corners android:radius="@dimen/s_4" />
+</shape>

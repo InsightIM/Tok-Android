@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fc="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/content_bg"
+    android:orientation="vertical">
+    <!--protrait+name+Tok ID-->
+
+    <RelativeLayout
+        android:id="@+id/id_mine_me_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_10"
+        android:background="@drawable/item_ripple_bg"
+        android:paddingStart="@dimen/spacing_10"
+        android:paddingTop="@dimen/spacing_10"
+        android:paddingEnd="@dimen/spacing_20"
+        android:paddingBottom="@dimen/spacing_10">
+
+        <com.client.tok.widget.PortraitView
+            android:id="@+id/id_mine_avatar_civ"
+            android:layout_width="@dimen/mine_portrait_width"
+            android:layout_height="@dimen/mine_portrait_height"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/spacing_10"
+            android:layout_marginRight="@dimen/spacing_10"
+            android:layout_toStartOf="@+id/id_mine_arrow_iv"
+            android:layout_toEndOf="@+id/id_mine_avatar_civ"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/id_mine_nick_name_tv"
+                style="@style/StyleLevelInfo1Big"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/app_name" />
+
+            <TextView
+                android:id="@+id/id_mine_user_name_tv"
+                style="@style/IntroduceContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/user_name"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/id_mine_signature_tv"
+                style="@style/IntroduceContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/default_signature" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/id_mine_arrow_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/info_item_arrow" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/id_mine_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_10"
+        android:background="@color/white_absolute"
+        android:orientation="vertical">
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_mine_status_iiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            fc:lefIconId="@drawable/status"
+            fc:promptId="@string/status"
+            fc:rightIconVisible="0" />
+
+        <View
+            style="@style/StyleDividerLine"
+            android:layout_marginStart="@dimen/spacing_16" />
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_mine_tok_id_iiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_mine_status_iiv"
+            fc:functionIconId="@drawable/qr_code"
+            fc:lefIconId="@drawable/id"
+            fc:promptId="@string/my_tok_id_prompt" />
+
+        <View
+            style="@style/StyleDividerLine"
+            android:layout_marginStart="@dimen/spacing_16" />
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_mine_find_friend_iiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_mine_status_iiv"
+            fc:lefIconId="@drawable/bot"
+            fc:promptId="@string/find_friend_bot" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_10"
+        android:orientation="vertical">
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_mine_safe_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            fc:lefIconId="@drawable/security"
+            fc:promptId="@string/security_privacy" />
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_mine_about_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_mine_safe_layout"
+            fc:lefIconId="@drawable/about"
+            fc:promptId="@string/about_us" />
+
+        <View
+            style="@style/StyleDividerLine"
+            android:layout_below="@+id/id_mine_safe_layout"
+            android:layout_marginStart="@dimen/s_16" />
+
+    </RelativeLayout>
+
+
+    <com.client.tok.widget.ItemInfoView
+        android:id="@+id/id_mine_setting_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_10"
+        fc:lefIconId="@drawable/setting"
+        fc:promptId="@string/setting" />
+
+</LinearLayout>

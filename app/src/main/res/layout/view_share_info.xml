@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/share_bg">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/id_view_share_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/s_36"
+        android:layout_marginTop="@dimen/s_60"
+        android:layout_marginEnd="@dimen/s_36"
+        app:cardCornerRadius="@dimen/s_16"
+        app:cardElevation="@dimen/s_30">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.client.tok.widget.PortraitView
+                android:id="@+id/id_view_share_pv"
+                android:layout_width="@dimen/share_portrait_width"
+                android:layout_height="@dimen/share_portrait_height"
+                android:layout_marginTop="@dimen/s_44" />
+
+            <TextView
+                android:id="@+id/id_view_share_my_info_tv"
+                style="@style/FunctionPrompt5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s_20"
+                android:gravity="center_horizontal" />
+
+            <ImageView
+                android:id="@+id/id_view_share_my_qr_iv"
+                android:layout_width="@dimen/qr_code_width"
+                android:layout_height="@dimen/qr_code_width"
+                android:layout_marginTop="@dimen/s_50" />
+
+            <TextView
+                style="@style/FunctionPrompt6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:gravity="center_horizontal"
+                android:paddingStart="@dimen/s_50"
+                android:paddingTop="@dimen/s_40"
+                android:paddingEnd="@dimen/s_50"
+                android:paddingBottom="@dimen/s_60"
+                android:text="@string/share_long_click_info" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_view_share_card"
+        android:layout_marginTop="@dimen/s_40"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/FunctionPrompt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/s_12"
+            android:paddingBottom="@dimen/s_12"
+            android:text="@string/slogon"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

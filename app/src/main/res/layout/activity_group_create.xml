@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/FunctionPrompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/s_16"
+        android:paddingTop="@dimen/s_12"
+        android:paddingEnd="@dimen/s_16"
+        android:paddingBottom="@dimen/s_5"
+        android:text="@string/group_name" />
+
+    <EditText
+        android:id="@+id/id_group_create_name_tv"
+        style="@style/ItemMainTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s_44"
+        android:background="@color/c_ffffff"
+        android:hint="@string/input_group_name"
+        android:maxLength="20"
+        android:paddingStart="@dimen/s_16"
+        android:paddingTop="@dimen/s_10"
+        android:paddingEnd="@dimen/s_16"
+        android:paddingBottom="@dimen/s_10"
+        android:singleLine="true"
+        android:textColorHint="@color/hint_color" />
+
+
+    <TextView
+        android:id="@+id/id_group_create_num_tv"
+        style="@style/FunctionPrompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/s_16"
+        android:paddingTop="@dimen/s_14"
+        android:paddingEnd="@dimen/s_16"
+        android:paddingBottom="@dimen/s_5"
+        android:text="@string/group_member_num" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/id_group_create_member_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_ffffff" />
+
+</LinearLayout>

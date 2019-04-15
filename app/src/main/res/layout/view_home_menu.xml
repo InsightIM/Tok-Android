@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/page_menu_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_menu"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/id_menu_add_friend_tv"
+            style="@style/MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chat_ripple"
+            android:gravity="start"
+            android:padding="@dimen/s_10"
+            android:drawablePadding="@dimen/s_10"
+            android:drawableStart="@drawable/menu_add"
+            android:text="@string/add_contact" />
+
+        <View
+            style="@style/MenuItemLine"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s_2px"
+            android:layout_marginStart="@dimen/s_10"
+            android:layout_marginEnd="@dimen/s_10" />
+
+        <TextView
+            android:id="@+id/id_menu_scan_tv"
+            style="@style/MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chat_ripple"
+            android:gravity="start"
+            android:drawableStart="@drawable/menu_scan"
+            android:padding="@dimen/s_10"
+            android:drawablePadding="@dimen/s_10"
+            android:text="@string/scan" />
+        <View
+            style="@style/MenuItemLine"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/s_2px"
+            android:layout_marginStart="@dimen/s_10"
+            android:layout_marginEnd="@dimen/s_10" />
+
+        <TextView
+            android:id="@+id/id_menu_my_id_tv"
+            style="@style/MenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/menu_id"
+            android:background="@drawable/chat_ripple"
+            android:gravity="start"
+            android:padding="@dimen/s_10"
+            android:drawablePadding="@dimen/s_10"
+            android:text="@string/my_tok_id" />
+
+    </LinearLayout>
+</FrameLayout>

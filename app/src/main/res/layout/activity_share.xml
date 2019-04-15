@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.client.tok.widget.ShareView
+            android:id="@+id/id_share_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+
+        <RelativeLayout
+            android:id="@+id/id_share_info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/share_bg">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/id_share_info_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/s_40"
+                android:layout_marginTop="@dimen/s_72"
+                android:layout_marginEnd="@dimen/s_40"
+                app:cardCornerRadius="@dimen/s_16"
+                app:cardElevation="@dimen/s_30">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.client.tok.widget.PortraitView
+                        android:id="@+id/id_share_pv"
+                        android:layout_width="@dimen/share_portrait_width"
+                        android:layout_height="@dimen/share_portrait_height"
+                        android:layout_marginTop="@dimen/s_53" />
+
+                    <TextView
+                        android:id="@+id/id_share_my_info_tv"
+                        style="@style/FunctionPrompt5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/s_20"
+                        android:gravity="center_horizontal" />
+
+                    <ImageView
+                        android:id="@+id/id_share_my_qr_iv"
+                        android:layout_width="@dimen/qr_code_width"
+                        android:layout_height="@dimen/qr_code_width"
+                        android:layout_marginTop="@dimen/s_50" />
+
+                    <TextView
+                        style="@style/FunctionPrompt7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/scan_my_qr_prompt" />
+
+                    <com.client.tok.widget.CopyTextView
+                        android:id="@+id/id_share_txt_tv"
+                        style="@style/FunctionPrompt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:autoLink="web"
+                        android:gravity="center_horizontal"
+                        android:paddingStart="@dimen/s_30"
+                        android:paddingTop="@dimen/s_40"
+                        android:paddingEnd="@dimen/s_30"
+                        android:paddingBottom="@dimen/s_20" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/id_share_info_card"
+                android:layout_marginStart="@dimen/s_40"
+                android:layout_marginTop="@dimen/s_50"
+                android:layout_marginEnd="@dimen/s_40"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/id_share_txt_bt"
+                    style="@style/MenuItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rect_bgtran_stroke2_43d5fe"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/s_10"
+                    android:paddingBottom="@dimen/s_10"
+                    android:text="@string/share_way_txt"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/id_share_img_bt"
+                    style="@style/MenuItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/s_14"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rect_bgtran_stroke2_43d5fe"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/s_10"
+                    android:paddingBottom="@dimen/s_10"
+                    android:text="@string/share_way_img"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+</ScrollView>

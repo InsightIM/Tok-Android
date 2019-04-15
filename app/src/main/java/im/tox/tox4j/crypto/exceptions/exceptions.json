@@ -1,0 +1,46 @@
+["crypto", "", {
+  "KeyDerivation": {
+    "NULL": ["The passphrase was null or empty."],
+    "FAILED": [
+      "The crypto lib was unable to derive a key from the given passphrase,",
+      "which is usually a lack of memory issue. The functions accepting keys",
+      "do not produce this error."
+    ],
+    "@JavaOnly INVALID_LENGTH": ["The salt was of incorrect length."]
+  },
+  "Encryption": {
+    "NULL": ["The key or input data was null or empty."],
+    "KEY_DERIVATION_FAILED": [
+      "The crypto lib was unable to derive a key from the given passphrase,",
+      "which is usually a lack of memory issue. The functions accepting keys",
+      "do not produce this error."
+    ],
+    "FAILED": ["The encryption itself failed."]
+  },
+  "Decryption": {
+    "NULL": ["The key or input data was null or empty."],
+    "INVALID_LENGTH": [
+      "The input data was shorter than {@link ToxCryptoConstants.ENCRYPTION_EXTRA_LENGTH} bytes."
+    ],
+    "BAD_FORMAT": [
+      "The input data is missing the magic number (i.e. wasn't created by this",
+      "module, or is corrupted)"
+    ],
+    "KEY_DERIVATION_FAILED": [
+      "The crypto lib was unable to derive a key from the given passphrase,",
+      "which is usually a lack of memory issue. The functions accepting keys",
+      "do not produce this error."
+    ],
+    "FAILED": [
+      "The encrypted byte array could not be decrypted. Either the data was",
+      "corrupt or the password/key was incorrect."
+    ]
+  },
+  "GetSalt": {
+    "NULL": ["The data or salt were null."],
+    "BAD_FORMAT": [
+      "The input data is missing the magic number (i.e. wasn't created by this",
+      "module, or is corrupted)"
+    ]
+  }
+}]

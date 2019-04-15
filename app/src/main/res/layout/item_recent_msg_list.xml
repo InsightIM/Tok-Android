@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/recent_item_height"
+    android:background="@drawable/item_ripple_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/s_16"
+        android:paddingTop="@dimen/s_12"
+        android:paddingEnd="@dimen/s_16"
+        android:paddingBottom="@dimen/s_8">
+
+
+        <RelativeLayout
+            android:id="@+id/id_left_layout"
+            android:layout_width="@dimen/s_53"
+            android:layout_height="@dimen/s_53">
+
+            <com.client.tok.widget.PortraitView
+                android:id="@+id/id_contact_portrait_iv"
+                android:layout_width="@dimen/recent_msg_portrait_width"
+                android:layout_height="@dimen/recent_msg__portrait_height"
+                tools:src="@drawable/img_place_holder" />
+
+            <ImageView
+                android:id="@+id/id_contact_line_status_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/status_list_selector"
+                tools:src="@drawable/circle_online" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/s_3"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/id_contact_last_msg_time_tv">
+
+                    <TextView
+                        android:id="@+id/id_contact_name_tv"
+                        style="@style/ItemMainTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@id/id_contact_mute_iv"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        tools:text="Friend Name" />
+
+                    <ImageView
+                        android:id="@+id/id_contact_mute_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/s_4"
+                        android:layout_marginEnd="@dimen/s_4"
+                        android:gravity="start"
+                        android:src="@drawable/mute"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/id_contact_last_msg_time_tv"
+                    style="@style/SenderTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    tools:text="19:14" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/s_8">
+
+                <TextView
+                    android:id="@+id/id_contact_last_msg_tv"
+                    style="@style/LastMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/spacing_10"
+                    android:layout_toStartOf="@+id/id_contact_unread_msg_iv"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    tools:text="Recent " />
+
+                <com.client.tok.widget.UnreadMsgView
+                    android:id="@+id/id_contact_unread_msg_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        style="@style/ItemDividerLine"
+        android:layout_below="@id/id_left_layout"
+        android:layout_marginStart="@dimen/s_16" />
+</LinearLayout>
+

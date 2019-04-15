@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fc="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/ItemTypeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/s_16"
+        android:paddingTop="@dimen/s_4"
+        android:paddingEnd="@dimen/s_16"
+        android:paddingBottom="@dimen/s_4"
+        android:text="@string/add_friends" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_new_friends_iiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            fc:lefIconId="@drawable/new_friend"
+            fc:promptId="@string/new_friends_request"
+            fc:rightIconVisible="0" />
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_add_friend_chat_id_iiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_new_friends_iiv"
+            android:visibility="gone"
+            fc:lefIconId="@drawable/tok_id"
+            fc:promptId="@string/add_friend_in_id"
+            fc:rightIconVisible="0" />
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_add_friend_share_iiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_add_friend_chat_id_iiv"
+            fc:lefIconId="@drawable/invite_friend"
+            fc:promptId="@string/invite_friend"
+            fc:rightIconVisible="0" />
+
+        <View
+            style="@style/ItemDividerLine"
+            android:layout_below="@id/id_add_friend_chat_id_iiv"
+            android:layout_marginStart="@dimen/s_16"
+            android:visibility="gone" />
+
+        <View
+            style="@style/ItemDividerLine"
+            android:layout_below="@id/id_new_friends_iiv"
+            android:layout_marginStart="@dimen/s_16" />
+
+    </RelativeLayout>
+</LinearLayout>

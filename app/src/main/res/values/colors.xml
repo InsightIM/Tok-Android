@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_main_bg">#f6f6f6</color>
+    <color name="app_black_bg">#202020</color>
+    <color name="white_absolute">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#f3f3f3</color>
+    <color name="white_dark">#F9F9F9</color>
+    <color name="grey_light">#EAEAEA</color>
+    <color name="wha">#202020</color>
+    <color name="grey">#dcdcdc</color>
+    <color name="grey_dark">#a0a0a0</color>
+    <color name="grey_darker">#666666</color>
+    <color name="grey_darker2">#ededee</color>
+    <color name="grey_darkest">#444444</color>
+    <color name="black_absolute">#000000</color>
+    <color name="black_light">#9c9c9c</color>
+    <color name="black">#222222</color>
+    <color name="green">#339554</color>
+    <color name="green_light">#ff31cb37</color>
+    <color name="green_lighter">#32e1c7</color>
+    <color name="green_dark">#2e7d32</color>
+    <color name="green_darker">#1b5e20</color>
+    <color name="orange">#FF9900</color>
+    <color name="material_orange_700">#f57c00</color>
+    <color name="red">#FF3333</color>
+    <color name="material_red_a700">#d50000</color>
+    <color name="purple_dark">#5e35b1</color>
+    <color name="purple_darker">#512da8</color>
+
+    <color name="brand_color">#3197fb</color>
+    <color name="brand_primary">@color/brand_color</color>
+    <color name="brand_primary_dark">@color/brand_color</color>
+    <color name="brand_secondary">@color/green</color>
+    <color name="brand_secondary_dark">@color/green_dark</color>
+    <color name="brand_secondary_darker">@color/green_darker</color>
+
+    <color name="away">@color/orange</color>
+    <color name="busy">@color/red</color>
+
+    <color name="action_bar_background">@color/brand_color</color>
+    <color name="sent_message_background">@color/brand_color</color>
+
+
+    <color name="fab_normal">@color/brand_secondary</color>
+    <color name="fab_pressed">@color/brand_secondary_dark</color>
+
+    <color name="tab_selected">@color/white</color>
+    <color name="tab_highlight">#aaaaaaaa</color>
+
+
+    <color name="divider_line">#ededee</color>
+
+
+    <color name="info_level_1">#191e24</color>
+    <color name="info_level_2">#a4a5a8</color>
+    <color name="info_level_3">#bfc1c3</color>
+
+    <color name="color_blink">#FF5E5E</color>
+
+
+    <!--新ui 重新定义-->
+    <!--基础color-->
+    <color name="c_000000">#000000</color>
+    <color name="c_202020">#202020</color>
+    <color name="c_ffffff">#ffffff</color>
+    <color name="c_f5f6fa">#f5f6fa</color>
+    <color name="c_8e8e93">#8e8e93</color>
+    <color name="c_d8d8d8">#d8d8d8</color>
+    <color name="c_dadbda">#dadbda</color>
+    <color name="c_b2b2b2">#b2b2b2</color>
+    <color name="c_555567">#555567</color>
+    <color name="c_18181d">#18181d</color>
+    <color name="c_b2000000">#b2000000</color>
+    <color name="c_fefffe">#fefffe</color>
+    <color name="c_e7e7f0">#e7e7f0</color>
+    <color name="c_4cd964">#4cd964</color>
+    <color name="c_f22929">#f22929</color>
+    <color name="c_4d000000">#4d000000</color>
+    <color name="c_6d000000">#6d000000</color>
+    <color name="c_43d5fe">#43d5fe</color>
+    <color name="c_b3000000">#b3000000</color>
+    <color name="c_f2f2f5">#f2f2f5</color>
+    <color name="c_dcdcdd">#dcdcdd</color>
+    <color name="c_171f24">#171f24</color>
+    <color name="c_007aff">#007aff</color>
+    <color name="c_157efb">#157efb</color>
+    <color name="c_dbdbe6">#dbdbe6</color>
+    <color name="c_efeff5">#efeff5</color>
+    <color name="c_b5b5bb">#b5b5bb</color>
+
+    <color name="c_38383e">#38383e</color>
+    <color name="c_333333">#333333</color>
+    <color name="c_666666">#666666</color>
+    <color name="c_1ae9ebea">#1ae9ebea</color>
+    <color name="c_83838d">#83838d</color>
+    <color name="c_d4d4dc">#d4d4dc</color>
+    <color name="c_e1e1e1">#e1e1e1</color>
+    <color name="c_fff7ad">#fff7ad</color>
+    <color name="c_ff4a40">#ff4a40</color>
+    <color name="c_999999">#ff999999</color>
+
+
+    <color name="online">@color/c_4cd964</color>
+    <color name="offline">@color/c_e7e7f0</color>
+    <color name="status_stoke">@color/c_ffffff</color>
+
+    <!--toorbar背景-->
+    <color name="toolbar_bg">@color/c_ffffff</color>
+    <!--内容背景-->
+    <color name="content_bg">@color/c_f5f6fa</color>
+    <!--会话底部选择文件背景-->
+    <color name="sel_file_bg">@color/c_f2f2f5</color>
+    <!--默认头像的color-->
+    <array name="portrait_colors">
+        <item name="c_1">#89D4B1</item>
+        <item name="c_2">#9EEC80</item>
+        <item name="c_3">#32e1c7</item>
+        <item name="c_4">#C9D93C</item>
+        <item name="c_5">#5AD4CB</item>
+        <item name="c_6">#7CCEFD</item>
+        <item name="c_7">#F48B68</item>
+        <item name="c_8">#538EED</item>
+        <item name="c_9">#F8C948</item>
+    </array>
+
+    <!--聊天界面输入框selector-->
+    <color name="chat_et_normal_bg">@color/c_dadbda</color>
+    <color name="chat_et_focus_bg">@color/c_b2b2b2</color>
+
+    <!--聊天界面录音selector所用颜色 -->
+    <color name="chat_record_solid_normal">@color/c_ffffff</color><!--normal 填充色-->
+    <color name="chat_record_solid_press">@color/c_d4d4dc</color><!--press 填充色-->
+    <color name="chat_record_stroke">@color/c_b2b2b2</color>
+
+    <!--loading外圈颜色-->
+    <color name="loading_ring">@color/c_ffffff</color>
+
+    <!--tab文字-->
+    <color name="tab_text_selected">@color/c_007aff</color>
+    <color name="tab_text_normal">@color/c_8e8e93</color>
+
+    <!--未读消息标志-->
+    <color name="unread_msg_red">@color/c_f22929</color>
+
+
+    <!--pop window bg-->
+    <color name="pop_window_bg">@color/c_38383e</color>
+
+    <color name="hint_color">@color/c_b5b5bb</color>
+
+    <color name="auto_link_color">@color/c_007aff</color>
+    
+    <color name="btn_available">@color/c_007aff</color>
+    <color name="btn_un_available">@color/c_8e8e93</color>
+
+
+    <color name="scan_mask_color">@color/c_6d000000</color>
+    <color name="scan_corner_color">@color/c_007aff</color>
+    <color name="scan_line_color">@color/c_007aff</color>
+    <color name="scan_border_color">@color/white</color>
+
+
+</resources>

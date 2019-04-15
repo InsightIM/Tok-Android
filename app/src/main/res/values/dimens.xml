@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="fab_margin">20dp</dimen>
+    <dimen name="padding_tiny">4dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="text_tiny">10sp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_smallish">16sp</dimen>
+    <dimen name="text_medium">18sp</dimen>
+    <dimen name="text_large">22sp</dimen>
+    <dimen name="text_larger">26sp</dimen>
+    <dimen name="text_largest">30sp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <!-- Font sizes -->
+    <dimen name="font_4">4dp</dimen>
+    <dimen name="font_8">8dp</dimen>
+    <dimen name="font_10">10dp</dimen>
+    <dimen name="font_12">12dp</dimen>
+    <dimen name="font_14">14dp</dimen>
+    <dimen name="font_16">16dp</dimen>
+    <dimen name="font_18">18dp</dimen>
+    <dimen name="font_20">20dp</dimen>
+    <dimen name="font_22">22dp</dimen>
+    <dimen name="font_24">24dp</dimen>
+    <dimen name="font_26">26dp</dimen>
+    <dimen name="font_28">28dp</dimen>
+    <dimen name="font_30">30dp</dimen>
+    <dimen name="font_32">32dp</dimen>
+    <dimen name="font_34">34dp</dimen>
+    <dimen name="font_38">38dp</dimen>
+
+    <!-- typical spacing between two views -->
+    <dimen name="spacing_1px">1px</dimen>
+    <dimen name="spacing_2px">2px</dimen>
+
+    <dimen name="spacing_1">1dp</dimen>
+    <dimen name="spacing_2">2dp</dimen>
+    <dimen name="spacing_3">3dp</dimen>
+    <dimen name="spacing_4">4dp</dimen>
+    <dimen name="spacing_6">6dp</dimen>
+    <dimen name="spacing_8">8dp</dimen>
+    <dimen name="spacing_10">10dp</dimen>
+    <dimen name="spacing_12">12dp</dimen>
+    <dimen name="spacing_15">15dp</dimen>
+    <dimen name="spacing_14">14dp</dimen>
+    <dimen name="spacing_16">16dp</dimen>
+    <dimen name="spacing_18">18dp</dimen>
+    <dimen name="spacing_20">20dp</dimen>
+    <dimen name="spacing_22">22dp</dimen>
+    <dimen name="spacing_24">24dp</dimen>
+    <dimen name="spacing_26">26dp</dimen>
+    <dimen name="spacing_28">28dp</dimen>
+    <dimen name="spacing_30">30dp</dimen>
+    <dimen name="spacing_32">32dp</dimen>
+    <dimen name="spacing_34">34dp</dimen>
+    <dimen name="spacing_36">36dp</dimen>
+    <dimen name="spacing_38">38dp</dimen>
+    <dimen name="spacing_40">40dp</dimen>
+    <dimen name="spacing_44">44dp</dimen>
+    <dimen name="spacing_50">50dp</dimen>
+    <dimen name="spacing_52">52dp</dimen>
+    <dimen name="spacing_54">54dp</dimen>
+    <dimen name="spacing_56">56dp</dimen>
+    <dimen name="spacing_60">60dp</dimen>
+    <dimen name="spacing_64">64dp</dimen>
+    <dimen name="spacing_70">70dp</dimen>
+    <dimen name="spacing_80">80dp</dimen>
+    <dimen name="spacing_90">90dp</dimen>
+    <dimen name="spacing_100">100dp</dimen>
+    <dimen name="spacing_116">116dp</dimen>
+    <dimen name="spacing_124">124dp</dimen>
+    <dimen name="spacing_140">140dp</dimen>
+    <dimen name="spacing_200">200dp</dimen>
+
+
+    <!--用户发送的图片大小-->
+    <dimen name="img_width">@dimen/spacing_80</dimen>
+    <dimen name="img_height">@dimen/spacing_140</dimen>
+
+
+    <dimen name="blink_size">8dp</dimen>
+
+
+    <!--新UI-->
+    <dimen name="f_10">10dp</dimen>
+    <dimen name="f_11">11dp</dimen>
+    <dimen name="f_12">12dp</dimen>
+    <dimen name="f_14">14dp</dimen>
+    <dimen name="f_15">15dp</dimen>
+    <dimen name="f_16">16dp</dimen>
+    <dimen name="f_17">17dp</dimen>
+    <dimen name="f_18">18dp</dimen>
+    <dimen name="f_20">20dp</dimen>
+    <dimen name="f_28">28dp</dimen>
+    <dimen name="f_30">30dp</dimen>
+    <dimen name="f_32">32dp</dimen>
+    <dimen name="f_35">35dp</dimen>
+    <dimen name="f_70">70dp</dimen>
+
+
+    <!--距离-->
+    <dimen name="s_1px">1px</dimen>
+    <dimen name="s_2px">2px</dimen>
+    <dimen name="s_0">0dp</dimen>
+    <dimen name="s_1">1dp</dimen>
+    <dimen name="s_2">2dp</dimen>
+    <dimen name="s_3">3dp</dimen>
+    <dimen name="s_4">4dp</dimen>
+    <dimen name="s_5">5dp</dimen>
+    <dimen name="s_6">6dp</dimen>
+    <dimen name="s_8">8dp</dimen>
+    <dimen name="s_10">10dp</dimen>
+    <dimen name="s_12">12dp</dimen>
+    <dimen name="s_14">14dp</dimen>
+    <dimen name="s_15">15dp</dimen>
+    <dimen name="s_16">16dp</dimen>
+    <dimen name="s_20">20dp</dimen>
+    <dimen name="s_22">22dp</dimen>
+    <dimen name="s_24">24dp</dimen>
+    <dimen name="s_30">30dp</dimen>
+    <dimen name="s_32">32dp</dimen>
+    <dimen name="s_36">36dp</dimen>
+    <dimen name="s_38">38dp</dimen>
+    <dimen name="s_40">40dp</dimen>
+    <dimen name="s_44">44dp</dimen>
+    <dimen name="s_48">48dp</dimen>
+    <dimen name="s_50">50dp</dimen>
+    <dimen name="s_52">52dp</dimen>
+    <dimen name="s_53">53dp</dimen>
+    <dimen name="s_54">54dp</dimen>
+    <dimen name="s_56">56dp</dimen>
+    <dimen name="s_58">58dp</dimen>
+    <dimen name="s_60">60dp</dimen>
+    <dimen name="s_62">62dp</dimen>
+    <dimen name="s_64">64dp</dimen>
+    <dimen name="s_72">72dp</dimen>
+    <dimen name="s_80">80dp</dimen>
+    <dimen name="s_86">86dp</dimen>
+    <dimen name="s_90">90dp</dimen>
+    <dimen name="s_100">100dp</dimen>
+    <dimen name="s_108">108dp</dimen>
+    <dimen name="s_114">114dp</dimen>
+    <dimen name="s_118">118dp</dimen>
+    <dimen name="s_120">120dp</dimen>
+    <dimen name="s_139">139dp</dimen>
+    <dimen name="s_140">140dp</dimen>
+    <dimen name="s_146">146dp</dimen>
+    <dimen name="s_150">150dp</dimen>
+    <dimen name="s_160">160dp</dimen>
+    <dimen name="s_170">170dp</dimen>
+    <dimen name="s_246">246dp</dimen>
+
+    <!--toolbar高度-->
+    <dimen name="toolbar_height">@dimen/s_54</dimen>
+
+    <!--好友列表中，离在线状态图标大小-->
+    <dimen name="status_list_width">@dimen/s_12</dimen>
+    <dimen name="status_list_height">@dimen/s_12</dimen>
+    <!--好友会话界面中，离在线状态图标大小-->
+    <dimen name="status_title_width">@dimen/s_6</dimen>
+    <dimen name="status_title_height">@dimen/s_6</dimen>
+
+    <!--聊天界面中整个页面的padding-->
+    <dimen name="chat_content_padding">@dimen/s_12</dimen>
+    <!--消息与消息之间的间隔-->
+    <dimen name="interval_sp_msg">@dimen/s_12</dimen>
+    <!--消息内容与上面的时间间隔-->
+    <dimen name="interval_sp_msg_time">@dimen/s_8</dimen>
+
+    <!--最近会话列表头像大小-->
+    <dimen name="recent_msg_portrait_width">@dimen/s_48</dimen>
+    <dimen name="recent_msg__portrait_height">@dimen/s_48</dimen>
+
+    <!--联系人列表头像大小-->
+    <dimen name="contact_portrait_width">@dimen/s_40</dimen>
+    <dimen name="contact_portrait_height">@dimen/s_40</dimen>
+
+    <!--分享页面头像大小-->
+    <dimen name="share_portrait_width">@dimen/s_50</dimen>
+    <dimen name="share_portrait_height">@dimen/s_50</dimen>
+
+    <!--我的页面头像大小-->
+    <dimen name="mine_portrait_width">@dimen/s_54</dimen>
+    <dimen name="mine_portrait_height">@dimen/s_54</dimen>
+
+    <!--会话页面头像大小-->
+    <dimen name="portrait_width">@dimen/s_36</dimen>
+    <dimen name="portrait_height">@dimen/s_36</dimen>
+    <dimen name="portrait_corner">@dimen/s_4</dimen>
+
+    <!--聊天时图片大小-->
+    <dimen name="chat_img_width">@dimen/s_146</dimen>
+    <dimen name="chat_img_height">@dimen/s_139</dimen>
+
+    <dimen name="chat_img_receiving_width">@dimen/s_86</dimen>
+    <dimen name="chat_img_receiving_height">@dimen/s_80</dimen>
+
+    <!--会话界面文件大小-->
+    <dimen name="chat_file_width">@dimen/s_246</dimen>
+    <dimen name="chat_file_height">@dimen/s_72</dimen>
+    <dimen name="file_icon_width">@dimen/s_50</dimen>
+    <dimen name="file_icon_height">@dimen/s_56</dimen>
+    <!--loading圈大小-->
+    <dimen name="loading_size">@dimen/s_40</dimen>
+
+    <!--音频显示的高度-->
+    <!--头像大小-->
+    <dimen name="audio_height">@dimen/s_36</dimen>
+
+    <dimen name="recent_item_height">@dimen/s_72</dimen>
+    <dimen name="list_menu_width">@dimen/s_120</dimen>
+    <dimen name="page_menu_width">@dimen/s_150</dimen>
+
+    <!--好友会话界面中，离在线状态图标大小-->
+    <dimen name="unread_width">@dimen/s_10</dimen>
+    <dimen name="unread_height">@dimen/s_10</dimen>
+
+
+    <dimen name="hint_txt_size">@dimen/f_14</dimen>
+
+    <dimen name="dialog_item_title_min">@dimen/s_90</dimen>
+    <dimen name="dialog_item_height">@dimen/s_50</dimen>
+    <dimen name="qr_code_width">@dimen/s_120</dimen>
+    <dimen name="qr_code_height">@dimen/s_120</dimen>
+</resources>

@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:empty="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.client.tok.widget.EmptyPromptView
+        android:id="@+id/id_contact_empty_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        empty:btnTxtId1="@string/create_group"
+        empty:mainContentId="@string/slogon" />
+
+    <ListView
+        android:id="@+id/id_contracts_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:scrollbars="none" />
+
+    <TextView
+        android:id="@+id/id_letter_sort_sel_tv"
+        android:layout_width="@dimen/spacing_80"
+        android:layout_height="@dimen/spacing_80"
+        android:layout_centerInParent="true"
+        android:background="@drawable/letter_sort_show_bg"
+        android:gravity="center"
+        android:textColor="@color/white_absolute"
+        android:textSize="@dimen/font_38"
+        android:visibility="gone"
+        tools:text="T"
+        tools:visibility="visible" />
+
+    <com.client.tok.widget.LetterSortView
+        android:id="@+id/id_letter_sort_view"
+        android:layout_width="@dimen/spacing_30"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/spacing_40"
+        android:layout_marginTop="@dimen/spacing_40" />
+
+
+</RelativeLayout>

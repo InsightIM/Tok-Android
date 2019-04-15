@@ -1,0 +1,105 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/spacing_10"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_absolute"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/spacing_10">
+
+        <com.client.tok.widget.PortraitView
+            android:id="@+id/id_new_friends_portrait_iv"
+            android:layout_width="@dimen/portrait_width"
+            android:layout_height="@dimen/portrait_height"
+            android:layout_marginTop="@dimen/spacing_4"
+            app:layout_constraintLeft_toLeftOf="@+id/id_left_gl"
+            tools:src="@color/red" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_10"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/id_new_friends_name_tv"
+                style="@style/StyleLevelInfo1Big"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/spacing_40"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                tools:text="new friend name" />
+
+            <View style="@style/StyleDividerLine" />
+
+            <TextView
+                android:id="@+id/id_new_friends_tok_id_tv"
+                style="@style/StyleLevelInfo3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="middle"
+                android:gravity="center_vertical"
+                android:padding="@dimen/spacing_2"
+                tools:text="new friend Tok ID" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        style="@style/StyleLevelInfo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_10"
+        android:gravity="center_vertical"
+        android:text="@string/request_msg" />
+
+    <TextView
+        android:id="@+id/id_new_friends_msg_tv"
+        style="@style/EtBgWhiteFontBlack"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_80"
+        android:layout_marginTop="@dimen/spacing_4"
+        android:gravity="top|left|start"
+        android:singleLine="true"
+        android:textSize="@dimen/font_16"
+        tools:text="hello, i am xuefang" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/spacing_10"
+        android:layout_marginTop="@dimen/spacing_20"
+        android:layout_marginRight="@dimen/spacing_10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/id_new_friends_refuse_tv"
+            style="@style/BtBgWhiteFontBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/refuse" />
+
+        <View
+            android:layout_width="@dimen/spacing_20"
+            android:layout_height="@dimen/spacing_2" />
+
+        <TextView
+            android:id="@+id/id_new_friends_accept_tv"
+            style="@style/BtBgBlueFontWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/accept" />
+
+    </LinearLayout>
+</LinearLayout>

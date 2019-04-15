@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/id_contact_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/spacing_6"
+        android:paddingLeft="@dimen/spacing_10"
+        android:paddingRight="@dimen/spacing_10"
+        android:paddingTop="@dimen/spacing_6">
+
+        <com.client.tok.widget.PortraitView
+            android:id="@+id/id_contact_portrait_iv"
+            android:layout_width="@dimen/spacing_40"
+            android:layout_height="@dimen/spacing_40"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            tools:src="@drawable/invite_friend" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/spacing_10"
+            android:layout_marginStart="@dimen/spacing_10"
+            android:layout_toEndOf="@+id/id_contact_portrait_iv"
+            android:layout_toLeftOf="@+id/id_contact_accept_tv"
+            android:layout_toRightOf="@+id/id_contact_portrait_iv"
+            android:layout_toStartOf="@+id/id_contact_accept_tv"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/id_contact_name_tv"
+                style="@style/StyleLevelInfo1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/id_mine_tok_id_iiv"
+                android:layout_centerVertical="true"
+                android:ellipsize="middle"
+                android:singleLine="true"
+                tools:text="new Friend name" />
+
+            <TextView
+                android:id="@+id/id_contact_msg_tv"
+                style="@style/StyleLevelInfo3Small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/id_mine_tok_id_iiv"
+                android:layout_centerVertical="true"
+                android:ellipsize="middle"
+                android:singleLine="true"
+                tools:text="new Friend message" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/id_contact_accept_tv"
+            style="@style/BtBgGreenFontWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/accept"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        style="@style/StyleDividerLine"
+        android:layout_below="@id/id_contact_layout" />
+
+</RelativeLayout>
+

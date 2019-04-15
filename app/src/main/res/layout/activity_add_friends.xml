@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fc="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/s_20">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_16"
+        android:visibility="gone">
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_add_group_iiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            fc:lefIconId="@drawable/new_friend"
+            fc:promptId="@string/create_group" />
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_add_friend_my_id_iiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_add_group_iiv"
+            fc:functionIconId="@drawable/qr_code"
+            fc:lefIconId="@drawable/id"
+            fc:promptId="@string/my_tok_id_prompt" />
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_add_friend_scan_iiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_add_friend_my_id_iiv"
+            fc:lefIconId="@drawable/scan"
+            fc:promptId="@string/scan" />
+
+        <View
+            style="@style/StyleDividerLine"
+            android:layout_below="@id/id_add_group_iiv"
+            android:layout_marginLeft="@dimen/spacing_60" />
+
+        <View
+            style="@style/StyleDividerLine"
+            android:layout_below="@id/id_add_friend_my_id_iiv"
+            android:layout_marginLeft="@dimen/spacing_60" />
+    </RelativeLayout>
+
+
+    <com.client.tok.widget.TokIdEditText
+        android:id="@+id/id_add_friends_id_et"
+        style="@style/EtBgWhiteFontBlack"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s_100"
+        android:layout_marginTop="@dimen/spacing_20"
+        android:hint="@string/input_tok_id"
+        android:maxLines="5"
+        android:singleLine="false" />
+
+    <Button
+        android:id="@+id/id_add_friends_add_tv"
+        style="@style/CommonBigBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_120"
+        android:enabled="true"
+        android:padding="@dimen/s_10"
+        android:text="@string/add_friends" />
+
+
+</LinearLayout>

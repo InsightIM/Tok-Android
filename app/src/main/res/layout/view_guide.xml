@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_ffffff"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/id_guide_title_tv"
+        style="@style/MainTitleMax2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_114"
+        android:gravity="center_horizontal"
+        tools:text="@string/guide_title1" />
+
+
+    <TextView
+        android:id="@+id/id_guide_content_tv"
+        style="@style/FunctionPrompt8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_8"
+        android:gravity="center_horizontal"
+        tools:text="@string/guide_content1" />
+
+    <ImageView
+        android:id="@+id/id_guide_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/s_100"
+        tools:src="@drawable/guide1" />
+</LinearLayout>

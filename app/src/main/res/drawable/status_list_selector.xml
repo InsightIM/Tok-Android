@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <shape android:shape="oval">
+            <solid android:color="@color/online" />
+            <size android:width="@dimen/status_list_width" android:height="@dimen/status_list_height" />
+
+            <stroke android:width="@dimen/s_2" android:color="@color/status_stoke" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/offline" />
+            <size android:width="@dimen/status_list_width" android:height="@dimen/status_list_height" />
+
+            <stroke android:width="@dimen/s_2" android:color="@color/status_stoke" />
+        </shape>
+    </item>
+</selector>

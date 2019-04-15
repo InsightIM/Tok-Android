@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/shape_rect_bgf9f9f9_stroke1dcdcdc_r2" android:state_pressed="true" />
+    <item android:drawable="@drawable/shape_rect_bgf9f9f9_stroke1dcdcdc_r2" android:state_focused="true" />
+    <item android:drawable="@drawable/shape_rect_bgf9f9f9_stroke1eaeaea_r2" />
+</selector>

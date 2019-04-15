@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/id_content_layout"
+        android:layout_width="@dimen/s_114"
+        android:layout_height="wrap_content"
+        android:background="@color/pop_window_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/id_menu_copy_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/id_menu_mark_layout"
+            android:layout_alignEnd="@+id/id_menu_mark_layout">
+
+            <TextView
+                android:id="@+id/id_menu_copy_tv"
+                style="@style/MenuItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chat_ripple"
+                android:gravity="start"
+                android:padding="@dimen/s_10"
+                android:text="@string/copy" />
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/id_menu_del_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_menu_copy_layout"
+            android:layout_alignStart="@+id/id_menu_mark_layout"
+            android:layout_alignEnd="@+id/id_menu_mark_layout">
+
+            <View
+                style="@style/MenuItemLine"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/s_2px"
+                android:layout_marginStart="@dimen/s_10"
+                android:layout_marginEnd="@dimen/s_10" />
+
+
+            <TextView
+                android:id="@+id/id_menu_del_tv"
+                style="@style/MenuItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chat_ripple"
+                android:gravity="start"
+                android:padding="@dimen/s_10"
+                android:text="@string/delete" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/id_menu_mark_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_menu_del_layout">
+
+            <View
+                style="@style/MenuItemLine"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/s_2px"
+                android:layout_alignStart="@+id/id_menu_mark_read_tv"
+                android:layout_alignTop="@+id/id_menu_mark_read_tv"
+                android:layout_alignEnd="@+id/id_menu_mark_read_tv"
+                android:layout_marginStart="@dimen/s_10"
+                android:layout_marginEnd="@dimen/s_10" />
+
+            <TextView
+                android:id="@+id/id_menu_mark_read_tv"
+                style="@style/MenuItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/chat_ripple"
+                android:gravity="start"
+                android:padding="@dimen/s_10"
+                android:text="@string/mark_read" />
+        </RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>

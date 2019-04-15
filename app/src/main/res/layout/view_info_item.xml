@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_ripple_bg"
+    android:paddingStart="@dimen/s_16"
+    android:paddingEnd="@dimen/s_16">
+
+    <ImageView
+        android:id="@+id/id_info_item_left_icon_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/arrow_back_black"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/id_info_item_prompt_tv"
+        style="@style/ItemMainTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/s_12"
+        android:layout_toEndOf="@id/id_info_item_left_icon_iv"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        tools:text="Prompt" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/id_info_item_prompt_tv"
+        android:gravity="center_vertical|end"
+        android:minHeight="@dimen/spacing_44">
+
+        <com.client.tok.widget.PortraitView
+            android:id="@+id/id_info_item_portrait_view"
+            android:layout_width="@dimen/portrait_width"
+            android:layout_height="@dimen/portrait_height"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/s_4"
+            android:layout_marginEnd="@dimen/s_12"
+            android:visibility="gone"
+            tools:src="portrait"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/id_info_item_content_iv"
+            style="@style/FunctionPrompt6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/s_16"
+            android:layout_marginEnd="@dimen/s_16"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:visibility="gone"
+            tools:text="content"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/id_info_item_function_icon_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/s_16"
+            tools:src="@drawable/qr_code" />
+
+        <ToggleButton
+            android:id="@+id/id_info_item_tb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/s_16"
+            android:background="@null"
+            android:button="@drawable/selector_toggle"
+            android:minWidth="20dp"
+            android:minHeight="30dp"
+            android:textOff="@null"
+            android:textOn="@null"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/id_info_item_right_icon_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/info_item_arrow"
+            android:visibility="visible" />
+    </LinearLayout>
+</RelativeLayout>

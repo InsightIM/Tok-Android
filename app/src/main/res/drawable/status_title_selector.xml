@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <shape
+            android:shape="oval">
+            <solid android:color="@color/online" />
+            <size
+                android:width="@dimen/status_title_width"
+                android:height="@dimen/status_title_height" />
+        </shape>
+    </item>
+    <item>
+        <shape
+            android:shape="oval">
+            <solid android:color="@color/offline" />
+            <size
+                android:width="@dimen/status_title_height"
+                android:height="@dimen/status_title_height" />
+        </shape>
+    </item>
+
+</selector>

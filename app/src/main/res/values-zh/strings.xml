@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="create_account_encrypted_profile_error">Android版暂时不支持加密文件</string>
+    <string name="create_account_load_profile_unknown">未知的文件加载异常</string>
+
+    <!-- User Status -->
+    <string name="status_online">在线</string>
+    <string name="status_away">离开</string>
+    <string name="status_busy">忙碌</string>
+    <string name="status_offline">离线</string>
+
+    <string name="app_name">Tok</string>
+    <string name="permission_location">定位</string>
+    <string name="permission_camera">相机</string>
+    <string name="permission_storage">存储</string>
+    <string name="permission_contacts">联系人</string>
+    <string name="permission_deny_prompt">Tok正常运行需要获取<Data><![CDATA[<font color="#000000"><b>%1$s</b></font>]]></Data>权限. 请在手机设置中打开<Data><![CDATA[<font color="#000000"><b>%2$s</b></font>]]></Data>权限</string>
+
+    <string name="create_account">生成账号</string>
+    <string name="hint_account_name">用户名</string>
+    <string name="hint_account_pwd">密码</string>
+    <string name="login">登录</string>
+    <string name="logout">退出</string>
+    <string name="input_user_name_prompt">请输入你的名称!</string>
+    <string name="input_user_pwd_prompt">请输入你的密码</string>
+    <string name="user_not_exist">对不起,这个用户 %1$s 不存在,请重新确认!</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="oops">出错了</string>
+    <string name="import_account">导入账户 > </string>
+    <string name="have_account_login">已有账号,请登录 > </string>
+    <string name="select_file">选择一个文件</string>
+    <string name="select_folder">选择文件夹</string>
+    <string name="import_profile_invalid_file">选择的文件不是可用的Tok/Tox文件</string>
+    <string name="user_has_exist">用户已存在，请登录!</string>
+    <string name="sign_up_failed">对不起，创建账户失败</string>
+    <string name="login_from_file_failed">对不起，导入文件失败</string>
+    <string name="message">消息</string>
+    <string name="contacts">联系人</string>
+    <string name="mine">我的</string>
+    <string name="default_signature">我正在使用Tok</string>
+    <string name="status">状态</string>
+    <string name="off_line">离线</string>
+    <string name="on_line">在线</string>
+    <string name="away">离开</string>
+    <string name="busy">繁忙</string>
+    <string name="my_tok_id_prompt">我的Tok ID</string>
+    <string name="security_privacy">安全与隐私</string>
+    <string name="about_us">关于 Tok</string>
+    <string name="setting">设置</string>
+    <string name="my_tok_id">我的Tok ID</string>
+    <string name="group_tok_id">群组Tok ID</string>
+    <string name="tok_id">Tok ID</string>
+    <string name="copy">复制</string>
+    <string name="copy_success">复制成功</string>
+    <string name="add_friends">添加好友</string>
+    <string name="confirm_add_friends">确认添加好友</string>
+    <string name="input_tok_id">请输入你的好友的Tok ID</string>
+    <string name="tok_id_invalid">Tok ID 不正确，请重新确认!</string>
+    <string name="can_not_add_yourself">你不能添加自己</string>
+    <string name="add_friend_friend_exists">已添加该好友</string>
+    <string name="add_friend_default_message">你好! 我是 %1$s</string>
+    <string name="add_friend_request_has_send">添加好友请求已发送</string>
+    <string name="add_friend_msg_hint">输入信息</string>
+    <string name="add_friend_in_id">添加好友Tok ID</string>
+
+    <string name="invite_friend">邀请好友</string>
+    <string name="scan">扫描</string>
+    <string name="scan_prompt">请扫描二维码</string>
+    <string name="qr_code_not_found">没有找到二维码</string>
+    <string name="account_info">账户信息</string>
+    <string name="account_name">账户名称</string>
+    <string name="export_profile">导出账户信息</string>
+    <!-- Export profile -->
+    <string name="export_success">导出数据文件到 %s</string>
+    <string name="export_failed">错误：无法导出数据文件.</string>
+    <string name="app_down_load_url">https://fir.im/tokandroid</string>
+    <string name="new_friends_request">新好友请求</string>
+    <string name="group">群组</string>
+    <string name="refuse">拒绝</string>
+    <string name="accept">接受</string>
+    <string name="share_with">分享至</string>
+    <string name="request_msg">请求信息</string>
+    <string name="friend_accepted_default_status">好友已经接受</string>
+    <string name="fail_try_again">对不起，失败了，请重新试试!</string>
+    <string name="successful">成功</string>
+    <string name="send">发送</string>
+    <string name="share_my_id">我是 %1$s,我正在使用Tok,我的Tok ID 是:%2$s</string>
+    <string name="share_my_group_id">我是 %1$s,我正在使用Tok,我的群Tok ID is:%2$s</string>
+    <string name="version">版本号:%1$s</string>
+
+    <string name="personal_info">个人信息</string>
+    <string name="friend_info">好友信息</string>
+    <string name="my_avatar">头像</string>
+    <string name="nick_name">昵称</string>
+    <string name="bio">简介</string>
+    <string name="nick_name_prompt">昵称: %1$s</string>
+    <string name="group_nick_name">群名称: %1$s</string>
+    <string name="friend_is_online">你的朋友在线</string>
+    <string name="friend_is_offline">你的朋友已离线</string>
+    <string name="input_msg">请输入信息</string>
+    <string name="file_sel_wrong">你选的文件有错误，请重新试试!</string>
+    <string name="send_file_need_online">对不起，需要好友在线才能发送文件!</string>
+    <string name="create_group">创建群组</string>
+    <string name="my_group">我的群组</string>
+    <string name="group_info">群信息</string>
+    <string name="create">创建</string>
+    <string name="next">下一步</string>
+    <string name="name">名称</string>
+    <string name="add_member">添加成员</string>
+    <string name="remove_member">移除成员</string>
+    <string name="prompt_group_Id">群 ID</string>
+    <string name="input_group_name">请输入群名称!</string>
+    <string name="sel_group_member_name">请选择群成员!</string>
+    <string name="rename">重新命名</string>
+    <string name="edit">编辑</string>
+    <string name="group_member_num">成员 (%1$s)</string>
+    <string name="del_group">删除群组</string>
+    <string name="del_member">删除 %1$s</string>
+    <string name="member_edit">成员编辑</string>
+    <string name="choose_member">选择成员</string>
+    <string name="choose_one_friend">请至少选择一个好友</string>
+    <string name="select">请选择</string>
+    <string name="input_msg_same_to_origin">昵称跟之前一样!</string>
+
+    <string name="service_notify_title">Tok</string>
+    <string name="service_notify_content">Tok正在运行</string>
+    <string name="file_not_exist">对不起，文件不存在</string>
+    <string name="play_failed">对不起，文件运行失败Sorry,File play failed!</string>
+    <string name="time_second">%1$s″</string>
+    <string name="default_group_title">群%1$s</string>
+    <string name="default_group_signature">Tok 群组,自由聊天</string>
+    <string name="scan_content_invalid">Scan content invalid</string>
+    <string name="not_support_group">Scan not support Group</string>
+    <string name="more">更多</string>
+    <string name="invited_has_sent">邀请已经发送</string>
+    <string name="yesterday">昨天</string>
+    <string name="delete">删除</string>
+    <string name="mark_read">标记为已读</string>
+    <string name="percent">%1$s%%</string>
+    <string name="type_photo">[图片]</string>
+    <string name="type_file">[文件]</string>
+    <string name="type_audio">[语音]</string>
+    <string name="type_draft"><Data><![CDATA[<font color="#e52828">[Draft]</font>]]></Data> %1$s</string>
+
+    <string name="group_name">群名称</string>
+    <string name="all_members">所有成员 ></string>
+
+    <string name="mute_notification">静音</string>
+    <string name="hold_to_talk">按住说话</string>
+    <string name="release_to_send">松手以发送</string>
+    <string name="release_to_cancel">松手以取消</string>
+    <string name="slide_to_cancel">滑动以取消</string>
+    <string name="slide_up_to_cancel">向上滑动以取消</string>
+
+    <string name="user_name">用户名</string>
+    <string name="alias_name">昵称</string>
+    <string name="profile_edit">信息编辑</string>
+    <string name="save">保存</string>
+    <string name="send_txt_need_online">发送信息时需要你的朋友在线</string>
+    <string name="album">相册</string>
+    <string name="camera">相机</string>
+    <string name="edit_avatar">编辑头像</string>
+    <string name="clipping_image">裁剪图片</string>
+    <string name="clip">裁剪</string>
+    <string name="group_create_hello">你好! 欢迎来到 %1$s</string>
+
+    <string name="add_contact">添加好友</string>
+    <string name="remove_leave">删除并退出</string>
+    <string name="ok">好</string>
+    <string name="confirm_remove">确认删除吗?</string>
+
+    <string name="p2p_encryp_empty">点对点通信，端到端加密，点击了解更多></string>
+    <string name="p2p_encryp_chat">此对话中的信息和通话已使用点对点加密通信。点击获取更多信息 ></string>
+    <string name="friend_chat_safe">这里可以和朋友更加安全聊天</string>
+    <string name="chat_safe_file_name">tok_safe_cn.html</string><!--此句无需翻译-->
+    <string name="slogon">让世界自由连通！</string>
+    <string name="share_qr_content">https://www.tok.life?#%1$s#</string><!--此句无需翻译-->
+
+    <string name="share_info_add_me">你好，我是<Data><![CDATA[<font color="#000000"><b>%1$s</b></font><br>我在Tok,快来点对点加密聊天吧!]]></Data></string>
+    <string name="share_txt_prompt">点对点加密聊天，我在 Tok。点击 https://www.tok.life,免费下载 Tok。如果你已经安装，请拷贝这段文字 $%1$s$，打开 Tok 即可加我为好友</string>
+    <string name="share_way_txt">文本分享</string>
+    <string name="share_way_img">图片分享</string>
+    <string name="share_long_click_info">长按图片，识别二维码下载软件。\n打开Tok软件扫描当前图片 即可加我为好友</string>
+    <string name="scan_my_qr_prompt">扫一扫上面的二维码图案，加我Tok</string>
+    <string name="add_friend_request">好友添加请求</string>
+    <string name="tok_id_prompt">Tok:ID</string><!--此句无需翻译-->
+    <string name="guide_title1">无需手机号</string>
+    <string name="guide_content1">自动生成随机超长ID，不关联任何实名信息</string>
+    <string name="guide_title2">隐藏IP地址</string>
+    <string name="guide_content2">使用洋葱路由，无法追踪你的位置</string>
+    <string name="guide_title3">点对点加密通信</string>
+    <string name="guide_content3">自动生成超长密钥，需要9.9亿亿亿年方能暴力破解</string>
+    <string name="enter_app">进入Tok</string>
+    <string name="pref_default_status_message">你好! 我正在使用Tok</string>
+
+    <string name="hint_confirm_pwd">密码确认</string>
+    <string name="input_exceed_length">输入内容不能超过 %1$s 字符</string>
+    <string name="sel_tok_file">请选择 Tok/Tox 文件</string>
+
+    <string name="clear_chat_history">粉碎所有聊天记录</string>
+    <string name="del_profile">销毁帐户</string>
+    <string name="export_profile_path">%1$s 已经存储到\n%2$s</string>
+    <string name="check">查看</string>
+    <string name="file_check">文件查看</string>
+
+    <string name="clear_msg_confirm_prompt">粉碎所有聊天记录吗?</string>
+    <string name="del_profile_confirm_prompt">注销该帐户吗?\n此操作将无法恢复</string>
+    <string name="logout_clear_msg">退出时删除聊天数据</string>
+    <string name="logout_clear_msg_warning">当你退出时,\n将会自动删除所有的聊天数据</string>
+    <string name="no_new_friend_request">没有新好友请求</string>
+    <string name="resend">重发</string>
+    <string name="public_key">公钥</string>
+    <string name="find_friend_bot">添加朋友机器人</string>
+    <string name="add_bot">添加机器人</string>
+    <string name="bot_list_file">bot_list_cn.json</string><!--no need translate-->
+    <string name="new_tag">NEW</string><!--no need translate-->
+
+
+    <string name="user_or_pwd_error">很抱歉，用户名或密码有误!</string>
+    <string name="setting_pwd">设置密码</string>
+    <string name="change_pwd">修改密码</string>
+    <string name="done">完成</string>
+    <string name="original_pwd">旧密码</string>
+    <string name="new_pwd">新密码</string>
+    <string name="repeat_pwd">再次输入密码</string>
+    <string name="hint_enter_origin_pwd">输入旧密码</string>
+    <string name="hint_enter_pwd">输入密码</string>
+    <string name="hint_enter_new_pwd">输入新密码</string>
+    <string name="hint_enter_new_pwd_again">再次输入新密码</string>
+    <string name="pwd_error">密码错误</string>
+    <string name="password">密码</string>
+    <string name="new_pwd_empty">新密码是空的</string>
+    <string name="pwd_not_match">密码不一致</string>
+    <string name="name_invalid">用户名不能包含 /</string>
+    <string name="failed">失败</string>
+
+    <string name="reset_tox_id">重置Tok ID</string>
+    <string name="reset">重置</string>
+    <string name="import_account2">导入帐户</string>
+    <string name="auto_receive_file">Auto receive files</string>
+    <string name="reset_tox_id_message">重置你的Tok ID（PK 不变，重置随机码），你的Tok ID 将被改变，请确认！ 重置ID后，你能够保留当前所有的好友列表，但是其他人不能再通过你的旧ID加你为好友</string>
+    <string name="contact_us">联系我们</string>
+    <string name="tok_user">Tok user</string><!--no need translate-->
+
+</resources>

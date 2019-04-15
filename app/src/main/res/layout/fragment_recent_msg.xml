@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:empty="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/create_group"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/id_recent_msg_lv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
+
+    <com.client.tok.widget.EmptyPromptView
+        android:id="@+id/id_recent_msg_empty_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/id_contracts_lv"
+        android:visibility="gone"
+        empty:btnTxtId1="@string/invite_friend"
+        empty:btnTxtId2="@string/add_friends"
+        empty:mainContentId="@string/p2p_encryp_empty"
+        empty:subContentId="@string/friend_chat_safe" />
+</LinearLayout>

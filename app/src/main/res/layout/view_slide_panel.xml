@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true">
+
+    <FrameLayout
+        android:id="@+id/cancel_fl"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/spacing_54"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingEnd="@dimen/spacing_32"
+        android:paddingStart="@dimen/spacing_32">
+
+        <TextView
+            android:id="@+id/cancel_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:alpha="0"
+            android:paddingEnd="48dp"
+            android:paddingStart="48dp"
+            android:text="@string/cancel"
+            android:textColor="@color/brand_color"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/slide_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingEnd="48dp"
+            android:paddingStart="48dp"
+            tools:ignore="RelativeOverlap,UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_chevron_left_gray_24dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/slide_to_cancel"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/spacing_16"
+                tools:ignore="RelativeOverlap" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/spacing_12"
+        android:layout_marginStart="@dimen/spacing_12"
+        android:drawablePadding="@dimen/spacing_8"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/black"
+        android:typeface="monospace"
+        tools:ignore="RelativeOverlap" />
+</FrameLayout>

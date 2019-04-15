@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/id_contact_first_letter_tv"
+        style="@style/ItemTypeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/s_16"
+        android:paddingTop="@dimen/s_4"
+        android:paddingBottom="@dimen/s_4"
+        android:visibility="visible"
+        tools:text="T" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_ripple_bg"
+        android:paddingStart="@dimen/s_16"
+        android:paddingTop="@dimen/s_12"
+        android:paddingEnd="@dimen/s_16"
+        android:paddingBottom="@dimen/s_12">
+
+        <CheckBox
+            android:id="@+id/id_contact_sel_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/item_ripple_bg"
+            android:button="@drawable/selector_checkbox"
+            android:clickable="false"
+            android:visibility="visible" />
+
+        <com.client.tok.widget.PortraitView
+            android:id="@+id/id_contact_portrait_iv"
+            android:layout_width="@dimen/contact_portrait_width"
+            android:layout_height="@dimen/contact_portrait_width"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/s_16"
+            android:layout_toEndOf="@id/id_contact_sel_cb"
+            tools:src="@drawable/invite_friend" />
+
+        <TextView
+            android:id="@+id/id_contact_name_tv"
+            style="@style/ContactName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_mine_tok_id_iiv"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/s_10"
+            android:layout_toEndOf="@+id/id_contact_portrait_iv"
+            tools:text="@string/add_friends" />
+    </RelativeLayout>
+
+    <View
+        style="@style/ItemDividerLine"
+        android:layout_below="@id/id_contact_portrait_layout"
+        android:layout_marginStart="@dimen/s_16" />
+
+</LinearLayout>
+

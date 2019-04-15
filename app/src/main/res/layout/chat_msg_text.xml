@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/chat_content_padding"
+    android:paddingTop="@dimen/interval_sp_msg"
+    android:paddingEnd="@dimen/chat_content_padding">
+
+    <TextView
+        android:id="@+id/id_msg_time_tv"
+        style="@style/ChatTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        tools:text="8月17 6:00"
+        tools:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/id_msg_friend_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_msg_time_tv"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="@dimen/interval_sp_msg_time"
+        android:layout_marginEnd="@dimen/s_50"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.client.tok.widget.PortraitView
+            android:id="@+id/id_msg_friend_portrait_iv"
+            android:layout_width="@dimen/portrait_width"
+            android:layout_height="@dimen/portrait_height"
+            android:layout_alignParentStart="true"
+            tools:src="@drawable/app_icon" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/s_8"
+            android:layout_toEndOf="@+id/id_msg_friend_portrait_iv"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/id_msg_sender_name_tv"
+                style="@style/SenderName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:text="Sender" />
+
+            <com.client.tok.widget.MsgTextView
+                android:id="@+id/id_msg_friend_tv"
+                style="@style/ChatMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="all"
+                android:background="@drawable/selector_msg_receive"
+                android:gravity="center_vertical"
+                tools:text="好友发过来的" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/id_msg_mine_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_msg_time_tv"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/s_50"
+        android:layout_marginTop="@dimen/interval_sp_msg_time"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/id_msg_mine_portrait_iv"
+            android:gravity="end|center_vertical">
+
+            <ImageView
+                android:id="@+id/id_msg_mine_send_status_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/s_10"
+                android:src="@drawable/msg_fail" />
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/s_8"
+                android:orientation="horizontal">
+
+                <com.client.tok.widget.MsgTextView
+                    android:id="@+id/id_msg_mine_tv"
+                    style="@style/ChatMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_msg_send"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="@dimen/s_16"
+                    tools:text="我发过来的信息劳而过来的我发过来的信息劳而过来的我发过来的信息劳而过来的我发过来的信息劳而过来的" />
+
+                <ImageView
+                    android:id="@+id/id_msg_mine_send_status2_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginEnd="@dimen/s_8"
+                    android:layout_marginBottom="@dimen/s_2"
+                    android:src="@drawable/msg_sending" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+        <com.client.tok.widget.PortraitView
+            android:id="@+id/id_msg_mine_portrait_iv"
+            android:layout_width="@dimen/portrait_width"
+            android:layout_height="@dimen/portrait_height"
+            android:layout_alignParentEnd="true"
+            tools:src="@drawable/app_icon" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

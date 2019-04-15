@@ -1,0 +1,179 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fc="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/s_20"
+    android:paddingTop="@dimen/s_12">
+
+    <RelativeLayout
+        android:id="@+id/id_group_info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/s_44"
+        android:background="@drawable/item_ripple_bg"
+        android:paddingStart="@dimen/s_16"
+        android:paddingEnd="@dimen/s_16">
+
+        <TextView
+            android:id="@+id/id_group_name_tv"
+            style="@style/ContactName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            tools:text="GroupName" />
+
+        <TextView
+            android:id="@+id/id_group_rename_tv"
+            style="@style/MenuPrompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="@string/rename" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/id_divider_1"
+        style="@style/ItemDividerLine"
+        android:layout_below="@id/id_group_info_layout" />
+
+    <RelativeLayout
+        android:id="@+id/id_group_menu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_divider_1"
+        android:orientation="vertical">
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_group_chat_id_iiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_ripple_bg"
+            fc:functionIconId="@drawable/qr_code"
+            fc:lefIconId="@drawable/id"
+            fc:promptId="@string/prompt_group_Id" />
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_group_add_member_iiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_group_chat_id_iiv"
+            android:background="@drawable/item_ripple_bg"
+            fc:lefIconId="@drawable/invite_friend"
+            fc:promptId="@string/add_member" />
+
+        <View
+            style="@style/ItemDividerLine"
+            android:layout_below="@id/id_group_chat_id_iiv" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/id_member_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_group_menu_layout"
+        android:layout_marginTop="@dimen/s_12"
+        android:background="@color/c_ffffff"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/id_group_member_prompt_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:paddingStart="@dimen/s_16"
+            android:paddingTop="@dimen/s_12"
+            android:paddingEnd="@dimen/s_16">
+
+            <TextView
+                android:id="@+id/id_group_num_prompt"
+                style="@style/FunctionPrompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                tools:text="Members (5)" />
+
+            <TextView
+                android:id="@+id/id_group_edit_tv"
+                style="@style/MenuPromptSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/edit" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/id_group_member_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_group_edit_tv"
+            android:layout_marginTop="@dimen/s_10"
+            android:divider="@null"
+            android:paddingStart="@dimen/s_20"
+            android:paddingEnd="@dimen/s_20"
+            android:scrollbars="none" />
+
+        <View style="@style/ItemDividerLine" />
+
+        <TextView
+            android:id="@+id/id_group_all_member_tv"
+            style="@style/ContactName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_ripple_bg"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/s_12"
+            android:paddingBottom="@dimen/s_12"
+            android:text="@string/all_members" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/id_group_mute_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_member_layout"
+        android:layout_marginTop="@dimen/s_12"
+        android:background="@color/c_ffffff"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/s_16"
+        android:paddingTop="@dimen/s_8"
+        android:paddingEnd="@dimen/s_16"
+        android:paddingBottom="@dimen/s_8">
+
+        <TextView
+            style="@style/ItemMainTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="@string/mute_notification" />
+
+        <ToggleButton
+            android:id="@+id/id_group_mute_tb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:button="@drawable/selector_toggle"
+            android:minWidth="20dp"
+            android:minHeight="30dp"
+            android:textOff="@null"
+            android:textOn="@null" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/id_group_del_tv"
+        style="@style/DelBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_group_mute_layout"
+        android:layout_marginStart="@dimen/s_16"
+        android:layout_marginEnd="@dimen/s_16"
+        android:layout_marginTop="@dimen/s_30"
+        android:text="@string/remove_leave" />
+
+</RelativeLayout>
