@@ -55,10 +55,13 @@ public class LoginPresenter implements LoginContract.ILoginPresenter {
 
     private void loginSuccess() {
         ServiceManager.startToxService();
-        new Handler().postDelayed(() -> {
-            PageJumpIn.jumpHomePage(mLoginView.getActivity());
-            mLoginView.viewDestroy();
-            LocalBroaderUtils.sendLocalBroadcast(GlobalParams.ACTION_LOGIN_SUCCESS, null);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                PageJumpIn.jumpHomePage(mLoginView.getActivity());
+                mLoginView.viewDestroy();
+                LocalBroaderUtils.sendLocalBroadcast(GlobalParams.ACTION_LOGIN_SUCCESS, null);
+            }
         }, GlobalParams.DELAY_ENTER_HOME);
     }
 }

@@ -63,7 +63,7 @@ public final class Core {
       /**
        * @deprecated Use {@link #forNumber(int)} instead.
        */
-      @java.lang.Deprecated
+      @Deprecated
       public static Type valueOf(int value) {
         return forNumber(value);
       }
@@ -111,60 +111,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.Connection parseFrom(
+    public static Connection parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.Connection parseFrom(
+    public static Connection parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.Connection parseFrom(byte[] data)
+    public static Connection parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.Connection parseFrom(
+    public static Connection parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.Connection parseFrom(java.io.InputStream input)
+    public static Connection parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.Connection parseFrom(
+    public static Connection parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.Connection parseDelimitedFrom(java.io.InputStream input)
+    public static Connection parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.Connection parseDelimitedFrom(
+    public static Connection parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.Connection parseFrom(
+    public static Connection parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.Connection parseFrom(
+    public static Connection parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -175,7 +175,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.Connection prototype) {
+    public static Builder newBuilder(Connection prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -184,9 +184,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.Connection, Builder> implements
+          Connection, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.Connection)
-        im.tox.proto.Core.ConnectionOrBuilder {
+        ConnectionOrBuilder {
       // Construct using im.tox.proto.Core.Connection.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -196,11 +196,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.Connection)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.Connection();
+          return new Connection();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -213,8 +213,8 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.Connection other = (im.tox.proto.Core.Connection) arg1;
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          Connection other = (Connection) arg1;
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -253,7 +253,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.Connection.class) {
+          if (PARSER == null) {    synchronized (Connection.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -267,13 +267,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.Connection)
-    private static final im.tox.proto.Core.Connection DEFAULT_INSTANCE;
+    private static final Connection DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new Connection();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.Connection getDefaultInstance() {
+    public static Connection getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -339,7 +339,7 @@ public final class Core {
       /**
        * @deprecated Use {@link #forNumber(int)} instead.
        */
-      @java.lang.Deprecated
+      @Deprecated
       public static Type valueOf(int value) {
         return forNumber(value);
       }
@@ -387,60 +387,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.UserStatus parseFrom(
+    public static UserStatus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.UserStatus parseFrom(
+    public static UserStatus parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.UserStatus parseFrom(byte[] data)
+    public static UserStatus parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.UserStatus parseFrom(
+    public static UserStatus parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.UserStatus parseFrom(java.io.InputStream input)
+    public static UserStatus parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.UserStatus parseFrom(
+    public static UserStatus parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.UserStatus parseDelimitedFrom(java.io.InputStream input)
+    public static UserStatus parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.UserStatus parseDelimitedFrom(
+    public static UserStatus parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.UserStatus parseFrom(
+    public static UserStatus parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.UserStatus parseFrom(
+    public static UserStatus parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -451,7 +451,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.UserStatus prototype) {
+    public static Builder newBuilder(UserStatus prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -460,9 +460,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.UserStatus, Builder> implements
+          UserStatus, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.UserStatus)
-        im.tox.proto.Core.UserStatusOrBuilder {
+        UserStatusOrBuilder {
       // Construct using im.tox.proto.Core.UserStatus.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -472,11 +472,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.UserStatus)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.UserStatus();
+          return new UserStatus();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -489,8 +489,8 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.UserStatus other = (im.tox.proto.Core.UserStatus) arg1;
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          UserStatus other = (UserStatus) arg1;
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -529,7 +529,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.UserStatus.class) {
+          if (PARSER == null) {    synchronized (UserStatus.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -543,13 +543,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.UserStatus)
-    private static final im.tox.proto.Core.UserStatus DEFAULT_INSTANCE;
+    private static final UserStatus DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new UserStatus();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.UserStatus getDefaultInstance() {
+    public static UserStatus getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -599,6 +599,10 @@ public final class Core {
        * <code>GROUP = 4;</code>
        */
       GROUP(4),
+      /**
+       * <code>OFFLINE = 6;</code>
+       */
+      OFFLINE(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -622,6 +626,10 @@ public final class Core {
        * <code>GROUP = 4;</code>
        */
       public static final int GROUP_VALUE = 4;
+      /**
+       * <code>OFFLINE = 6;</code>
+       */
+      public static final int OFFLINE_VALUE = 6;
 
 
       public final int getNumber() {
@@ -631,7 +639,7 @@ public final class Core {
       /**
        * @deprecated Use {@link #forNumber(int)} instead.
        */
-      @java.lang.Deprecated
+      @Deprecated
       public static Type valueOf(int value) {
         return forNumber(value);
       }
@@ -643,6 +651,7 @@ public final class Core {
           case 2: return BOT;
           case 3: return FORWARD;
           case 4: return GROUP;
+          case 6: return OFFLINE;
           default: return null;
         }
       }
@@ -681,60 +690,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.MessageType parseFrom(
+    public static MessageType parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.MessageType parseFrom(
+    public static MessageType parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.MessageType parseFrom(byte[] data)
+    public static MessageType parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.MessageType parseFrom(
+    public static MessageType parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.MessageType parseFrom(java.io.InputStream input)
+    public static MessageType parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.MessageType parseFrom(
+    public static MessageType parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.MessageType parseDelimitedFrom(java.io.InputStream input)
+    public static MessageType parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.MessageType parseDelimitedFrom(
+    public static MessageType parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.MessageType parseFrom(
+    public static MessageType parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.MessageType parseFrom(
+    public static MessageType parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -745,7 +754,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.MessageType prototype) {
+    public static Builder newBuilder(MessageType prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -754,9 +763,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.MessageType, Builder> implements
+          MessageType, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.MessageType)
-        im.tox.proto.Core.MessageTypeOrBuilder {
+        MessageTypeOrBuilder {
       // Construct using im.tox.proto.Core.MessageType.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -766,11 +775,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.MessageType)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.MessageType();
+          return new MessageType();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -783,8 +792,8 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.MessageType other = (im.tox.proto.Core.MessageType) arg1;
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          MessageType other = (MessageType) arg1;
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -823,7 +832,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.MessageType.class) {
+          if (PARSER == null) {    synchronized (MessageType.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -837,13 +846,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.MessageType)
-    private static final im.tox.proto.Core.MessageType DEFAULT_INSTANCE;
+    private static final MessageType DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new MessageType();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.MessageType getDefaultInstance() {
+    public static MessageType getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -909,7 +918,7 @@ public final class Core {
       /**
        * @deprecated Use {@link #forNumber(int)} instead.
        */
-      @java.lang.Deprecated
+      @Deprecated
       public static Type valueOf(int value) {
         return forNumber(value);
       }
@@ -957,60 +966,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FileControl parseFrom(
+    public static FileControl parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FileControl parseFrom(
+    public static FileControl parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileControl parseFrom(byte[] data)
+    public static FileControl parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FileControl parseFrom(
+    public static FileControl parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileControl parseFrom(java.io.InputStream input)
+    public static FileControl parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileControl parseFrom(
+    public static FileControl parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileControl parseDelimitedFrom(java.io.InputStream input)
+    public static FileControl parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileControl parseDelimitedFrom(
+    public static FileControl parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileControl parseFrom(
+    public static FileControl parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileControl parseFrom(
+    public static FileControl parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1021,7 +1030,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FileControl prototype) {
+    public static Builder newBuilder(FileControl prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -1030,9 +1039,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FileControl, Builder> implements
+          FileControl, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FileControl)
-        im.tox.proto.Core.FileControlOrBuilder {
+        FileControlOrBuilder {
       // Construct using im.tox.proto.Core.FileControl.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -1042,11 +1051,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FileControl)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FileControl();
+          return new FileControl();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -1059,8 +1068,8 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FileControl other = (im.tox.proto.Core.FileControl) arg1;
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          FileControl other = (FileControl) arg1;
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -1099,7 +1108,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FileControl.class) {
+          if (PARSER == null) {    synchronized (FileControl.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -1113,13 +1122,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FileControl)
-    private static final im.tox.proto.Core.FileControl DEFAULT_INSTANCE;
+    private static final FileControl DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FileControl();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FileControl getDefaultInstance() {
+    public static FileControl getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1141,7 +1150,7 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.Connection.Type connection_status = 1;</code>
      */
-    im.tox.proto.Core.Connection.Type getConnectionStatus();
+    Connection.Type getConnectionStatus();
   }
   /**
    * Protobuf type {@code im.tox.proto.SelfConnectionStatus}
@@ -1164,9 +1173,9 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.Connection.Type connection_status = 1;</code>
      */
-    public im.tox.proto.Core.Connection.Type getConnectionStatus() {
-      im.tox.proto.Core.Connection.Type result = im.tox.proto.Core.Connection.Type.forNumber(connectionStatus_);
-      return result == null ? im.tox.proto.Core.Connection.Type.UNRECOGNIZED : result;
+    public Connection.Type getConnectionStatus() {
+      Connection.Type result = Connection.Type.forNumber(connectionStatus_);
+      return result == null ? Connection.Type.UNRECOGNIZED : result;
     }
     /**
      * <code>optional .im.tox.proto.Connection.Type connection_status = 1;</code>
@@ -1177,24 +1186,24 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.Connection.Type connection_status = 1;</code>
      */
-    private void setConnectionStatus(im.tox.proto.Core.Connection.Type value) {
+    private void setConnectionStatus(Connection.Type value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       connectionStatus_ = value.getNumber();
     }
     /**
      * <code>optional .im.tox.proto.Connection.Type connection_status = 1;</code>
      */
     private void clearConnectionStatus() {
-      
+
       connectionStatus_ = 0;
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (connectionStatus_ != im.tox.proto.Core.Connection.Type.NONE.getNumber()) {
+      if (connectionStatus_ != Connection.Type.NONE.getNumber()) {
         output.writeEnum(1, connectionStatus_);
       }
     }
@@ -1204,7 +1213,7 @@ public final class Core {
       if (size != -1) return size;
 
       size = 0;
-      if (connectionStatus_ != im.tox.proto.Core.Connection.Type.NONE.getNumber()) {
+      if (connectionStatus_ != Connection.Type.NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, connectionStatus_);
       }
@@ -1212,60 +1221,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.SelfConnectionStatus parseFrom(
+    public static SelfConnectionStatus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.SelfConnectionStatus parseFrom(
+    public static SelfConnectionStatus parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.SelfConnectionStatus parseFrom(byte[] data)
+    public static SelfConnectionStatus parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.SelfConnectionStatus parseFrom(
+    public static SelfConnectionStatus parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.SelfConnectionStatus parseFrom(java.io.InputStream input)
+    public static SelfConnectionStatus parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.SelfConnectionStatus parseFrom(
+    public static SelfConnectionStatus parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.SelfConnectionStatus parseDelimitedFrom(java.io.InputStream input)
+    public static SelfConnectionStatus parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.SelfConnectionStatus parseDelimitedFrom(
+    public static SelfConnectionStatus parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.SelfConnectionStatus parseFrom(
+    public static SelfConnectionStatus parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.SelfConnectionStatus parseFrom(
+    public static SelfConnectionStatus parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1276,7 +1285,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.SelfConnectionStatus prototype) {
+    public static Builder newBuilder(SelfConnectionStatus prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -1285,9 +1294,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.SelfConnectionStatus, Builder> implements
+          SelfConnectionStatus, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.SelfConnectionStatus)
-        im.tox.proto.Core.SelfConnectionStatusOrBuilder {
+        SelfConnectionStatusOrBuilder {
       // Construct using im.tox.proto.Core.SelfConnectionStatus.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -1311,13 +1320,13 @@ public final class Core {
       /**
        * <code>optional .im.tox.proto.Connection.Type connection_status = 1;</code>
        */
-      public im.tox.proto.Core.Connection.Type getConnectionStatus() {
+      public Connection.Type getConnectionStatus() {
         return instance.getConnectionStatus();
       }
       /**
        * <code>optional .im.tox.proto.Connection.Type connection_status = 1;</code>
        */
-      public Builder setConnectionStatus(im.tox.proto.Core.Connection.Type value) {
+      public Builder setConnectionStatus(Connection.Type value) {
         copyOnWrite();
         instance.setConnectionStatus(value);
         return this;
@@ -1334,11 +1343,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.SelfConnectionStatus)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.SelfConnectionStatus();
+          return new SelfConnectionStatus();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -1351,9 +1360,9 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.SelfConnectionStatus other = (im.tox.proto.Core.SelfConnectionStatus) arg1;
+          SelfConnectionStatus other = (SelfConnectionStatus) arg1;
           connectionStatus_ = visitor.visitInt(connectionStatus_ != 0, connectionStatus_,    other.connectionStatus_ != 0, other.connectionStatus_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -1398,7 +1407,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.SelfConnectionStatus.class) {
+          if (PARSER == null) {    synchronized (SelfConnectionStatus.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -1412,13 +1421,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.SelfConnectionStatus)
-    private static final im.tox.proto.Core.SelfConnectionStatus DEFAULT_INSTANCE;
+    private static final SelfConnectionStatus DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new SelfConnectionStatus();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.SelfConnectionStatus getDefaultInstance() {
+    public static SelfConnectionStatus getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1466,14 +1475,14 @@ public final class Core {
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void setFriendNumber(int value) {
-      
+
       friendNumber_ = value;
     }
     /**
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void clearFriendNumber() {
-      
+
       friendNumber_ = 0;
     }
 
@@ -1492,14 +1501,14 @@ public final class Core {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       name_ = value;
     }
     /**
      * <code>optional bytes name = 2;</code>
      */
     private void clearName() {
-      
+
       name_ = getDefaultInstance().getName();
     }
 
@@ -1530,60 +1539,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FriendName parseFrom(
+    public static FriendName parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendName parseFrom(
+    public static FriendName parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendName parseFrom(byte[] data)
+    public static FriendName parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendName parseFrom(
+    public static FriendName parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendName parseFrom(java.io.InputStream input)
+    public static FriendName parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendName parseFrom(
+    public static FriendName parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendName parseDelimitedFrom(java.io.InputStream input)
+    public static FriendName parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendName parseDelimitedFrom(
+    public static FriendName parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendName parseFrom(
+    public static FriendName parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendName parseFrom(
+    public static FriendName parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1594,7 +1603,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FriendName prototype) {
+    public static Builder newBuilder(FriendName prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -1603,9 +1612,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FriendName, Builder> implements
+          FriendName, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FriendName)
-        im.tox.proto.Core.FriendNameOrBuilder {
+        FriendNameOrBuilder {
       // Construct using im.tox.proto.Core.FriendName.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -1661,11 +1670,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FriendName)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FriendName();
+          return new FriendName();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -1678,12 +1687,12 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FriendName other = (im.tox.proto.Core.FriendName) arg1;
+          FriendName other = (FriendName) arg1;
           friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
               other.friendNumber_ != 0, other.friendNumber_);
           name_ = visitor.visitByteString(name_ != com.google.protobuf.ByteString.EMPTY, name_,
               other.name_ != com.google.protobuf.ByteString.EMPTY, other.name_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -1732,7 +1741,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FriendName.class) {
+          if (PARSER == null) {    synchronized (FriendName.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -1746,13 +1755,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FriendName)
-    private static final im.tox.proto.Core.FriendName DEFAULT_INSTANCE;
+    private static final FriendName DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FriendName();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FriendName getDefaultInstance() {
+    public static FriendName getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1800,14 +1809,14 @@ public final class Core {
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void setFriendNumber(int value) {
-      
+
       friendNumber_ = value;
     }
     /**
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void clearFriendNumber() {
-      
+
       friendNumber_ = 0;
     }
 
@@ -1826,14 +1835,14 @@ public final class Core {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       message_ = value;
     }
     /**
      * <code>optional bytes message = 2;</code>
      */
     private void clearMessage() {
-      
+
       message_ = getDefaultInstance().getMessage();
     }
 
@@ -1864,60 +1873,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FriendStatusMessage parseFrom(
+    public static FriendStatusMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendStatusMessage parseFrom(
+    public static FriendStatusMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendStatusMessage parseFrom(byte[] data)
+    public static FriendStatusMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendStatusMessage parseFrom(
+    public static FriendStatusMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendStatusMessage parseFrom(java.io.InputStream input)
+    public static FriendStatusMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendStatusMessage parseFrom(
+    public static FriendStatusMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendStatusMessage parseDelimitedFrom(java.io.InputStream input)
+    public static FriendStatusMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendStatusMessage parseDelimitedFrom(
+    public static FriendStatusMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendStatusMessage parseFrom(
+    public static FriendStatusMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendStatusMessage parseFrom(
+    public static FriendStatusMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1928,7 +1937,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FriendStatusMessage prototype) {
+    public static Builder newBuilder(FriendStatusMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -1937,9 +1946,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FriendStatusMessage, Builder> implements
+          FriendStatusMessage, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FriendStatusMessage)
-        im.tox.proto.Core.FriendStatusMessageOrBuilder {
+        FriendStatusMessageOrBuilder {
       // Construct using im.tox.proto.Core.FriendStatusMessage.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -1995,11 +2004,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FriendStatusMessage)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FriendStatusMessage();
+          return new FriendStatusMessage();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -2012,12 +2021,12 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FriendStatusMessage other = (im.tox.proto.Core.FriendStatusMessage) arg1;
+          FriendStatusMessage other = (FriendStatusMessage) arg1;
           friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
               other.friendNumber_ != 0, other.friendNumber_);
           message_ = visitor.visitByteString(message_ != com.google.protobuf.ByteString.EMPTY, message_,
               other.message_ != com.google.protobuf.ByteString.EMPTY, other.message_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -2066,7 +2075,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FriendStatusMessage.class) {
+          if (PARSER == null) {    synchronized (FriendStatusMessage.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -2080,13 +2089,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FriendStatusMessage)
-    private static final im.tox.proto.Core.FriendStatusMessage DEFAULT_INSTANCE;
+    private static final FriendStatusMessage DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FriendStatusMessage();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FriendStatusMessage getDefaultInstance() {
+    public static FriendStatusMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2113,7 +2122,7 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.UserStatus.Type status = 2;</code>
      */
-    im.tox.proto.Core.UserStatus.Type getStatus();
+    UserStatus.Type getStatus();
   }
   /**
    * Protobuf type {@code im.tox.proto.FriendStatus}
@@ -2137,14 +2146,14 @@ public final class Core {
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void setFriendNumber(int value) {
-      
+
       friendNumber_ = value;
     }
     /**
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void clearFriendNumber() {
-      
+
       friendNumber_ = 0;
     }
 
@@ -2159,9 +2168,9 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.UserStatus.Type status = 2;</code>
      */
-    public im.tox.proto.Core.UserStatus.Type getStatus() {
-      im.tox.proto.Core.UserStatus.Type result = im.tox.proto.Core.UserStatus.Type.forNumber(status_);
-      return result == null ? im.tox.proto.Core.UserStatus.Type.UNRECOGNIZED : result;
+    public UserStatus.Type getStatus() {
+      UserStatus.Type result = UserStatus.Type.forNumber(status_);
+      return result == null ? UserStatus.Type.UNRECOGNIZED : result;
     }
     /**
      * <code>optional .im.tox.proto.UserStatus.Type status = 2;</code>
@@ -2172,18 +2181,18 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.UserStatus.Type status = 2;</code>
      */
-    private void setStatus(im.tox.proto.Core.UserStatus.Type value) {
+    private void setStatus(UserStatus.Type value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       status_ = value.getNumber();
     }
     /**
      * <code>optional .im.tox.proto.UserStatus.Type status = 2;</code>
      */
     private void clearStatus() {
-      
+
       status_ = 0;
     }
 
@@ -2192,7 +2201,7 @@ public final class Core {
       if (friendNumber_ != 0) {
         output.writeUInt32(1, friendNumber_);
       }
-      if (status_ != im.tox.proto.Core.UserStatus.Type.NONE.getNumber()) {
+      if (status_ != UserStatus.Type.NONE.getNumber()) {
         output.writeEnum(2, status_);
       }
     }
@@ -2206,7 +2215,7 @@ public final class Core {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, friendNumber_);
       }
-      if (status_ != im.tox.proto.Core.UserStatus.Type.NONE.getNumber()) {
+      if (status_ != UserStatus.Type.NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, status_);
       }
@@ -2214,60 +2223,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FriendStatus parseFrom(
+    public static FriendStatus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendStatus parseFrom(
+    public static FriendStatus parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendStatus parseFrom(byte[] data)
+    public static FriendStatus parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendStatus parseFrom(
+    public static FriendStatus parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendStatus parseFrom(java.io.InputStream input)
+    public static FriendStatus parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendStatus parseFrom(
+    public static FriendStatus parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendStatus parseDelimitedFrom(java.io.InputStream input)
+    public static FriendStatus parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendStatus parseDelimitedFrom(
+    public static FriendStatus parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendStatus parseFrom(
+    public static FriendStatus parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendStatus parseFrom(
+    public static FriendStatus parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2278,7 +2287,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FriendStatus prototype) {
+    public static Builder newBuilder(FriendStatus prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -2287,9 +2296,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FriendStatus, Builder> implements
+          FriendStatus, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FriendStatus)
-        im.tox.proto.Core.FriendStatusOrBuilder {
+        FriendStatusOrBuilder {
       // Construct using im.tox.proto.Core.FriendStatus.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -2336,13 +2345,13 @@ public final class Core {
       /**
        * <code>optional .im.tox.proto.UserStatus.Type status = 2;</code>
        */
-      public im.tox.proto.Core.UserStatus.Type getStatus() {
+      public UserStatus.Type getStatus() {
         return instance.getStatus();
       }
       /**
        * <code>optional .im.tox.proto.UserStatus.Type status = 2;</code>
        */
-      public Builder setStatus(im.tox.proto.Core.UserStatus.Type value) {
+      public Builder setStatus(UserStatus.Type value) {
         copyOnWrite();
         instance.setStatus(value);
         return this;
@@ -2359,11 +2368,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FriendStatus)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FriendStatus();
+          return new FriendStatus();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -2376,11 +2385,11 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FriendStatus other = (im.tox.proto.Core.FriendStatus) arg1;
+          FriendStatus other = (FriendStatus) arg1;
           friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
               other.friendNumber_ != 0, other.friendNumber_);
           status_ = visitor.visitInt(status_ != 0, status_,    other.status_ != 0, other.status_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -2430,7 +2439,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FriendStatus.class) {
+          if (PARSER == null) {    synchronized (FriendStatus.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -2444,13 +2453,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FriendStatus)
-    private static final im.tox.proto.Core.FriendStatus DEFAULT_INSTANCE;
+    private static final FriendStatus DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FriendStatus();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FriendStatus getDefaultInstance() {
+    public static FriendStatus getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2477,7 +2486,7 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.Connection.Type connection_status = 2;</code>
      */
-    im.tox.proto.Core.Connection.Type getConnectionStatus();
+    Connection.Type getConnectionStatus();
   }
   /**
    * Protobuf type {@code im.tox.proto.FriendConnectionStatus}
@@ -2501,14 +2510,14 @@ public final class Core {
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void setFriendNumber(int value) {
-      
+
       friendNumber_ = value;
     }
     /**
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void clearFriendNumber() {
-      
+
       friendNumber_ = 0;
     }
 
@@ -2523,9 +2532,9 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.Connection.Type connection_status = 2;</code>
      */
-    public im.tox.proto.Core.Connection.Type getConnectionStatus() {
-      im.tox.proto.Core.Connection.Type result = im.tox.proto.Core.Connection.Type.forNumber(connectionStatus_);
-      return result == null ? im.tox.proto.Core.Connection.Type.UNRECOGNIZED : result;
+    public Connection.Type getConnectionStatus() {
+      Connection.Type result = Connection.Type.forNumber(connectionStatus_);
+      return result == null ? Connection.Type.UNRECOGNIZED : result;
     }
     /**
      * <code>optional .im.tox.proto.Connection.Type connection_status = 2;</code>
@@ -2536,18 +2545,18 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.Connection.Type connection_status = 2;</code>
      */
-    private void setConnectionStatus(im.tox.proto.Core.Connection.Type value) {
+    private void setConnectionStatus(Connection.Type value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       connectionStatus_ = value.getNumber();
     }
     /**
      * <code>optional .im.tox.proto.Connection.Type connection_status = 2;</code>
      */
     private void clearConnectionStatus() {
-      
+
       connectionStatus_ = 0;
     }
 
@@ -2556,7 +2565,7 @@ public final class Core {
       if (friendNumber_ != 0) {
         output.writeUInt32(1, friendNumber_);
       }
-      if (connectionStatus_ != im.tox.proto.Core.Connection.Type.NONE.getNumber()) {
+      if (connectionStatus_ != Connection.Type.NONE.getNumber()) {
         output.writeEnum(2, connectionStatus_);
       }
     }
@@ -2570,7 +2579,7 @@ public final class Core {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, friendNumber_);
       }
-      if (connectionStatus_ != im.tox.proto.Core.Connection.Type.NONE.getNumber()) {
+      if (connectionStatus_ != Connection.Type.NONE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, connectionStatus_);
       }
@@ -2578,60 +2587,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FriendConnectionStatus parseFrom(
+    public static FriendConnectionStatus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendConnectionStatus parseFrom(
+    public static FriendConnectionStatus parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendConnectionStatus parseFrom(byte[] data)
+    public static FriendConnectionStatus parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendConnectionStatus parseFrom(
+    public static FriendConnectionStatus parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendConnectionStatus parseFrom(java.io.InputStream input)
+    public static FriendConnectionStatus parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendConnectionStatus parseFrom(
+    public static FriendConnectionStatus parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendConnectionStatus parseDelimitedFrom(java.io.InputStream input)
+    public static FriendConnectionStatus parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendConnectionStatus parseDelimitedFrom(
+    public static FriendConnectionStatus parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendConnectionStatus parseFrom(
+    public static FriendConnectionStatus parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendConnectionStatus parseFrom(
+    public static FriendConnectionStatus parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2642,7 +2651,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FriendConnectionStatus prototype) {
+    public static Builder newBuilder(FriendConnectionStatus prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -2651,9 +2660,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FriendConnectionStatus, Builder> implements
+          FriendConnectionStatus, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FriendConnectionStatus)
-        im.tox.proto.Core.FriendConnectionStatusOrBuilder {
+        FriendConnectionStatusOrBuilder {
       // Construct using im.tox.proto.Core.FriendConnectionStatus.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -2700,13 +2709,13 @@ public final class Core {
       /**
        * <code>optional .im.tox.proto.Connection.Type connection_status = 2;</code>
        */
-      public im.tox.proto.Core.Connection.Type getConnectionStatus() {
+      public Connection.Type getConnectionStatus() {
         return instance.getConnectionStatus();
       }
       /**
        * <code>optional .im.tox.proto.Connection.Type connection_status = 2;</code>
        */
-      public Builder setConnectionStatus(im.tox.proto.Core.Connection.Type value) {
+      public Builder setConnectionStatus(Connection.Type value) {
         copyOnWrite();
         instance.setConnectionStatus(value);
         return this;
@@ -2723,11 +2732,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FriendConnectionStatus)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FriendConnectionStatus();
+          return new FriendConnectionStatus();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -2740,11 +2749,11 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FriendConnectionStatus other = (im.tox.proto.Core.FriendConnectionStatus) arg1;
+          FriendConnectionStatus other = (FriendConnectionStatus) arg1;
           friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
               other.friendNumber_ != 0, other.friendNumber_);
           connectionStatus_ = visitor.visitInt(connectionStatus_ != 0, connectionStatus_,    other.connectionStatus_ != 0, other.connectionStatus_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -2794,7 +2803,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FriendConnectionStatus.class) {
+          if (PARSER == null) {    synchronized (FriendConnectionStatus.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -2808,13 +2817,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FriendConnectionStatus)
-    private static final im.tox.proto.Core.FriendConnectionStatus DEFAULT_INSTANCE;
+    private static final FriendConnectionStatus DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FriendConnectionStatus();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FriendConnectionStatus getDefaultInstance() {
+    public static FriendConnectionStatus getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2861,14 +2870,14 @@ public final class Core {
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void setFriendNumber(int value) {
-      
+
       friendNumber_ = value;
     }
     /**
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void clearFriendNumber() {
-      
+
       friendNumber_ = 0;
     }
 
@@ -2884,14 +2893,14 @@ public final class Core {
      * <code>optional bool is_typing = 2;</code>
      */
     private void setIsTyping(boolean value) {
-      
+
       isTyping_ = value;
     }
     /**
      * <code>optional bool is_typing = 2;</code>
      */
     private void clearIsTyping() {
-      
+
       isTyping_ = false;
     }
 
@@ -2922,60 +2931,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FriendTyping parseFrom(
+    public static FriendTyping parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendTyping parseFrom(
+    public static FriendTyping parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendTyping parseFrom(byte[] data)
+    public static FriendTyping parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendTyping parseFrom(
+    public static FriendTyping parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendTyping parseFrom(java.io.InputStream input)
+    public static FriendTyping parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendTyping parseFrom(
+    public static FriendTyping parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendTyping parseDelimitedFrom(java.io.InputStream input)
+    public static FriendTyping parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendTyping parseDelimitedFrom(
+    public static FriendTyping parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendTyping parseFrom(
+    public static FriendTyping parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendTyping parseFrom(
+    public static FriendTyping parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2986,7 +2995,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FriendTyping prototype) {
+    public static Builder newBuilder(FriendTyping prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -2995,9 +3004,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FriendTyping, Builder> implements
+          FriendTyping, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FriendTyping)
-        im.tox.proto.Core.FriendTypingOrBuilder {
+        FriendTypingOrBuilder {
       // Construct using im.tox.proto.Core.FriendTyping.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -3053,11 +3062,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FriendTyping)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FriendTyping();
+          return new FriendTyping();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -3070,12 +3079,12 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FriendTyping other = (im.tox.proto.Core.FriendTyping) arg1;
+          FriendTyping other = (FriendTyping) arg1;
           friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
               other.friendNumber_ != 0, other.friendNumber_);
           isTyping_ = visitor.visitBoolean(isTyping_ != false, isTyping_,
               other.isTyping_ != false, other.isTyping_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -3124,7 +3133,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FriendTyping.class) {
+          if (PARSER == null) {    synchronized (FriendTyping.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -3138,13 +3147,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FriendTyping)
-    private static final im.tox.proto.Core.FriendTyping DEFAULT_INSTANCE;
+    private static final FriendTyping DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FriendTyping();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FriendTyping getDefaultInstance() {
+    public static FriendTyping getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3191,14 +3200,14 @@ public final class Core {
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void setFriendNumber(int value) {
-      
+
       friendNumber_ = value;
     }
     /**
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void clearFriendNumber() {
-      
+
       friendNumber_ = 0;
     }
 
@@ -3214,14 +3223,14 @@ public final class Core {
      * <code>optional uint32 message_id = 2;</code>
      */
     private void setMessageId(int value) {
-      
+
       messageId_ = value;
     }
     /**
      * <code>optional uint32 message_id = 2;</code>
      */
     private void clearMessageId() {
-      
+
       messageId_ = 0;
     }
 
@@ -3252,60 +3261,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FriendReadReceipt parseFrom(
+    public static FriendReadReceipt parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendReadReceipt parseFrom(
+    public static FriendReadReceipt parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendReadReceipt parseFrom(byte[] data)
+    public static FriendReadReceipt parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendReadReceipt parseFrom(
+    public static FriendReadReceipt parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendReadReceipt parseFrom(java.io.InputStream input)
+    public static FriendReadReceipt parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendReadReceipt parseFrom(
+    public static FriendReadReceipt parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendReadReceipt parseDelimitedFrom(java.io.InputStream input)
+    public static FriendReadReceipt parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendReadReceipt parseDelimitedFrom(
+    public static FriendReadReceipt parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendReadReceipt parseFrom(
+    public static FriendReadReceipt parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendReadReceipt parseFrom(
+    public static FriendReadReceipt parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3316,7 +3325,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FriendReadReceipt prototype) {
+    public static Builder newBuilder(FriendReadReceipt prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -3325,9 +3334,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FriendReadReceipt, Builder> implements
+          FriendReadReceipt, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FriendReadReceipt)
-        im.tox.proto.Core.FriendReadReceiptOrBuilder {
+        FriendReadReceiptOrBuilder {
       // Construct using im.tox.proto.Core.FriendReadReceipt.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -3383,11 +3392,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FriendReadReceipt)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FriendReadReceipt();
+          return new FriendReadReceipt();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -3400,12 +3409,12 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FriendReadReceipt other = (im.tox.proto.Core.FriendReadReceipt) arg1;
+          FriendReadReceipt other = (FriendReadReceipt) arg1;
           friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
               other.friendNumber_ != 0, other.friendNumber_);
           messageId_ = visitor.visitInt(messageId_ != 0, messageId_,
               other.messageId_ != 0, other.messageId_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -3454,7 +3463,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FriendReadReceipt.class) {
+          if (PARSER == null) {    synchronized (FriendReadReceipt.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -3468,13 +3477,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FriendReadReceipt)
-    private static final im.tox.proto.Core.FriendReadReceipt DEFAULT_INSTANCE;
+    private static final FriendReadReceipt DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FriendReadReceipt();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FriendReadReceipt getDefaultInstance() {
+    public static FriendReadReceipt getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3531,14 +3540,14 @@ public final class Core {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       publicKey_ = value;
     }
     /**
      * <code>optional bytes public_key = 1;</code>
      */
     private void clearPublicKey() {
-      
+
       publicKey_ = getDefaultInstance().getPublicKey();
     }
 
@@ -3554,14 +3563,14 @@ public final class Core {
      * <code>optional uint32 time_delta = 2;</code>
      */
     private void setTimeDelta(int value) {
-      
+
       timeDelta_ = value;
     }
     /**
      * <code>optional uint32 time_delta = 2;</code>
      */
     private void clearTimeDelta() {
-      
+
       timeDelta_ = 0;
     }
 
@@ -3580,14 +3589,14 @@ public final class Core {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       message_ = value;
     }
     /**
      * <code>optional bytes message = 3;</code>
      */
     private void clearMessage() {
-      
+
       message_ = getDefaultInstance().getMessage();
     }
 
@@ -3625,60 +3634,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FriendRequest parseFrom(
+    public static FriendRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendRequest parseFrom(
+    public static FriendRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendRequest parseFrom(byte[] data)
+    public static FriendRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendRequest parseFrom(
+    public static FriendRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendRequest parseFrom(java.io.InputStream input)
+    public static FriendRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendRequest parseFrom(
+    public static FriendRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendRequest parseDelimitedFrom(java.io.InputStream input)
+    public static FriendRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendRequest parseDelimitedFrom(
+    public static FriendRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendRequest parseFrom(
+    public static FriendRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendRequest parseFrom(
+    public static FriendRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3689,7 +3698,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FriendRequest prototype) {
+    public static Builder newBuilder(FriendRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -3698,9 +3707,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FriendRequest, Builder> implements
+          FriendRequest, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FriendRequest)
-        im.tox.proto.Core.FriendRequestOrBuilder {
+        FriendRequestOrBuilder {
       // Construct using im.tox.proto.Core.FriendRequest.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -3779,11 +3788,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FriendRequest)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FriendRequest();
+          return new FriendRequest();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -3796,14 +3805,14 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FriendRequest other = (im.tox.proto.Core.FriendRequest) arg1;
+          FriendRequest other = (FriendRequest) arg1;
           publicKey_ = visitor.visitByteString(publicKey_ != com.google.protobuf.ByteString.EMPTY, publicKey_,
               other.publicKey_ != com.google.protobuf.ByteString.EMPTY, other.publicKey_);
           timeDelta_ = visitor.visitInt(timeDelta_ != 0, timeDelta_,
               other.timeDelta_ != 0, other.timeDelta_);
           message_ = visitor.visitByteString(message_ != com.google.protobuf.ByteString.EMPTY, message_,
               other.message_ != com.google.protobuf.ByteString.EMPTY, other.message_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -3857,7 +3866,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FriendRequest.class) {
+          if (PARSER == null) {    synchronized (FriendRequest.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -3871,13 +3880,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FriendRequest)
-    private static final im.tox.proto.Core.FriendRequest DEFAULT_INSTANCE;
+    private static final FriendRequest DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FriendRequest();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FriendRequest getDefaultInstance() {
+    public static FriendRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3904,7 +3913,7 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.MessageType.Type type = 2;</code>
      */
-    im.tox.proto.Core.MessageType.Type getType();
+    MessageType.Type getType();
 
     /**
      * <code>optional uint32 time_delta = 3;</code>
@@ -3939,14 +3948,14 @@ public final class Core {
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void setFriendNumber(int value) {
-      
+
       friendNumber_ = value;
     }
     /**
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void clearFriendNumber() {
-      
+
       friendNumber_ = 0;
     }
 
@@ -3961,9 +3970,9 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.MessageType.Type type = 2;</code>
      */
-    public im.tox.proto.Core.MessageType.Type getType() {
-      im.tox.proto.Core.MessageType.Type result = im.tox.proto.Core.MessageType.Type.forNumber(type_);
-      return result == null ? im.tox.proto.Core.MessageType.Type.UNRECOGNIZED : result;
+    public MessageType.Type getType() {
+      MessageType.Type result = MessageType.Type.forNumber(type_);
+      return result == null ? MessageType.Type.UNRECOGNIZED : result;
     }
     /**
      * <code>optional .im.tox.proto.MessageType.Type type = 2;</code>
@@ -3974,18 +3983,18 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.MessageType.Type type = 2;</code>
      */
-    private void setType(im.tox.proto.Core.MessageType.Type value) {
+    private void setType(MessageType.Type value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       type_ = value.getNumber();
     }
     /**
      * <code>optional .im.tox.proto.MessageType.Type type = 2;</code>
      */
     private void clearType() {
-      
+
       type_ = 0;
     }
 
@@ -4001,14 +4010,14 @@ public final class Core {
      * <code>optional uint32 time_delta = 3;</code>
      */
     private void setTimeDelta(int value) {
-      
+
       timeDelta_ = value;
     }
     /**
      * <code>optional uint32 time_delta = 3;</code>
      */
     private void clearTimeDelta() {
-      
+
       timeDelta_ = 0;
     }
 
@@ -4027,14 +4036,14 @@ public final class Core {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       message_ = value;
     }
     /**
      * <code>optional bytes message = 4;</code>
      */
     private void clearMessage() {
-      
+
       message_ = getDefaultInstance().getMessage();
     }
 
@@ -4043,7 +4052,7 @@ public final class Core {
       if (friendNumber_ != 0) {
         output.writeUInt32(1, friendNumber_);
       }
-      if (type_ != im.tox.proto.Core.MessageType.Type.NORMAL.getNumber()) {
+      if (type_ != MessageType.Type.NORMAL.getNumber()) {
         output.writeEnum(2, type_);
       }
       if (timeDelta_ != 0) {
@@ -4063,7 +4072,7 @@ public final class Core {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, friendNumber_);
       }
-      if (type_ != im.tox.proto.Core.MessageType.Type.NORMAL.getNumber()) {
+      if (type_ != MessageType.Type.NORMAL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, type_);
       }
@@ -4079,60 +4088,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FriendMessage parseFrom(
+    public static FriendMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendMessage parseFrom(
+    public static FriendMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendMessage parseFrom(byte[] data)
+    public static FriendMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendMessage parseFrom(
+    public static FriendMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendMessage parseFrom(java.io.InputStream input)
+    public static FriendMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendMessage parseFrom(
+    public static FriendMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendMessage parseDelimitedFrom(java.io.InputStream input)
+    public static FriendMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendMessage parseDelimitedFrom(
+    public static FriendMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendMessage parseFrom(
+    public static FriendMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendMessage parseFrom(
+    public static FriendMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4143,7 +4152,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FriendMessage prototype) {
+    public static Builder newBuilder(FriendMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -4152,9 +4161,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FriendMessage, Builder> implements
+          FriendMessage, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FriendMessage)
-        im.tox.proto.Core.FriendMessageOrBuilder {
+        FriendMessageOrBuilder {
       // Construct using im.tox.proto.Core.FriendMessage.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -4201,13 +4210,13 @@ public final class Core {
       /**
        * <code>optional .im.tox.proto.MessageType.Type type = 2;</code>
        */
-      public im.tox.proto.Core.MessageType.Type getType() {
+      public MessageType.Type getType() {
         return instance.getType();
       }
       /**
        * <code>optional .im.tox.proto.MessageType.Type type = 2;</code>
        */
-      public Builder setType(im.tox.proto.Core.MessageType.Type value) {
+      public Builder setType(MessageType.Type value) {
         copyOnWrite();
         instance.setType(value);
         return this;
@@ -4270,11 +4279,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FriendMessage)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FriendMessage();
+          return new FriendMessage();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -4287,7 +4296,7 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FriendMessage other = (im.tox.proto.Core.FriendMessage) arg1;
+          FriendMessage other = (FriendMessage) arg1;
           friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
               other.friendNumber_ != 0, other.friendNumber_);
           type_ = visitor.visitInt(type_ != 0, type_,    other.type_ != 0, other.type_);
@@ -4295,7 +4304,7 @@ public final class Core {
               other.timeDelta_ != 0, other.timeDelta_);
           message_ = visitor.visitByteString(message_ != com.google.protobuf.ByteString.EMPTY, message_,
               other.message_ != com.google.protobuf.ByteString.EMPTY, other.message_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -4355,7 +4364,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FriendMessage.class) {
+          if (PARSER == null) {    synchronized (FriendMessage.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -4369,13 +4378,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FriendMessage)
-    private static final im.tox.proto.Core.FriendMessage DEFAULT_INSTANCE;
+    private static final FriendMessage DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FriendMessage();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FriendMessage getDefaultInstance() {
+    public static FriendMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4407,7 +4416,7 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.FileControl.Type control = 3;</code>
      */
-    im.tox.proto.Core.FileControl.Type getControl();
+    FileControl.Type getControl();
   }
   /**
    * Protobuf type {@code im.tox.proto.FileRecvControl}
@@ -4431,14 +4440,14 @@ public final class Core {
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void setFriendNumber(int value) {
-      
+
       friendNumber_ = value;
     }
     /**
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void clearFriendNumber() {
-      
+
       friendNumber_ = 0;
     }
 
@@ -4454,14 +4463,14 @@ public final class Core {
      * <code>optional uint32 file_number = 2;</code>
      */
     private void setFileNumber(int value) {
-      
+
       fileNumber_ = value;
     }
     /**
      * <code>optional uint32 file_number = 2;</code>
      */
     private void clearFileNumber() {
-      
+
       fileNumber_ = 0;
     }
 
@@ -4476,9 +4485,9 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.FileControl.Type control = 3;</code>
      */
-    public im.tox.proto.Core.FileControl.Type getControl() {
-      im.tox.proto.Core.FileControl.Type result = im.tox.proto.Core.FileControl.Type.forNumber(control_);
-      return result == null ? im.tox.proto.Core.FileControl.Type.UNRECOGNIZED : result;
+    public FileControl.Type getControl() {
+      FileControl.Type result = FileControl.Type.forNumber(control_);
+      return result == null ? FileControl.Type.UNRECOGNIZED : result;
     }
     /**
      * <code>optional .im.tox.proto.FileControl.Type control = 3;</code>
@@ -4489,18 +4498,18 @@ public final class Core {
     /**
      * <code>optional .im.tox.proto.FileControl.Type control = 3;</code>
      */
-    private void setControl(im.tox.proto.Core.FileControl.Type value) {
+    private void setControl(FileControl.Type value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       control_ = value.getNumber();
     }
     /**
      * <code>optional .im.tox.proto.FileControl.Type control = 3;</code>
      */
     private void clearControl() {
-      
+
       control_ = 0;
     }
 
@@ -4512,7 +4521,7 @@ public final class Core {
       if (fileNumber_ != 0) {
         output.writeUInt32(2, fileNumber_);
       }
-      if (control_ != im.tox.proto.Core.FileControl.Type.RESUME.getNumber()) {
+      if (control_ != FileControl.Type.RESUME.getNumber()) {
         output.writeEnum(3, control_);
       }
     }
@@ -4530,7 +4539,7 @@ public final class Core {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, fileNumber_);
       }
-      if (control_ != im.tox.proto.Core.FileControl.Type.RESUME.getNumber()) {
+      if (control_ != FileControl.Type.RESUME.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, control_);
       }
@@ -4538,60 +4547,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FileRecvControl parseFrom(
+    public static FileRecvControl parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FileRecvControl parseFrom(
+    public static FileRecvControl parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileRecvControl parseFrom(byte[] data)
+    public static FileRecvControl parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FileRecvControl parseFrom(
+    public static FileRecvControl parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileRecvControl parseFrom(java.io.InputStream input)
+    public static FileRecvControl parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileRecvControl parseFrom(
+    public static FileRecvControl parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileRecvControl parseDelimitedFrom(java.io.InputStream input)
+    public static FileRecvControl parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileRecvControl parseDelimitedFrom(
+    public static FileRecvControl parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileRecvControl parseFrom(
+    public static FileRecvControl parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileRecvControl parseFrom(
+    public static FileRecvControl parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4602,7 +4611,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FileRecvControl prototype) {
+    public static Builder newBuilder(FileRecvControl prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -4611,9 +4620,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FileRecvControl, Builder> implements
+          FileRecvControl, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FileRecvControl)
-        im.tox.proto.Core.FileRecvControlOrBuilder {
+        FileRecvControlOrBuilder {
       // Construct using im.tox.proto.Core.FileRecvControl.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -4683,13 +4692,13 @@ public final class Core {
       /**
        * <code>optional .im.tox.proto.FileControl.Type control = 3;</code>
        */
-      public im.tox.proto.Core.FileControl.Type getControl() {
+      public FileControl.Type getControl() {
         return instance.getControl();
       }
       /**
        * <code>optional .im.tox.proto.FileControl.Type control = 3;</code>
        */
-      public Builder setControl(im.tox.proto.Core.FileControl.Type value) {
+      public Builder setControl(FileControl.Type value) {
         copyOnWrite();
         instance.setControl(value);
         return this;
@@ -4706,11 +4715,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FileRecvControl)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FileRecvControl();
+          return new FileRecvControl();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -4723,13 +4732,13 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FileRecvControl other = (im.tox.proto.Core.FileRecvControl) arg1;
+          FileRecvControl other = (FileRecvControl) arg1;
           friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
               other.friendNumber_ != 0, other.friendNumber_);
           fileNumber_ = visitor.visitInt(fileNumber_ != 0, fileNumber_,
               other.fileNumber_ != 0, other.fileNumber_);
           control_ = visitor.visitInt(control_ != 0, control_,    other.control_ != 0, other.control_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -4784,7 +4793,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FileRecvControl.class) {
+          if (PARSER == null) {    synchronized (FileRecvControl.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -4798,13 +4807,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FileRecvControl)
-    private static final im.tox.proto.Core.FileRecvControl DEFAULT_INSTANCE;
+    private static final FileRecvControl DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FileRecvControl();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FileRecvControl getDefaultInstance() {
+    public static FileRecvControl getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4861,14 +4870,14 @@ public final class Core {
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void setFriendNumber(int value) {
-      
+
       friendNumber_ = value;
     }
     /**
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void clearFriendNumber() {
-      
+
       friendNumber_ = 0;
     }
 
@@ -4884,14 +4893,14 @@ public final class Core {
      * <code>optional uint32 file_number = 2;</code>
      */
     private void setFileNumber(int value) {
-      
+
       fileNumber_ = value;
     }
     /**
      * <code>optional uint32 file_number = 2;</code>
      */
     private void clearFileNumber() {
-      
+
       fileNumber_ = 0;
     }
 
@@ -4907,14 +4916,14 @@ public final class Core {
      * <code>optional uint64 position = 3;</code>
      */
     private void setPosition(long value) {
-      
+
       position_ = value;
     }
     /**
      * <code>optional uint64 position = 3;</code>
      */
     private void clearPosition() {
-      
+
       position_ = 0L;
     }
 
@@ -4930,14 +4939,14 @@ public final class Core {
      * <code>optional uint32 length = 4;</code>
      */
     private void setLength(int value) {
-      
+
       length_ = value;
     }
     /**
      * <code>optional uint32 length = 4;</code>
      */
     private void clearLength() {
-      
+
       length_ = 0;
     }
 
@@ -4982,60 +4991,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FileChunkRequest parseFrom(
+    public static FileChunkRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FileChunkRequest parseFrom(
+    public static FileChunkRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileChunkRequest parseFrom(byte[] data)
+    public static FileChunkRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FileChunkRequest parseFrom(
+    public static FileChunkRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileChunkRequest parseFrom(java.io.InputStream input)
+    public static FileChunkRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileChunkRequest parseFrom(
+    public static FileChunkRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileChunkRequest parseDelimitedFrom(java.io.InputStream input)
+    public static FileChunkRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileChunkRequest parseDelimitedFrom(
+    public static FileChunkRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileChunkRequest parseFrom(
+    public static FileChunkRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileChunkRequest parseFrom(
+    public static FileChunkRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5046,7 +5055,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FileChunkRequest prototype) {
+    public static Builder newBuilder(FileChunkRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -5055,9 +5064,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FileChunkRequest, Builder> implements
+          FileChunkRequest, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FileChunkRequest)
-        im.tox.proto.Core.FileChunkRequestOrBuilder {
+        FileChunkRequestOrBuilder {
       // Construct using im.tox.proto.Core.FileChunkRequest.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -5159,11 +5168,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FileChunkRequest)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FileChunkRequest();
+          return new FileChunkRequest();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -5176,7 +5185,7 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FileChunkRequest other = (im.tox.proto.Core.FileChunkRequest) arg1;
+          FileChunkRequest other = (FileChunkRequest) arg1;
           friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
               other.friendNumber_ != 0, other.friendNumber_);
           fileNumber_ = visitor.visitInt(fileNumber_ != 0, fileNumber_,
@@ -5185,7 +5194,7 @@ public final class Core {
               other.position_ != 0L, other.position_);
           length_ = visitor.visitInt(length_ != 0, length_,
               other.length_ != 0, other.length_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -5244,7 +5253,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FileChunkRequest.class) {
+          if (PARSER == null) {    synchronized (FileChunkRequest.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -5258,13 +5267,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FileChunkRequest)
-    private static final im.tox.proto.Core.FileChunkRequest DEFAULT_INSTANCE;
+    private static final FileChunkRequest DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FileChunkRequest();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FileChunkRequest getDefaultInstance() {
+    public static FileChunkRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5327,14 +5336,14 @@ public final class Core {
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void setFriendNumber(int value) {
-      
+
       friendNumber_ = value;
     }
     /**
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void clearFriendNumber() {
-      
+
       friendNumber_ = 0;
     }
 
@@ -5350,14 +5359,14 @@ public final class Core {
      * <code>optional uint32 file_number = 2;</code>
      */
     private void setFileNumber(int value) {
-      
+
       fileNumber_ = value;
     }
     /**
      * <code>optional uint32 file_number = 2;</code>
      */
     private void clearFileNumber() {
-      
+
       fileNumber_ = 0;
     }
 
@@ -5373,14 +5382,14 @@ public final class Core {
      * <code>optional uint32 kind = 3;</code>
      */
     private void setKind(int value) {
-      
+
       kind_ = value;
     }
     /**
      * <code>optional uint32 kind = 3;</code>
      */
     private void clearKind() {
-      
+
       kind_ = 0;
     }
 
@@ -5396,14 +5405,14 @@ public final class Core {
      * <code>optional uint64 file_size = 4;</code>
      */
     private void setFileSize(long value) {
-      
+
       fileSize_ = value;
     }
     /**
      * <code>optional uint64 file_size = 4;</code>
      */
     private void clearFileSize() {
-      
+
       fileSize_ = 0L;
     }
 
@@ -5422,14 +5431,14 @@ public final class Core {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       filename_ = value;
     }
     /**
      * <code>optional bytes filename = 5;</code>
      */
     private void clearFilename() {
-      
+
       filename_ = getDefaultInstance().getFilename();
     }
 
@@ -5481,60 +5490,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FileRecv parseFrom(
+    public static FileRecv parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FileRecv parseFrom(
+    public static FileRecv parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileRecv parseFrom(byte[] data)
+    public static FileRecv parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FileRecv parseFrom(
+    public static FileRecv parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileRecv parseFrom(java.io.InputStream input)
+    public static FileRecv parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileRecv parseFrom(
+    public static FileRecv parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileRecv parseDelimitedFrom(java.io.InputStream input)
+    public static FileRecv parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileRecv parseDelimitedFrom(
+    public static FileRecv parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileRecv parseFrom(
+    public static FileRecv parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileRecv parseFrom(
+    public static FileRecv parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5545,7 +5554,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FileRecv prototype) {
+    public static Builder newBuilder(FileRecv prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -5554,9 +5563,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FileRecv, Builder> implements
+          FileRecv, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FileRecv)
-        im.tox.proto.Core.FileRecvOrBuilder {
+        FileRecvOrBuilder {
       // Construct using im.tox.proto.Core.FileRecv.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -5681,11 +5690,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FileRecv)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FileRecv();
+          return new FileRecv();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -5698,7 +5707,7 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FileRecv other = (im.tox.proto.Core.FileRecv) arg1;
+          FileRecv other = (FileRecv) arg1;
           friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
               other.friendNumber_ != 0, other.friendNumber_);
           fileNumber_ = visitor.visitInt(fileNumber_ != 0, fileNumber_,
@@ -5709,7 +5718,7 @@ public final class Core {
               other.fileSize_ != 0L, other.fileSize_);
           filename_ = visitor.visitByteString(filename_ != com.google.protobuf.ByteString.EMPTY, filename_,
               other.filename_ != com.google.protobuf.ByteString.EMPTY, other.filename_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -5773,7 +5782,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FileRecv.class) {
+          if (PARSER == null) {    synchronized (FileRecv.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -5787,13 +5796,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FileRecv)
-    private static final im.tox.proto.Core.FileRecv DEFAULT_INSTANCE;
+    private static final FileRecv DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FileRecv();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FileRecv getDefaultInstance() {
+    public static FileRecv getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5851,14 +5860,14 @@ public final class Core {
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void setFriendNumber(int value) {
-      
+
       friendNumber_ = value;
     }
     /**
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void clearFriendNumber() {
-      
+
       friendNumber_ = 0;
     }
 
@@ -5874,14 +5883,14 @@ public final class Core {
      * <code>optional uint32 file_number = 2;</code>
      */
     private void setFileNumber(int value) {
-      
+
       fileNumber_ = value;
     }
     /**
      * <code>optional uint32 file_number = 2;</code>
      */
     private void clearFileNumber() {
-      
+
       fileNumber_ = 0;
     }
 
@@ -5897,14 +5906,14 @@ public final class Core {
      * <code>optional uint64 position = 3;</code>
      */
     private void setPosition(long value) {
-      
+
       position_ = value;
     }
     /**
      * <code>optional uint64 position = 3;</code>
      */
     private void clearPosition() {
-      
+
       position_ = 0L;
     }
 
@@ -5923,14 +5932,14 @@ public final class Core {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       data_ = value;
     }
     /**
      * <code>optional bytes data = 4;</code>
      */
     private void clearData() {
-      
+
       data_ = getDefaultInstance().getData();
     }
 
@@ -5975,60 +5984,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FileRecvChunk parseFrom(
+    public static FileRecvChunk parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FileRecvChunk parseFrom(
+    public static FileRecvChunk parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileRecvChunk parseFrom(byte[] data)
+    public static FileRecvChunk parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FileRecvChunk parseFrom(
+    public static FileRecvChunk parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileRecvChunk parseFrom(java.io.InputStream input)
+    public static FileRecvChunk parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileRecvChunk parseFrom(
+    public static FileRecvChunk parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileRecvChunk parseDelimitedFrom(java.io.InputStream input)
+    public static FileRecvChunk parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileRecvChunk parseDelimitedFrom(
+    public static FileRecvChunk parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FileRecvChunk parseFrom(
+    public static FileRecvChunk parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FileRecvChunk parseFrom(
+    public static FileRecvChunk parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6039,7 +6048,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FileRecvChunk prototype) {
+    public static Builder newBuilder(FileRecvChunk prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -6048,9 +6057,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FileRecvChunk, Builder> implements
+          FileRecvChunk, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FileRecvChunk)
-        im.tox.proto.Core.FileRecvChunkOrBuilder {
+        FileRecvChunkOrBuilder {
       // Construct using im.tox.proto.Core.FileRecvChunk.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -6152,11 +6161,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FileRecvChunk)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FileRecvChunk();
+          return new FileRecvChunk();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -6169,7 +6178,7 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FileRecvChunk other = (im.tox.proto.Core.FileRecvChunk) arg1;
+          FileRecvChunk other = (FileRecvChunk) arg1;
           friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
               other.friendNumber_ != 0, other.friendNumber_);
           fileNumber_ = visitor.visitInt(fileNumber_ != 0, fileNumber_,
@@ -6178,7 +6187,7 @@ public final class Core {
               other.position_ != 0L, other.position_);
           data_ = visitor.visitByteString(data_ != com.google.protobuf.ByteString.EMPTY, data_,
               other.data_ != com.google.protobuf.ByteString.EMPTY, other.data_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -6237,7 +6246,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FileRecvChunk.class) {
+          if (PARSER == null) {    synchronized (FileRecvChunk.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -6251,13 +6260,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FileRecvChunk)
-    private static final im.tox.proto.Core.FileRecvChunk DEFAULT_INSTANCE;
+    private static final FileRecvChunk DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FileRecvChunk();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FileRecvChunk getDefaultInstance() {
+    public static FileRecvChunk getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6305,14 +6314,14 @@ public final class Core {
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void setFriendNumber(int value) {
-      
+
       friendNumber_ = value;
     }
     /**
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void clearFriendNumber() {
-      
+
       friendNumber_ = 0;
     }
 
@@ -6331,14 +6340,14 @@ public final class Core {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       data_ = value;
     }
     /**
      * <code>optional bytes data = 2;</code>
      */
     private void clearData() {
-      
+
       data_ = getDefaultInstance().getData();
     }
 
@@ -6369,60 +6378,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FriendLossyPacket parseFrom(
+    public static FriendLossyPacket parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendLossyPacket parseFrom(
+    public static FriendLossyPacket parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendLossyPacket parseFrom(byte[] data)
+    public static FriendLossyPacket parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendLossyPacket parseFrom(
+    public static FriendLossyPacket parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendLossyPacket parseFrom(java.io.InputStream input)
+    public static FriendLossyPacket parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendLossyPacket parseFrom(
+    public static FriendLossyPacket parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendLossyPacket parseDelimitedFrom(java.io.InputStream input)
+    public static FriendLossyPacket parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendLossyPacket parseDelimitedFrom(
+    public static FriendLossyPacket parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendLossyPacket parseFrom(
+    public static FriendLossyPacket parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendLossyPacket parseFrom(
+    public static FriendLossyPacket parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6433,7 +6442,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FriendLossyPacket prototype) {
+    public static Builder newBuilder(FriendLossyPacket prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -6442,9 +6451,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FriendLossyPacket, Builder> implements
+          FriendLossyPacket, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FriendLossyPacket)
-        im.tox.proto.Core.FriendLossyPacketOrBuilder {
+        FriendLossyPacketOrBuilder {
       // Construct using im.tox.proto.Core.FriendLossyPacket.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -6500,11 +6509,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FriendLossyPacket)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FriendLossyPacket();
+          return new FriendLossyPacket();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -6517,12 +6526,12 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FriendLossyPacket other = (im.tox.proto.Core.FriendLossyPacket) arg1;
+          FriendLossyPacket other = (FriendLossyPacket) arg1;
           friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
               other.friendNumber_ != 0, other.friendNumber_);
           data_ = visitor.visitByteString(data_ != com.google.protobuf.ByteString.EMPTY, data_,
               other.data_ != com.google.protobuf.ByteString.EMPTY, other.data_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -6571,7 +6580,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FriendLossyPacket.class) {
+          if (PARSER == null) {    synchronized (FriendLossyPacket.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -6585,13 +6594,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FriendLossyPacket)
-    private static final im.tox.proto.Core.FriendLossyPacket DEFAULT_INSTANCE;
+    private static final FriendLossyPacket DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FriendLossyPacket();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FriendLossyPacket getDefaultInstance() {
+    public static FriendLossyPacket getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6639,14 +6648,14 @@ public final class Core {
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void setFriendNumber(int value) {
-      
+
       friendNumber_ = value;
     }
     /**
      * <code>optional uint32 friend_number = 1;</code>
      */
     private void clearFriendNumber() {
-      
+
       friendNumber_ = 0;
     }
 
@@ -6665,14 +6674,14 @@ public final class Core {
       if (value == null) {
     throw new NullPointerException();
   }
-  
+
       data_ = value;
     }
     /**
      * <code>optional bytes data = 2;</code>
      */
     private void clearData() {
-      
+
       data_ = getDefaultInstance().getData();
     }
 
@@ -6703,60 +6712,60 @@ public final class Core {
       return size;
     }
 
-    public static im.tox.proto.Core.FriendLosslessPacket parseFrom(
+    public static FriendLosslessPacket parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendLosslessPacket parseFrom(
+    public static FriendLosslessPacket parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendLosslessPacket parseFrom(byte[] data)
+    public static FriendLosslessPacket parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.FriendLosslessPacket parseFrom(
+    public static FriendLosslessPacket parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendLosslessPacket parseFrom(java.io.InputStream input)
+    public static FriendLosslessPacket parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendLosslessPacket parseFrom(
+    public static FriendLosslessPacket parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendLosslessPacket parseDelimitedFrom(java.io.InputStream input)
+    public static FriendLosslessPacket parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendLosslessPacket parseDelimitedFrom(
+    public static FriendLosslessPacket parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.FriendLosslessPacket parseFrom(
+    public static FriendLosslessPacket parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.FriendLosslessPacket parseFrom(
+    public static FriendLosslessPacket parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6767,7 +6776,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.FriendLosslessPacket prototype) {
+    public static Builder newBuilder(FriendLosslessPacket prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -6776,9 +6785,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.FriendLosslessPacket, Builder> implements
+          FriendLosslessPacket, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.FriendLosslessPacket)
-        im.tox.proto.Core.FriendLosslessPacketOrBuilder {
+        FriendLosslessPacketOrBuilder {
       // Construct using im.tox.proto.Core.FriendLosslessPacket.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -6834,11 +6843,11 @@ public final class Core {
       // @@protoc_insertion_point(builder_scope:im.tox.proto.FriendLosslessPacket)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.FriendLosslessPacket();
+          return new FriendLosslessPacket();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -6851,12 +6860,12 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.FriendLosslessPacket other = (im.tox.proto.Core.FriendLosslessPacket) arg1;
+          FriendLosslessPacket other = (FriendLosslessPacket) arg1;
           friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
               other.friendNumber_ != 0, other.friendNumber_);
           data_ = visitor.visitByteString(data_ != com.google.protobuf.ByteString.EMPTY, data_,
               other.data_ != com.google.protobuf.ByteString.EMPTY, other.data_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -6905,7 +6914,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.FriendLosslessPacket.class) {
+          if (PARSER == null) {    synchronized (FriendLosslessPacket.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -6919,19 +6928,418 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.FriendLosslessPacket)
-    private static final im.tox.proto.Core.FriendLosslessPacket DEFAULT_INSTANCE;
+    private static final FriendLosslessPacket DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new FriendLosslessPacket();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.FriendLosslessPacket getDefaultInstance() {
+    public static FriendLosslessPacket getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
     private static volatile com.google.protobuf.Parser<FriendLosslessPacket> PARSER;
 
     public static com.google.protobuf.Parser<FriendLosslessPacket> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
+  public interface FriendMessageOfflineOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:im.tox.proto.FriendMessageOffline)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional uint32 cmd = 1;</code>
+     */
+    int getCmd();
+
+    /**
+     * <code>optional uint32 friend_number = 2;</code>
+     */
+    int getFriendNumber();
+
+    /**
+     * <code>optional bytes message = 3;</code>
+     */
+    com.google.protobuf.ByteString getMessage();
+  }
+  /**
+   * Protobuf type {@code im.tox.proto.FriendMessageOffline}
+   */
+  public  static final class FriendMessageOffline extends
+      com.google.protobuf.GeneratedMessageLite<
+          FriendMessageOffline, FriendMessageOffline.Builder> implements
+      // @@protoc_insertion_point(message_implements:im.tox.proto.FriendMessageOffline)
+      FriendMessageOfflineOrBuilder {
+    private FriendMessageOffline() {
+      message_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    public static final int CMD_FIELD_NUMBER = 1;
+    private int cmd_;
+    /**
+     * <code>optional uint32 cmd = 1;</code>
+     */
+    public int getCmd() {
+      return cmd_;
+    }
+    /**
+     * <code>optional uint32 cmd = 1;</code>
+     */
+    private void setCmd(int value) {
+
+      cmd_ = value;
+    }
+    /**
+     * <code>optional uint32 cmd = 1;</code>
+     */
+    private void clearCmd() {
+
+      cmd_ = 0;
+    }
+
+    public static final int FRIEND_NUMBER_FIELD_NUMBER = 2;
+    private int friendNumber_;
+    /**
+     * <code>optional uint32 friend_number = 2;</code>
+     */
+    public int getFriendNumber() {
+      return friendNumber_;
+    }
+    /**
+     * <code>optional uint32 friend_number = 2;</code>
+     */
+    private void setFriendNumber(int value) {
+
+      friendNumber_ = value;
+    }
+    /**
+     * <code>optional uint32 friend_number = 2;</code>
+     */
+    private void clearFriendNumber() {
+
+      friendNumber_ = 0;
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString message_;
+    /**
+     * <code>optional bytes message = 3;</code>
+     */
+    public com.google.protobuf.ByteString getMessage() {
+      return message_;
+    }
+    /**
+     * <code>optional bytes message = 3;</code>
+     */
+    private void setMessage(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+
+      message_ = value;
+    }
+    /**
+     * <code>optional bytes message = 3;</code>
+     */
+    private void clearMessage() {
+
+      message_ = getDefaultInstance().getMessage();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (cmd_ != 0) {
+        output.writeUInt32(1, cmd_);
+      }
+      if (friendNumber_ != 0) {
+        output.writeUInt32(2, friendNumber_);
+      }
+      if (!message_.isEmpty()) {
+        output.writeBytes(3, message_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (cmd_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, cmd_);
+      }
+      if (friendNumber_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, friendNumber_);
+      }
+      if (!message_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, message_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static FriendMessageOffline parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static FriendMessageOffline parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static FriendMessageOffline parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static FriendMessageOffline parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static FriendMessageOffline parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static FriendMessageOffline parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static FriendMessageOffline parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static FriendMessageOffline parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static FriendMessageOffline parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static FriendMessageOffline parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(FriendMessageOffline prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code im.tox.proto.FriendMessageOffline}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          FriendMessageOffline, Builder> implements
+        // @@protoc_insertion_point(builder_implements:im.tox.proto.FriendMessageOffline)
+        FriendMessageOfflineOrBuilder {
+      // Construct using im.tox.proto.Core.FriendMessageOffline.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional uint32 cmd = 1;</code>
+       */
+      public int getCmd() {
+        return instance.getCmd();
+      }
+      /**
+       * <code>optional uint32 cmd = 1;</code>
+       */
+      public Builder setCmd(int value) {
+        copyOnWrite();
+        instance.setCmd(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 cmd = 1;</code>
+       */
+      public Builder clearCmd() {
+        copyOnWrite();
+        instance.clearCmd();
+        return this;
+      }
+
+      /**
+       * <code>optional uint32 friend_number = 2;</code>
+       */
+      public int getFriendNumber() {
+        return instance.getFriendNumber();
+      }
+      /**
+       * <code>optional uint32 friend_number = 2;</code>
+       */
+      public Builder setFriendNumber(int value) {
+        copyOnWrite();
+        instance.setFriendNumber(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 friend_number = 2;</code>
+       */
+      public Builder clearFriendNumber() {
+        copyOnWrite();
+        instance.clearFriendNumber();
+        return this;
+      }
+
+      /**
+       * <code>optional bytes message = 3;</code>
+       */
+      public com.google.protobuf.ByteString getMessage() {
+        return instance.getMessage();
+      }
+      /**
+       * <code>optional bytes message = 3;</code>
+       */
+      public Builder setMessage(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setMessage(value);
+        return this;
+      }
+      /**
+       * <code>optional bytes message = 3;</code>
+       */
+      public Builder clearMessage() {
+        copyOnWrite();
+        instance.clearMessage();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:im.tox.proto.FriendMessageOffline)
+    }
+    protected final Object dynamicMethod(
+        MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new FriendMessageOffline();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          FriendMessageOffline other = (FriendMessageOffline) arg1;
+          cmd_ = visitor.visitInt(cmd_ != 0, cmd_,
+              other.cmd_ != 0, other.cmd_);
+          friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
+              other.friendNumber_ != 0, other.friendNumber_);
+          message_ = visitor.visitByteString(message_ != com.google.protobuf.ByteString.EMPTY, message_,
+              other.message_ != com.google.protobuf.ByteString.EMPTY, other.message_);
+          if (visitor == MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+
+                  cmd_ = input.readUInt32();
+                  break;
+                }
+                case 16: {
+
+                  friendNumber_ = input.readUInt32();
+                  break;
+                }
+                case 26: {
+
+                  message_ = input.readBytes();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (FriendMessageOffline.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:im.tox.proto.FriendMessageOffline)
+    private static final FriendMessageOffline DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new FriendMessageOffline();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static FriendMessageOffline getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<FriendMessageOffline> PARSER;
+
+    public static com.google.protobuf.Parser<FriendMessageOffline> parser() {
       return DEFAULT_INSTANCE.getParserForType();
     }
   }
@@ -6943,12 +7351,12 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
      */
-    java.util.List<im.tox.proto.Core.SelfConnectionStatus> 
+    java.util.List<SelfConnectionStatus>
         getSelfConnectionStatusList();
     /**
      * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
      */
-    im.tox.proto.Core.SelfConnectionStatus getSelfConnectionStatus(int index);
+    SelfConnectionStatus getSelfConnectionStatus(int index);
     /**
      * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
      */
@@ -6957,12 +7365,12 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
      */
-    java.util.List<im.tox.proto.Core.FriendName> 
+    java.util.List<FriendName>
         getFriendNameList();
     /**
      * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
      */
-    im.tox.proto.Core.FriendName getFriendName(int index);
+    FriendName getFriendName(int index);
     /**
      * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
      */
@@ -6971,12 +7379,12 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
      */
-    java.util.List<im.tox.proto.Core.FriendStatusMessage> 
+    java.util.List<FriendStatusMessage>
         getFriendStatusMessageList();
     /**
      * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
      */
-    im.tox.proto.Core.FriendStatusMessage getFriendStatusMessage(int index);
+    FriendStatusMessage getFriendStatusMessage(int index);
     /**
      * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
      */
@@ -6985,12 +7393,12 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
      */
-    java.util.List<im.tox.proto.Core.FriendStatus> 
+    java.util.List<FriendStatus>
         getFriendStatusList();
     /**
      * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
      */
-    im.tox.proto.Core.FriendStatus getFriendStatus(int index);
+    FriendStatus getFriendStatus(int index);
     /**
      * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
      */
@@ -6999,12 +7407,12 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
      */
-    java.util.List<im.tox.proto.Core.FriendConnectionStatus> 
+    java.util.List<FriendConnectionStatus>
         getFriendConnectionStatusList();
     /**
      * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
      */
-    im.tox.proto.Core.FriendConnectionStatus getFriendConnectionStatus(int index);
+    FriendConnectionStatus getFriendConnectionStatus(int index);
     /**
      * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
      */
@@ -7013,12 +7421,12 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
      */
-    java.util.List<im.tox.proto.Core.FriendTyping> 
+    java.util.List<FriendTyping>
         getFriendTypingList();
     /**
      * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
      */
-    im.tox.proto.Core.FriendTyping getFriendTyping(int index);
+    FriendTyping getFriendTyping(int index);
     /**
      * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
      */
@@ -7027,12 +7435,12 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
      */
-    java.util.List<im.tox.proto.Core.FriendReadReceipt> 
+    java.util.List<FriendReadReceipt>
         getFriendReadReceiptList();
     /**
      * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
      */
-    im.tox.proto.Core.FriendReadReceipt getFriendReadReceipt(int index);
+    FriendReadReceipt getFriendReadReceipt(int index);
     /**
      * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
      */
@@ -7041,12 +7449,12 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
      */
-    java.util.List<im.tox.proto.Core.FriendRequest> 
+    java.util.List<FriendRequest>
         getFriendRequestList();
     /**
      * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
      */
-    im.tox.proto.Core.FriendRequest getFriendRequest(int index);
+    FriendRequest getFriendRequest(int index);
     /**
      * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
      */
@@ -7055,12 +7463,12 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
      */
-    java.util.List<im.tox.proto.Core.FriendMessage> 
+    java.util.List<FriendMessage>
         getFriendMessageList();
     /**
      * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
      */
-    im.tox.proto.Core.FriendMessage getFriendMessage(int index);
+    FriendMessage getFriendMessage(int index);
     /**
      * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
      */
@@ -7069,12 +7477,12 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
      */
-    java.util.List<im.tox.proto.Core.FileRecvControl> 
+    java.util.List<FileRecvControl>
         getFileRecvControlList();
     /**
      * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
      */
-    im.tox.proto.Core.FileRecvControl getFileRecvControl(int index);
+    FileRecvControl getFileRecvControl(int index);
     /**
      * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
      */
@@ -7083,12 +7491,12 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
      */
-    java.util.List<im.tox.proto.Core.FileChunkRequest> 
+    java.util.List<FileChunkRequest>
         getFileChunkRequestList();
     /**
      * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
      */
-    im.tox.proto.Core.FileChunkRequest getFileChunkRequest(int index);
+    FileChunkRequest getFileChunkRequest(int index);
     /**
      * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
      */
@@ -7097,12 +7505,12 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
      */
-    java.util.List<im.tox.proto.Core.FileRecv> 
+    java.util.List<FileRecv>
         getFileRecvList();
     /**
      * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
      */
-    im.tox.proto.Core.FileRecv getFileRecv(int index);
+    FileRecv getFileRecv(int index);
     /**
      * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
      */
@@ -7111,12 +7519,12 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
      */
-    java.util.List<im.tox.proto.Core.FileRecvChunk> 
+    java.util.List<FileRecvChunk>
         getFileRecvChunkList();
     /**
      * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
      */
-    im.tox.proto.Core.FileRecvChunk getFileRecvChunk(int index);
+    FileRecvChunk getFileRecvChunk(int index);
     /**
      * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
      */
@@ -7125,12 +7533,12 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
      */
-    java.util.List<im.tox.proto.Core.FriendLossyPacket> 
+    java.util.List<FriendLossyPacket>
         getFriendLossyPacketList();
     /**
      * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
      */
-    im.tox.proto.Core.FriendLossyPacket getFriendLossyPacket(int index);
+    FriendLossyPacket getFriendLossyPacket(int index);
     /**
      * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
      */
@@ -7139,16 +7547,30 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
-    java.util.List<im.tox.proto.Core.FriendLosslessPacket> 
+    java.util.List<FriendLosslessPacket>
         getFriendLosslessPacketList();
     /**
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
-    im.tox.proto.Core.FriendLosslessPacket getFriendLosslessPacket(int index);
+    FriendLosslessPacket getFriendLosslessPacket(int index);
     /**
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
     int getFriendLosslessPacketCount();
+
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    java.util.List<FriendMessageOffline>
+        getFriendMessageOfflineList();
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    FriendMessageOffline getFriendMessageOffline(int index);
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    int getFriendMessageOfflineCount();
   }
   /**
    * Protobuf type {@code im.tox.proto.CoreEvents}
@@ -7174,19 +7596,20 @@ public final class Core {
       fileRecvChunk_ = emptyProtobufList();
       friendLossyPacket_ = emptyProtobufList();
       friendLosslessPacket_ = emptyProtobufList();
+      friendMessageOffline_ = emptyProtobufList();
     }
     public static final int SELF_CONNECTION_STATUS_FIELD_NUMBER = 1;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.SelfConnectionStatus> selfConnectionStatus_;
+    private com.google.protobuf.Internal.ProtobufList<SelfConnectionStatus> selfConnectionStatus_;
     /**
      * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
      */
-    public java.util.List<im.tox.proto.Core.SelfConnectionStatus> getSelfConnectionStatusList() {
+    public java.util.List<SelfConnectionStatus> getSelfConnectionStatusList() {
       return selfConnectionStatus_;
     }
     /**
      * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.SelfConnectionStatusOrBuilder> 
+    public java.util.List<? extends SelfConnectionStatusOrBuilder>
         getSelfConnectionStatusOrBuilderList() {
       return selfConnectionStatus_;
     }
@@ -7199,13 +7622,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
      */
-    public im.tox.proto.Core.SelfConnectionStatus getSelfConnectionStatus(int index) {
+    public SelfConnectionStatus getSelfConnectionStatus(int index) {
       return selfConnectionStatus_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
      */
-    public im.tox.proto.Core.SelfConnectionStatusOrBuilder getSelfConnectionStatusOrBuilder(
+    public SelfConnectionStatusOrBuilder getSelfConnectionStatusOrBuilder(
         int index) {
       return selfConnectionStatus_.get(index);
     }
@@ -7220,7 +7643,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
      */
     private void setSelfConnectionStatus(
-        int index, im.tox.proto.Core.SelfConnectionStatus value) {
+        int index, SelfConnectionStatus value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7231,14 +7654,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
      */
     private void setSelfConnectionStatus(
-        int index, im.tox.proto.Core.SelfConnectionStatus.Builder builderForValue) {
+        int index, SelfConnectionStatus.Builder builderForValue) {
       ensureSelfConnectionStatusIsMutable();
       selfConnectionStatus_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
      */
-    private void addSelfConnectionStatus(im.tox.proto.Core.SelfConnectionStatus value) {
+    private void addSelfConnectionStatus(SelfConnectionStatus value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7249,7 +7672,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
      */
     private void addSelfConnectionStatus(
-        int index, im.tox.proto.Core.SelfConnectionStatus value) {
+        int index, SelfConnectionStatus value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7260,7 +7683,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
      */
     private void addSelfConnectionStatus(
-        im.tox.proto.Core.SelfConnectionStatus.Builder builderForValue) {
+        SelfConnectionStatus.Builder builderForValue) {
       ensureSelfConnectionStatusIsMutable();
       selfConnectionStatus_.add(builderForValue.build());
     }
@@ -7268,7 +7691,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
      */
     private void addSelfConnectionStatus(
-        int index, im.tox.proto.Core.SelfConnectionStatus.Builder builderForValue) {
+        int index, SelfConnectionStatus.Builder builderForValue) {
       ensureSelfConnectionStatusIsMutable();
       selfConnectionStatus_.add(index, builderForValue.build());
     }
@@ -7276,7 +7699,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
      */
     private void addAllSelfConnectionStatus(
-        java.lang.Iterable<? extends im.tox.proto.Core.SelfConnectionStatus> values) {
+        Iterable<? extends SelfConnectionStatus> values) {
       ensureSelfConnectionStatusIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, selfConnectionStatus_);
@@ -7296,17 +7719,17 @@ public final class Core {
     }
 
     public static final int FRIEND_NAME_FIELD_NUMBER = 2;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FriendName> friendName_;
+    private com.google.protobuf.Internal.ProtobufList<FriendName> friendName_;
     /**
      * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
      */
-    public java.util.List<im.tox.proto.Core.FriendName> getFriendNameList() {
+    public java.util.List<FriendName> getFriendNameList() {
       return friendName_;
     }
     /**
      * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.FriendNameOrBuilder> 
+    public java.util.List<? extends FriendNameOrBuilder>
         getFriendNameOrBuilderList() {
       return friendName_;
     }
@@ -7319,13 +7742,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
      */
-    public im.tox.proto.Core.FriendName getFriendName(int index) {
+    public FriendName getFriendName(int index) {
       return friendName_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
      */
-    public im.tox.proto.Core.FriendNameOrBuilder getFriendNameOrBuilder(
+    public FriendNameOrBuilder getFriendNameOrBuilder(
         int index) {
       return friendName_.get(index);
     }
@@ -7340,7 +7763,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
      */
     private void setFriendName(
-        int index, im.tox.proto.Core.FriendName value) {
+        int index, FriendName value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7351,14 +7774,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
      */
     private void setFriendName(
-        int index, im.tox.proto.Core.FriendName.Builder builderForValue) {
+        int index, FriendName.Builder builderForValue) {
       ensureFriendNameIsMutable();
       friendName_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
      */
-    private void addFriendName(im.tox.proto.Core.FriendName value) {
+    private void addFriendName(FriendName value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7369,7 +7792,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
      */
     private void addFriendName(
-        int index, im.tox.proto.Core.FriendName value) {
+        int index, FriendName value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7380,7 +7803,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
      */
     private void addFriendName(
-        im.tox.proto.Core.FriendName.Builder builderForValue) {
+        FriendName.Builder builderForValue) {
       ensureFriendNameIsMutable();
       friendName_.add(builderForValue.build());
     }
@@ -7388,7 +7811,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
      */
     private void addFriendName(
-        int index, im.tox.proto.Core.FriendName.Builder builderForValue) {
+        int index, FriendName.Builder builderForValue) {
       ensureFriendNameIsMutable();
       friendName_.add(index, builderForValue.build());
     }
@@ -7396,7 +7819,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
      */
     private void addAllFriendName(
-        java.lang.Iterable<? extends im.tox.proto.Core.FriendName> values) {
+        Iterable<? extends FriendName> values) {
       ensureFriendNameIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, friendName_);
@@ -7416,17 +7839,17 @@ public final class Core {
     }
 
     public static final int FRIEND_STATUS_MESSAGE_FIELD_NUMBER = 3;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FriendStatusMessage> friendStatusMessage_;
+    private com.google.protobuf.Internal.ProtobufList<FriendStatusMessage> friendStatusMessage_;
     /**
      * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
      */
-    public java.util.List<im.tox.proto.Core.FriendStatusMessage> getFriendStatusMessageList() {
+    public java.util.List<FriendStatusMessage> getFriendStatusMessageList() {
       return friendStatusMessage_;
     }
     /**
      * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.FriendStatusMessageOrBuilder> 
+    public java.util.List<? extends FriendStatusMessageOrBuilder>
         getFriendStatusMessageOrBuilderList() {
       return friendStatusMessage_;
     }
@@ -7439,13 +7862,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
      */
-    public im.tox.proto.Core.FriendStatusMessage getFriendStatusMessage(int index) {
+    public FriendStatusMessage getFriendStatusMessage(int index) {
       return friendStatusMessage_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
      */
-    public im.tox.proto.Core.FriendStatusMessageOrBuilder getFriendStatusMessageOrBuilder(
+    public FriendStatusMessageOrBuilder getFriendStatusMessageOrBuilder(
         int index) {
       return friendStatusMessage_.get(index);
     }
@@ -7460,7 +7883,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
      */
     private void setFriendStatusMessage(
-        int index, im.tox.proto.Core.FriendStatusMessage value) {
+        int index, FriendStatusMessage value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7471,14 +7894,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
      */
     private void setFriendStatusMessage(
-        int index, im.tox.proto.Core.FriendStatusMessage.Builder builderForValue) {
+        int index, FriendStatusMessage.Builder builderForValue) {
       ensureFriendStatusMessageIsMutable();
       friendStatusMessage_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
      */
-    private void addFriendStatusMessage(im.tox.proto.Core.FriendStatusMessage value) {
+    private void addFriendStatusMessage(FriendStatusMessage value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7489,7 +7912,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
      */
     private void addFriendStatusMessage(
-        int index, im.tox.proto.Core.FriendStatusMessage value) {
+        int index, FriendStatusMessage value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7500,7 +7923,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
      */
     private void addFriendStatusMessage(
-        im.tox.proto.Core.FriendStatusMessage.Builder builderForValue) {
+        FriendStatusMessage.Builder builderForValue) {
       ensureFriendStatusMessageIsMutable();
       friendStatusMessage_.add(builderForValue.build());
     }
@@ -7508,7 +7931,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
      */
     private void addFriendStatusMessage(
-        int index, im.tox.proto.Core.FriendStatusMessage.Builder builderForValue) {
+        int index, FriendStatusMessage.Builder builderForValue) {
       ensureFriendStatusMessageIsMutable();
       friendStatusMessage_.add(index, builderForValue.build());
     }
@@ -7516,7 +7939,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
      */
     private void addAllFriendStatusMessage(
-        java.lang.Iterable<? extends im.tox.proto.Core.FriendStatusMessage> values) {
+        Iterable<? extends FriendStatusMessage> values) {
       ensureFriendStatusMessageIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, friendStatusMessage_);
@@ -7536,17 +7959,17 @@ public final class Core {
     }
 
     public static final int FRIEND_STATUS_FIELD_NUMBER = 4;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FriendStatus> friendStatus_;
+    private com.google.protobuf.Internal.ProtobufList<FriendStatus> friendStatus_;
     /**
      * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
      */
-    public java.util.List<im.tox.proto.Core.FriendStatus> getFriendStatusList() {
+    public java.util.List<FriendStatus> getFriendStatusList() {
       return friendStatus_;
     }
     /**
      * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.FriendStatusOrBuilder> 
+    public java.util.List<? extends FriendStatusOrBuilder>
         getFriendStatusOrBuilderList() {
       return friendStatus_;
     }
@@ -7559,13 +7982,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
      */
-    public im.tox.proto.Core.FriendStatus getFriendStatus(int index) {
+    public FriendStatus getFriendStatus(int index) {
       return friendStatus_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
      */
-    public im.tox.proto.Core.FriendStatusOrBuilder getFriendStatusOrBuilder(
+    public FriendStatusOrBuilder getFriendStatusOrBuilder(
         int index) {
       return friendStatus_.get(index);
     }
@@ -7580,7 +8003,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
      */
     private void setFriendStatus(
-        int index, im.tox.proto.Core.FriendStatus value) {
+        int index, FriendStatus value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7591,14 +8014,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
      */
     private void setFriendStatus(
-        int index, im.tox.proto.Core.FriendStatus.Builder builderForValue) {
+        int index, FriendStatus.Builder builderForValue) {
       ensureFriendStatusIsMutable();
       friendStatus_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
      */
-    private void addFriendStatus(im.tox.proto.Core.FriendStatus value) {
+    private void addFriendStatus(FriendStatus value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7609,7 +8032,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
      */
     private void addFriendStatus(
-        int index, im.tox.proto.Core.FriendStatus value) {
+        int index, FriendStatus value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7620,7 +8043,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
      */
     private void addFriendStatus(
-        im.tox.proto.Core.FriendStatus.Builder builderForValue) {
+        FriendStatus.Builder builderForValue) {
       ensureFriendStatusIsMutable();
       friendStatus_.add(builderForValue.build());
     }
@@ -7628,7 +8051,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
      */
     private void addFriendStatus(
-        int index, im.tox.proto.Core.FriendStatus.Builder builderForValue) {
+        int index, FriendStatus.Builder builderForValue) {
       ensureFriendStatusIsMutable();
       friendStatus_.add(index, builderForValue.build());
     }
@@ -7636,7 +8059,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
      */
     private void addAllFriendStatus(
-        java.lang.Iterable<? extends im.tox.proto.Core.FriendStatus> values) {
+        Iterable<? extends FriendStatus> values) {
       ensureFriendStatusIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, friendStatus_);
@@ -7656,17 +8079,17 @@ public final class Core {
     }
 
     public static final int FRIEND_CONNECTION_STATUS_FIELD_NUMBER = 5;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FriendConnectionStatus> friendConnectionStatus_;
+    private com.google.protobuf.Internal.ProtobufList<FriendConnectionStatus> friendConnectionStatus_;
     /**
      * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
      */
-    public java.util.List<im.tox.proto.Core.FriendConnectionStatus> getFriendConnectionStatusList() {
+    public java.util.List<FriendConnectionStatus> getFriendConnectionStatusList() {
       return friendConnectionStatus_;
     }
     /**
      * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.FriendConnectionStatusOrBuilder> 
+    public java.util.List<? extends FriendConnectionStatusOrBuilder>
         getFriendConnectionStatusOrBuilderList() {
       return friendConnectionStatus_;
     }
@@ -7679,13 +8102,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
      */
-    public im.tox.proto.Core.FriendConnectionStatus getFriendConnectionStatus(int index) {
+    public FriendConnectionStatus getFriendConnectionStatus(int index) {
       return friendConnectionStatus_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
      */
-    public im.tox.proto.Core.FriendConnectionStatusOrBuilder getFriendConnectionStatusOrBuilder(
+    public FriendConnectionStatusOrBuilder getFriendConnectionStatusOrBuilder(
         int index) {
       return friendConnectionStatus_.get(index);
     }
@@ -7700,7 +8123,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
      */
     private void setFriendConnectionStatus(
-        int index, im.tox.proto.Core.FriendConnectionStatus value) {
+        int index, FriendConnectionStatus value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7711,14 +8134,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
      */
     private void setFriendConnectionStatus(
-        int index, im.tox.proto.Core.FriendConnectionStatus.Builder builderForValue) {
+        int index, FriendConnectionStatus.Builder builderForValue) {
       ensureFriendConnectionStatusIsMutable();
       friendConnectionStatus_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
      */
-    private void addFriendConnectionStatus(im.tox.proto.Core.FriendConnectionStatus value) {
+    private void addFriendConnectionStatus(FriendConnectionStatus value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7729,7 +8152,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
      */
     private void addFriendConnectionStatus(
-        int index, im.tox.proto.Core.FriendConnectionStatus value) {
+        int index, FriendConnectionStatus value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7740,7 +8163,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
      */
     private void addFriendConnectionStatus(
-        im.tox.proto.Core.FriendConnectionStatus.Builder builderForValue) {
+        FriendConnectionStatus.Builder builderForValue) {
       ensureFriendConnectionStatusIsMutable();
       friendConnectionStatus_.add(builderForValue.build());
     }
@@ -7748,7 +8171,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
      */
     private void addFriendConnectionStatus(
-        int index, im.tox.proto.Core.FriendConnectionStatus.Builder builderForValue) {
+        int index, FriendConnectionStatus.Builder builderForValue) {
       ensureFriendConnectionStatusIsMutable();
       friendConnectionStatus_.add(index, builderForValue.build());
     }
@@ -7756,7 +8179,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
      */
     private void addAllFriendConnectionStatus(
-        java.lang.Iterable<? extends im.tox.proto.Core.FriendConnectionStatus> values) {
+        Iterable<? extends FriendConnectionStatus> values) {
       ensureFriendConnectionStatusIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, friendConnectionStatus_);
@@ -7776,17 +8199,17 @@ public final class Core {
     }
 
     public static final int FRIEND_TYPING_FIELD_NUMBER = 6;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FriendTyping> friendTyping_;
+    private com.google.protobuf.Internal.ProtobufList<FriendTyping> friendTyping_;
     /**
      * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
      */
-    public java.util.List<im.tox.proto.Core.FriendTyping> getFriendTypingList() {
+    public java.util.List<FriendTyping> getFriendTypingList() {
       return friendTyping_;
     }
     /**
      * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.FriendTypingOrBuilder> 
+    public java.util.List<? extends FriendTypingOrBuilder>
         getFriendTypingOrBuilderList() {
       return friendTyping_;
     }
@@ -7799,13 +8222,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
      */
-    public im.tox.proto.Core.FriendTyping getFriendTyping(int index) {
+    public FriendTyping getFriendTyping(int index) {
       return friendTyping_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
      */
-    public im.tox.proto.Core.FriendTypingOrBuilder getFriendTypingOrBuilder(
+    public FriendTypingOrBuilder getFriendTypingOrBuilder(
         int index) {
       return friendTyping_.get(index);
     }
@@ -7820,7 +8243,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
      */
     private void setFriendTyping(
-        int index, im.tox.proto.Core.FriendTyping value) {
+        int index, FriendTyping value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7831,14 +8254,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
      */
     private void setFriendTyping(
-        int index, im.tox.proto.Core.FriendTyping.Builder builderForValue) {
+        int index, FriendTyping.Builder builderForValue) {
       ensureFriendTypingIsMutable();
       friendTyping_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
      */
-    private void addFriendTyping(im.tox.proto.Core.FriendTyping value) {
+    private void addFriendTyping(FriendTyping value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7849,7 +8272,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
      */
     private void addFriendTyping(
-        int index, im.tox.proto.Core.FriendTyping value) {
+        int index, FriendTyping value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7860,7 +8283,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
      */
     private void addFriendTyping(
-        im.tox.proto.Core.FriendTyping.Builder builderForValue) {
+        FriendTyping.Builder builderForValue) {
       ensureFriendTypingIsMutable();
       friendTyping_.add(builderForValue.build());
     }
@@ -7868,7 +8291,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
      */
     private void addFriendTyping(
-        int index, im.tox.proto.Core.FriendTyping.Builder builderForValue) {
+        int index, FriendTyping.Builder builderForValue) {
       ensureFriendTypingIsMutable();
       friendTyping_.add(index, builderForValue.build());
     }
@@ -7876,7 +8299,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
      */
     private void addAllFriendTyping(
-        java.lang.Iterable<? extends im.tox.proto.Core.FriendTyping> values) {
+        Iterable<? extends FriendTyping> values) {
       ensureFriendTypingIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, friendTyping_);
@@ -7896,17 +8319,17 @@ public final class Core {
     }
 
     public static final int FRIEND_READ_RECEIPT_FIELD_NUMBER = 7;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FriendReadReceipt> friendReadReceipt_;
+    private com.google.protobuf.Internal.ProtobufList<FriendReadReceipt> friendReadReceipt_;
     /**
      * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
      */
-    public java.util.List<im.tox.proto.Core.FriendReadReceipt> getFriendReadReceiptList() {
+    public java.util.List<FriendReadReceipt> getFriendReadReceiptList() {
       return friendReadReceipt_;
     }
     /**
      * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.FriendReadReceiptOrBuilder> 
+    public java.util.List<? extends FriendReadReceiptOrBuilder>
         getFriendReadReceiptOrBuilderList() {
       return friendReadReceipt_;
     }
@@ -7919,13 +8342,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
      */
-    public im.tox.proto.Core.FriendReadReceipt getFriendReadReceipt(int index) {
+    public FriendReadReceipt getFriendReadReceipt(int index) {
       return friendReadReceipt_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
      */
-    public im.tox.proto.Core.FriendReadReceiptOrBuilder getFriendReadReceiptOrBuilder(
+    public FriendReadReceiptOrBuilder getFriendReadReceiptOrBuilder(
         int index) {
       return friendReadReceipt_.get(index);
     }
@@ -7940,7 +8363,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
      */
     private void setFriendReadReceipt(
-        int index, im.tox.proto.Core.FriendReadReceipt value) {
+        int index, FriendReadReceipt value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7951,14 +8374,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
      */
     private void setFriendReadReceipt(
-        int index, im.tox.proto.Core.FriendReadReceipt.Builder builderForValue) {
+        int index, FriendReadReceipt.Builder builderForValue) {
       ensureFriendReadReceiptIsMutable();
       friendReadReceipt_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
      */
-    private void addFriendReadReceipt(im.tox.proto.Core.FriendReadReceipt value) {
+    private void addFriendReadReceipt(FriendReadReceipt value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7969,7 +8392,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
      */
     private void addFriendReadReceipt(
-        int index, im.tox.proto.Core.FriendReadReceipt value) {
+        int index, FriendReadReceipt value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7980,7 +8403,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
      */
     private void addFriendReadReceipt(
-        im.tox.proto.Core.FriendReadReceipt.Builder builderForValue) {
+        FriendReadReceipt.Builder builderForValue) {
       ensureFriendReadReceiptIsMutable();
       friendReadReceipt_.add(builderForValue.build());
     }
@@ -7988,7 +8411,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
      */
     private void addFriendReadReceipt(
-        int index, im.tox.proto.Core.FriendReadReceipt.Builder builderForValue) {
+        int index, FriendReadReceipt.Builder builderForValue) {
       ensureFriendReadReceiptIsMutable();
       friendReadReceipt_.add(index, builderForValue.build());
     }
@@ -7996,7 +8419,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
      */
     private void addAllFriendReadReceipt(
-        java.lang.Iterable<? extends im.tox.proto.Core.FriendReadReceipt> values) {
+        Iterable<? extends FriendReadReceipt> values) {
       ensureFriendReadReceiptIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, friendReadReceipt_);
@@ -8016,17 +8439,17 @@ public final class Core {
     }
 
     public static final int FRIEND_REQUEST_FIELD_NUMBER = 8;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FriendRequest> friendRequest_;
+    private com.google.protobuf.Internal.ProtobufList<FriendRequest> friendRequest_;
     /**
      * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
      */
-    public java.util.List<im.tox.proto.Core.FriendRequest> getFriendRequestList() {
+    public java.util.List<FriendRequest> getFriendRequestList() {
       return friendRequest_;
     }
     /**
      * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.FriendRequestOrBuilder> 
+    public java.util.List<? extends FriendRequestOrBuilder>
         getFriendRequestOrBuilderList() {
       return friendRequest_;
     }
@@ -8039,13 +8462,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
      */
-    public im.tox.proto.Core.FriendRequest getFriendRequest(int index) {
+    public FriendRequest getFriendRequest(int index) {
       return friendRequest_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
      */
-    public im.tox.proto.Core.FriendRequestOrBuilder getFriendRequestOrBuilder(
+    public FriendRequestOrBuilder getFriendRequestOrBuilder(
         int index) {
       return friendRequest_.get(index);
     }
@@ -8060,7 +8483,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
      */
     private void setFriendRequest(
-        int index, im.tox.proto.Core.FriendRequest value) {
+        int index, FriendRequest value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8071,14 +8494,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
      */
     private void setFriendRequest(
-        int index, im.tox.proto.Core.FriendRequest.Builder builderForValue) {
+        int index, FriendRequest.Builder builderForValue) {
       ensureFriendRequestIsMutable();
       friendRequest_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
      */
-    private void addFriendRequest(im.tox.proto.Core.FriendRequest value) {
+    private void addFriendRequest(FriendRequest value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8089,7 +8512,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
      */
     private void addFriendRequest(
-        int index, im.tox.proto.Core.FriendRequest value) {
+        int index, FriendRequest value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8100,7 +8523,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
      */
     private void addFriendRequest(
-        im.tox.proto.Core.FriendRequest.Builder builderForValue) {
+        FriendRequest.Builder builderForValue) {
       ensureFriendRequestIsMutable();
       friendRequest_.add(builderForValue.build());
     }
@@ -8108,7 +8531,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
      */
     private void addFriendRequest(
-        int index, im.tox.proto.Core.FriendRequest.Builder builderForValue) {
+        int index, FriendRequest.Builder builderForValue) {
       ensureFriendRequestIsMutable();
       friendRequest_.add(index, builderForValue.build());
     }
@@ -8116,7 +8539,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
      */
     private void addAllFriendRequest(
-        java.lang.Iterable<? extends im.tox.proto.Core.FriendRequest> values) {
+        Iterable<? extends FriendRequest> values) {
       ensureFriendRequestIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, friendRequest_);
@@ -8136,17 +8559,17 @@ public final class Core {
     }
 
     public static final int FRIEND_MESSAGE_FIELD_NUMBER = 9;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FriendMessage> friendMessage_;
+    private com.google.protobuf.Internal.ProtobufList<FriendMessage> friendMessage_;
     /**
      * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
      */
-    public java.util.List<im.tox.proto.Core.FriendMessage> getFriendMessageList() {
+    public java.util.List<FriendMessage> getFriendMessageList() {
       return friendMessage_;
     }
     /**
      * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.FriendMessageOrBuilder> 
+    public java.util.List<? extends FriendMessageOrBuilder>
         getFriendMessageOrBuilderList() {
       return friendMessage_;
     }
@@ -8159,13 +8582,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
      */
-    public im.tox.proto.Core.FriendMessage getFriendMessage(int index) {
+    public FriendMessage getFriendMessage(int index) {
       return friendMessage_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
      */
-    public im.tox.proto.Core.FriendMessageOrBuilder getFriendMessageOrBuilder(
+    public FriendMessageOrBuilder getFriendMessageOrBuilder(
         int index) {
       return friendMessage_.get(index);
     }
@@ -8180,7 +8603,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
      */
     private void setFriendMessage(
-        int index, im.tox.proto.Core.FriendMessage value) {
+        int index, FriendMessage value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8191,14 +8614,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
      */
     private void setFriendMessage(
-        int index, im.tox.proto.Core.FriendMessage.Builder builderForValue) {
+        int index, FriendMessage.Builder builderForValue) {
       ensureFriendMessageIsMutable();
       friendMessage_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
      */
-    private void addFriendMessage(im.tox.proto.Core.FriendMessage value) {
+    private void addFriendMessage(FriendMessage value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8209,7 +8632,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
      */
     private void addFriendMessage(
-        int index, im.tox.proto.Core.FriendMessage value) {
+        int index, FriendMessage value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8220,7 +8643,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
      */
     private void addFriendMessage(
-        im.tox.proto.Core.FriendMessage.Builder builderForValue) {
+        FriendMessage.Builder builderForValue) {
       ensureFriendMessageIsMutable();
       friendMessage_.add(builderForValue.build());
     }
@@ -8228,7 +8651,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
      */
     private void addFriendMessage(
-        int index, im.tox.proto.Core.FriendMessage.Builder builderForValue) {
+        int index, FriendMessage.Builder builderForValue) {
       ensureFriendMessageIsMutable();
       friendMessage_.add(index, builderForValue.build());
     }
@@ -8236,7 +8659,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
      */
     private void addAllFriendMessage(
-        java.lang.Iterable<? extends im.tox.proto.Core.FriendMessage> values) {
+        Iterable<? extends FriendMessage> values) {
       ensureFriendMessageIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, friendMessage_);
@@ -8256,17 +8679,17 @@ public final class Core {
     }
 
     public static final int FILE_RECV_CONTROL_FIELD_NUMBER = 10;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FileRecvControl> fileRecvControl_;
+    private com.google.protobuf.Internal.ProtobufList<FileRecvControl> fileRecvControl_;
     /**
      * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
      */
-    public java.util.List<im.tox.proto.Core.FileRecvControl> getFileRecvControlList() {
+    public java.util.List<FileRecvControl> getFileRecvControlList() {
       return fileRecvControl_;
     }
     /**
      * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.FileRecvControlOrBuilder> 
+    public java.util.List<? extends FileRecvControlOrBuilder>
         getFileRecvControlOrBuilderList() {
       return fileRecvControl_;
     }
@@ -8279,13 +8702,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
      */
-    public im.tox.proto.Core.FileRecvControl getFileRecvControl(int index) {
+    public FileRecvControl getFileRecvControl(int index) {
       return fileRecvControl_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
      */
-    public im.tox.proto.Core.FileRecvControlOrBuilder getFileRecvControlOrBuilder(
+    public FileRecvControlOrBuilder getFileRecvControlOrBuilder(
         int index) {
       return fileRecvControl_.get(index);
     }
@@ -8300,7 +8723,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
      */
     private void setFileRecvControl(
-        int index, im.tox.proto.Core.FileRecvControl value) {
+        int index, FileRecvControl value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8311,14 +8734,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
      */
     private void setFileRecvControl(
-        int index, im.tox.proto.Core.FileRecvControl.Builder builderForValue) {
+        int index, FileRecvControl.Builder builderForValue) {
       ensureFileRecvControlIsMutable();
       fileRecvControl_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
      */
-    private void addFileRecvControl(im.tox.proto.Core.FileRecvControl value) {
+    private void addFileRecvControl(FileRecvControl value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8329,7 +8752,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
      */
     private void addFileRecvControl(
-        int index, im.tox.proto.Core.FileRecvControl value) {
+        int index, FileRecvControl value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8340,7 +8763,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
      */
     private void addFileRecvControl(
-        im.tox.proto.Core.FileRecvControl.Builder builderForValue) {
+        FileRecvControl.Builder builderForValue) {
       ensureFileRecvControlIsMutable();
       fileRecvControl_.add(builderForValue.build());
     }
@@ -8348,7 +8771,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
      */
     private void addFileRecvControl(
-        int index, im.tox.proto.Core.FileRecvControl.Builder builderForValue) {
+        int index, FileRecvControl.Builder builderForValue) {
       ensureFileRecvControlIsMutable();
       fileRecvControl_.add(index, builderForValue.build());
     }
@@ -8356,7 +8779,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
      */
     private void addAllFileRecvControl(
-        java.lang.Iterable<? extends im.tox.proto.Core.FileRecvControl> values) {
+        Iterable<? extends FileRecvControl> values) {
       ensureFileRecvControlIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, fileRecvControl_);
@@ -8376,17 +8799,17 @@ public final class Core {
     }
 
     public static final int FILE_CHUNK_REQUEST_FIELD_NUMBER = 11;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FileChunkRequest> fileChunkRequest_;
+    private com.google.protobuf.Internal.ProtobufList<FileChunkRequest> fileChunkRequest_;
     /**
      * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
      */
-    public java.util.List<im.tox.proto.Core.FileChunkRequest> getFileChunkRequestList() {
+    public java.util.List<FileChunkRequest> getFileChunkRequestList() {
       return fileChunkRequest_;
     }
     /**
      * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.FileChunkRequestOrBuilder> 
+    public java.util.List<? extends FileChunkRequestOrBuilder>
         getFileChunkRequestOrBuilderList() {
       return fileChunkRequest_;
     }
@@ -8399,13 +8822,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
      */
-    public im.tox.proto.Core.FileChunkRequest getFileChunkRequest(int index) {
+    public FileChunkRequest getFileChunkRequest(int index) {
       return fileChunkRequest_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
      */
-    public im.tox.proto.Core.FileChunkRequestOrBuilder getFileChunkRequestOrBuilder(
+    public FileChunkRequestOrBuilder getFileChunkRequestOrBuilder(
         int index) {
       return fileChunkRequest_.get(index);
     }
@@ -8420,7 +8843,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
      */
     private void setFileChunkRequest(
-        int index, im.tox.proto.Core.FileChunkRequest value) {
+        int index, FileChunkRequest value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8431,14 +8854,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
      */
     private void setFileChunkRequest(
-        int index, im.tox.proto.Core.FileChunkRequest.Builder builderForValue) {
+        int index, FileChunkRequest.Builder builderForValue) {
       ensureFileChunkRequestIsMutable();
       fileChunkRequest_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
      */
-    private void addFileChunkRequest(im.tox.proto.Core.FileChunkRequest value) {
+    private void addFileChunkRequest(FileChunkRequest value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8449,7 +8872,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
      */
     private void addFileChunkRequest(
-        int index, im.tox.proto.Core.FileChunkRequest value) {
+        int index, FileChunkRequest value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8460,7 +8883,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
      */
     private void addFileChunkRequest(
-        im.tox.proto.Core.FileChunkRequest.Builder builderForValue) {
+        FileChunkRequest.Builder builderForValue) {
       ensureFileChunkRequestIsMutable();
       fileChunkRequest_.add(builderForValue.build());
     }
@@ -8468,7 +8891,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
      */
     private void addFileChunkRequest(
-        int index, im.tox.proto.Core.FileChunkRequest.Builder builderForValue) {
+        int index, FileChunkRequest.Builder builderForValue) {
       ensureFileChunkRequestIsMutable();
       fileChunkRequest_.add(index, builderForValue.build());
     }
@@ -8476,7 +8899,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
      */
     private void addAllFileChunkRequest(
-        java.lang.Iterable<? extends im.tox.proto.Core.FileChunkRequest> values) {
+        Iterable<? extends FileChunkRequest> values) {
       ensureFileChunkRequestIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, fileChunkRequest_);
@@ -8496,17 +8919,17 @@ public final class Core {
     }
 
     public static final int FILE_RECV_FIELD_NUMBER = 12;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FileRecv> fileRecv_;
+    private com.google.protobuf.Internal.ProtobufList<FileRecv> fileRecv_;
     /**
      * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
      */
-    public java.util.List<im.tox.proto.Core.FileRecv> getFileRecvList() {
+    public java.util.List<FileRecv> getFileRecvList() {
       return fileRecv_;
     }
     /**
      * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.FileRecvOrBuilder> 
+    public java.util.List<? extends FileRecvOrBuilder>
         getFileRecvOrBuilderList() {
       return fileRecv_;
     }
@@ -8519,13 +8942,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
      */
-    public im.tox.proto.Core.FileRecv getFileRecv(int index) {
+    public FileRecv getFileRecv(int index) {
       return fileRecv_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
      */
-    public im.tox.proto.Core.FileRecvOrBuilder getFileRecvOrBuilder(
+    public FileRecvOrBuilder getFileRecvOrBuilder(
         int index) {
       return fileRecv_.get(index);
     }
@@ -8540,7 +8963,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
      */
     private void setFileRecv(
-        int index, im.tox.proto.Core.FileRecv value) {
+        int index, FileRecv value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8551,14 +8974,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
      */
     private void setFileRecv(
-        int index, im.tox.proto.Core.FileRecv.Builder builderForValue) {
+        int index, FileRecv.Builder builderForValue) {
       ensureFileRecvIsMutable();
       fileRecv_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
      */
-    private void addFileRecv(im.tox.proto.Core.FileRecv value) {
+    private void addFileRecv(FileRecv value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8569,7 +8992,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
      */
     private void addFileRecv(
-        int index, im.tox.proto.Core.FileRecv value) {
+        int index, FileRecv value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8580,7 +9003,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
      */
     private void addFileRecv(
-        im.tox.proto.Core.FileRecv.Builder builderForValue) {
+        FileRecv.Builder builderForValue) {
       ensureFileRecvIsMutable();
       fileRecv_.add(builderForValue.build());
     }
@@ -8588,7 +9011,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
      */
     private void addFileRecv(
-        int index, im.tox.proto.Core.FileRecv.Builder builderForValue) {
+        int index, FileRecv.Builder builderForValue) {
       ensureFileRecvIsMutable();
       fileRecv_.add(index, builderForValue.build());
     }
@@ -8596,7 +9019,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
      */
     private void addAllFileRecv(
-        java.lang.Iterable<? extends im.tox.proto.Core.FileRecv> values) {
+        Iterable<? extends FileRecv> values) {
       ensureFileRecvIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, fileRecv_);
@@ -8616,17 +9039,17 @@ public final class Core {
     }
 
     public static final int FILE_RECV_CHUNK_FIELD_NUMBER = 13;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FileRecvChunk> fileRecvChunk_;
+    private com.google.protobuf.Internal.ProtobufList<FileRecvChunk> fileRecvChunk_;
     /**
      * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
      */
-    public java.util.List<im.tox.proto.Core.FileRecvChunk> getFileRecvChunkList() {
+    public java.util.List<FileRecvChunk> getFileRecvChunkList() {
       return fileRecvChunk_;
     }
     /**
      * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.FileRecvChunkOrBuilder> 
+    public java.util.List<? extends FileRecvChunkOrBuilder>
         getFileRecvChunkOrBuilderList() {
       return fileRecvChunk_;
     }
@@ -8639,13 +9062,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
      */
-    public im.tox.proto.Core.FileRecvChunk getFileRecvChunk(int index) {
+    public FileRecvChunk getFileRecvChunk(int index) {
       return fileRecvChunk_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
      */
-    public im.tox.proto.Core.FileRecvChunkOrBuilder getFileRecvChunkOrBuilder(
+    public FileRecvChunkOrBuilder getFileRecvChunkOrBuilder(
         int index) {
       return fileRecvChunk_.get(index);
     }
@@ -8660,7 +9083,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
      */
     private void setFileRecvChunk(
-        int index, im.tox.proto.Core.FileRecvChunk value) {
+        int index, FileRecvChunk value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8671,14 +9094,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
      */
     private void setFileRecvChunk(
-        int index, im.tox.proto.Core.FileRecvChunk.Builder builderForValue) {
+        int index, FileRecvChunk.Builder builderForValue) {
       ensureFileRecvChunkIsMutable();
       fileRecvChunk_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
      */
-    private void addFileRecvChunk(im.tox.proto.Core.FileRecvChunk value) {
+    private void addFileRecvChunk(FileRecvChunk value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8689,7 +9112,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
      */
     private void addFileRecvChunk(
-        int index, im.tox.proto.Core.FileRecvChunk value) {
+        int index, FileRecvChunk value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8700,7 +9123,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
      */
     private void addFileRecvChunk(
-        im.tox.proto.Core.FileRecvChunk.Builder builderForValue) {
+        FileRecvChunk.Builder builderForValue) {
       ensureFileRecvChunkIsMutable();
       fileRecvChunk_.add(builderForValue.build());
     }
@@ -8708,7 +9131,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
      */
     private void addFileRecvChunk(
-        int index, im.tox.proto.Core.FileRecvChunk.Builder builderForValue) {
+        int index, FileRecvChunk.Builder builderForValue) {
       ensureFileRecvChunkIsMutable();
       fileRecvChunk_.add(index, builderForValue.build());
     }
@@ -8716,7 +9139,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
      */
     private void addAllFileRecvChunk(
-        java.lang.Iterable<? extends im.tox.proto.Core.FileRecvChunk> values) {
+        Iterable<? extends FileRecvChunk> values) {
       ensureFileRecvChunkIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, fileRecvChunk_);
@@ -8736,17 +9159,17 @@ public final class Core {
     }
 
     public static final int FRIEND_LOSSY_PACKET_FIELD_NUMBER = 14;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FriendLossyPacket> friendLossyPacket_;
+    private com.google.protobuf.Internal.ProtobufList<FriendLossyPacket> friendLossyPacket_;
     /**
      * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
      */
-    public java.util.List<im.tox.proto.Core.FriendLossyPacket> getFriendLossyPacketList() {
+    public java.util.List<FriendLossyPacket> getFriendLossyPacketList() {
       return friendLossyPacket_;
     }
     /**
      * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.FriendLossyPacketOrBuilder> 
+    public java.util.List<? extends FriendLossyPacketOrBuilder>
         getFriendLossyPacketOrBuilderList() {
       return friendLossyPacket_;
     }
@@ -8759,13 +9182,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
      */
-    public im.tox.proto.Core.FriendLossyPacket getFriendLossyPacket(int index) {
+    public FriendLossyPacket getFriendLossyPacket(int index) {
       return friendLossyPacket_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
      */
-    public im.tox.proto.Core.FriendLossyPacketOrBuilder getFriendLossyPacketOrBuilder(
+    public FriendLossyPacketOrBuilder getFriendLossyPacketOrBuilder(
         int index) {
       return friendLossyPacket_.get(index);
     }
@@ -8780,7 +9203,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
      */
     private void setFriendLossyPacket(
-        int index, im.tox.proto.Core.FriendLossyPacket value) {
+        int index, FriendLossyPacket value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8791,14 +9214,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
      */
     private void setFriendLossyPacket(
-        int index, im.tox.proto.Core.FriendLossyPacket.Builder builderForValue) {
+        int index, FriendLossyPacket.Builder builderForValue) {
       ensureFriendLossyPacketIsMutable();
       friendLossyPacket_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
      */
-    private void addFriendLossyPacket(im.tox.proto.Core.FriendLossyPacket value) {
+    private void addFriendLossyPacket(FriendLossyPacket value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8809,7 +9232,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
      */
     private void addFriendLossyPacket(
-        int index, im.tox.proto.Core.FriendLossyPacket value) {
+        int index, FriendLossyPacket value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8820,7 +9243,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
      */
     private void addFriendLossyPacket(
-        im.tox.proto.Core.FriendLossyPacket.Builder builderForValue) {
+        FriendLossyPacket.Builder builderForValue) {
       ensureFriendLossyPacketIsMutable();
       friendLossyPacket_.add(builderForValue.build());
     }
@@ -8828,7 +9251,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
      */
     private void addFriendLossyPacket(
-        int index, im.tox.proto.Core.FriendLossyPacket.Builder builderForValue) {
+        int index, FriendLossyPacket.Builder builderForValue) {
       ensureFriendLossyPacketIsMutable();
       friendLossyPacket_.add(index, builderForValue.build());
     }
@@ -8836,7 +9259,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
      */
     private void addAllFriendLossyPacket(
-        java.lang.Iterable<? extends im.tox.proto.Core.FriendLossyPacket> values) {
+        Iterable<? extends FriendLossyPacket> values) {
       ensureFriendLossyPacketIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, friendLossyPacket_);
@@ -8856,17 +9279,17 @@ public final class Core {
     }
 
     public static final int FRIEND_LOSSLESS_PACKET_FIELD_NUMBER = 15;
-    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FriendLosslessPacket> friendLosslessPacket_;
+    private com.google.protobuf.Internal.ProtobufList<FriendLosslessPacket> friendLosslessPacket_;
     /**
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
-    public java.util.List<im.tox.proto.Core.FriendLosslessPacket> getFriendLosslessPacketList() {
+    public java.util.List<FriendLosslessPacket> getFriendLosslessPacketList() {
       return friendLosslessPacket_;
     }
     /**
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
-    public java.util.List<? extends im.tox.proto.Core.FriendLosslessPacketOrBuilder> 
+    public java.util.List<? extends FriendLosslessPacketOrBuilder>
         getFriendLosslessPacketOrBuilderList() {
       return friendLosslessPacket_;
     }
@@ -8879,13 +9302,13 @@ public final class Core {
     /**
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
-    public im.tox.proto.Core.FriendLosslessPacket getFriendLosslessPacket(int index) {
+    public FriendLosslessPacket getFriendLosslessPacket(int index) {
       return friendLosslessPacket_.get(index);
     }
     /**
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
-    public im.tox.proto.Core.FriendLosslessPacketOrBuilder getFriendLosslessPacketOrBuilder(
+    public FriendLosslessPacketOrBuilder getFriendLosslessPacketOrBuilder(
         int index) {
       return friendLosslessPacket_.get(index);
     }
@@ -8900,7 +9323,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
     private void setFriendLosslessPacket(
-        int index, im.tox.proto.Core.FriendLosslessPacket value) {
+        int index, FriendLosslessPacket value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8911,14 +9334,14 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
     private void setFriendLosslessPacket(
-        int index, im.tox.proto.Core.FriendLosslessPacket.Builder builderForValue) {
+        int index, FriendLosslessPacket.Builder builderForValue) {
       ensureFriendLosslessPacketIsMutable();
       friendLosslessPacket_.set(index, builderForValue.build());
     }
     /**
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
-    private void addFriendLosslessPacket(im.tox.proto.Core.FriendLosslessPacket value) {
+    private void addFriendLosslessPacket(FriendLosslessPacket value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8929,7 +9352,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
     private void addFriendLosslessPacket(
-        int index, im.tox.proto.Core.FriendLosslessPacket value) {
+        int index, FriendLosslessPacket value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -8940,7 +9363,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
     private void addFriendLosslessPacket(
-        im.tox.proto.Core.FriendLosslessPacket.Builder builderForValue) {
+        FriendLosslessPacket.Builder builderForValue) {
       ensureFriendLosslessPacketIsMutable();
       friendLosslessPacket_.add(builderForValue.build());
     }
@@ -8948,7 +9371,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
     private void addFriendLosslessPacket(
-        int index, im.tox.proto.Core.FriendLosslessPacket.Builder builderForValue) {
+        int index, FriendLosslessPacket.Builder builderForValue) {
       ensureFriendLosslessPacketIsMutable();
       friendLosslessPacket_.add(index, builderForValue.build());
     }
@@ -8956,7 +9379,7 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
     private void addAllFriendLosslessPacket(
-        java.lang.Iterable<? extends im.tox.proto.Core.FriendLosslessPacket> values) {
+        Iterable<? extends FriendLosslessPacket> values) {
       ensureFriendLosslessPacketIsMutable();
       com.google.protobuf.AbstractMessageLite.addAll(
           values, friendLosslessPacket_);
@@ -8973,6 +9396,126 @@ public final class Core {
     private void removeFriendLosslessPacket(int index) {
       ensureFriendLosslessPacketIsMutable();
       friendLosslessPacket_.remove(index);
+    }
+
+    public static final int FRIEND_MESSAGE_OFFLINE_FIELD_NUMBER = 16;
+    private com.google.protobuf.Internal.ProtobufList<FriendMessageOffline> friendMessageOffline_;
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    public java.util.List<FriendMessageOffline> getFriendMessageOfflineList() {
+      return friendMessageOffline_;
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    public java.util.List<? extends FriendMessageOfflineOrBuilder>
+        getFriendMessageOfflineOrBuilderList() {
+      return friendMessageOffline_;
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    public int getFriendMessageOfflineCount() {
+      return friendMessageOffline_.size();
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    public FriendMessageOffline getFriendMessageOffline(int index) {
+      return friendMessageOffline_.get(index);
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    public FriendMessageOfflineOrBuilder getFriendMessageOfflineOrBuilder(
+        int index) {
+      return friendMessageOffline_.get(index);
+    }
+    private void ensureFriendMessageOfflineIsMutable() {
+      if (!friendMessageOffline_.isModifiable()) {
+        friendMessageOffline_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(friendMessageOffline_);
+       }
+    }
+
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void setFriendMessageOffline(
+        int index, FriendMessageOffline value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFriendMessageOfflineIsMutable();
+      friendMessageOffline_.set(index, value);
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void setFriendMessageOffline(
+        int index, FriendMessageOffline.Builder builderForValue) {
+      ensureFriendMessageOfflineIsMutable();
+      friendMessageOffline_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void addFriendMessageOffline(FriendMessageOffline value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFriendMessageOfflineIsMutable();
+      friendMessageOffline_.add(value);
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void addFriendMessageOffline(
+        int index, FriendMessageOffline value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFriendMessageOfflineIsMutable();
+      friendMessageOffline_.add(index, value);
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void addFriendMessageOffline(
+        FriendMessageOffline.Builder builderForValue) {
+      ensureFriendMessageOfflineIsMutable();
+      friendMessageOffline_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void addFriendMessageOffline(
+        int index, FriendMessageOffline.Builder builderForValue) {
+      ensureFriendMessageOfflineIsMutable();
+      friendMessageOffline_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void addAllFriendMessageOffline(
+        Iterable<? extends FriendMessageOffline> values) {
+      ensureFriendMessageOfflineIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, friendMessageOffline_);
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void clearFriendMessageOffline() {
+      friendMessageOffline_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void removeFriendMessageOffline(int index) {
+      ensureFriendMessageOfflineIsMutable();
+      friendMessageOffline_.remove(index);
     }
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
@@ -9021,6 +9564,9 @@ public final class Core {
       }
       for (int i = 0; i < friendLosslessPacket_.size(); i++) {
         output.writeMessage(15, friendLosslessPacket_.get(i));
+      }
+      for (int i = 0; i < friendMessageOffline_.size(); i++) {
+        output.writeMessage(16, friendMessageOffline_.get(i));
       }
     }
 
@@ -9089,64 +9635,68 @@ public final class Core {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, friendLosslessPacket_.get(i));
       }
+      for (int i = 0; i < friendMessageOffline_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, friendMessageOffline_.get(i));
+      }
       memoizedSerializedSize = size;
       return size;
     }
 
-    public static im.tox.proto.Core.CoreEvents parseFrom(
+    public static CoreEvents parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.CoreEvents parseFrom(
+    public static CoreEvents parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.CoreEvents parseFrom(byte[] data)
+    public static CoreEvents parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data);
     }
-    public static im.tox.proto.Core.CoreEvents parseFrom(
+    public static CoreEvents parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, data, extensionRegistry);
     }
-    public static im.tox.proto.Core.CoreEvents parseFrom(java.io.InputStream input)
+    public static CoreEvents parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.CoreEvents parseFrom(
+    public static CoreEvents parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.CoreEvents parseDelimitedFrom(java.io.InputStream input)
+    public static CoreEvents parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.CoreEvents parseDelimitedFrom(
+    public static CoreEvents parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
     }
-    public static im.tox.proto.Core.CoreEvents parseFrom(
+    public static CoreEvents parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageLite.parseFrom(
           DEFAULT_INSTANCE, input);
     }
-    public static im.tox.proto.Core.CoreEvents parseFrom(
+    public static CoreEvents parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9157,7 +9707,7 @@ public final class Core {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(im.tox.proto.Core.CoreEvents prototype) {
+    public static Builder newBuilder(CoreEvents prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
 
@@ -9166,9 +9716,9 @@ public final class Core {
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageLite.Builder<
-          im.tox.proto.Core.CoreEvents, Builder> implements
+          CoreEvents, Builder> implements
         // @@protoc_insertion_point(builder_implements:im.tox.proto.CoreEvents)
-        im.tox.proto.Core.CoreEventsOrBuilder {
+        CoreEventsOrBuilder {
       // Construct using im.tox.proto.Core.CoreEvents.newBuilder()
       private Builder() {
         super(DEFAULT_INSTANCE);
@@ -9178,7 +9728,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
        */
-      public java.util.List<im.tox.proto.Core.SelfConnectionStatus> getSelfConnectionStatusList() {
+      public java.util.List<SelfConnectionStatus> getSelfConnectionStatusList() {
         return java.util.Collections.unmodifiableList(
             instance.getSelfConnectionStatusList());
       }
@@ -9190,14 +9740,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
        */
-      public im.tox.proto.Core.SelfConnectionStatus getSelfConnectionStatus(int index) {
+      public SelfConnectionStatus getSelfConnectionStatus(int index) {
         return instance.getSelfConnectionStatus(index);
       }
       /**
        * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
        */
       public Builder setSelfConnectionStatus(
-          int index, im.tox.proto.Core.SelfConnectionStatus value) {
+          int index, SelfConnectionStatus value) {
         copyOnWrite();
         instance.setSelfConnectionStatus(index, value);
         return this;
@@ -9206,7 +9756,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
        */
       public Builder setSelfConnectionStatus(
-          int index, im.tox.proto.Core.SelfConnectionStatus.Builder builderForValue) {
+          int index, SelfConnectionStatus.Builder builderForValue) {
         copyOnWrite();
         instance.setSelfConnectionStatus(index, builderForValue);
         return this;
@@ -9214,7 +9764,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
        */
-      public Builder addSelfConnectionStatus(im.tox.proto.Core.SelfConnectionStatus value) {
+      public Builder addSelfConnectionStatus(SelfConnectionStatus value) {
         copyOnWrite();
         instance.addSelfConnectionStatus(value);
         return this;
@@ -9223,7 +9773,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
        */
       public Builder addSelfConnectionStatus(
-          int index, im.tox.proto.Core.SelfConnectionStatus value) {
+          int index, SelfConnectionStatus value) {
         copyOnWrite();
         instance.addSelfConnectionStatus(index, value);
         return this;
@@ -9232,7 +9782,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
        */
       public Builder addSelfConnectionStatus(
-          im.tox.proto.Core.SelfConnectionStatus.Builder builderForValue) {
+          SelfConnectionStatus.Builder builderForValue) {
         copyOnWrite();
         instance.addSelfConnectionStatus(builderForValue);
         return this;
@@ -9241,7 +9791,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
        */
       public Builder addSelfConnectionStatus(
-          int index, im.tox.proto.Core.SelfConnectionStatus.Builder builderForValue) {
+          int index, SelfConnectionStatus.Builder builderForValue) {
         copyOnWrite();
         instance.addSelfConnectionStatus(index, builderForValue);
         return this;
@@ -9250,7 +9800,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.SelfConnectionStatus self_connection_status = 1;</code>
        */
       public Builder addAllSelfConnectionStatus(
-          java.lang.Iterable<? extends im.tox.proto.Core.SelfConnectionStatus> values) {
+          Iterable<? extends SelfConnectionStatus> values) {
         copyOnWrite();
         instance.addAllSelfConnectionStatus(values);
         return this;
@@ -9275,7 +9825,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
        */
-      public java.util.List<im.tox.proto.Core.FriendName> getFriendNameList() {
+      public java.util.List<FriendName> getFriendNameList() {
         return java.util.Collections.unmodifiableList(
             instance.getFriendNameList());
       }
@@ -9287,14 +9837,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
        */
-      public im.tox.proto.Core.FriendName getFriendName(int index) {
+      public FriendName getFriendName(int index) {
         return instance.getFriendName(index);
       }
       /**
        * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
        */
       public Builder setFriendName(
-          int index, im.tox.proto.Core.FriendName value) {
+          int index, FriendName value) {
         copyOnWrite();
         instance.setFriendName(index, value);
         return this;
@@ -9303,7 +9853,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
        */
       public Builder setFriendName(
-          int index, im.tox.proto.Core.FriendName.Builder builderForValue) {
+          int index, FriendName.Builder builderForValue) {
         copyOnWrite();
         instance.setFriendName(index, builderForValue);
         return this;
@@ -9311,7 +9861,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
        */
-      public Builder addFriendName(im.tox.proto.Core.FriendName value) {
+      public Builder addFriendName(FriendName value) {
         copyOnWrite();
         instance.addFriendName(value);
         return this;
@@ -9320,7 +9870,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
        */
       public Builder addFriendName(
-          int index, im.tox.proto.Core.FriendName value) {
+          int index, FriendName value) {
         copyOnWrite();
         instance.addFriendName(index, value);
         return this;
@@ -9329,7 +9879,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
        */
       public Builder addFriendName(
-          im.tox.proto.Core.FriendName.Builder builderForValue) {
+          FriendName.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendName(builderForValue);
         return this;
@@ -9338,7 +9888,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
        */
       public Builder addFriendName(
-          int index, im.tox.proto.Core.FriendName.Builder builderForValue) {
+          int index, FriendName.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendName(index, builderForValue);
         return this;
@@ -9347,7 +9897,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendName friend_name = 2;</code>
        */
       public Builder addAllFriendName(
-          java.lang.Iterable<? extends im.tox.proto.Core.FriendName> values) {
+          Iterable<? extends FriendName> values) {
         copyOnWrite();
         instance.addAllFriendName(values);
         return this;
@@ -9372,7 +9922,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
        */
-      public java.util.List<im.tox.proto.Core.FriendStatusMessage> getFriendStatusMessageList() {
+      public java.util.List<FriendStatusMessage> getFriendStatusMessageList() {
         return java.util.Collections.unmodifiableList(
             instance.getFriendStatusMessageList());
       }
@@ -9384,14 +9934,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
        */
-      public im.tox.proto.Core.FriendStatusMessage getFriendStatusMessage(int index) {
+      public FriendStatusMessage getFriendStatusMessage(int index) {
         return instance.getFriendStatusMessage(index);
       }
       /**
        * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
        */
       public Builder setFriendStatusMessage(
-          int index, im.tox.proto.Core.FriendStatusMessage value) {
+          int index, FriendStatusMessage value) {
         copyOnWrite();
         instance.setFriendStatusMessage(index, value);
         return this;
@@ -9400,7 +9950,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
        */
       public Builder setFriendStatusMessage(
-          int index, im.tox.proto.Core.FriendStatusMessage.Builder builderForValue) {
+          int index, FriendStatusMessage.Builder builderForValue) {
         copyOnWrite();
         instance.setFriendStatusMessage(index, builderForValue);
         return this;
@@ -9408,7 +9958,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
        */
-      public Builder addFriendStatusMessage(im.tox.proto.Core.FriendStatusMessage value) {
+      public Builder addFriendStatusMessage(FriendStatusMessage value) {
         copyOnWrite();
         instance.addFriendStatusMessage(value);
         return this;
@@ -9417,7 +9967,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
        */
       public Builder addFriendStatusMessage(
-          int index, im.tox.proto.Core.FriendStatusMessage value) {
+          int index, FriendStatusMessage value) {
         copyOnWrite();
         instance.addFriendStatusMessage(index, value);
         return this;
@@ -9426,7 +9976,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
        */
       public Builder addFriendStatusMessage(
-          im.tox.proto.Core.FriendStatusMessage.Builder builderForValue) {
+          FriendStatusMessage.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendStatusMessage(builderForValue);
         return this;
@@ -9435,7 +9985,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
        */
       public Builder addFriendStatusMessage(
-          int index, im.tox.proto.Core.FriendStatusMessage.Builder builderForValue) {
+          int index, FriendStatusMessage.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendStatusMessage(index, builderForValue);
         return this;
@@ -9444,7 +9994,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendStatusMessage friend_status_message = 3;</code>
        */
       public Builder addAllFriendStatusMessage(
-          java.lang.Iterable<? extends im.tox.proto.Core.FriendStatusMessage> values) {
+          Iterable<? extends FriendStatusMessage> values) {
         copyOnWrite();
         instance.addAllFriendStatusMessage(values);
         return this;
@@ -9469,7 +10019,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
        */
-      public java.util.List<im.tox.proto.Core.FriendStatus> getFriendStatusList() {
+      public java.util.List<FriendStatus> getFriendStatusList() {
         return java.util.Collections.unmodifiableList(
             instance.getFriendStatusList());
       }
@@ -9481,14 +10031,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
        */
-      public im.tox.proto.Core.FriendStatus getFriendStatus(int index) {
+      public FriendStatus getFriendStatus(int index) {
         return instance.getFriendStatus(index);
       }
       /**
        * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
        */
       public Builder setFriendStatus(
-          int index, im.tox.proto.Core.FriendStatus value) {
+          int index, FriendStatus value) {
         copyOnWrite();
         instance.setFriendStatus(index, value);
         return this;
@@ -9497,7 +10047,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
        */
       public Builder setFriendStatus(
-          int index, im.tox.proto.Core.FriendStatus.Builder builderForValue) {
+          int index, FriendStatus.Builder builderForValue) {
         copyOnWrite();
         instance.setFriendStatus(index, builderForValue);
         return this;
@@ -9505,7 +10055,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
        */
-      public Builder addFriendStatus(im.tox.proto.Core.FriendStatus value) {
+      public Builder addFriendStatus(FriendStatus value) {
         copyOnWrite();
         instance.addFriendStatus(value);
         return this;
@@ -9514,7 +10064,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
        */
       public Builder addFriendStatus(
-          int index, im.tox.proto.Core.FriendStatus value) {
+          int index, FriendStatus value) {
         copyOnWrite();
         instance.addFriendStatus(index, value);
         return this;
@@ -9523,7 +10073,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
        */
       public Builder addFriendStatus(
-          im.tox.proto.Core.FriendStatus.Builder builderForValue) {
+          FriendStatus.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendStatus(builderForValue);
         return this;
@@ -9532,7 +10082,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
        */
       public Builder addFriendStatus(
-          int index, im.tox.proto.Core.FriendStatus.Builder builderForValue) {
+          int index, FriendStatus.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendStatus(index, builderForValue);
         return this;
@@ -9541,7 +10091,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendStatus friend_status = 4;</code>
        */
       public Builder addAllFriendStatus(
-          java.lang.Iterable<? extends im.tox.proto.Core.FriendStatus> values) {
+          Iterable<? extends FriendStatus> values) {
         copyOnWrite();
         instance.addAllFriendStatus(values);
         return this;
@@ -9566,7 +10116,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
        */
-      public java.util.List<im.tox.proto.Core.FriendConnectionStatus> getFriendConnectionStatusList() {
+      public java.util.List<FriendConnectionStatus> getFriendConnectionStatusList() {
         return java.util.Collections.unmodifiableList(
             instance.getFriendConnectionStatusList());
       }
@@ -9578,14 +10128,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
        */
-      public im.tox.proto.Core.FriendConnectionStatus getFriendConnectionStatus(int index) {
+      public FriendConnectionStatus getFriendConnectionStatus(int index) {
         return instance.getFriendConnectionStatus(index);
       }
       /**
        * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
        */
       public Builder setFriendConnectionStatus(
-          int index, im.tox.proto.Core.FriendConnectionStatus value) {
+          int index, FriendConnectionStatus value) {
         copyOnWrite();
         instance.setFriendConnectionStatus(index, value);
         return this;
@@ -9594,7 +10144,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
        */
       public Builder setFriendConnectionStatus(
-          int index, im.tox.proto.Core.FriendConnectionStatus.Builder builderForValue) {
+          int index, FriendConnectionStatus.Builder builderForValue) {
         copyOnWrite();
         instance.setFriendConnectionStatus(index, builderForValue);
         return this;
@@ -9602,7 +10152,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
        */
-      public Builder addFriendConnectionStatus(im.tox.proto.Core.FriendConnectionStatus value) {
+      public Builder addFriendConnectionStatus(FriendConnectionStatus value) {
         copyOnWrite();
         instance.addFriendConnectionStatus(value);
         return this;
@@ -9611,7 +10161,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
        */
       public Builder addFriendConnectionStatus(
-          int index, im.tox.proto.Core.FriendConnectionStatus value) {
+          int index, FriendConnectionStatus value) {
         copyOnWrite();
         instance.addFriendConnectionStatus(index, value);
         return this;
@@ -9620,7 +10170,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
        */
       public Builder addFriendConnectionStatus(
-          im.tox.proto.Core.FriendConnectionStatus.Builder builderForValue) {
+          FriendConnectionStatus.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendConnectionStatus(builderForValue);
         return this;
@@ -9629,7 +10179,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
        */
       public Builder addFriendConnectionStatus(
-          int index, im.tox.proto.Core.FriendConnectionStatus.Builder builderForValue) {
+          int index, FriendConnectionStatus.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendConnectionStatus(index, builderForValue);
         return this;
@@ -9638,7 +10188,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendConnectionStatus friend_connection_status = 5;</code>
        */
       public Builder addAllFriendConnectionStatus(
-          java.lang.Iterable<? extends im.tox.proto.Core.FriendConnectionStatus> values) {
+          Iterable<? extends FriendConnectionStatus> values) {
         copyOnWrite();
         instance.addAllFriendConnectionStatus(values);
         return this;
@@ -9663,7 +10213,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
        */
-      public java.util.List<im.tox.proto.Core.FriendTyping> getFriendTypingList() {
+      public java.util.List<FriendTyping> getFriendTypingList() {
         return java.util.Collections.unmodifiableList(
             instance.getFriendTypingList());
       }
@@ -9675,14 +10225,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
        */
-      public im.tox.proto.Core.FriendTyping getFriendTyping(int index) {
+      public FriendTyping getFriendTyping(int index) {
         return instance.getFriendTyping(index);
       }
       /**
        * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
        */
       public Builder setFriendTyping(
-          int index, im.tox.proto.Core.FriendTyping value) {
+          int index, FriendTyping value) {
         copyOnWrite();
         instance.setFriendTyping(index, value);
         return this;
@@ -9691,7 +10241,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
        */
       public Builder setFriendTyping(
-          int index, im.tox.proto.Core.FriendTyping.Builder builderForValue) {
+          int index, FriendTyping.Builder builderForValue) {
         copyOnWrite();
         instance.setFriendTyping(index, builderForValue);
         return this;
@@ -9699,7 +10249,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
        */
-      public Builder addFriendTyping(im.tox.proto.Core.FriendTyping value) {
+      public Builder addFriendTyping(FriendTyping value) {
         copyOnWrite();
         instance.addFriendTyping(value);
         return this;
@@ -9708,7 +10258,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
        */
       public Builder addFriendTyping(
-          int index, im.tox.proto.Core.FriendTyping value) {
+          int index, FriendTyping value) {
         copyOnWrite();
         instance.addFriendTyping(index, value);
         return this;
@@ -9717,7 +10267,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
        */
       public Builder addFriendTyping(
-          im.tox.proto.Core.FriendTyping.Builder builderForValue) {
+          FriendTyping.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendTyping(builderForValue);
         return this;
@@ -9726,7 +10276,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
        */
       public Builder addFriendTyping(
-          int index, im.tox.proto.Core.FriendTyping.Builder builderForValue) {
+          int index, FriendTyping.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendTyping(index, builderForValue);
         return this;
@@ -9735,7 +10285,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendTyping friend_typing = 6;</code>
        */
       public Builder addAllFriendTyping(
-          java.lang.Iterable<? extends im.tox.proto.Core.FriendTyping> values) {
+          Iterable<? extends FriendTyping> values) {
         copyOnWrite();
         instance.addAllFriendTyping(values);
         return this;
@@ -9760,7 +10310,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
        */
-      public java.util.List<im.tox.proto.Core.FriendReadReceipt> getFriendReadReceiptList() {
+      public java.util.List<FriendReadReceipt> getFriendReadReceiptList() {
         return java.util.Collections.unmodifiableList(
             instance.getFriendReadReceiptList());
       }
@@ -9772,14 +10322,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
        */
-      public im.tox.proto.Core.FriendReadReceipt getFriendReadReceipt(int index) {
+      public FriendReadReceipt getFriendReadReceipt(int index) {
         return instance.getFriendReadReceipt(index);
       }
       /**
        * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
        */
       public Builder setFriendReadReceipt(
-          int index, im.tox.proto.Core.FriendReadReceipt value) {
+          int index, FriendReadReceipt value) {
         copyOnWrite();
         instance.setFriendReadReceipt(index, value);
         return this;
@@ -9788,7 +10338,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
        */
       public Builder setFriendReadReceipt(
-          int index, im.tox.proto.Core.FriendReadReceipt.Builder builderForValue) {
+          int index, FriendReadReceipt.Builder builderForValue) {
         copyOnWrite();
         instance.setFriendReadReceipt(index, builderForValue);
         return this;
@@ -9796,7 +10346,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
        */
-      public Builder addFriendReadReceipt(im.tox.proto.Core.FriendReadReceipt value) {
+      public Builder addFriendReadReceipt(FriendReadReceipt value) {
         copyOnWrite();
         instance.addFriendReadReceipt(value);
         return this;
@@ -9805,7 +10355,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
        */
       public Builder addFriendReadReceipt(
-          int index, im.tox.proto.Core.FriendReadReceipt value) {
+          int index, FriendReadReceipt value) {
         copyOnWrite();
         instance.addFriendReadReceipt(index, value);
         return this;
@@ -9814,7 +10364,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
        */
       public Builder addFriendReadReceipt(
-          im.tox.proto.Core.FriendReadReceipt.Builder builderForValue) {
+          FriendReadReceipt.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendReadReceipt(builderForValue);
         return this;
@@ -9823,7 +10373,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
        */
       public Builder addFriendReadReceipt(
-          int index, im.tox.proto.Core.FriendReadReceipt.Builder builderForValue) {
+          int index, FriendReadReceipt.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendReadReceipt(index, builderForValue);
         return this;
@@ -9832,7 +10382,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendReadReceipt friend_read_receipt = 7;</code>
        */
       public Builder addAllFriendReadReceipt(
-          java.lang.Iterable<? extends im.tox.proto.Core.FriendReadReceipt> values) {
+          Iterable<? extends FriendReadReceipt> values) {
         copyOnWrite();
         instance.addAllFriendReadReceipt(values);
         return this;
@@ -9857,7 +10407,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
        */
-      public java.util.List<im.tox.proto.Core.FriendRequest> getFriendRequestList() {
+      public java.util.List<FriendRequest> getFriendRequestList() {
         return java.util.Collections.unmodifiableList(
             instance.getFriendRequestList());
       }
@@ -9869,14 +10419,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
        */
-      public im.tox.proto.Core.FriendRequest getFriendRequest(int index) {
+      public FriendRequest getFriendRequest(int index) {
         return instance.getFriendRequest(index);
       }
       /**
        * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
        */
       public Builder setFriendRequest(
-          int index, im.tox.proto.Core.FriendRequest value) {
+          int index, FriendRequest value) {
         copyOnWrite();
         instance.setFriendRequest(index, value);
         return this;
@@ -9885,7 +10435,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
        */
       public Builder setFriendRequest(
-          int index, im.tox.proto.Core.FriendRequest.Builder builderForValue) {
+          int index, FriendRequest.Builder builderForValue) {
         copyOnWrite();
         instance.setFriendRequest(index, builderForValue);
         return this;
@@ -9893,7 +10443,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
        */
-      public Builder addFriendRequest(im.tox.proto.Core.FriendRequest value) {
+      public Builder addFriendRequest(FriendRequest value) {
         copyOnWrite();
         instance.addFriendRequest(value);
         return this;
@@ -9902,7 +10452,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
        */
       public Builder addFriendRequest(
-          int index, im.tox.proto.Core.FriendRequest value) {
+          int index, FriendRequest value) {
         copyOnWrite();
         instance.addFriendRequest(index, value);
         return this;
@@ -9911,7 +10461,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
        */
       public Builder addFriendRequest(
-          im.tox.proto.Core.FriendRequest.Builder builderForValue) {
+          FriendRequest.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendRequest(builderForValue);
         return this;
@@ -9920,7 +10470,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
        */
       public Builder addFriendRequest(
-          int index, im.tox.proto.Core.FriendRequest.Builder builderForValue) {
+          int index, FriendRequest.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendRequest(index, builderForValue);
         return this;
@@ -9929,7 +10479,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendRequest friend_request = 8;</code>
        */
       public Builder addAllFriendRequest(
-          java.lang.Iterable<? extends im.tox.proto.Core.FriendRequest> values) {
+          Iterable<? extends FriendRequest> values) {
         copyOnWrite();
         instance.addAllFriendRequest(values);
         return this;
@@ -9954,7 +10504,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
        */
-      public java.util.List<im.tox.proto.Core.FriendMessage> getFriendMessageList() {
+      public java.util.List<FriendMessage> getFriendMessageList() {
         return java.util.Collections.unmodifiableList(
             instance.getFriendMessageList());
       }
@@ -9966,14 +10516,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
        */
-      public im.tox.proto.Core.FriendMessage getFriendMessage(int index) {
+      public FriendMessage getFriendMessage(int index) {
         return instance.getFriendMessage(index);
       }
       /**
        * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
        */
       public Builder setFriendMessage(
-          int index, im.tox.proto.Core.FriendMessage value) {
+          int index, FriendMessage value) {
         copyOnWrite();
         instance.setFriendMessage(index, value);
         return this;
@@ -9982,7 +10532,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
        */
       public Builder setFriendMessage(
-          int index, im.tox.proto.Core.FriendMessage.Builder builderForValue) {
+          int index, FriendMessage.Builder builderForValue) {
         copyOnWrite();
         instance.setFriendMessage(index, builderForValue);
         return this;
@@ -9990,7 +10540,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
        */
-      public Builder addFriendMessage(im.tox.proto.Core.FriendMessage value) {
+      public Builder addFriendMessage(FriendMessage value) {
         copyOnWrite();
         instance.addFriendMessage(value);
         return this;
@@ -9999,7 +10549,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
        */
       public Builder addFriendMessage(
-          int index, im.tox.proto.Core.FriendMessage value) {
+          int index, FriendMessage value) {
         copyOnWrite();
         instance.addFriendMessage(index, value);
         return this;
@@ -10008,7 +10558,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
        */
       public Builder addFriendMessage(
-          im.tox.proto.Core.FriendMessage.Builder builderForValue) {
+          FriendMessage.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendMessage(builderForValue);
         return this;
@@ -10017,7 +10567,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
        */
       public Builder addFriendMessage(
-          int index, im.tox.proto.Core.FriendMessage.Builder builderForValue) {
+          int index, FriendMessage.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendMessage(index, builderForValue);
         return this;
@@ -10026,7 +10576,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendMessage friend_message = 9;</code>
        */
       public Builder addAllFriendMessage(
-          java.lang.Iterable<? extends im.tox.proto.Core.FriendMessage> values) {
+          Iterable<? extends FriendMessage> values) {
         copyOnWrite();
         instance.addAllFriendMessage(values);
         return this;
@@ -10051,7 +10601,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
        */
-      public java.util.List<im.tox.proto.Core.FileRecvControl> getFileRecvControlList() {
+      public java.util.List<FileRecvControl> getFileRecvControlList() {
         return java.util.Collections.unmodifiableList(
             instance.getFileRecvControlList());
       }
@@ -10063,14 +10613,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
        */
-      public im.tox.proto.Core.FileRecvControl getFileRecvControl(int index) {
+      public FileRecvControl getFileRecvControl(int index) {
         return instance.getFileRecvControl(index);
       }
       /**
        * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
        */
       public Builder setFileRecvControl(
-          int index, im.tox.proto.Core.FileRecvControl value) {
+          int index, FileRecvControl value) {
         copyOnWrite();
         instance.setFileRecvControl(index, value);
         return this;
@@ -10079,7 +10629,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
        */
       public Builder setFileRecvControl(
-          int index, im.tox.proto.Core.FileRecvControl.Builder builderForValue) {
+          int index, FileRecvControl.Builder builderForValue) {
         copyOnWrite();
         instance.setFileRecvControl(index, builderForValue);
         return this;
@@ -10087,7 +10637,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
        */
-      public Builder addFileRecvControl(im.tox.proto.Core.FileRecvControl value) {
+      public Builder addFileRecvControl(FileRecvControl value) {
         copyOnWrite();
         instance.addFileRecvControl(value);
         return this;
@@ -10096,7 +10646,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
        */
       public Builder addFileRecvControl(
-          int index, im.tox.proto.Core.FileRecvControl value) {
+          int index, FileRecvControl value) {
         copyOnWrite();
         instance.addFileRecvControl(index, value);
         return this;
@@ -10105,7 +10655,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
        */
       public Builder addFileRecvControl(
-          im.tox.proto.Core.FileRecvControl.Builder builderForValue) {
+          FileRecvControl.Builder builderForValue) {
         copyOnWrite();
         instance.addFileRecvControl(builderForValue);
         return this;
@@ -10114,7 +10664,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
        */
       public Builder addFileRecvControl(
-          int index, im.tox.proto.Core.FileRecvControl.Builder builderForValue) {
+          int index, FileRecvControl.Builder builderForValue) {
         copyOnWrite();
         instance.addFileRecvControl(index, builderForValue);
         return this;
@@ -10123,7 +10673,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecvControl file_recv_control = 10;</code>
        */
       public Builder addAllFileRecvControl(
-          java.lang.Iterable<? extends im.tox.proto.Core.FileRecvControl> values) {
+          Iterable<? extends FileRecvControl> values) {
         copyOnWrite();
         instance.addAllFileRecvControl(values);
         return this;
@@ -10148,7 +10698,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
        */
-      public java.util.List<im.tox.proto.Core.FileChunkRequest> getFileChunkRequestList() {
+      public java.util.List<FileChunkRequest> getFileChunkRequestList() {
         return java.util.Collections.unmodifiableList(
             instance.getFileChunkRequestList());
       }
@@ -10160,14 +10710,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
        */
-      public im.tox.proto.Core.FileChunkRequest getFileChunkRequest(int index) {
+      public FileChunkRequest getFileChunkRequest(int index) {
         return instance.getFileChunkRequest(index);
       }
       /**
        * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
        */
       public Builder setFileChunkRequest(
-          int index, im.tox.proto.Core.FileChunkRequest value) {
+          int index, FileChunkRequest value) {
         copyOnWrite();
         instance.setFileChunkRequest(index, value);
         return this;
@@ -10176,7 +10726,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
        */
       public Builder setFileChunkRequest(
-          int index, im.tox.proto.Core.FileChunkRequest.Builder builderForValue) {
+          int index, FileChunkRequest.Builder builderForValue) {
         copyOnWrite();
         instance.setFileChunkRequest(index, builderForValue);
         return this;
@@ -10184,7 +10734,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
        */
-      public Builder addFileChunkRequest(im.tox.proto.Core.FileChunkRequest value) {
+      public Builder addFileChunkRequest(FileChunkRequest value) {
         copyOnWrite();
         instance.addFileChunkRequest(value);
         return this;
@@ -10193,7 +10743,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
        */
       public Builder addFileChunkRequest(
-          int index, im.tox.proto.Core.FileChunkRequest value) {
+          int index, FileChunkRequest value) {
         copyOnWrite();
         instance.addFileChunkRequest(index, value);
         return this;
@@ -10202,7 +10752,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
        */
       public Builder addFileChunkRequest(
-          im.tox.proto.Core.FileChunkRequest.Builder builderForValue) {
+          FileChunkRequest.Builder builderForValue) {
         copyOnWrite();
         instance.addFileChunkRequest(builderForValue);
         return this;
@@ -10211,7 +10761,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
        */
       public Builder addFileChunkRequest(
-          int index, im.tox.proto.Core.FileChunkRequest.Builder builderForValue) {
+          int index, FileChunkRequest.Builder builderForValue) {
         copyOnWrite();
         instance.addFileChunkRequest(index, builderForValue);
         return this;
@@ -10220,7 +10770,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileChunkRequest file_chunk_request = 11;</code>
        */
       public Builder addAllFileChunkRequest(
-          java.lang.Iterable<? extends im.tox.proto.Core.FileChunkRequest> values) {
+          Iterable<? extends FileChunkRequest> values) {
         copyOnWrite();
         instance.addAllFileChunkRequest(values);
         return this;
@@ -10245,7 +10795,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
        */
-      public java.util.List<im.tox.proto.Core.FileRecv> getFileRecvList() {
+      public java.util.List<FileRecv> getFileRecvList() {
         return java.util.Collections.unmodifiableList(
             instance.getFileRecvList());
       }
@@ -10257,14 +10807,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
        */
-      public im.tox.proto.Core.FileRecv getFileRecv(int index) {
+      public FileRecv getFileRecv(int index) {
         return instance.getFileRecv(index);
       }
       /**
        * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
        */
       public Builder setFileRecv(
-          int index, im.tox.proto.Core.FileRecv value) {
+          int index, FileRecv value) {
         copyOnWrite();
         instance.setFileRecv(index, value);
         return this;
@@ -10273,7 +10823,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
        */
       public Builder setFileRecv(
-          int index, im.tox.proto.Core.FileRecv.Builder builderForValue) {
+          int index, FileRecv.Builder builderForValue) {
         copyOnWrite();
         instance.setFileRecv(index, builderForValue);
         return this;
@@ -10281,7 +10831,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
        */
-      public Builder addFileRecv(im.tox.proto.Core.FileRecv value) {
+      public Builder addFileRecv(FileRecv value) {
         copyOnWrite();
         instance.addFileRecv(value);
         return this;
@@ -10290,7 +10840,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
        */
       public Builder addFileRecv(
-          int index, im.tox.proto.Core.FileRecv value) {
+          int index, FileRecv value) {
         copyOnWrite();
         instance.addFileRecv(index, value);
         return this;
@@ -10299,7 +10849,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
        */
       public Builder addFileRecv(
-          im.tox.proto.Core.FileRecv.Builder builderForValue) {
+          FileRecv.Builder builderForValue) {
         copyOnWrite();
         instance.addFileRecv(builderForValue);
         return this;
@@ -10308,7 +10858,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
        */
       public Builder addFileRecv(
-          int index, im.tox.proto.Core.FileRecv.Builder builderForValue) {
+          int index, FileRecv.Builder builderForValue) {
         copyOnWrite();
         instance.addFileRecv(index, builderForValue);
         return this;
@@ -10317,7 +10867,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecv file_recv = 12;</code>
        */
       public Builder addAllFileRecv(
-          java.lang.Iterable<? extends im.tox.proto.Core.FileRecv> values) {
+          Iterable<? extends FileRecv> values) {
         copyOnWrite();
         instance.addAllFileRecv(values);
         return this;
@@ -10342,7 +10892,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
        */
-      public java.util.List<im.tox.proto.Core.FileRecvChunk> getFileRecvChunkList() {
+      public java.util.List<FileRecvChunk> getFileRecvChunkList() {
         return java.util.Collections.unmodifiableList(
             instance.getFileRecvChunkList());
       }
@@ -10354,14 +10904,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
        */
-      public im.tox.proto.Core.FileRecvChunk getFileRecvChunk(int index) {
+      public FileRecvChunk getFileRecvChunk(int index) {
         return instance.getFileRecvChunk(index);
       }
       /**
        * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
        */
       public Builder setFileRecvChunk(
-          int index, im.tox.proto.Core.FileRecvChunk value) {
+          int index, FileRecvChunk value) {
         copyOnWrite();
         instance.setFileRecvChunk(index, value);
         return this;
@@ -10370,7 +10920,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
        */
       public Builder setFileRecvChunk(
-          int index, im.tox.proto.Core.FileRecvChunk.Builder builderForValue) {
+          int index, FileRecvChunk.Builder builderForValue) {
         copyOnWrite();
         instance.setFileRecvChunk(index, builderForValue);
         return this;
@@ -10378,7 +10928,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
        */
-      public Builder addFileRecvChunk(im.tox.proto.Core.FileRecvChunk value) {
+      public Builder addFileRecvChunk(FileRecvChunk value) {
         copyOnWrite();
         instance.addFileRecvChunk(value);
         return this;
@@ -10387,7 +10937,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
        */
       public Builder addFileRecvChunk(
-          int index, im.tox.proto.Core.FileRecvChunk value) {
+          int index, FileRecvChunk value) {
         copyOnWrite();
         instance.addFileRecvChunk(index, value);
         return this;
@@ -10396,7 +10946,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
        */
       public Builder addFileRecvChunk(
-          im.tox.proto.Core.FileRecvChunk.Builder builderForValue) {
+          FileRecvChunk.Builder builderForValue) {
         copyOnWrite();
         instance.addFileRecvChunk(builderForValue);
         return this;
@@ -10405,7 +10955,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
        */
       public Builder addFileRecvChunk(
-          int index, im.tox.proto.Core.FileRecvChunk.Builder builderForValue) {
+          int index, FileRecvChunk.Builder builderForValue) {
         copyOnWrite();
         instance.addFileRecvChunk(index, builderForValue);
         return this;
@@ -10414,7 +10964,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FileRecvChunk file_recv_chunk = 13;</code>
        */
       public Builder addAllFileRecvChunk(
-          java.lang.Iterable<? extends im.tox.proto.Core.FileRecvChunk> values) {
+          Iterable<? extends FileRecvChunk> values) {
         copyOnWrite();
         instance.addAllFileRecvChunk(values);
         return this;
@@ -10439,7 +10989,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
        */
-      public java.util.List<im.tox.proto.Core.FriendLossyPacket> getFriendLossyPacketList() {
+      public java.util.List<FriendLossyPacket> getFriendLossyPacketList() {
         return java.util.Collections.unmodifiableList(
             instance.getFriendLossyPacketList());
       }
@@ -10451,14 +11001,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
        */
-      public im.tox.proto.Core.FriendLossyPacket getFriendLossyPacket(int index) {
+      public FriendLossyPacket getFriendLossyPacket(int index) {
         return instance.getFriendLossyPacket(index);
       }
       /**
        * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
        */
       public Builder setFriendLossyPacket(
-          int index, im.tox.proto.Core.FriendLossyPacket value) {
+          int index, FriendLossyPacket value) {
         copyOnWrite();
         instance.setFriendLossyPacket(index, value);
         return this;
@@ -10467,7 +11017,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
        */
       public Builder setFriendLossyPacket(
-          int index, im.tox.proto.Core.FriendLossyPacket.Builder builderForValue) {
+          int index, FriendLossyPacket.Builder builderForValue) {
         copyOnWrite();
         instance.setFriendLossyPacket(index, builderForValue);
         return this;
@@ -10475,7 +11025,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
        */
-      public Builder addFriendLossyPacket(im.tox.proto.Core.FriendLossyPacket value) {
+      public Builder addFriendLossyPacket(FriendLossyPacket value) {
         copyOnWrite();
         instance.addFriendLossyPacket(value);
         return this;
@@ -10484,7 +11034,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
        */
       public Builder addFriendLossyPacket(
-          int index, im.tox.proto.Core.FriendLossyPacket value) {
+          int index, FriendLossyPacket value) {
         copyOnWrite();
         instance.addFriendLossyPacket(index, value);
         return this;
@@ -10493,7 +11043,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
        */
       public Builder addFriendLossyPacket(
-          im.tox.proto.Core.FriendLossyPacket.Builder builderForValue) {
+          FriendLossyPacket.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendLossyPacket(builderForValue);
         return this;
@@ -10502,7 +11052,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
        */
       public Builder addFriendLossyPacket(
-          int index, im.tox.proto.Core.FriendLossyPacket.Builder builderForValue) {
+          int index, FriendLossyPacket.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendLossyPacket(index, builderForValue);
         return this;
@@ -10511,7 +11061,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendLossyPacket friend_lossy_packet = 14;</code>
        */
       public Builder addAllFriendLossyPacket(
-          java.lang.Iterable<? extends im.tox.proto.Core.FriendLossyPacket> values) {
+          Iterable<? extends FriendLossyPacket> values) {
         copyOnWrite();
         instance.addAllFriendLossyPacket(values);
         return this;
@@ -10536,7 +11086,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
        */
-      public java.util.List<im.tox.proto.Core.FriendLosslessPacket> getFriendLosslessPacketList() {
+      public java.util.List<FriendLosslessPacket> getFriendLosslessPacketList() {
         return java.util.Collections.unmodifiableList(
             instance.getFriendLosslessPacketList());
       }
@@ -10548,14 +11098,14 @@ public final class Core {
       }/**
        * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
        */
-      public im.tox.proto.Core.FriendLosslessPacket getFriendLosslessPacket(int index) {
+      public FriendLosslessPacket getFriendLosslessPacket(int index) {
         return instance.getFriendLosslessPacket(index);
       }
       /**
        * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
        */
       public Builder setFriendLosslessPacket(
-          int index, im.tox.proto.Core.FriendLosslessPacket value) {
+          int index, FriendLosslessPacket value) {
         copyOnWrite();
         instance.setFriendLosslessPacket(index, value);
         return this;
@@ -10564,7 +11114,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
        */
       public Builder setFriendLosslessPacket(
-          int index, im.tox.proto.Core.FriendLosslessPacket.Builder builderForValue) {
+          int index, FriendLosslessPacket.Builder builderForValue) {
         copyOnWrite();
         instance.setFriendLosslessPacket(index, builderForValue);
         return this;
@@ -10572,7 +11122,7 @@ public final class Core {
       /**
        * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
        */
-      public Builder addFriendLosslessPacket(im.tox.proto.Core.FriendLosslessPacket value) {
+      public Builder addFriendLosslessPacket(FriendLosslessPacket value) {
         copyOnWrite();
         instance.addFriendLosslessPacket(value);
         return this;
@@ -10581,7 +11131,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
        */
       public Builder addFriendLosslessPacket(
-          int index, im.tox.proto.Core.FriendLosslessPacket value) {
+          int index, FriendLosslessPacket value) {
         copyOnWrite();
         instance.addFriendLosslessPacket(index, value);
         return this;
@@ -10590,7 +11140,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
        */
       public Builder addFriendLosslessPacket(
-          im.tox.proto.Core.FriendLosslessPacket.Builder builderForValue) {
+          FriendLosslessPacket.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendLosslessPacket(builderForValue);
         return this;
@@ -10599,7 +11149,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
        */
       public Builder addFriendLosslessPacket(
-          int index, im.tox.proto.Core.FriendLosslessPacket.Builder builderForValue) {
+          int index, FriendLosslessPacket.Builder builderForValue) {
         copyOnWrite();
         instance.addFriendLosslessPacket(index, builderForValue);
         return this;
@@ -10608,7 +11158,7 @@ public final class Core {
        * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
        */
       public Builder addAllFriendLosslessPacket(
-          java.lang.Iterable<? extends im.tox.proto.Core.FriendLosslessPacket> values) {
+          Iterable<? extends FriendLosslessPacket> values) {
         copyOnWrite();
         instance.addAllFriendLosslessPacket(values);
         return this;
@@ -10630,14 +11180,111 @@ public final class Core {
         return this;
       }
 
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public java.util.List<FriendMessageOffline> getFriendMessageOfflineList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getFriendMessageOfflineList());
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public int getFriendMessageOfflineCount() {
+        return instance.getFriendMessageOfflineCount();
+      }/**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public FriendMessageOffline getFriendMessageOffline(int index) {
+        return instance.getFriendMessageOffline(index);
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder setFriendMessageOffline(
+          int index, FriendMessageOffline value) {
+        copyOnWrite();
+        instance.setFriendMessageOffline(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder setFriendMessageOffline(
+          int index, FriendMessageOffline.Builder builderForValue) {
+        copyOnWrite();
+        instance.setFriendMessageOffline(index, builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder addFriendMessageOffline(FriendMessageOffline value) {
+        copyOnWrite();
+        instance.addFriendMessageOffline(value);
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder addFriendMessageOffline(
+          int index, FriendMessageOffline value) {
+        copyOnWrite();
+        instance.addFriendMessageOffline(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder addFriendMessageOffline(
+          FriendMessageOffline.Builder builderForValue) {
+        copyOnWrite();
+        instance.addFriendMessageOffline(builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder addFriendMessageOffline(
+          int index, FriendMessageOffline.Builder builderForValue) {
+        copyOnWrite();
+        instance.addFriendMessageOffline(index, builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder addAllFriendMessageOffline(
+          Iterable<? extends FriendMessageOffline> values) {
+        copyOnWrite();
+        instance.addAllFriendMessageOffline(values);
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder clearFriendMessageOffline() {
+        copyOnWrite();
+        instance.clearFriendMessageOffline();
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder removeFriendMessageOffline(int index) {
+        copyOnWrite();
+        instance.removeFriendMessageOffline(index);
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:im.tox.proto.CoreEvents)
     }
     protected final Object dynamicMethod(
-        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        MethodToInvoke method,
         Object arg0, Object arg1) {
       switch (method) {
         case NEW_MUTABLE_INSTANCE: {
-          return new im.tox.proto.Core.CoreEvents();
+          return new CoreEvents();
         }
         case IS_INITIALIZED: {
           return DEFAULT_INSTANCE;
@@ -10658,6 +11305,7 @@ public final class Core {
           fileRecvChunk_.makeImmutable();
           friendLossyPacket_.makeImmutable();
           friendLosslessPacket_.makeImmutable();
+          friendMessageOffline_.makeImmutable();
           return null;
         }
         case NEW_BUILDER: {
@@ -10665,7 +11313,7 @@ public final class Core {
         }
         case VISIT: {
           Visitor visitor = (Visitor) arg0;
-          im.tox.proto.Core.CoreEvents other = (im.tox.proto.Core.CoreEvents) arg1;
+          CoreEvents other = (CoreEvents) arg1;
           selfConnectionStatus_= visitor.visitList(selfConnectionStatus_, other.selfConnectionStatus_);
           friendName_= visitor.visitList(friendName_, other.friendName_);
           friendStatusMessage_= visitor.visitList(friendStatusMessage_, other.friendStatusMessage_);
@@ -10681,7 +11329,8 @@ public final class Core {
           fileRecvChunk_= visitor.visitList(fileRecvChunk_, other.fileRecvChunk_);
           friendLossyPacket_= visitor.visitList(friendLossyPacket_, other.friendLossyPacket_);
           friendLosslessPacket_= visitor.visitList(friendLosslessPacket_, other.friendLosslessPacket_);
-          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+          friendMessageOffline_= visitor.visitList(friendMessageOffline_, other.friendMessageOffline_);
+          if (visitor == MergeFromVisitor
               .INSTANCE) {
           }
           return this;
@@ -10711,7 +11360,7 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(selfConnectionStatus_);
                   }
                   selfConnectionStatus_.add(
-                      input.readMessage(im.tox.proto.Core.SelfConnectionStatus.parser(), extensionRegistry));
+                      input.readMessage(SelfConnectionStatus.parser(), extensionRegistry));
                   break;
                 }
                 case 18: {
@@ -10720,7 +11369,7 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(friendName_);
                   }
                   friendName_.add(
-                      input.readMessage(im.tox.proto.Core.FriendName.parser(), extensionRegistry));
+                      input.readMessage(FriendName.parser(), extensionRegistry));
                   break;
                 }
                 case 26: {
@@ -10729,7 +11378,7 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(friendStatusMessage_);
                   }
                   friendStatusMessage_.add(
-                      input.readMessage(im.tox.proto.Core.FriendStatusMessage.parser(), extensionRegistry));
+                      input.readMessage(FriendStatusMessage.parser(), extensionRegistry));
                   break;
                 }
                 case 34: {
@@ -10738,7 +11387,7 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(friendStatus_);
                   }
                   friendStatus_.add(
-                      input.readMessage(im.tox.proto.Core.FriendStatus.parser(), extensionRegistry));
+                      input.readMessage(FriendStatus.parser(), extensionRegistry));
                   break;
                 }
                 case 42: {
@@ -10747,7 +11396,7 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(friendConnectionStatus_);
                   }
                   friendConnectionStatus_.add(
-                      input.readMessage(im.tox.proto.Core.FriendConnectionStatus.parser(), extensionRegistry));
+                      input.readMessage(FriendConnectionStatus.parser(), extensionRegistry));
                   break;
                 }
                 case 50: {
@@ -10756,7 +11405,7 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(friendTyping_);
                   }
                   friendTyping_.add(
-                      input.readMessage(im.tox.proto.Core.FriendTyping.parser(), extensionRegistry));
+                      input.readMessage(FriendTyping.parser(), extensionRegistry));
                   break;
                 }
                 case 58: {
@@ -10765,7 +11414,7 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(friendReadReceipt_);
                   }
                   friendReadReceipt_.add(
-                      input.readMessage(im.tox.proto.Core.FriendReadReceipt.parser(), extensionRegistry));
+                      input.readMessage(FriendReadReceipt.parser(), extensionRegistry));
                   break;
                 }
                 case 66: {
@@ -10774,7 +11423,7 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(friendRequest_);
                   }
                   friendRequest_.add(
-                      input.readMessage(im.tox.proto.Core.FriendRequest.parser(), extensionRegistry));
+                      input.readMessage(FriendRequest.parser(), extensionRegistry));
                   break;
                 }
                 case 74: {
@@ -10783,7 +11432,7 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(friendMessage_);
                   }
                   friendMessage_.add(
-                      input.readMessage(im.tox.proto.Core.FriendMessage.parser(), extensionRegistry));
+                      input.readMessage(FriendMessage.parser(), extensionRegistry));
                   break;
                 }
                 case 82: {
@@ -10792,7 +11441,7 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(fileRecvControl_);
                   }
                   fileRecvControl_.add(
-                      input.readMessage(im.tox.proto.Core.FileRecvControl.parser(), extensionRegistry));
+                      input.readMessage(FileRecvControl.parser(), extensionRegistry));
                   break;
                 }
                 case 90: {
@@ -10801,7 +11450,7 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(fileChunkRequest_);
                   }
                   fileChunkRequest_.add(
-                      input.readMessage(im.tox.proto.Core.FileChunkRequest.parser(), extensionRegistry));
+                      input.readMessage(FileChunkRequest.parser(), extensionRegistry));
                   break;
                 }
                 case 98: {
@@ -10810,7 +11459,7 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(fileRecv_);
                   }
                   fileRecv_.add(
-                      input.readMessage(im.tox.proto.Core.FileRecv.parser(), extensionRegistry));
+                      input.readMessage(FileRecv.parser(), extensionRegistry));
                   break;
                 }
                 case 106: {
@@ -10819,7 +11468,7 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(fileRecvChunk_);
                   }
                   fileRecvChunk_.add(
-                      input.readMessage(im.tox.proto.Core.FileRecvChunk.parser(), extensionRegistry));
+                      input.readMessage(FileRecvChunk.parser(), extensionRegistry));
                   break;
                 }
                 case 114: {
@@ -10828,7 +11477,7 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(friendLossyPacket_);
                   }
                   friendLossyPacket_.add(
-                      input.readMessage(im.tox.proto.Core.FriendLossyPacket.parser(), extensionRegistry));
+                      input.readMessage(FriendLossyPacket.parser(), extensionRegistry));
                   break;
                 }
                 case 122: {
@@ -10837,7 +11486,16 @@ public final class Core {
                         com.google.protobuf.GeneratedMessageLite.mutableCopy(friendLosslessPacket_);
                   }
                   friendLosslessPacket_.add(
-                      input.readMessage(im.tox.proto.Core.FriendLosslessPacket.parser(), extensionRegistry));
+                      input.readMessage(FriendLosslessPacket.parser(), extensionRegistry));
+                  break;
+                }
+                case 130: {
+                  if (!friendMessageOffline_.isModifiable()) {
+                    friendMessageOffline_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(friendMessageOffline_);
+                  }
+                  friendMessageOffline_.add(
+                      input.readMessage(FriendMessageOffline.parser(), extensionRegistry));
                   break;
                 }
               }
@@ -10855,7 +11513,7 @@ public final class Core {
           return DEFAULT_INSTANCE;
         }
         case GET_PARSER: {
-          if (PARSER == null) {    synchronized (im.tox.proto.Core.CoreEvents.class) {
+          if (PARSER == null) {    synchronized (CoreEvents.class) {
               if (PARSER == null) {
                 PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
               }
@@ -10869,13 +11527,13 @@ public final class Core {
 
 
     // @@protoc_insertion_point(class_scope:im.tox.proto.CoreEvents)
-    private static final im.tox.proto.Core.CoreEvents DEFAULT_INSTANCE;
+    private static final CoreEvents DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new CoreEvents();
       DEFAULT_INSTANCE.makeImmutable();
     }
 
-    public static im.tox.proto.Core.CoreEvents getDefaultInstance() {
+    public static CoreEvents getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 

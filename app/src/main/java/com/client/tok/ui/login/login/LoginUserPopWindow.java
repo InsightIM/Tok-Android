@@ -15,18 +15,20 @@ import java.util.List;
 public class LoginUserPopWindow {
 
     public static PopupWindow showLoginUsers(Context context, List<UserInfo> users,
-        AdapterView.OnItemClickListener listener) {
-        PopupWindow popWindow = new PopupWindow(context);
+        final AdapterView.OnItemClickListener listener) {
+        final PopupWindow popWindow = new PopupWindow(context);
         View rootView = ViewUtil.inflateViewById(context, R.layout.layout_login_user_pop_window);
 
         ListView listView = rootView.findViewById(R.id.id_list);
-        listView.setOnItemClickListener(
-            (AdapterView<?> parent, View view, int position, long id) -> {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (listener != null) {
                     listener.onItemClick(parent, view, position, id);
                 }
                 popWindow.dismiss();
-            });
+            }
+        });
         LoginUserAdapter adapter = new LoginUserAdapter(context, users);
         listView.setAdapter(adapter);
 

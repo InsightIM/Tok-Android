@@ -8,14 +8,16 @@ import com.client.tok.TokApplication;
 import com.client.tok.ui.about.AboutUsActivity;
 import com.client.tok.ui.addfriends.AddFriendsActivity;
 import com.client.tok.ui.chat2.Chat2Activity;
-import com.client.tok.ui.chatid.ChatIdActivity;
+import com.client.tok.ui.chatid.TokIdActivity;
 import com.client.tok.ui.clipimg.ClipImgActivity;
 import com.client.tok.ui.contactreq.ContactReqActivity;
 import com.client.tok.ui.contactreqdetail.ContactReqDetailActivity;
 import com.client.tok.ui.home.HomeActivity;
 import com.client.tok.ui.imgshow.ImgShowActivity;
-import com.client.tok.ui.infor.friend.FriendInfoActivity;
-import com.client.tok.ui.infor.mine.MyInforActivity;
+import com.client.tok.ui.info.friend.FriendInfoActivity;
+import com.client.tok.ui.info.mine.MyInfoActivity;
+import com.client.tok.ui.info.offlinebot.OfflineBotActivity;
+import com.client.tok.ui.info.offlinebot.OfflineBotDetailActivity;
 import com.client.tok.ui.login.home.LoginSignUpHomeActivity;
 import com.client.tok.ui.login.login.LoginActivity;
 import com.client.tok.ui.login.signup.SignUpActivity;
@@ -23,7 +25,9 @@ import com.client.tok.ui.profileedit.ProfileEditActivity;
 import com.client.tok.ui.pwd.ChangePwdActivity;
 import com.client.tok.ui.scan.ScanActivity;
 import com.client.tok.ui.setting.SettingActivity;
+import com.client.tok.ui.setting.notify.NotifySetActivity;
 import com.client.tok.ui.share.ShareActivity;
+import com.client.tok.ui.video.VideoRecordActivity;
 import com.client.tok.ui.web.WebViewActivity;
 import com.client.tok.utils.StringUtils;
 
@@ -54,7 +58,12 @@ public class PageJumpIn extends BasePageJump {
         jump(context, intent);
     }
 
-    public static void jumpMyChatIdPage(Context context) {
+    public static void jumpSetNotificationPage(Context context) {
+        Intent intent = createIntent(context, NotifySetActivity.class);
+        jump(context, intent);
+    }
+
+    public static void jumpMyTokIdPage(Context context) {
         jumpTokIdPage(context, GlobalParams.TYPE_MINE, null);
     }
 
@@ -63,7 +72,7 @@ public class PageJumpIn extends BasePageJump {
      * @param key key
      */
     private static void jumpTokIdPage(Context context, String type, String key) {
-        Intent intent = createIntent(context, ChatIdActivity.class);
+        Intent intent = createIntent(context, TokIdActivity.class);
         if (!StringUtils.isEmpty(type)) {
             intent.putExtra(IntentConstants.ID_TYPE, type);
         }
@@ -77,9 +86,9 @@ public class PageJumpIn extends BasePageJump {
         jumpAddFriendsPage(context, null);
     }
 
-    public static void jumpAddFriendsPage(Context context, String pk) {
+    public static void jumpAddFriendsPage(Context context, String tokId) {
         Intent intent = createIntent(context, AddFriendsActivity.class);
-        intent.putExtra(IntentConstants.PK, pk);
+        intent.putExtra(IntentConstants.TOK_ID, tokId);
         jump(context, intent);
     }
 
@@ -99,20 +108,30 @@ public class PageJumpIn extends BasePageJump {
         jump(context, intent);
     }
 
-    public static void jumpFriendInfoPage(Context context, String groupNumber, String tokId) {
+    public static void jumpFriendInfoPage(Context context, String groupNumber, String pk) {
         Intent intent = createIntent(context, FriendInfoActivity.class);
         intent.putExtra(IntentConstants.GROUP_ID, groupNumber);
-        intent.putExtra(IntentConstants.TOK_ID, tokId);
+        intent.putExtra(IntentConstants.PK, pk);
         jump(context, intent);
     }
 
-    public static void jumpFriendChatPage(Context context, String tokId) {
-        jumpChatPage(context, tokId, GlobalParams.CHAT_FRIEND);
+    public static void jumpOfflineBotInfoPage(Context context) {
+        Intent intent = createIntent(context, OfflineBotActivity.class);
+        jump(context, intent);
+    }
+
+    public static void jumpOfflineBotDetailPage(Context context) {
+        Intent intent = createIntent(context, OfflineBotDetailActivity.class);
+        jump(context, intent);
+    }
+
+    public static void jumpFriendChatPage(Context context, String pk) {
+        jumpChatPage(context, pk, GlobalParams.CHAT_FRIEND);
     }
 
     private static void jumpChatPage(Context context, String tokId, String chatType) {
         Intent intent = createIntent(context, Chat2Activity.class);
-        intent.putExtra(IntentConstants.TOK_ID, tokId);
+        intent.putExtra(IntentConstants.PK, tokId);
         intent.putExtra(IntentConstants.CHAT_TYPE, chatType);
         jump(context, intent);
     }
@@ -123,7 +142,7 @@ public class PageJumpIn extends BasePageJump {
     }
 
     public static void jumpMyInfoPage(Context context) {
-        Intent intent = createIntent(context, MyInforActivity.class);
+        Intent intent = createIntent(context, MyInfoActivity.class);
         jump(context, intent);
     }
 
@@ -135,7 +154,7 @@ public class PageJumpIn extends BasePageJump {
 
     public static void jumpProfileEditPage(Context context, String key, int whatToDo) {
         Intent intent = createIntent(context, ProfileEditActivity.class);
-        intent.putExtra(IntentConstants.TOK_ID, key);
+        intent.putExtra(IntentConstants.PK, key);
         intent.putExtra(IntentConstants.WHAT_TODO, whatToDo);
         jump(context, intent);
     }
@@ -164,6 +183,11 @@ public class PageJumpIn extends BasePageJump {
         Intent intent = createIntent(context, ChangePwdActivity.class);
         intent.putExtra(IntentConstants.USER_NAME, userName);
         jump(context, intent);
+    }
+
+    public static void jumpVideoRecordPage(Activity activity) {
+        Intent intent = createIntent(activity, VideoRecordActivity.class);
+        jumpForResult(activity, intent, GlobalParams.REQ_CODE_RECORD_VIDEO);
     }
 
     public static void jumpActivity(Context context, String activityName) {

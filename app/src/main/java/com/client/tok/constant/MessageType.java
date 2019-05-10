@@ -12,8 +12,10 @@ public enum MessageType {
     GROUP_MESSAGE(4),
     GROUP_ACTION(5),
     CALL_EVENT(6),
-    HELLO_JOIN(7),
-    DRAFT(8);
+    PROMPT_NORMAL(7),//normal prompt,just has text
+    DRAFT(8),
+    PROMPT_ADD_OFFLINE_BOT(9),//prompt about add offline bot,can click
+    OFF_LINE(10);
 
     private int type;
 
@@ -36,10 +38,8 @@ public enum MessageType {
                 return ACTION;
             case NORMAL:
                 return MESSAGE;
-            case HELLO:
-                return HELLO_JOIN;
-            case DRAFT:
-                return DRAFT;
+            case OFF_LINE:
+                return MESSAGE;
             default:
                 return NONE;
         }
@@ -53,10 +53,8 @@ public enum MessageType {
             case MESSAGE:
             case GROUP_MESSAGE:
                 return ToxMessageType.NORMAL;
-            case HELLO_JOIN:
-                return ToxMessageType.HELLO;
-            case DRAFT:
-                return ToxMessageType.DRAFT;
+            case OFF_LINE:
+                return ToxMessageType.OFF_LINE;
             default:
                 throw new Exception("Invalid message type for conversion to ToxMessageType.");
         }

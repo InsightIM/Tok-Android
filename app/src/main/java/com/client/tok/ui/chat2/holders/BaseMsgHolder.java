@@ -11,9 +11,9 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import com.client.tok.R;
 import com.client.tok.bean.Message;
-import com.client.tok.rx.event.ProgressEvent;
-import com.client.tok.rx.RxBus;
 import com.client.tok.pagejump.GlobalParams;
+import com.client.tok.rx.RxBus;
+import com.client.tok.rx.event.ProgressEvent;
 import com.client.tok.tox.State;
 import com.client.tok.ui.chat2.Contract;
 import com.client.tok.utils.LogUtil;
@@ -27,6 +27,7 @@ import im.tox.utils.TimeUtil;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import java.util.concurrent.TimeUnit;
 
 public abstract class BaseMsgHolder extends RecyclerView.ViewHolder
@@ -88,9 +89,12 @@ public abstract class BaseMsgHolder extends RecyclerView.ViewHolder
         if (mDisposable == null) {
             mDisposable = RxBus.listen(ProgressEvent.class)
                 .observeOn(io.reactivex.android.schedulers.AndroidSchedulers.mainThread())
-                .subscribe((ProgressEvent progressEvent) -> {
-                    if (progressEvent.getMsgId().equals(mMsgId)) {
-                        chatLayout(progressEvent);
+                .subscribe(new Consumer<ProgressEvent>() {
+                    @Override
+                    public void accept(ProgressEvent progressEvent) throws Exception {
+                        if (progressEvent.getMsgId().equals(mMsgId)) {
+                            BaseMsgHolder.this.chatLayout(progressEvent);
+                        }
                     }
                 });
         }
@@ -191,15 +195,22 @@ public abstract class BaseMsgHolder extends RecyclerView.ViewHolder
         if (mDisposable2 == null || mDisposable2.isDisposed()) {
             mDisposable2 = Observable.interval(1000, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe((Long aLong) -> {
-                    long curPosition = State.transfers.getProgress(msg.getId());
-                    LogUtil.i(TAG,
-                        "progress interval size:" + msg.getSize() + ",curPosition:" + curPosition);
-                    if (msg.getSize() <= curPosition) {
-                        mDisposable2 = null;
+                .subscribe(new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
+                        long curPosition = State.transfers.getProgress(msg.getId());
+                        LogUtil.i(TAG, "progress interval size:"
+                            + msg.getSize()
+                            + ",curPosition:"
+                            + curPosition);
+
+                        progressView.setProgress(msg.getSize(),
+                            State.transfers.getProgress(msg.getId()));
+                        if (msg.getSize() <= curPosition) {
+                            mDisposable2.dispose();
+                            mDisposable2 = null;
+                        }
                     }
-                    progressView.setProgress(msg.getSize(),
-                        State.transfers.getProgress(msg.getId()));
                 });
         }
     }
@@ -235,6 +246,12 @@ public abstract class BaseMsgHolder extends RecyclerView.ViewHolder
             //infoRepo.deleteMessage(mCurMsg.getId());
             if (mPresenter != null) {
                 mPresenter.del(mCurMsg.getId());
+            }
+        }
+
+        public void onSave() {
+            if (mPresenter != null) {
+                mPresenter.save(mCurMsg.getMessage());
             }
         }
 

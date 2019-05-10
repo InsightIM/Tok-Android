@@ -1,9 +1,10 @@
 package com.client.tok.msg.callbacks;
 
 import android.content.Context;
-import com.client.tok.bean.ContactsInfo;
-import com.client.tok.tox.CoreManager;
+import com.client.tok.bean.ContactInfo;
 import com.client.tok.tox.State;
+import com.client.tok.tox.ToxManager;
+import com.client.tok.ui.offlinecore.OfflineHandler;
 import com.client.tok.utils.LogUtil;
 import im.tox.tox4j.core.callbacks.ToxCoreEventListener;
 import im.tox.tox4j.core.data.ToxFilename;
@@ -55,9 +56,9 @@ public class ToxCallbackListener implements ToxCoreEventListener {
     // --------- tox_file_seek callback is missing here !! ----------
     // tox_file_seek(Tox *tox, uint32_t friend_number, uint32_t file_number, uint64_t position, TOX_ERR_FILE_SEEK *error)
     // --------- tox_file_seek callback is missing here !! ----------
-    private ContactsInfo getFriendInfo(ToxFriendNumber friendNumber) {
+    private ContactInfo getFriendInfo(ToxFriendNumber friendNumber) {
         return State.infoRepo()
-            .getFriendInfo(CoreManager.getManager().toxBase.getFriendKey(friendNumber).getKey());
+            .getFriendInfo(ToxManager.getManager().toxBase.getFriendKey(friendNumber).getKey());
     }
 
     @Override
@@ -77,7 +78,7 @@ public class ToxCallbackListener implements ToxCoreEventListener {
     public void fileRecvControl(ToxFriendNumber friendNumber, int fileNumber,
         ToxFileControl control) {
         LogUtil.i(TAG, "fileRecvControl...");
-        ContactsInfo friendInfo = getFriendInfo(friendNumber);
+        ContactInfo friendInfo = getFriendInfo(friendNumber);
         fileRecvControlCallback.fileRecvControl(friendInfo, fileNumber, control);
     }
 
@@ -90,13 +91,13 @@ public class ToxCallbackListener implements ToxCoreEventListener {
 
     @Override
     public void friendLosslessPacket(ToxFriendNumber friendNumber, ToxLosslessPacket data) {
-        ContactsInfo friendInfo = getFriendInfo(friendNumber);
+        ContactInfo friendInfo = getFriendInfo(friendNumber);
         friendLosslessPacketCallback.friendLosslessPacket(friendInfo, data);
     }
 
     @Override
     public void friendReadReceipt(ToxFriendNumber friendNumber, int messageId) {
-        ContactsInfo friendInfo = getFriendInfo(friendNumber);
+        ContactInfo friendInfo = getFriendInfo(friendNumber);
         readReceiptCallback.friendReadReceipt(friendInfo, messageId);
     }
 
@@ -104,13 +105,13 @@ public class ToxCallbackListener implements ToxCoreEventListener {
     public void fileChunkRequest(ToxFriendNumber friendNumber, int fileNumber, long position,
         int length) {
         LogUtil.i(TAG, "fileChunkRequest...position:" + position + ",length:" + length);
-        ContactsInfo friendInfo = getFriendInfo(friendNumber);
+        ContactInfo friendInfo = getFriendInfo(friendNumber);
         fileChunkRequestCallback.fileChunkRequest(friendInfo, fileNumber, position, length);
     }
 
     @Override
     public void friendStatusMessage(ToxFriendNumber friendNumber, ToxStatusMessage message) {
-        ContactsInfo friendInfo = getFriendInfo(friendNumber);
+        ContactInfo friendInfo = getFriendInfo(friendNumber);
         LogUtil.i(TAG, "friendStatusMessage...");
         signatureMessageCallback.friendStatusMessage(friendInfo, message);
     }
@@ -118,23 +119,22 @@ public class ToxCallbackListener implements ToxCoreEventListener {
     @Override
     public void friendStatus(ToxFriendNumber friendNumber, ToxUserStatus status) {
         LogUtil.i(TAG, "friendStatus...");
-        ContactsInfo friendInfo = getFriendInfo(friendNumber);
+        ContactInfo friendInfo = getFriendInfo(friendNumber);
         userStatusCallback.friendStatus(friendInfo, status);
     }
 
     @Override
     public void friendMessage(ToxFriendNumber friendNumber, ToxMessageType messageType,
         int timeDelta, ToxFriendMessage message) {
+        //this method is called in thread
         LogUtil.i(TAG, "friendMessage..."
             + messageType.name()
             + ",message:"
             + new String(message.value)
             + ",time:"
             + timeDelta);
-        ContactsInfo friendInfo = getFriendInfo(friendNumber);
-        if (messageType == ToxMessageType.GROUP) {
-            groupMessage(friendNumber, messageType, timeDelta, message);
-        } else {
+        ContactInfo friendInfo = getFriendInfo(friendNumber);//friend or group
+        if (messageType == ToxMessageType.NORMAL) {
             messageCallback.friendMessage(friendInfo, messageType, timeDelta, message);
         }
     }
@@ -142,7 +142,7 @@ public class ToxCallbackListener implements ToxCoreEventListener {
     @Override
     public void fileRecv(ToxFriendNumber friendNumber, int fileNumber, int kind, long fileSize,
         ToxFilename filename) {
-        ContactsInfo friendInfo = getFriendInfo(friendNumber);
+        ContactInfo friendInfo = getFriendInfo(friendNumber);
         LogUtil.i(TAG, "fileReceive...friendNumber:"
             + friendNumber.value
             + ",fileNumber:"
@@ -165,7 +165,7 @@ public class ToxCallbackListener implements ToxCoreEventListener {
 
     @Override
     public void friendName(ToxFriendNumber friendNumber, ToxNickname name) {
-        ContactsInfo friendInfo = getFriendInfo(friendNumber);
+        ContactInfo friendInfo = getFriendInfo(friendNumber);
         nameChangeCallback.friendName(friendInfo, name);
     }
 
@@ -186,7 +186,8 @@ public class ToxCallbackListener implements ToxCoreEventListener {
     }
 
     @Override
-    public void groupMessage(ToxFriendNumber friendNumber, ToxMessageType messageType,
-        int timeDelta, ToxFriendMessage message) {
+    public void offlineMessage(int cmd, byte[] data) {
+        LogUtil.i(TAG, "offlineMessage,cmd:" + cmd);
+        OfflineHandler.handle(cmd, data);
     }
 }

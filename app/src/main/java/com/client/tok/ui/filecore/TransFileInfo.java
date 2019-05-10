@@ -3,6 +3,9 @@ package com.client.tok.ui.filecore;
 import com.client.tok.pagejump.GlobalParams;
 
 public class TransFileInfo {
+    /**
+     * {@link GlobalParams.CHAT_FRIEND,GlobalParams.CHAT_GROUP}
+     */
     private int chatType;
     //when sending message,this is receiver pk; if receive message ,this is sender pk
     private String toOrFromPk;
@@ -48,10 +51,6 @@ public class TransFileInfo {
 
     public void setCreateTime(long createTime) {
         this.createTime = createTime;
-    }
-
-    public boolean isDataValid() {
-        return String.valueOf(chatType).equals(GlobalParams.CHAT_FRIEND);
     }
 
     @Override

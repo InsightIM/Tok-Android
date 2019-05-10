@@ -13,19 +13,11 @@ public final class Group {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <pre>
-     *成员pk
-     * </pre>
-     *
      * <code>optional bytes peer_pk = 1;</code>
      */
     com.google.protobuf.ByteString getPeerPk();
 
     /**
-     * <pre>
-     *成员名称
-     * </pre>
-     *
      * <code>optional bytes peer_name = 2;</code>
      */
     com.google.protobuf.ByteString getPeerName();
@@ -45,20 +37,12 @@ public final class Group {
     public static final int PEER_PK_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString peerPk_;
     /**
-     * <pre>
-     *成员pk
-     * </pre>
-     *
      * <code>optional bytes peer_pk = 1;</code>
      */
     public com.google.protobuf.ByteString getPeerPk() {
       return peerPk_;
     }
     /**
-     * <pre>
-     *成员pk
-     * </pre>
-     *
      * <code>optional bytes peer_pk = 1;</code>
      */
     private void setPeerPk(com.google.protobuf.ByteString value) {
@@ -69,10 +53,6 @@ public final class Group {
       peerPk_ = value;
     }
     /**
-     * <pre>
-     *成员pk
-     * </pre>
-     *
      * <code>optional bytes peer_pk = 1;</code>
      */
     private void clearPeerPk() {
@@ -83,20 +63,12 @@ public final class Group {
     public static final int PEER_NAME_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString peerName_;
     /**
-     * <pre>
-     *成员名称
-     * </pre>
-     *
      * <code>optional bytes peer_name = 2;</code>
      */
     public com.google.protobuf.ByteString getPeerName() {
       return peerName_;
     }
     /**
-     * <pre>
-     *成员名称
-     * </pre>
-     *
      * <code>optional bytes peer_name = 2;</code>
      */
     private void setPeerName(com.google.protobuf.ByteString value) {
@@ -107,10 +79,6 @@ public final class Group {
       peerName_ = value;
     }
     /**
-     * <pre>
-     *成员名称
-     * </pre>
-     *
      * <code>optional bytes peer_name = 2;</code>
      */
     private void clearPeerName() {
@@ -228,20 +196,12 @@ public final class Group {
 
 
       /**
-       * <pre>
-       *成员pk
-       * </pre>
-       *
        * <code>optional bytes peer_pk = 1;</code>
        */
       public com.google.protobuf.ByteString getPeerPk() {
         return instance.getPeerPk();
       }
       /**
-       * <pre>
-       *成员pk
-       * </pre>
-       *
        * <code>optional bytes peer_pk = 1;</code>
        */
       public Builder setPeerPk(com.google.protobuf.ByteString value) {
@@ -250,10 +210,6 @@ public final class Group {
         return this;
       }
       /**
-       * <pre>
-       *成员pk
-       * </pre>
-       *
        * <code>optional bytes peer_pk = 1;</code>
        */
       public Builder clearPeerPk() {
@@ -263,20 +219,12 @@ public final class Group {
       }
 
       /**
-       * <pre>
-       *成员名称
-       * </pre>
-       *
        * <code>optional bytes peer_name = 2;</code>
        */
       public com.google.protobuf.ByteString getPeerName() {
         return instance.getPeerName();
       }
       /**
-       * <pre>
-       *成员名称
-       * </pre>
-       *
        * <code>optional bytes peer_name = 2;</code>
        */
       public Builder setPeerName(com.google.protobuf.ByteString value) {
@@ -285,10 +233,6 @@ public final class Group {
         return this;
       }
       /**
-       * <pre>
-       *成员名称
-       * </pre>
-       *
        * <code>optional bytes peer_name = 2;</code>
        */
       public Builder clearPeerName() {
@@ -407,36 +351,21 @@ public final class Group {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <pre>
-     * </pre>
-     *
      * <code>optional uint32 group_id = 1;</code>
      */
     int getGroupId();
 
     /**
-     * <pre>
-     *邀请谁
-     * </pre>
-     *
      * <code>optional bytes invite_to_pk = 2;</code>
      */
     com.google.protobuf.ByteString getInviteToPk();
 
     /**
-     * <pre>
-     *谁邀请的
-     * </pre>
-     *
      * <code>optional bytes invite_fr_pk = 3;</code>
      */
     com.google.protobuf.ByteString getInviteFrPk();
 
     /**
-     * <pre>
-     *群标题
-     * </pre>
-     *
      * <code>optional bytes group_name = 4;</code>
      */
     com.google.protobuf.ByteString getGroupName();
@@ -457,18 +386,12 @@ public final class Group {
     public static final int GROUP_ID_FIELD_NUMBER = 1;
     private int groupId_;
     /**
-     * <pre>
-     * </pre>
-     *
      * <code>optional uint32 group_id = 1;</code>
      */
     public int getGroupId() {
       return groupId_;
     }
     /**
-     * <pre>
-     * </pre>
-     *
      * <code>optional uint32 group_id = 1;</code>
      */
     private void setGroupId(int value) {
@@ -476,9 +399,6 @@ public final class Group {
       groupId_ = value;
     }
     /**
-     * <pre>
-     * </pre>
-     *
      * <code>optional uint32 group_id = 1;</code>
      */
     private void clearGroupId() {
@@ -489,20 +409,12 @@ public final class Group {
     public static final int INVITE_TO_PK_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString inviteToPk_;
     /**
-     * <pre>
-     *邀请谁
-     * </pre>
-     *
      * <code>optional bytes invite_to_pk = 2;</code>
      */
     public com.google.protobuf.ByteString getInviteToPk() {
       return inviteToPk_;
     }
     /**
-     * <pre>
-     *邀请谁
-     * </pre>
-     *
      * <code>optional bytes invite_to_pk = 2;</code>
      */
     private void setInviteToPk(com.google.protobuf.ByteString value) {
@@ -513,10 +425,6 @@ public final class Group {
       inviteToPk_ = value;
     }
     /**
-     * <pre>
-     *邀请谁
-     * </pre>
-     *
      * <code>optional bytes invite_to_pk = 2;</code>
      */
     private void clearInviteToPk() {
@@ -527,20 +435,12 @@ public final class Group {
     public static final int INVITE_FR_PK_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString inviteFrPk_;
     /**
-     * <pre>
-     *谁邀请的
-     * </pre>
-     *
      * <code>optional bytes invite_fr_pk = 3;</code>
      */
     public com.google.protobuf.ByteString getInviteFrPk() {
       return inviteFrPk_;
     }
     /**
-     * <pre>
-     *谁邀请的
-     * </pre>
-     *
      * <code>optional bytes invite_fr_pk = 3;</code>
      */
     private void setInviteFrPk(com.google.protobuf.ByteString value) {
@@ -551,10 +451,6 @@ public final class Group {
       inviteFrPk_ = value;
     }
     /**
-     * <pre>
-     *谁邀请的
-     * </pre>
-     *
      * <code>optional bytes invite_fr_pk = 3;</code>
      */
     private void clearInviteFrPk() {
@@ -565,20 +461,12 @@ public final class Group {
     public static final int GROUP_NAME_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString groupName_;
     /**
-     * <pre>
-     *群标题
-     * </pre>
-     *
      * <code>optional bytes group_name = 4;</code>
      */
     public com.google.protobuf.ByteString getGroupName() {
       return groupName_;
     }
     /**
-     * <pre>
-     *群标题
-     * </pre>
-     *
      * <code>optional bytes group_name = 4;</code>
      */
     private void setGroupName(com.google.protobuf.ByteString value) {
@@ -589,10 +477,6 @@ public final class Group {
       groupName_ = value;
     }
     /**
-     * <pre>
-     *群标题
-     * </pre>
-     *
      * <code>optional bytes group_name = 4;</code>
      */
     private void clearGroupName() {
@@ -724,18 +608,12 @@ public final class Group {
 
 
       /**
-       * <pre>
-       * </pre>
-       *
        * <code>optional uint32 group_id = 1;</code>
        */
       public int getGroupId() {
         return instance.getGroupId();
       }
       /**
-       * <pre>
-       * </pre>
-       *
        * <code>optional uint32 group_id = 1;</code>
        */
       public Builder setGroupId(int value) {
@@ -744,9 +622,6 @@ public final class Group {
         return this;
       }
       /**
-       * <pre>
-       * </pre>
-       *
        * <code>optional uint32 group_id = 1;</code>
        */
       public Builder clearGroupId() {
@@ -756,20 +631,12 @@ public final class Group {
       }
 
       /**
-       * <pre>
-       *邀请谁
-       * </pre>
-       *
        * <code>optional bytes invite_to_pk = 2;</code>
        */
       public com.google.protobuf.ByteString getInviteToPk() {
         return instance.getInviteToPk();
       }
       /**
-       * <pre>
-       *邀请谁
-       * </pre>
-       *
        * <code>optional bytes invite_to_pk = 2;</code>
        */
       public Builder setInviteToPk(com.google.protobuf.ByteString value) {
@@ -778,10 +645,6 @@ public final class Group {
         return this;
       }
       /**
-       * <pre>
-       *邀请谁
-       * </pre>
-       *
        * <code>optional bytes invite_to_pk = 2;</code>
        */
       public Builder clearInviteToPk() {
@@ -791,20 +654,12 @@ public final class Group {
       }
 
       /**
-       * <pre>
-       *谁邀请的
-       * </pre>
-       *
        * <code>optional bytes invite_fr_pk = 3;</code>
        */
       public com.google.protobuf.ByteString getInviteFrPk() {
         return instance.getInviteFrPk();
       }
       /**
-       * <pre>
-       *谁邀请的
-       * </pre>
-       *
        * <code>optional bytes invite_fr_pk = 3;</code>
        */
       public Builder setInviteFrPk(com.google.protobuf.ByteString value) {
@@ -813,10 +668,6 @@ public final class Group {
         return this;
       }
       /**
-       * <pre>
-       *谁邀请的
-       * </pre>
-       *
        * <code>optional bytes invite_fr_pk = 3;</code>
        */
       public Builder clearInviteFrPk() {
@@ -826,20 +677,12 @@ public final class Group {
       }
 
       /**
-       * <pre>
-       *群标题
-       * </pre>
-       *
        * <code>optional bytes group_name = 4;</code>
        */
       public com.google.protobuf.ByteString getGroupName() {
         return instance.getGroupName();
       }
       /**
-       * <pre>
-       *群标题
-       * </pre>
-       *
        * <code>optional bytes group_name = 4;</code>
        */
       public Builder setGroupName(com.google.protobuf.ByteString value) {
@@ -848,10 +691,6 @@ public final class Group {
         return this;
       }
       /**
-       * <pre>
-       *群标题
-       * </pre>
-       *
        * <code>optional bytes group_name = 4;</code>
        */
       public Builder clearGroupName() {
@@ -984,33 +823,25 @@ public final class Group {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <pre>
-     *成员number
-     * </pre>
-     *
      * <code>optional uint32 platform = 1;</code>
      */
     int getPlatform();
 
     /**
-     * <pre>
-     *成员名称
-     * </pre>
-     *
      * <code>optional string token = 2;</code>
      */
     java.lang.String getToken();
     /**
-     * <pre>
-     *成员名称
-     * </pre>
-     *
      * <code>optional string token = 2;</code>
      */
     com.google.protobuf.ByteString
         getTokenBytes();
   }
   /**
+   * <pre>
+   *for ios
+   * </pre>
+   *
    * Protobuf type {@code im.tox.proto.GroupTokenPush}
    */
   public  static final class GroupTokenPush extends
@@ -1024,20 +855,12 @@ public final class Group {
     public static final int PLATFORM_FIELD_NUMBER = 1;
     private int platform_;
     /**
-     * <pre>
-     *成员number
-     * </pre>
-     *
      * <code>optional uint32 platform = 1;</code>
      */
     public int getPlatform() {
       return platform_;
     }
     /**
-     * <pre>
-     *成员number
-     * </pre>
-     *
      * <code>optional uint32 platform = 1;</code>
      */
     private void setPlatform(int value) {
@@ -1045,10 +868,6 @@ public final class Group {
       platform_ = value;
     }
     /**
-     * <pre>
-     *成员number
-     * </pre>
-     *
      * <code>optional uint32 platform = 1;</code>
      */
     private void clearPlatform() {
@@ -1059,20 +878,12 @@ public final class Group {
     public static final int TOKEN_FIELD_NUMBER = 2;
     private java.lang.String token_;
     /**
-     * <pre>
-     *成员名称
-     * </pre>
-     *
      * <code>optional string token = 2;</code>
      */
     public java.lang.String getToken() {
       return token_;
     }
     /**
-     * <pre>
-     *成员名称
-     * </pre>
-     *
      * <code>optional string token = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -1080,10 +891,6 @@ public final class Group {
       return com.google.protobuf.ByteString.copyFromUtf8(token_);
     }
     /**
-     * <pre>
-     *成员名称
-     * </pre>
-     *
      * <code>optional string token = 2;</code>
      */
     private void setToken(
@@ -1095,10 +902,6 @@ public final class Group {
       token_ = value;
     }
     /**
-     * <pre>
-     *成员名称
-     * </pre>
-     *
      * <code>optional string token = 2;</code>
      */
     private void clearToken() {
@@ -1106,10 +909,6 @@ public final class Group {
       token_ = getDefaultInstance().getToken();
     }
     /**
-     * <pre>
-     *成员名称
-     * </pre>
-     *
      * <code>optional string token = 2;</code>
      */
     private void setTokenBytes(
@@ -1218,6 +1017,10 @@ public final class Group {
     }
 
     /**
+     * <pre>
+     *for ios
+     * </pre>
+     *
      * Protobuf type {@code im.tox.proto.GroupTokenPush}
      */
     public static final class Builder extends
@@ -1232,20 +1035,12 @@ public final class Group {
 
 
       /**
-       * <pre>
-       *成员number
-       * </pre>
-       *
        * <code>optional uint32 platform = 1;</code>
        */
       public int getPlatform() {
         return instance.getPlatform();
       }
       /**
-       * <pre>
-       *成员number
-       * </pre>
-       *
        * <code>optional uint32 platform = 1;</code>
        */
       public Builder setPlatform(int value) {
@@ -1254,10 +1049,6 @@ public final class Group {
         return this;
       }
       /**
-       * <pre>
-       *成员number
-       * </pre>
-       *
        * <code>optional uint32 platform = 1;</code>
        */
       public Builder clearPlatform() {
@@ -1267,20 +1058,12 @@ public final class Group {
       }
 
       /**
-       * <pre>
-       *成员名称
-       * </pre>
-       *
        * <code>optional string token = 2;</code>
        */
       public java.lang.String getToken() {
         return instance.getToken();
       }
       /**
-       * <pre>
-       *成员名称
-       * </pre>
-       *
        * <code>optional string token = 2;</code>
        */
       public com.google.protobuf.ByteString
@@ -1288,10 +1071,6 @@ public final class Group {
         return instance.getTokenBytes();
       }
       /**
-       * <pre>
-       *成员名称
-       * </pre>
-       *
        * <code>optional string token = 2;</code>
        */
       public Builder setToken(
@@ -1301,10 +1080,6 @@ public final class Group {
         return this;
       }
       /**
-       * <pre>
-       *成员名称
-       * </pre>
-       *
        * <code>optional string token = 2;</code>
        */
       public Builder clearToken() {
@@ -1313,10 +1088,6 @@ public final class Group {
         return this;
       }
       /**
-       * <pre>
-       *成员名称
-       * </pre>
-       *
        * <code>optional string token = 2;</code>
        */
       public Builder setTokenBytes(
@@ -1437,19 +1208,11 @@ public final class Group {
       com.google.protobuf.MessageLiteOrBuilder {
 
     /**
-     * <pre>
-     *群组id，申请创建的时候为0，创建成功为群组的id
-     * </pre>
-     *
      * <code>optional uint32 group_id = 1;</code>
      */
     int getGroupId();
 
     /**
-     * <pre>
-     *群组title，只有创建者可以设置title
-     * </pre>
-     *
      * <code>optional bytes group_name = 2;</code>
      */
     com.google.protobuf.ByteString getGroupName();
@@ -1468,20 +1231,12 @@ public final class Group {
     public static final int GROUP_ID_FIELD_NUMBER = 1;
     private int groupId_;
     /**
-     * <pre>
-     *群组id，申请创建的时候为0，创建成功为群组的id
-     * </pre>
-     *
      * <code>optional uint32 group_id = 1;</code>
      */
     public int getGroupId() {
       return groupId_;
     }
     /**
-     * <pre>
-     *群组id，申请创建的时候为0，创建成功为群组的id
-     * </pre>
-     *
      * <code>optional uint32 group_id = 1;</code>
      */
     private void setGroupId(int value) {
@@ -1489,10 +1244,6 @@ public final class Group {
       groupId_ = value;
     }
     /**
-     * <pre>
-     *群组id，申请创建的时候为0，创建成功为群组的id
-     * </pre>
-     *
      * <code>optional uint32 group_id = 1;</code>
      */
     private void clearGroupId() {
@@ -1503,20 +1254,12 @@ public final class Group {
     public static final int GROUP_NAME_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString groupName_;
     /**
-     * <pre>
-     *群组title，只有创建者可以设置title
-     * </pre>
-     *
      * <code>optional bytes group_name = 2;</code>
      */
     public com.google.protobuf.ByteString getGroupName() {
       return groupName_;
     }
     /**
-     * <pre>
-     *群组title，只有创建者可以设置title
-     * </pre>
-     *
      * <code>optional bytes group_name = 2;</code>
      */
     private void setGroupName(com.google.protobuf.ByteString value) {
@@ -1527,10 +1270,6 @@ public final class Group {
       groupName_ = value;
     }
     /**
-     * <pre>
-     *群组title，只有创建者可以设置title
-     * </pre>
-     *
      * <code>optional bytes group_name = 2;</code>
      */
     private void clearGroupName() {
@@ -1648,20 +1387,12 @@ public final class Group {
 
 
       /**
-       * <pre>
-       *群组id，申请创建的时候为0，创建成功为群组的id
-       * </pre>
-       *
        * <code>optional uint32 group_id = 1;</code>
        */
       public int getGroupId() {
         return instance.getGroupId();
       }
       /**
-       * <pre>
-       *群组id，申请创建的时候为0，创建成功为群组的id
-       * </pre>
-       *
        * <code>optional uint32 group_id = 1;</code>
        */
       public Builder setGroupId(int value) {
@@ -1670,10 +1401,6 @@ public final class Group {
         return this;
       }
       /**
-       * <pre>
-       *群组id，申请创建的时候为0，创建成功为群组的id
-       * </pre>
-       *
        * <code>optional uint32 group_id = 1;</code>
        */
       public Builder clearGroupId() {
@@ -1683,20 +1410,12 @@ public final class Group {
       }
 
       /**
-       * <pre>
-       *群组title，只有创建者可以设置title
-       * </pre>
-       *
        * <code>optional bytes group_name = 2;</code>
        */
       public com.google.protobuf.ByteString getGroupName() {
         return instance.getGroupName();
       }
       /**
-       * <pre>
-       *群组title，只有创建者可以设置title
-       * </pre>
-       *
        * <code>optional bytes group_name = 2;</code>
        */
       public Builder setGroupName(com.google.protobuf.ByteString value) {
@@ -1705,10 +1424,6 @@ public final class Group {
         return this;
       }
       /**
-       * <pre>
-       *群组title，只有创建者可以设置title
-       * </pre>
-       *
        * <code>optional bytes group_name = 2;</code>
        */
       public Builder clearGroupName() {
@@ -2829,7 +2544,7 @@ public final class Group {
 
     /**
      * <pre>
-     *群消息的命令
+     *group order number
      * </pre>
      *
      * <code>optional uint32 cmd = 1;</code>
@@ -2838,7 +2553,7 @@ public final class Group {
 
     /**
      * <pre>
-     *群编号
+     *group number
      * </pre>
      *
      * <code>optional uint32 group_id = 2;</code>
@@ -2846,17 +2561,13 @@ public final class Group {
     int getGroupId();
 
     /**
-     * <pre>
-     *群名称
-     * </pre>
-     *
      * <code>optional bytes group_name = 3;</code>
      */
     com.google.protobuf.ByteString getGroupName();
 
     /**
      * <pre>
-     *群邀请
+     *invite peer infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupInvite groupInvite = 4;</code>
@@ -2864,7 +2575,7 @@ public final class Group {
     boolean hasGroupInvite();
     /**
      * <pre>
-     *群邀请
+     *invite peer infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupInvite groupInvite = 4;</code>
@@ -2873,7 +2584,7 @@ public final class Group {
 
     /**
      * <pre>
-     *token上报
+     *token for ios
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupTokenPush groupTokenPush = 5;</code>
@@ -2881,7 +2592,7 @@ public final class Group {
     boolean hasGroupTokenPush();
     /**
      * <pre>
-     *token上报
+     *token for ios
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupTokenPush groupTokenPush = 5;</code>
@@ -2890,7 +2601,7 @@ public final class Group {
 
     /**
      * <pre>
-     *创建群
+     *create group infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupCreate groupCreate = 6;</code>
@@ -2898,7 +2609,7 @@ public final class Group {
     boolean hasGroupCreate();
     /**
      * <pre>
-     *创建群
+     *create group infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupCreate groupCreate = 6;</code>
@@ -2916,7 +2627,7 @@ public final class Group {
 
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -2925,7 +2636,7 @@ public final class Group {
         getGroupPeersList();
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -2933,7 +2644,7 @@ public final class Group {
     im.tox.proto.Group.GroupPeer getGroupPeers(int index);
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -2957,7 +2668,7 @@ public final class Group {
     private int cmd_;
     /**
      * <pre>
-     *群消息的命令
+     *group order number
      * </pre>
      *
      * <code>optional uint32 cmd = 1;</code>
@@ -2967,7 +2678,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群消息的命令
+     *group order number
      * </pre>
      *
      * <code>optional uint32 cmd = 1;</code>
@@ -2978,7 +2689,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群消息的命令
+     *group order number
      * </pre>
      *
      * <code>optional uint32 cmd = 1;</code>
@@ -2992,7 +2703,7 @@ public final class Group {
     private int groupId_;
     /**
      * <pre>
-     *群编号
+     *group number
      * </pre>
      *
      * <code>optional uint32 group_id = 2;</code>
@@ -3002,7 +2713,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群编号
+     *group number
      * </pre>
      *
      * <code>optional uint32 group_id = 2;</code>
@@ -3013,7 +2724,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群编号
+     *group number
      * </pre>
      *
      * <code>optional uint32 group_id = 2;</code>
@@ -3026,20 +2737,12 @@ public final class Group {
     public static final int GROUP_NAME_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString groupName_;
     /**
-     * <pre>
-     *群名称
-     * </pre>
-     *
      * <code>optional bytes group_name = 3;</code>
      */
     public com.google.protobuf.ByteString getGroupName() {
       return groupName_;
     }
     /**
-     * <pre>
-     *群名称
-     * </pre>
-     *
      * <code>optional bytes group_name = 3;</code>
      */
     private void setGroupName(com.google.protobuf.ByteString value) {
@@ -3050,10 +2753,6 @@ public final class Group {
       groupName_ = value;
     }
     /**
-     * <pre>
-     *群名称
-     * </pre>
-     *
      * <code>optional bytes group_name = 3;</code>
      */
     private void clearGroupName() {
@@ -3065,7 +2764,7 @@ public final class Group {
     private im.tox.proto.Group.GroupInvite groupInvite_;
     /**
      * <pre>
-     *群邀请
+     *invite peer infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupInvite groupInvite = 4;</code>
@@ -3075,7 +2774,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群邀请
+     *invite peer infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupInvite groupInvite = 4;</code>
@@ -3085,7 +2784,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群邀请
+     *invite peer infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupInvite groupInvite = 4;</code>
@@ -3099,7 +2798,7 @@ public final class Group {
       }
     /**
      * <pre>
-     *群邀请
+     *invite peer infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupInvite groupInvite = 4;</code>
@@ -3111,7 +2810,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群邀请
+     *invite peer infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupInvite groupInvite = 4;</code>
@@ -3128,7 +2827,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群邀请
+     *invite peer infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupInvite groupInvite = 4;</code>
@@ -3141,7 +2840,7 @@ public final class Group {
     private im.tox.proto.Group.GroupTokenPush groupTokenPush_;
     /**
      * <pre>
-     *token上报
+     *token for ios
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupTokenPush groupTokenPush = 5;</code>
@@ -3151,7 +2850,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *token上报
+     *token for ios
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupTokenPush groupTokenPush = 5;</code>
@@ -3161,7 +2860,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *token上报
+     *token for ios
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupTokenPush groupTokenPush = 5;</code>
@@ -3175,7 +2874,7 @@ public final class Group {
       }
     /**
      * <pre>
-     *token上报
+     *token for ios
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupTokenPush groupTokenPush = 5;</code>
@@ -3187,7 +2886,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *token上报
+     *token for ios
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupTokenPush groupTokenPush = 5;</code>
@@ -3204,7 +2903,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *token上报
+     *token for ios
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupTokenPush groupTokenPush = 5;</code>
@@ -3217,7 +2916,7 @@ public final class Group {
     private im.tox.proto.Group.GroupCreate groupCreate_;
     /**
      * <pre>
-     *创建群
+     *create group infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupCreate groupCreate = 6;</code>
@@ -3227,7 +2926,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *创建群
+     *create group infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupCreate groupCreate = 6;</code>
@@ -3237,7 +2936,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *创建群
+     *create group infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupCreate groupCreate = 6;</code>
@@ -3251,7 +2950,7 @@ public final class Group {
       }
     /**
      * <pre>
-     *创建群
+     *create group infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupCreate groupCreate = 6;</code>
@@ -3263,7 +2962,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *创建群
+     *create group infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupCreate groupCreate = 6;</code>
@@ -3280,7 +2979,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *创建群
+     *create group infor
      * </pre>
      *
      * <code>optional .im.tox.proto.GroupCreate groupCreate = 6;</code>
@@ -3345,7 +3044,7 @@ public final class Group {
     private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Group.GroupPeer> groupPeers_;
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -3355,7 +3054,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -3366,7 +3065,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -3376,7 +3075,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -3386,7 +3085,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -3404,7 +3103,7 @@ public final class Group {
 
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -3419,7 +3118,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -3431,7 +3130,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -3445,7 +3144,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -3460,7 +3159,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -3472,7 +3171,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -3484,7 +3183,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -3497,7 +3196,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -3507,7 +3206,7 @@ public final class Group {
     }
     /**
      * <pre>
-     *群成员列表，可多个
+     *group peer info
      * </pre>
      *
      * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -3670,7 +3369,7 @@ public final class Group {
 
       /**
        * <pre>
-       *群消息的命令
+       *group order number
        * </pre>
        *
        * <code>optional uint32 cmd = 1;</code>
@@ -3680,7 +3379,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群消息的命令
+       *group order number
        * </pre>
        *
        * <code>optional uint32 cmd = 1;</code>
@@ -3692,7 +3391,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群消息的命令
+       *group order number
        * </pre>
        *
        * <code>optional uint32 cmd = 1;</code>
@@ -3705,7 +3404,7 @@ public final class Group {
 
       /**
        * <pre>
-       *群编号
+       *group number
        * </pre>
        *
        * <code>optional uint32 group_id = 2;</code>
@@ -3715,7 +3414,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群编号
+       *group number
        * </pre>
        *
        * <code>optional uint32 group_id = 2;</code>
@@ -3727,7 +3426,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群编号
+       *group number
        * </pre>
        *
        * <code>optional uint32 group_id = 2;</code>
@@ -3739,20 +3438,12 @@ public final class Group {
       }
 
       /**
-       * <pre>
-       *群名称
-       * </pre>
-       *
        * <code>optional bytes group_name = 3;</code>
        */
       public com.google.protobuf.ByteString getGroupName() {
         return instance.getGroupName();
       }
       /**
-       * <pre>
-       *群名称
-       * </pre>
-       *
        * <code>optional bytes group_name = 3;</code>
        */
       public Builder setGroupName(com.google.protobuf.ByteString value) {
@@ -3761,10 +3452,6 @@ public final class Group {
         return this;
       }
       /**
-       * <pre>
-       *群名称
-       * </pre>
-       *
        * <code>optional bytes group_name = 3;</code>
        */
       public Builder clearGroupName() {
@@ -3775,7 +3462,7 @@ public final class Group {
 
       /**
        * <pre>
-       *群邀请
+       *invite peer infor
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupInvite groupInvite = 4;</code>
@@ -3785,7 +3472,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群邀请
+       *invite peer infor
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupInvite groupInvite = 4;</code>
@@ -3795,7 +3482,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群邀请
+       *invite peer infor
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupInvite groupInvite = 4;</code>
@@ -3807,7 +3494,7 @@ public final class Group {
         }
       /**
        * <pre>
-       *群邀请
+       *invite peer infor
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupInvite groupInvite = 4;</code>
@@ -3820,7 +3507,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群邀请
+       *invite peer infor
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupInvite groupInvite = 4;</code>
@@ -3832,7 +3519,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群邀请
+       *invite peer infor
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupInvite groupInvite = 4;</code>
@@ -3844,7 +3531,7 @@ public final class Group {
 
       /**
        * <pre>
-       *token上报
+       *token for ios
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupTokenPush groupTokenPush = 5;</code>
@@ -3854,7 +3541,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *token上报
+       *token for ios
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupTokenPush groupTokenPush = 5;</code>
@@ -3864,7 +3551,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *token上报
+       *token for ios
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupTokenPush groupTokenPush = 5;</code>
@@ -3876,7 +3563,7 @@ public final class Group {
         }
       /**
        * <pre>
-       *token上报
+       *token for ios
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupTokenPush groupTokenPush = 5;</code>
@@ -3889,7 +3576,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *token上报
+       *token for ios
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupTokenPush groupTokenPush = 5;</code>
@@ -3901,7 +3588,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *token上报
+       *token for ios
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupTokenPush groupTokenPush = 5;</code>
@@ -3913,7 +3600,7 @@ public final class Group {
 
       /**
        * <pre>
-       *创建群
+       *create group infor
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupCreate groupCreate = 6;</code>
@@ -3923,7 +3610,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *创建群
+       *create group infor
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupCreate groupCreate = 6;</code>
@@ -3933,7 +3620,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *创建群
+       *create group infor
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupCreate groupCreate = 6;</code>
@@ -3945,7 +3632,7 @@ public final class Group {
         }
       /**
        * <pre>
-       *创建群
+       *create group infor
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupCreate groupCreate = 6;</code>
@@ -3958,7 +3645,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *创建群
+       *create group infor
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupCreate groupCreate = 6;</code>
@@ -3970,7 +3657,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *创建群
+       *create group infor
        * </pre>
        *
        * <code>optional .im.tox.proto.GroupCreate groupCreate = 6;</code>
@@ -4027,7 +3714,7 @@ public final class Group {
 
       /**
        * <pre>
-       *群成员列表，可多个
+       *group peer info
        * </pre>
        *
        * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -4038,7 +3725,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群成员列表，可多个
+       *group peer info
        * </pre>
        *
        * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -4047,7 +3734,7 @@ public final class Group {
         return instance.getGroupPeersCount();
       }/**
        * <pre>
-       *群成员列表，可多个
+       *group peer info
        * </pre>
        *
        * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -4057,7 +3744,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群成员列表，可多个
+       *group peer info
        * </pre>
        *
        * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -4070,7 +3757,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群成员列表，可多个
+       *group peer info
        * </pre>
        *
        * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -4083,7 +3770,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群成员列表，可多个
+       *group peer info
        * </pre>
        *
        * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -4095,7 +3782,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群成员列表，可多个
+       *group peer info
        * </pre>
        *
        * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -4108,7 +3795,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群成员列表，可多个
+       *group peer info
        * </pre>
        *
        * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -4121,7 +3808,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群成员列表，可多个
+       *group peer info
        * </pre>
        *
        * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -4134,7 +3821,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群成员列表，可多个
+       *group peer info
        * </pre>
        *
        * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -4147,7 +3834,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群成员列表，可多个
+       *group peer info
        * </pre>
        *
        * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>
@@ -4159,7 +3846,7 @@ public final class Group {
       }
       /**
        * <pre>
-       *群成员列表，可多个
+       *group peer info
        * </pre>
        *
        * <code>repeated .im.tox.proto.GroupPeer group_peers = 8;</code>

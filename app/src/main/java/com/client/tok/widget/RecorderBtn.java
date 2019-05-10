@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import com.client.tok.R;
 import com.client.tok.media.player.audio.AudioPlayer;
-import com.client.tok.media.recorder.OpusAudioRecorder;
+import com.client.tok.media.recorder.audio.OpusAudioRecorder;
 import com.client.tok.pagejump.GlobalParams;
 import com.client.tok.permission.PermissionModel;
 import com.client.tok.ui.chat2.Contract;
@@ -105,7 +105,7 @@ public class RecorderBtn extends android.support.v7.widget.AppCompatTextView
                 }
                 break;
             case MotionEvent.ACTION_UP:
-            case MotionEvent.ACTION_CANCEL:
+            case MotionEvent.ACTION_CANCEL://xiaomi always return action_cancel when action_up??
                 LogUtil.i(TAG,
                     "action up or cancel:" + action + ",triggeredCancel:" + mTriggeredCancel);
                 handleCancelOrEnd(mTriggeredCancel);

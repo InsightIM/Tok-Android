@@ -2,7 +2,17 @@
     {
         "name": "添加朋友机器人",
         "type": "10001",
+        "provider": "Tok 提供",
+        "defaultIcon": "avatar_find_friend_bot",
         "tokId": "3415845A7145854DE91046FF4666503A83EED05BC47CA222644C5F47A8E0F072938433360B34",
-        "signature": "我可以做什么？添加朋友机器人可以帮你寻找更多的朋友。添加我为好友，点击或输入/help获取指令列表。"
+        "signature": "我可以做什么？添加朋友机器人可以帮你寻找更多的朋友。添加我为好友，在输入框中输入/help获取指令列表。"
+    },
+    {
+        "name": "离线消息机器人",
+        "type": "10002",
+        "provider": "Tok 提供",
+        "defaultIcon": "avatar_offline_bot",
+        "tokId": "EC6EFF1B9CA5E5C2E41715A187497094B9D61F1604FBC1B6F202B1F1C89B4501B4EB7E520B24",
+        "signature": "这个机器人能为您提供发送离线消息的能力。注意：只有会话双方都添加了机器人，这个过渡阶段的功能才会生效"
     }
 ]

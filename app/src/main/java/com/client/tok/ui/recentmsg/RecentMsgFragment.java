@@ -54,14 +54,23 @@ public class RecentMsgFragment extends BaseFragment
         mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecentMsgRv.setLayoutManager(mLayoutManager);
         mEmptyPromptView = view.findViewById(R.id.id_recent_msg_empty_layout);
-        mEmptyPromptView.setMainContentListener((View v) -> {
-            PageJumpIn.jumpSafePage(getActivity());
+        mEmptyPromptView.setMainContentListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PageJumpIn.jumpSafePage(RecentMsgFragment.this.getActivity());
+            }
         });
-        mEmptyPromptView.setBtn1Listener((View v) -> {
-            PageJumpIn.jumpSharePage(getActivity());
+        mEmptyPromptView.setBtn1Listener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PageJumpIn.jumpSharePage(RecentMsgFragment.this.getActivity());
+            }
         });
-        mEmptyPromptView.setBtn2Listener((View v) -> {
-            PageJumpIn.jumpAddFriendsPage(getActivity());
+        mEmptyPromptView.setBtn2Listener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PageJumpIn.jumpAddFriendsPage(RecentMsgFragment.this.getActivity());
+            }
         });
         new RecentMsgPresenter(this);
         return view;

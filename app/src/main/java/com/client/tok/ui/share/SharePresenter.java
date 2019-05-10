@@ -4,7 +4,7 @@ import com.client.QR.Contents;
 import com.client.QR.QRCodeEncode;
 import com.client.tok.R;
 import com.client.tok.bean.UserInfo;
-import com.client.tok.tox.CoreManager;
+import com.client.tok.tox.ToxManager;
 import com.client.tok.tox.State;
 import com.client.tok.utils.ImageUtils;
 import com.client.tok.utils.LogUtil;
@@ -36,8 +36,8 @@ public class SharePresenter implements ShareContract.ISharePresenter {
 
     private void getInfo() {
         UserInfo userInfo = State.userRepo().getActiveUserDetails();
-        mKey = CoreManager.getManager().toxBase.getSelfKey().getKey();
-        mSelfAddress = CoreManager.getManager().toxBase.getSelfAddress().getAddress().toUpperCase();
+        mKey = ToxManager.getManager().toxBase.getSelfKey().getKey();
+        mSelfAddress = ToxManager.getManager().toxBase.getSelfAddress().getAddress().toUpperCase();
         mNickName = new String(userInfo.getNickname().value);
         mShareView.showPortraitView(mKey, mNickName);
         mShareView.showMyInfo(

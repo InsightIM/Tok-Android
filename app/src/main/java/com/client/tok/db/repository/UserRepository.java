@@ -52,7 +52,7 @@ public class UserRepository {
         UserInfo user = new UserInfo(toxMeName, password,
             ToxNickname.unsafeFromValue(toxMeName.getUserName().getBytes()), "online",
             ToxStatusMessage.unsafeFromValue(
-                StringUtils.getTextFromResId(R.string.pref_default_status_message).getBytes()), "",
+                StringUtils.getTextFromResId(R.string.default_signature).getBytes()), "",
             System.currentTimeMillis());
         long dbId = userDao.insert(user);
         LogUtil.i(TAG, "addUser,dbId:" + dbId);

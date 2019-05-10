@@ -8,7 +8,7 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import com.client.tok.TokApplication;
 import com.client.tok.msg.callbacks.ToxCallbackListener;
-import com.client.tok.tox.CoreManager;
+import com.client.tok.tox.ToxManager;
 import com.client.tok.utils.LogUtil;
 import com.client.tok.utils.NetUtils;
 import java.util.Timer;
@@ -31,32 +31,35 @@ public class ChatMainService extends Service {
         LogUtil.i(TAG, "chatMainService onCreate");
         context = TokApplication.getInstance();
         keepRunning = true;
-        Runnable start = () -> {
-            CoreManager.getManager().initTox(TokApplication.getInstance());
-            final ToxCallbackListener toxCallbackListener = new ToxCallbackListener(context);
-            timer = new Timer(true);
-            isRunning = true;
-            try {
-                task = new TimerTask() {
-                    public void run() {
-                        if (keepRunning) {
-                            if (NetUtils.isNetworkAvailable()) {
-                                if (keepRunning) {
-                                    LogUtil.i(TAG,
-                                        "coreManager:" + CoreManager.getManager().hashCode());
-                                    CoreManager.getManager().iterate(toxCallbackListener);
+        Runnable start = new Runnable() {
+            @Override
+            public void run() {
+                ToxManager.getManager().initTox(TokApplication.getInstance());
+                final ToxCallbackListener toxCallbackListener = new ToxCallbackListener(context);
+                timer = new Timer(true);
+                isRunning = true;
+                try {
+                    task = new TimerTask() {
+                        public void run() {
+                            if (keepRunning) {
+                                if (NetUtils.isNetworkAvailable()) {
+                                    if (keepRunning) {
+                                        LogUtil.i(TAG,
+                                            "coreManager:" + ToxManager.getManager().hashCode());
+                                        ToxManager.getManager().iterate(toxCallbackListener);
+                                    }
                                 }
+                            } else {
+                                stopTimer();
                             }
-                        } else {
-                            stopTimer();
                         }
-                    }
-                };
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+                    };
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
-            timer.scheduleAtFixedRate(task, 200, 200);
+                timer.scheduleAtFixedRate(task, 200, 200);
+            }
         };
 
         serviceThread = new Thread(start);
@@ -93,7 +96,7 @@ public class ChatMainService extends Service {
         super.onDestroy();
         stopTimer();
         isRunning = false;
-        CoreManager.getManager().saveAndClose();
+        ToxManager.getManager().saveAndClose();
         LogUtil.i(TAG, "Chat Service onDestroy");
     }
 

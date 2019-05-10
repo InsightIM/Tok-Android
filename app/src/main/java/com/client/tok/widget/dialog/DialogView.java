@@ -72,19 +72,25 @@ public class DialogView extends Dialog {
         contentTv = findViewById(R.id.id_dialog_content_tv);
         btnLayout = findViewById(R.id.id_dialog_btn_layout);
         leftBt = findViewById(R.id.id_dialog_left_bt);
-        leftBt.setOnClickListener((View v) -> {
-            if (leftListener != null) {
-                leftListener.onClick(v);
+        leftBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (leftListener != null) {
+                    leftListener.onClick(v);
+                }
+                DialogView.this.dismiss();
             }
-            DialogView.this.dismiss();
         });
         rightBt = findViewById(R.id.id_dialog_right_bt);
-        rightBt.setOnClickListener((View v) -> {
-            if (rightListener != null) {
-                rightListener.onClick(v);
-            }
-            if (autoDismiss) {
-                DialogView.this.dismiss();
+        rightBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (rightListener != null) {
+                    rightListener.onClick(v);
+                }
+                if (autoDismiss) {
+                    DialogView.this.dismiss();
+                }
             }
         });
         customLayout = findViewById(R.id.id_dialog_custom_layout);

@@ -7,7 +7,7 @@ package com.client.tok.pagejump;
 public class IntentConstants {
     public static final String NOTIFY_DATA = "data";
     public static final String PK = "pk";
-    public static final String TOK_ID = "key";
+    public static final String TOK_ID = "tok_id";
     public static final String REQ_FRIEND_KEY = "req_friend_key";
     public static final String CHAT_TYPE = "chat_type";
     public static final String FROM_NOTIFICATION = "notification";

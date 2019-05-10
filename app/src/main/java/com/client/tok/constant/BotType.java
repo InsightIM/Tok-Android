@@ -2,7 +2,7 @@ package com.client.tok.constant;
 
 public enum BotType {
     FIND_FRIEND_BOT(10001),
-    SEND_MSG_BOT(10002);
+    OFFLINE_MSG_BOT(10002);
     private int type;
 
     public int getType() {
@@ -15,7 +15,7 @@ public enum BotType {
                 return botType;
             }
         }
-        return SEND_MSG_BOT;
+        return OFFLINE_MSG_BOT;
     }
 
     BotType(int type) {

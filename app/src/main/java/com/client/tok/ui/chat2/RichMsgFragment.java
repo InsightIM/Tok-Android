@@ -23,6 +23,7 @@ import com.client.tok.widget.RecorderBtn;
 import com.client.tok.widget.RecordingView;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 
 import static com.client.tok.constant.BotOrder.ADD;
 import static com.client.tok.constant.BotOrder.START;
@@ -58,7 +59,9 @@ public class RichMsgFragment extends BaseFragment implements View.OnClickListene
         mInputRecordBtnSw = rootView.findViewById(R.id.id_keyboard_record_switcher_btn);
         mInputEt = rootView.findViewById(R.id.id_input_msg_et);
         mInputEt.setOnClickListener(this);
-        mInputEt.setText(mPresenter.getDraft());
+        if(mPresenter!=null){
+            mInputEt.setText(mPresenter.getDraft());
+        }
         mRecorderTv = rootView.findViewById(R.id.id_record_tv);
         mSendIv = rootView.findViewById(R.id.id_send_msg_tv);
         mSendIv.setOnClickListener(this);
@@ -112,40 +115,43 @@ public class RichMsgFragment extends BaseFragment implements View.OnClickListene
         if (mBotEventDis == null) {
             mBotEventDis = RxBus.listen(BotOrderEvent.class)
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe((BotOrderEvent botOrderEvent) -> {
-                    LogUtil.i(TAG, "==" + botOrderEvent.toString() + "==");
-                    String order = botOrderEvent.getOrder();
-                    String sendMsg = order;
-                    BotOrder botOrder = fromVal(order);
-                    switch (botOrder) {
-                        case START:
-                            sendMsg =
-                                order + " " + PreferenceUtils.getString(SharePKeys.CHAT_ID, "");
-                            break;
-                        case SET:
-                            sendMsg = order + " " + State.userRepo()
-                                .getActiveUserDetails()
-                                .getStatusMessage()
-                                .toString();
-                            break;
-                        case ADD:
-                            break;
-                        case OTHER:
-                            break;
-                    }
+                .subscribe(new Consumer<BotOrderEvent>() {
+                    @Override
+                    public void accept(BotOrderEvent botOrderEvent) throws Exception {
+                        LogUtil.i(TAG, "==" + botOrderEvent.toString() + "==");
+                        String order = botOrderEvent.getOrder();
+                        String sendMsg = order;
+                        BotOrder botOrder = fromVal(order);
+                        switch (botOrder) {
+                            case START:
+                                sendMsg =
+                                    order + " " + PreferenceUtils.getString(SharePKeys.CHAT_ID, "");
+                                break;
+                            case SET:
+                                sendMsg = order + " " + State.userRepo()
+                                    .getActiveUserDetails()
+                                    .getStatusMessage()
+                                    .toString();
+                                break;
+                            case ADD:
+                                break;
+                            case OTHER:
+                                break;
+                        }
 
-                    if (botOrder.isDirSend()) {
-                        //send msg directly
-                        mInputEt.setText(sendMsg);
-                        sendMsg();
-                    } else {
-                        //show msg in edit text
-                        if (ADD.getOrder().equals(order)) {
-                            String tokId = botOrderEvent.getMsg();
-                            mPresenter.addFriendOrder(tokId);
-                        } else {
+                        if (botOrder.isDirSend()) {
+                            //send msg directly
                             mInputEt.setText(sendMsg);
-                            mInputEt.setSelection(sendMsg.length());
+                            RichMsgFragment.this.sendMsg();
+                        } else {
+                            //show msg in edit text
+                            if (ADD.getOrder().equals(order)) {
+                                String tokId = botOrderEvent.getMsg();
+                                mPresenter.addFriendOrder(tokId);
+                            } else {
+                                mInputEt.setText(sendMsg);
+                                mInputEt.setSelection(sendMsg.length());
+                            }
                         }
                     }
                 });

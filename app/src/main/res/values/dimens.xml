@@ -49,6 +49,7 @@
     <dimen name="spacing_8">8dp</dimen>
     <dimen name="spacing_10">10dp</dimen>
     <dimen name="spacing_12">12dp</dimen>
+    <dimen name="spacing_13">13dp</dimen>
     <dimen name="spacing_15">15dp</dimen>
     <dimen name="spacing_14">14dp</dimen>
     <dimen name="spacing_16">16dp</dimen>
@@ -116,12 +117,14 @@
     <dimen name="s_4">4dp</dimen>
     <dimen name="s_5">5dp</dimen>
     <dimen name="s_6">6dp</dimen>
+    <dimen name="s_7">7dp</dimen>
     <dimen name="s_8">8dp</dimen>
     <dimen name="s_10">10dp</dimen>
     <dimen name="s_12">12dp</dimen>
     <dimen name="s_14">14dp</dimen>
     <dimen name="s_15">15dp</dimen>
     <dimen name="s_16">16dp</dimen>
+    <dimen name="s_17">17dp</dimen>
     <dimen name="s_20">20dp</dimen>
     <dimen name="s_22">22dp</dimen>
     <dimen name="s_24">24dp</dimen>
@@ -131,6 +134,7 @@
     <dimen name="s_38">38dp</dimen>
     <dimen name="s_40">40dp</dimen>
     <dimen name="s_44">44dp</dimen>
+    <dimen name="s_46">46dp</dimen>
     <dimen name="s_48">48dp</dimen>
     <dimen name="s_50">50dp</dimen>
     <dimen name="s_52">52dp</dimen>
@@ -145,6 +149,7 @@
     <dimen name="s_80">80dp</dimen>
     <dimen name="s_86">86dp</dimen>
     <dimen name="s_90">90dp</dimen>
+    <dimen name="s_94">94dp</dimen>
     <dimen name="s_100">100dp</dimen>
     <dimen name="s_108">108dp</dimen>
     <dimen name="s_114">114dp</dimen>
@@ -158,68 +163,48 @@
     <dimen name="s_170">170dp</dimen>
     <dimen name="s_246">246dp</dimen>
 
-    <!--toolbar高度-->
     <dimen name="toolbar_height">@dimen/s_54</dimen>
 
-    <!--好友列表中，离在线状态图标大小-->
     <dimen name="status_list_width">@dimen/s_12</dimen>
     <dimen name="status_list_height">@dimen/s_12</dimen>
-    <!--好友会话界面中，离在线状态图标大小-->
     <dimen name="status_title_width">@dimen/s_6</dimen>
     <dimen name="status_title_height">@dimen/s_6</dimen>
 
-    <!--聊天界面中整个页面的padding-->
     <dimen name="chat_content_padding">@dimen/s_12</dimen>
-    <!--消息与消息之间的间隔-->
     <dimen name="interval_sp_msg">@dimen/s_12</dimen>
-    <!--消息内容与上面的时间间隔-->
     <dimen name="interval_sp_msg_time">@dimen/s_8</dimen>
 
-    <!--最近会话列表头像大小-->
+    <dimen name="avatar_head_info_size">@dimen/s_46</dimen>
     <dimen name="recent_msg_portrait_width">@dimen/s_48</dimen>
     <dimen name="recent_msg__portrait_height">@dimen/s_48</dimen>
-
-    <!--联系人列表头像大小-->
     <dimen name="contact_portrait_width">@dimen/s_40</dimen>
     <dimen name="contact_portrait_height">@dimen/s_40</dimen>
-
-    <!--分享页面头像大小-->
     <dimen name="share_portrait_width">@dimen/s_50</dimen>
     <dimen name="share_portrait_height">@dimen/s_50</dimen>
-
-    <!--我的页面头像大小-->
     <dimen name="mine_portrait_width">@dimen/s_54</dimen>
     <dimen name="mine_portrait_height">@dimen/s_54</dimen>
-
-    <!--会话页面头像大小-->
     <dimen name="portrait_width">@dimen/s_36</dimen>
     <dimen name="portrait_height">@dimen/s_36</dimen>
     <dimen name="portrait_corner">@dimen/s_4</dimen>
 
-    <!--聊天时图片大小-->
     <dimen name="chat_img_width">@dimen/s_146</dimen>
     <dimen name="chat_img_height">@dimen/s_139</dimen>
 
     <dimen name="chat_img_receiving_width">@dimen/s_86</dimen>
     <dimen name="chat_img_receiving_height">@dimen/s_80</dimen>
 
-    <!--会话界面文件大小-->
     <dimen name="chat_file_width">@dimen/s_246</dimen>
     <dimen name="chat_file_height">@dimen/s_72</dimen>
     <dimen name="file_icon_width">@dimen/s_50</dimen>
     <dimen name="file_icon_height">@dimen/s_56</dimen>
-    <!--loading圈大小-->
     <dimen name="loading_size">@dimen/s_40</dimen>
 
-    <!--音频显示的高度-->
-    <!--头像大小-->
     <dimen name="audio_height">@dimen/s_36</dimen>
 
     <dimen name="recent_item_height">@dimen/s_72</dimen>
     <dimen name="list_menu_width">@dimen/s_120</dimen>
     <dimen name="page_menu_width">@dimen/s_150</dimen>
 
-    <!--好友会话界面中，离在线状态图标大小-->
     <dimen name="unread_width">@dimen/s_10</dimen>
     <dimen name="unread_height">@dimen/s_10</dimen>
 

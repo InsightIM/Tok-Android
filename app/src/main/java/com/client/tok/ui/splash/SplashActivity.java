@@ -43,8 +43,11 @@ public class SplashActivity extends BaseTitleFullScreenActivity
         viewList.add(ViewUtil.inflateViewById(this, R.layout.layout_guide2));
         View lastView = ViewUtil.inflateViewById(this, R.layout.layout_guide3);
         TextView enter = lastView.findViewById(R.id.id_guide_enter_btn);
-        enter.setOnClickListener((View v) -> {
-            mSplashPresenter.enter();
+        enter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSplashPresenter.enter();
+            }
         });
         viewList.add(lastView);
         PagerAdapter vpAdapter = new GuideAdapter(viewList);

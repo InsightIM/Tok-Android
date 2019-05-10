@@ -50,9 +50,12 @@ public class MsgTextHolder extends BaseMsgHolder {
         mMyMsgTv = itemView.findViewById(R.id.id_msg_mine_tv);
         mMyMsgTv.setEnableOrderLink(mPresenter.isEnableOrderLink());
         mFailedIv = itemView.findViewById(R.id.id_msg_mine_send_status_iv);
-        mFailedIv.setOnClickListener((View v) -> {
-            if (mPresenter != null) {
-                mPresenter.onMsgFailDeal(mCurMsg);
+        mFailedIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mPresenter != null) {
+                    mPresenter.onMsgFailDeal(mCurMsg);
+                }
             }
         });
         mSentStatus2Iv = itemView.findViewById(R.id.id_msg_mine_send_status2_iv);

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.client.tok.R;
-import com.client.tok.bean.ContactsInfo;
+import com.client.tok.bean.ContactInfo;
 import com.client.tok.msg.UserStatus;
 import com.client.tok.ui.adapter.BaseViewHolder;
 import com.client.tok.utils.ViewUtil;
@@ -19,7 +19,7 @@ import java.util.List;
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactsHolder> {
     private String TAG = "RecentMsgAdapter2";
     private Context mContext;
-    private List<ContactsInfo> mContactsList = new ArrayList<>();
+    private List<ContactInfo> mContactsList = new ArrayList<>();
     private BaseViewHolder.OnItemClickListener mItemClickListener;
     private BaseViewHolder.OnItemLongClickListener mItemLongClickListener;
     private View mHeaderView;
@@ -31,7 +31,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.Contacts
         mContext = context;
     }
 
-    public void updateDataList(List<ContactsInfo> contactsList) {
+    public void updateDataList(List<ContactInfo> contactsList) {
         mContactsList.clear();
         mContactsList.addAll(contactsList);
         notifyDataSetChanged();
@@ -83,10 +83,10 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.Contacts
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ContactsHolder holder, int position) {
+    public void onBindViewHolder(final ContactsHolder holder, int position) {
         if (getItemViewType(position) == TYPE_NORMAL) {
             int realPosition = holder.getAdapterPosition() - getHeaderCount();
-            ContactsInfo item = mContactsList.get(realPosition);
+            ContactInfo item = mContactsList.get(realPosition);
             if (realPosition == 0 || !mContactsList.get(realPosition - 1)
                 .getFirstLetter()
                 .equals(item.getFirstLetter())) {
@@ -101,16 +101,22 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.Contacts
             holder.portraitView.setFriendText(item.getKey().toString(), item.getDisplayName());
             holder.name.setText(item.getDisplayName());
 
-            holder.itemView.setOnClickListener((View v) -> {
-                if (mItemClickListener != null) {
-                    mItemClickListener.onItemClick(v, holder.getAdapterPosition());
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mItemClickListener != null) {
+                        mItemClickListener.onItemClick(v, holder.getAdapterPosition());
+                    }
                 }
             });
-            holder.itemView.setOnLongClickListener((View v) -> {
-                if (mItemLongClickListener != null) {
-                    mItemLongClickListener.onItemLongClick(v, holder.getAdapterPosition());
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    if (mItemLongClickListener != null) {
+                        mItemLongClickListener.onItemLongClick(v, holder.getAdapterPosition());
+                    }
+                    return true;
                 }
-                return true;
             });
         } else if (getItemViewType(position) == TYPE_HEADER) {
             return;

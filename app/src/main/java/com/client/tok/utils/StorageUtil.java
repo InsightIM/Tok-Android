@@ -1,7 +1,6 @@
 package com.client.tok.utils;
 
 import android.os.Environment;
-import com.client.tok.TokApplication;
 import java.io.File;
 
 public class StorageUtil {
@@ -12,7 +11,8 @@ public class StorageUtil {
     private static String FOLDER_SDCARD = Environment.getExternalStorageDirectory().toString();
     private static String FOLDER_ROOT =
         FOLDER_SDCARD + File.separator + ROOT_NAME + File.separator + PreferenceUtils.getAccount();
-    private static String[] SUB_FOLDERS = { ".files", ".avatars", ".qr", ".tmp", "profile" };
+    private static String[] SUB_FOLDERS =
+        { ".files", ".avatars", ".qr", ".tmp", "profile", "download" };
     private static String QR_CODE_FILE = "qr_code.jpg";
     private static String QR_CODE_SHARE_FILE = "qr_code_share.jpg";
     private static String SHARE_IMG_FILE = "share_img.jpg";
@@ -59,6 +59,10 @@ public class StorageUtil {
         return FOLDER_ROOT + File.separator + SUB_FOLDERS[4] + File.separator;
     }
 
+    public static String getDownloadFolder() {
+        return FOLDER_ROOT + File.separator + SUB_FOLDERS[5] + File.separator;
+    }
+
     public static String getQrCodeFile() {
         return getQrCodeFolder() + File.separator + QR_CODE_FILE;
     }
@@ -70,5 +74,4 @@ public class StorageUtil {
     public static String getShareImgFile() {
         return getTmpFolder() + File.separator + SHARE_IMG_FILE;
     }
-
 }

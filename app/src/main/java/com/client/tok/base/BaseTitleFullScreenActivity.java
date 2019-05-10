@@ -23,6 +23,6 @@ public class BaseTitleFullScreenActivity extends BaseTitleActivity {
 
     @Override
     public int getStatusBarStyle() {
-        return STATUS_BAR_FULL_SCREEN_WHITE;
+        return STATUS_BAR_FULL_SCREEN_TRANSLATE;
     }
 }

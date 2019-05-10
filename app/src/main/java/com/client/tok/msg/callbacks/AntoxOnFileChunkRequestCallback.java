@@ -1,7 +1,7 @@
 package com.client.tok.msg.callbacks;
 
-import com.client.tok.bean.ContactsInfo;
-import com.client.tok.tox.CoreManager;
+import com.client.tok.bean.ContactInfo;
+import com.client.tok.tox.ToxManager;
 import com.client.tok.tox.State;
 import com.client.tok.transfer.FileStatus;
 import com.client.tok.transfer.FileTransfer;
@@ -10,7 +10,7 @@ import com.client.tok.utils.LogUtil;
 public class AntoxOnFileChunkRequestCallback {
     private String TAG = "AntoxOnFileChunkRequestCallback";
 
-    public void fileChunkRequest(ContactsInfo friendInfo, int fileNumber, long position,
+    public void fileChunkRequest(ContactInfo friendInfo, int fileNumber, long position,
         int length) {
         FileTransfer fileTransfer = State.transfers.get(friendInfo.getKey(), fileNumber);
 
@@ -23,7 +23,7 @@ public class AntoxOnFileChunkRequestCallback {
                 LogUtil.i(TAG, "RequestCallback position:" + position + ",length:" + length);
                 byte[] data = fileTransfer.readData(position, length);
                 if (data != null) {
-                    CoreManager.getManager().toxBase.fileSendChunk(friendInfo.getKey(), fileNumber,
+                    ToxManager.getManager().toxBase.fileSendChunk(friendInfo.getKey(), fileNumber,
                         position, data);
                 }
             }

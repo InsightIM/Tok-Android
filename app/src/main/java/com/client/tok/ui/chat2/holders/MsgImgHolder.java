@@ -12,12 +12,11 @@ import com.client.tok.ui.chat2.Contract;
 import com.client.tok.ui.imgzoom.ImgViewInfoList;
 import com.client.tok.ui.imgzoom.ImgZoomManager;
 import com.client.tok.utils.ImageLoadUtils;
+import com.client.tok.utils.ImageUtils;
 import com.client.tok.utils.LogUtil;
-import com.client.tok.utils.StorageUtil;
 import com.client.tok.widget.MenuPopWindow;
 import com.client.tok.widget.PortraitView;
 import com.client.tok.widget.ProgressView;
-import java.io.File;
 
 /**
  * viewHolder:Image
@@ -92,13 +91,7 @@ public class MsgImgHolder extends BaseMsgHolder implements View.OnClickListener 
     }
 
     private String getImgPath(Message curMsg) {
-        String fileMsg = curMsg.getMessage();
-        LogUtil.i(TAG, "getImgPath:" + fileMsg);
-        if (fileMsg.contains(File.separator)) {
-            return fileMsg;
-        } else {
-            return StorageUtil.getFilesFolder() + fileMsg;
-        }
+        return ImageUtils.getImgPath(curMsg.getMessage());
     }
 
     @Override

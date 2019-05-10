@@ -1,5 +1,7 @@
 package com.client.tok.ui.contactreq;
 
+import android.arch.lifecycle.Observer;
+import android.support.annotation.Nullable;
 import com.client.tok.bean.FriendRequest;
 import com.client.tok.tox.State;
 import com.client.tok.utils.LogUtil;
@@ -23,9 +25,11 @@ public class ContactReqPresenter implements ContactReqContract.IContactReqPresen
     private void showContacts() {
         State.infoRepo()
             .friendReqLive()
-            .observe(mContactReqView, (List<FriendRequest> friendReqList) -> {
-                mContactReqView.showContactReq(friendReqList);
-                State.infoRepo().setFriendReqRead();
+            .observe(mContactReqView, new Observer<List<FriendRequest>>() {
+                @Override
+                public void onChanged(@Nullable List<FriendRequest> friendReqList) {
+                    mContactReqView.showContactReq(friendReqList);
+                }
             });
     }
 

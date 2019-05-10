@@ -49,9 +49,12 @@ public class SlidePanelView extends RelativeLayout {
         blinkingDrawable = new BlinkingDrawable(ScreenUtils.getColor(context, R.color.color_blink));
         blinkingDrawable.setBounds(0, 0, blinkSize, blinkSize);
         timeTv.setCompoundDrawables(blinkingDrawable, null, null, null);
-        cancelTv.setOnClickListener((cancelTv) -> {
-            if (callback != null) {
-                callback.onSlideCancel();
+        cancelTv.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View cancelTv) {
+                if (callback != null) {
+                    callback.onSlideCancel();
+                }
             }
         });
         timeTv.setText(String.valueOf(0));

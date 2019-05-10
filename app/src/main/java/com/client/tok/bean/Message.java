@@ -9,7 +9,7 @@ import com.client.tok.constant.MessageType;
 import com.client.tok.db.converter.FileKindConverter;
 import com.client.tok.db.converter.MessageTypeConverter;
 import com.client.tok.db.converter.ToxKeyConverter;
-import com.client.tok.tox.CoreManager;
+import com.client.tok.tox.ToxManager;
 
 @Entity(tableName = "friend_messages")
 public class Message {
@@ -17,7 +17,7 @@ public class Message {
     @ColumnInfo(name = "_id")
     private int id;
     @ColumnInfo(name = "message_id")
-    private int messageId;
+    private long messageId;
     @TypeConverters(ToxKeyConverter.class)
     @ColumnInfo(name = "tox_key")
     private ContactsKey key;
@@ -52,7 +52,7 @@ public class Message {
     @ColumnInfo(name = "file_kind")
     private FileKind fileKind;
 
-    public Message(int id, int messageId, ContactsKey key, ContactsKey senderKey, String senderName,
+    public Message(int id, long messageId, ContactsKey key, ContactsKey senderKey, String senderName,
         String message, int sentStatus, int receiveStatus, boolean read, boolean hasPlayed,
         long timestamp, long size, MessageType msgType, FileKind fileKind) {
         this.id = id;
@@ -79,11 +79,11 @@ public class Message {
         this.id = id;
     }
 
-    public int getMessageId() {
+    public long getMessageId() {
         return messageId;
     }
 
-    public void setMessageId(int messageId) {
+    public void setMessageId(long messageId) {
         this.messageId = messageId;
     }
 
@@ -184,7 +184,7 @@ public class Message {
     }
 
     public boolean isMine() {
-        return senderKey.key.equals(CoreManager.getManager().toxBase.getSelfKey().key);
+        return senderKey.key.equals(ToxManager.getManager().toxBase.getSelfKey().key);
     }
 
     public boolean isFileTransfer() {

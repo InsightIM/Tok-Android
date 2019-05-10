@@ -34,8 +34,14 @@
     <View
         style="@style/ItemDividerLine"
         android:layout_marginStart="@dimen/s_14"
-        android:layout_marginEnd="@dimen/s_14"
-        android:visibility="gone" />
+        android:layout_marginEnd="@dimen/s_14" />
+
+    <com.client.tok.widget.ItemInfoView
+        android:id="@+id/id_setting_notify_iiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        fc:promptId="@string/notifications" />
+
 
     <com.client.tok.widget.ItemInfoView
         android:id="@+id/id_setting_auto_file_iiv"

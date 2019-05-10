@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:roundProgress="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <FrameLayout
+        android:id="@+id/id_video_gl_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" />
+
+    <VideoView
+        android:id="@+id/id_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/id_video_flash_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/s_30"
+        android:layout_marginTop="@dimen/s_30"
+        android:src="@drawable/flash_off" />
+
+    <ImageView
+        android:id="@+id/id_video_camera_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/s_30"
+        android:layout_marginEnd="@dimen/s_30"
+        android:src="@drawable/camera_back" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/s_20">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/id_record_layout">
+
+            <ImageView
+                android:id="@+id/id_video_close_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/arrow_down_white" />
+
+            <ImageView
+                android:id="@+id/id_video_drop_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/drop"
+                android:visibility="gone" />
+        </FrameLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/id_record_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/s_64"
+            android:layout_marginEnd="@dimen/s_64">
+
+            <com.client.tok.widget.RoundProgress
+                android:id="@+id/id_record_progress"
+                android:layout_width="@dimen/s_86"
+                android:layout_height="@dimen/s_86"
+                android:layout_gravity="center"
+                roundProgress:max="100"
+                roundProgress:progressColor="@color/grey_dark"
+                roundProgress:roundColor="@color/grey"
+                roundProgress:roundWidth="@dimen/s_8"
+                roundProgress:startAngle="270"
+                roundProgress:style="STROKE" />
+
+            <ImageView
+                android:id="@+id/id_video_record_view"
+                android:layout_width="@dimen/s_72"
+                android:layout_height="@dimen/s_72"
+                android:layout_centerInParent="true"
+                android:src="@drawable/shape_circle_ffffff" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/id_video_select_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/id_record_layout"
+            android:src="@drawable/select"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

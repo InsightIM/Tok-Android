@@ -25,8 +25,11 @@ public class ProfileEditActivity extends BaseCommonTitleActivity
         mContentEt = $(R.id.id_edit_content_tv);
         new ProfileEditPresenter(this);
 
-        mContentEt.setOnDrawableRightListener(() -> {
-            mContentEt.setText("");
+        mContentEt.setOnDrawableRightListener(new TextInputDrawableEt.OnDrawableRightListener() {
+            @Override
+            public void onDrawableRightClick() {
+                mContentEt.setText("");
+            }
         });
     }
 

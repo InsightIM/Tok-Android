@@ -107,7 +107,7 @@
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.client.tok.ui.chatid.ChatIdActivity"
+            android:name="com.client.tok.ui.chatid.TokIdActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
@@ -154,13 +154,13 @@
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.client.tok.ui.infor.mine.MyInforActivity"
+            android:name="com.client.tok.ui.info.mine.MyInfoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.client.tok.ui.infor.friend.FriendInfoActivity"
+            android:name="com.client.tok.ui.info.friend.FriendInfoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
@@ -170,6 +170,35 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
+        <activity
+            android:name="com.client.tok.ui.contactchoose.ChooseActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.client.tok.ui.groupcreate.GroupCreateActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.client.tok.ui.groupallpeers.GroupAllPeersActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.client.tok.ui.grouplist.GroupListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="com.client.tok.ui.groupdetail.GroupDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
 
         <activity
             android:name="com.client.tok.ui.profileedit.ProfileEditActivity"
@@ -201,6 +230,30 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
+        <activity
+            android:name="com.client.tok.ui.setting.notify.NotifySetActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".ui.video.VideoRecordActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".ui.info.offlinebot.OfflineBotActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".ui.info.offlinebot.OfflineBotDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
         <service
             android:name="com.client.tok.service.ChatMainService"
             android:exported="false"
@@ -218,11 +271,12 @@
 
         <receiver
             android:name="com.client.tok.booter.MMReceiver$BootReceiver"
-            android:directBootAware="true"
+            android:directBootAware="false"
             android:exported="false"
             android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
             <intent-filter>
-                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+                <!--cause crash on android 9.0 https://developer.android.com/training/articles/direct-boot-->
+                <!--<action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />-->
                 <action android:name="android.intent.action.ACTION_BOOT_COMPLETED" />
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.QUICKBOOT_POWERON" />

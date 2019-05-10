@@ -9,7 +9,7 @@ import com.client.tok.R;
 import com.client.tok.pagejump.PageJumpIn;
 import com.client.tok.rx.RxBus;
 import com.client.tok.rx.event.PortraitEvent;
-import com.client.tok.tox.CoreManager;
+import com.client.tok.tox.ToxManager;
 import com.client.tok.ui.imgzoom.ImgZoomManager;
 import com.client.tok.utils.ImageLoadUtils;
 import com.client.tok.utils.LogUtil;
@@ -18,6 +18,7 @@ import com.client.tok.utils.StringUtils;
 import com.client.tok.utils.ViewUtil;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import java.io.File;
 
 public class PortraitView extends FrameLayout {
@@ -54,23 +55,26 @@ public class PortraitView extends FrameLayout {
 
     private void initView(Context context) {
         mContext = context;
-        View rootView = ViewUtil.inflateViewById(context, R.layout.view_portrait);
+        View rootView = ViewUtil.inflateViewById(mContext, R.layout.view_portrait);
         this.addView(rootView);
         mTextPortraitView = findViewById(R.id.id_portrait_text_view);
         mImgPortraitView = findViewById(R.id.id_portrait_img_view);
-        this.setOnClickListener((View v) -> {
-            if (mClickEnterInfoDetail) {
-                //if friend key is null,the avatar is mine(current user)
-                if (StringUtils.isEmpty(mFriendKey) || mFriendKey.equals(
-                    CoreManager.getManager().toxBase.getSelfKey().toString())) {
-                    PageJumpIn.jumpMyChatIdPage(context);
+        this.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mClickEnterInfoDetail) {
+                    //if friend key is null,the avatar is mine(current user)
+                    if (StringUtils.isEmpty(mFriendKey) || mFriendKey.equals(
+                        ToxManager.getManager().toxBase.getSelfKey().toString())) {
+                        PageJumpIn.jumpMyTokIdPage(mContext);
+                    } else {
+                        PageJumpIn.jumpFriendInfoPage(mContext, mGroupNumber, mFriendKey);
+                    }
                 } else {
-                    PageJumpIn.jumpFriendInfoPage(context, mGroupNumber, mFriendKey);
-                }
-            } else {
-                if (mHasPortraitFile) {
-                    ImgZoomManager.showSingleImg(context, v,
-                        StorageUtil.getAvatarsFolder() + mAvatarFileName);
+                    if (mHasPortraitFile) {
+                        ImgZoomManager.showSingleImg(mContext, v,
+                            StorageUtil.getAvatarsFolder() + mAvatarFileName);
+                    }
                 }
             }
         });
@@ -81,9 +85,12 @@ public class PortraitView extends FrameLayout {
         if (mDisposable == null) {
             mDisposable = RxBus.listen(PortraitEvent.class)
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe((PortraitEvent portraitEvent) -> {
-                    if (portraitEvent.getKey().equals(mFriendKey)) {
-                        loadAvatar();
+                .subscribe(new Consumer<PortraitEvent>() {
+                    @Override
+                    public void accept(PortraitEvent portraitEvent) throws Exception {
+                        if (portraitEvent.getKey().equals(mFriendKey)) {
+                            PortraitView.this.loadAvatar();
+                        }
                     }
                 });
         }
@@ -97,7 +104,7 @@ public class PortraitView extends FrameLayout {
     }
 
     public void setText(CharSequence text) {
-        setFriendText(null, CoreManager.getManager().toxBase.getSelfKey().getKey(), text);
+        setFriendText(null, ToxManager.getManager().toxBase.getSelfKey().getKey(), text);
     }
 
     public void setFriendText(String friendKey, CharSequence text) {
@@ -113,9 +120,16 @@ public class PortraitView extends FrameLayout {
         listen();
     }
 
+    public void setAvatarId(int avatarId) {
+        if (avatarId > 0) {
+            mImgPortraitView.setVisibility(View.VISIBLE);
+            ImageLoadUtils.loadRoundImg(mContext, avatarId, mImgPortraitView);
+        }
+    }
+
     private void loadAvatar() {
         mAvatarFileName = mFriendKey + ".png";
-        String portraitPath = StorageUtil.getAvatarsFolder() + mAvatarFileName;
+        final String portraitPath = StorageUtil.getAvatarsFolder() + mAvatarFileName;
         File file = new File(portraitPath);
         mHasPortraitFile = false;
         if (file.exists() && file.length() > 0) {

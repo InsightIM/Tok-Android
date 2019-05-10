@@ -100,9 +100,12 @@ public class LoginSignUpPresenter implements LoginSignUpContract.ILoginSignUpPre
 
     private void importSuccess() {
         ServiceManager.startToxService();
-        new Handler().postDelayed(() -> {
-            PageJumpIn.jumpHomePage(mLoginSignUpView.getActivity());
-            mLoginSignUpView.viewDestroy();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                PageJumpIn.jumpHomePage(mLoginSignUpView.getActivity());
+                mLoginSignUpView.viewDestroy();
+            }
         }, GlobalParams.DELAY_ENTER_HOME);
     }
 

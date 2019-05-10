@@ -2,7 +2,7 @@ package com.client.tok.bot;
 
 import com.client.tok.R;
 import com.client.tok.TokApplication;
-import com.client.tok.bean.ContactsInfo;
+import com.client.tok.bean.ContactInfo;
 import com.client.tok.bean.ContactsKey;
 import com.client.tok.constant.BotType;
 import com.client.tok.utils.FileUtilsJ;
@@ -42,7 +42,7 @@ public class BotManager {
         return sInstance;
     }
 
-    public String getAddFriendBotTokId() {
+    public String getFindFriendBotTokId() {
         String tokId = "";
         if (botList != null) {
             for (BotInfo botInfo : botList) {
@@ -55,7 +55,7 @@ public class BotManager {
         return tokId;
     }
 
-    public String getAddFriendBotPk() {
+    public String getFindFriendBotPk() {
         String key = "";
         if (botList != null) {
             for (BotInfo botInfo : botList) {
@@ -68,22 +68,67 @@ public class BotManager {
         return key;
     }
 
-    public ContactsInfo getAddFriendBotInfo(String key) {
-        ContactsInfo info = null;
+    public String getOfflineBotTokId() {
+        String tokId = "";
         if (botList != null) {
             for (BotInfo botInfo : botList) {
-                if (botInfo.getTokId().contains(key)) {
-                    info = new ContactsInfo();
-                    info.setKey(new ContactsKey(key));
-                    info.setName(ToxNickname.unsafeFromValue(botInfo.getName().getBytes()));
-                    info.setSignature(botInfo.getSignature());
-                    info.setBot(true);
-                    info.setBotType(botInfo.getType());
-                    info.setTokId(botInfo.getTokId());
+                if (botInfo.getType() == BotType.OFFLINE_MSG_BOT.getType()) {
+                    tokId = botInfo.getTokId();
                     break;
                 }
             }
         }
+        return tokId;
+    }
+
+    public String getOfflineBotPk() {
+        String key = "";
+        if (botList != null) {
+            for (BotInfo botInfo : botList) {
+                if (botInfo.getType() == BotType.OFFLINE_MSG_BOT.getType()) {
+                    key = PkUtils.getPkFromAddress(botInfo.getTokId());
+                    break;
+                }
+            }
+        }
+        return key;
+    }
+
+    public ContactInfo getBotContactInfo(int botType) {
+        ContactInfo info = null;
+        if (botList != null) {
+            for (BotInfo botInfo : botList) {
+                if (botInfo.getType() == botType) {
+                    info = convert(botInfo);
+                    break;
+                }
+            }
+        }
+        return info;
+    }
+
+    public ContactInfo getBotContactInfo(String key) {
+        ContactInfo info = null;
+        if (botList != null) {
+            for (BotInfo botInfo : botList) {
+                if (botInfo.getTokId().contains(key)) {
+                    info = convert(botInfo);
+                    break;
+                }
+            }
+        }
+        return info;
+    }
+
+    private ContactInfo convert(BotInfo botInfo) {
+        ContactInfo info = new ContactInfo();
+        info.setKey(new ContactsKey(PkUtils.getPkFromAddress(botInfo.getTokId())));
+        info.setName(ToxNickname.unsafeFromValue(botInfo.getName().getBytes()));
+        info.setSignature(botInfo.getSignature());
+        info.setProvider(botInfo.getProvider());
+        info.setBot(true);
+        info.setBotType(botInfo.getType());
+        info.setTokId(botInfo.getTokId());
         return info;
     }
 }

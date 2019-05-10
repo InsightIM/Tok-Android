@@ -2,13 +2,13 @@ package com.client.tok.ui.contactreq;
 
 import com.client.tok.bean.ContactsKey;
 import com.client.tok.bean.FriendRequest;
+import com.client.tok.constant.MessageType;
 import com.client.tok.db.repository.InfoRepository;
 import com.client.tok.notification.NotifyManager;
 import com.client.tok.pagejump.GlobalParams;
-import com.client.tok.tox.CoreManager;
+import com.client.tok.tox.ToxManager;
 import com.client.tok.tox.State;
 import im.tox.tox4j.core.data.ToxNickname;
-import im.tox.tox4j.core.enums.ToxMessageType;
 
 public class ContactModel {
     public boolean acceptNewContactRequest(String key, String name, String alias,
@@ -20,8 +20,8 @@ public class ContactModel {
                 db.addFriend(contactsKey, name, alias, statusMsg);
                 db.delFriendRequest(key);
                 NotifyManager.getInstance().cleanNotify(key.hashCode());
-                CoreManager.getManager().toxBase.acceptAddFriendRequest(contactsKey);
-                CoreManager.getManager().save();
+                ToxManager.getManager().toxBase.acceptAddFriendRequest(contactsKey);
+                ToxManager.getManager().save();
 
                 //add conversation
                 State.infoRepo().addConversation(key);
@@ -37,7 +37,7 @@ public class ContactModel {
         State.infoRepo()
             .addMessage2(friendRequest.getRequestKey(), friendRequest.getRequestKey(),
                 ToxNickname.unsafeFromValue("".getBytes()), friendRequest.getRequestMessage(), 0L,
-                GlobalParams.SEND_SUCCESS, true, ToxMessageType.NORMAL, -1);
+                GlobalParams.SEND_SUCCESS, true, MessageType.PROMPT_NORMAL, -1);
     }
 
     public boolean refuseNewContactRequest(FriendRequest friendRequest) {

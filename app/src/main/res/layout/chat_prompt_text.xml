@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/chat_content_padding"
+    android:paddingTop="@dimen/interval_sp_msg"
+    android:paddingEnd="@dimen/chat_content_padding">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/id_msg_time_tv"
+            style="@style/ChatTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            tools:text="8月17 6:00" />
+
+        <TextView
+            android:id="@+id/id_msg_prompt_tv"
+            style="@style/ChatPrompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_msg_time_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/s_10"
+            android:background="@drawable/shape_rect_bgdedede_r20"
+            android:gravity="center_horizontal"
+            android:paddingStart="@dimen/s_10"
+            android:paddingEnd="@dimen/s_10"
+            tools:text="hello" />
+    </RelativeLayout>
+
+</RelativeLayout>

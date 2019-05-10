@@ -1,14 +1,14 @@
 package com.client.tok.msg.callbacks;
 
-import com.client.tok.bean.ContactsInfo;
+import com.client.tok.bean.ContactInfo;
 import com.client.tok.bean.ContactsKey;
 import com.client.tok.constant.FileKind;
 import com.client.tok.db.repository.InfoRepository;
 import com.client.tok.pagejump.GlobalParams;
 import com.client.tok.rx.RxBus;
 import com.client.tok.rx.event.PortraitEvent;
-import com.client.tok.tox.CoreManager;
 import com.client.tok.tox.State;
+import com.client.tok.tox.ToxManager;
 import com.client.tok.utils.ByteUtil;
 import com.client.tok.utils.FileUtilsJ;
 import com.client.tok.utils.LogUtil;
@@ -22,7 +22,7 @@ public class AntoxOnFileRecvCallback {
 
     private String TAG = "AntoxOnFileRecvCallback";
 
-    public void fileRecv(ContactsInfo friendInfo, int fileNumber, int toxFileKind, long fileSize,
+    public void fileRecv(ContactInfo friendInfo, int fileNumber, int toxFileKind, long fileSize,
         ToxFilename filename) {
         FileKind kind = FileKind.fromKindId(toxFileKind);
 
@@ -32,7 +32,7 @@ public class AntoxOnFileRecvCallback {
             if (fileSize > GlobalParams.MAX_AVATAR_SIZE) {
                 return;
             } else if (fileSize == 0) {
-                CoreManager.getManager().toxBase.fileControl(friendInfo.getKey(), fileNumber,
+                ToxManager.getManager().toxBase.fileControl(friendInfo.getKey(), fileNumber,
                     ToxFileControl.CANCEL);
 
                 InfoRepository infoRepo = State.infoRepo();
@@ -44,18 +44,18 @@ public class AntoxOnFileRecvCallback {
             }
 
             String fileId =
-                CoreManager.getManager().toxBase.fileGetFileId(friendInfo.getKey(), fileNumber)
+                ToxManager.getManager().toxBase.fileGetFileId(friendInfo.getKey(), fileNumber)
                     .toHexString();
             File avatarFile = FileKind.AVATAR.getFile(name);
             LogUtil.i(TAG, "friendKey:" + friendInfo.getKey());
 
             if (avatarFile != null) {
                 String storedFileId = ByteUtil.bytes2HexStr(
-                    CoreManager.getManager().toxBase.hash(FileUtilsJ.readToBytes(avatarFile)));
+                    ToxManager.getManager().toxBase.hash(FileUtilsJ.readToBytes(avatarFile)));
                 LogUtil.i(TAG, "fileId:" + fileId + ",storedFiledId:" + storedFileId);
                 if (fileId.equals(storedFileId)) {
                     LogUtil.i(TAG, "friend avatar cancel:" + friendInfo.getKey().getKey());
-                    CoreManager.getManager().toxBase.fileControl(friendInfo.getKey(), fileNumber,
+                    ToxManager.getManager().toxBase.fileControl(friendInfo.getKey(), fileNumber,
                         ToxFileControl.CANCEL);
                     return;
                 }
@@ -90,7 +90,7 @@ public class AntoxOnFileRecvCallback {
             ContactsKey realReceiverKey = friendInfo.getKey();
             ContactsKey proxyContactsKey = friendInfo.getKey();
             ContactsKey realSenderKey = friendInfo.getKey();
-            long createTime = System.currentTimeMillis(); //bot forward
+            long createTime = System.currentTimeMillis(); //bot forward,when offline/group message
 
             LogUtil.i(TAG, "receiverFileInfo "
                 + "realReceiverKey:"

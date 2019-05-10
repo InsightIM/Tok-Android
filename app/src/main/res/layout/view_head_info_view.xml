@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_ripple_bg"
+    android:paddingStart="@dimen/s_17"
+    android:paddingTop="@dimen/s_15"
+    android:paddingEnd="@dimen/s_24"
+    android:paddingBottom="@dimen/s_15">
+
+    <com.client.tok.widget.PortraitView
+        android:id="@+id/id_head_avatar_civ"
+        android:layout_width="@dimen/avatar_head_info_size"
+        android:layout_height="@dimen/avatar_head_info_size"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/spacing_13"
+        android:layout_marginEnd="@dimen/spacing_13"
+        android:layout_toStartOf="@+id/id_head_function_iv"
+        android:layout_toEndOf="@+id/id_head_avatar_civ"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/id_head_title_tv"
+            style="@style/HeadInfoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textStyle="bold"
+            tools:text="NickName" />
+
+        <TextView
+            android:id="@+id/id_head_info_tv"
+            style="@style/HeadInfoContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/s_1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="Provided by TOK" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/id_head_function_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/arrow_right_grey" />
+</RelativeLayout>

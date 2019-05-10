@@ -2,7 +2,7 @@ package com.client.tok.msg.callbacks;
 
 import com.client.tok.bean.ContactsKey;
 import com.client.tok.db.repository.InfoRepository;
-import com.client.tok.tox.CoreManager;
+import com.client.tok.tox.ToxManager;
 import com.client.tok.tox.State;
 import com.client.tok.utils.LogUtil;
 import im.tox.tox4j.core.data.ToxFriendNumber;
@@ -20,7 +20,7 @@ public class AntoxOnConnectionStatusCallback {
      */
     public void friendConnectionStatus(ToxFriendNumber friendNumber,
         ToxConnection connectionStatus) {
-        friendConnectionStatus(CoreManager.getManager().toxBase.getFriendKey(friendNumber),
+        friendConnectionStatus(ToxManager.getManager().toxBase.getFriendKey(friendNumber),
             connectionStatus);
     }
 

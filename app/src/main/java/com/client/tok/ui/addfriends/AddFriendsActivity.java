@@ -42,7 +42,7 @@ public class AddFriendsActivity extends BaseCommonTitleActivity
         mAddFriendBtn = $(R.id.id_add_friends_add_tv);
         mAddFriendBtn.setOnClickListener(this);
 
-        mFriendIdEt.setText(getIntent().getStringExtra(IntentConstants.PK));
+        mFriendIdEt.setText(getIntent().getStringExtra(IntentConstants.TOK_ID));
     }
 
     @Override
@@ -93,7 +93,7 @@ public class AddFriendsActivity extends BaseCommonTitleActivity
                 mAddFriendsPresenter.checkId(tokId.toUpperCase());
                 break;
             case R.id.id_add_friend_my_id_iiv:
-                PageJumpIn.jumpMyChatIdPage(this);
+                PageJumpIn.jumpMyTokIdPage(this);
                 break;
             case R.id.id_add_friend_scan_iiv:
                 PageJumpIn.jumpScanPage(this);
@@ -109,10 +109,14 @@ public class AddFriendsActivity extends BaseCommonTitleActivity
 
     @Override
     public void showMsgDialog(String tokId, String alias, String defaultMsg) {
-        DialogFactory.addFriendDialog(this, tokId, null, false, defaultMsg, null, (View v) -> {
-            showSuccess(R.string.add_friend_request_has_send);
-            viewDestroy();
-        });
+        DialogFactory.addFriendDialog(this, tokId, null, false, defaultMsg, null,
+            new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AddFriendsActivity.this.showSuccess(R.string.add_friend_request_has_send);
+                    AddFriendsActivity.this.viewDestroy();
+                }
+            });
     }
 
     @Override

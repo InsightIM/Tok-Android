@@ -3,7 +3,7 @@ package com.client.tok.db.repository;
 import android.arch.lifecycle.LiveData;
 import android.graphics.Rect;
 import com.client.tok.TokApplication;
-import com.client.tok.bean.ContactsInfo;
+import com.client.tok.bean.ContactInfo;
 import com.client.tok.bean.ContactsKey;
 import com.client.tok.bean.Conversation;
 import com.client.tok.bean.ConversationItem;
@@ -25,7 +25,6 @@ import com.client.tok.ui.imgzoom.ImgViewInfoList;
 import com.client.tok.utils.ImageUtils;
 import im.tox.tox4j.core.data.ToxNickname;
 import im.tox.tox4j.core.data.ToxStatusMessage;
-import im.tox.tox4j.core.enums.ToxMessageType;
 import im.tox.tox4j.core.enums.ToxUserStatus;
 import java.util.ArrayList;
 import java.util.List;
@@ -89,21 +88,11 @@ public class InfoRepository {
         return conversationDao.delByKey(key);
     }
 
-    public boolean doesContactExist(String key) {
-        return contactsDao.countByKey(key) > 0;
-    }
-
     public LiveData<List<ConversationItem>> conversationLive() {
         return conversationDao.getConversationLive();
     }
 
-    public long addFriend(ContactsKey key, String name, String alias, String statusMsg) {
-        ContactsInfo contacts =
-            new ContactsInfo(key, name, alias, statusMsg, ContactType.FRIEND.getType());
-        return contactsDao.insert(contacts);
-    }
-
-    private long addToMessagesTable(int messageId, ContactsKey key, ContactsKey senderKey,
+    private long addToMessagesTable(long messageId, ContactsKey key, ContactsKey senderKey,
         ToxNickname senderName, String message, long createTime, int sentStatus, int receiverStatus,
         boolean hasBeenRead, long size, MessageType messageType, FileKind fileKind) {
         createTime = createTime > 0 ? createTime : System.currentTimeMillis();
@@ -127,14 +116,13 @@ public class InfoRepository {
 
     public long addMessage2(ContactsKey key, ContactsKey senderKey, ToxNickname senderName,
         String message, long createTime, int sentStatus, boolean hasBeenRead,
-        ToxMessageType messageType, int messageId) {
+        MessageType messageType, long messageId) {
         return addToMessagesTable(messageId, key, senderKey, senderName, message, createTime,
-            sentStatus, GlobalParams.RECEIVE_ING, hasBeenRead, 0,
-            MessageType.fromToxMessageType(messageType), FileKind.INVALID);
+            sentStatus, GlobalParams.RECEIVE_ING, hasBeenRead, 0, messageType, FileKind.INVALID);
     }
 
     public long addMessage(ContactsKey key, ContactsKey senderKey, ToxNickname senderName,
-        String message, int sentStatus, boolean hasBeenRead, ToxMessageType messageType,
+        String message, int sentStatus, boolean hasBeenRead, MessageType messageType,
         int messageId) {
         return addMessage2(key, senderKey, senderName, message, 0, sentStatus, hasBeenRead,
             messageType, messageId);
@@ -149,7 +137,7 @@ public class InfoRepository {
     }
 
     public int totalUnreadCount() {
-        return msgDao.totalUnreadCount();
+        return msgDao.totalUnreadCount() + friendReqDao.getUnReadCount();
     }
 
     public int totalUnreadCount(String key) {
@@ -173,19 +161,23 @@ public class InfoRepository {
             GlobalParams.RECEIVE_FAIL);
     }
 
+    public boolean msgExist(String pk, long messageId) {
+        return msgDao.getMsgCount(pk, messageId) > 0;
+    }
+
     public int fileTransferFinish(ContactsKey key, int fileNumber) {
         return msgDao.setFileStatus(key.toString(), fileNumber, GlobalParams.SEND_SUCCESS,
             GlobalParams.RECEIVE_SUCCESS);
     }
 
-    public long addFriendRequest(ContactsKey key, String reqMsg) {
-        FriendRequest request = friendReqDao.queryByKey(key.key);
+    public long addFriendRequest(String key, String reqMsg) {
+        FriendRequest request = friendReqDao.queryByKey(key);
         if (request != null) {
             request.setRequestMessage(reqMsg);
             //request.setHasRead(false); not agree,and tox will send some times,so no change this value
             return friendReqDao.update(request);
         } else {
-            request = new FriendRequest(key, reqMsg);
+            request = new FriendRequest(new ContactsKey(key), reqMsg);
             return friendReqDao.insert(request);
         }
     }
@@ -202,19 +194,19 @@ public class InfoRepository {
         return friendReqDao.queryByKey(key);
     }
 
-    public int setFriendReqRead() {
-        return friendReqDao.setHasRead();
+    public int setFriendReqRead(String key) {
+        return friendReqDao.setHasRead(key);
     }
 
     public LiveData<Integer> getFriendReqUnReadCount() {
-        return friendReqDao.getUnReadCount();
+        return friendReqDao.getUnReadCountLive();
     }
 
     public List<Message> getUnsentMessageList(ContactsKey ContactsKey) {
         return msgDao.getUnsentMsgList(ContactsKey.toString());
     }
 
-    public int setMessageFailByReceiptId(int receiptId) {
+    public int setMessageFailByReceiptId(long receiptId) {
         return msgDao.setMsgFailByMsgId(receiptId);
     }
 
@@ -222,12 +214,25 @@ public class InfoRepository {
         return msgDao.setMsgFailByDbId(dbId);
     }
 
-    public int setMessageSending(int messageId, long dbId) {
+    public int setMessageSending(long messageId, long dbId) {
         return msgDao.setMsgSending(messageId, dbId);
     }
 
-    public int setMessageReceived(int receiptId) {
-        return msgDao.setMessageReceived(receiptId);
+    /**
+     * this method is for offline message,
+     * message_id is unique in offline message
+     */
+    public int setMessageReceived(long messageId) {
+        return msgDao.setMessageReceived(messageId);
+    }
+
+    /**
+     * this is for on line message,
+     * the messageId is auto increment from 0 when tox start,and every friend from 0
+     * so messageId is not unique
+     */
+    public int setMessageReceived(long messageId, String toxKey) {
+        return msgDao.setMessageReceived(messageId, toxKey);
     }
 
     public int markReaded(String key) {
@@ -265,11 +270,27 @@ public class InfoRepository {
         return msgDao.getLastMessage(key);
     }
 
-    public LiveData<List<ContactsInfo>> friendList() {
+    public boolean doesContactExist(String key) {
+        return contactsDao.countByKey(key) > 0;
+    }
+
+    public long addFriend(ContactsKey key, String name, String alias, String statusMsg) {
+        ContactInfo contacts =
+            new ContactInfo(key, name, alias, statusMsg, ContactType.FRIEND.getType());
+        return contactsDao.insert(contacts);
+    }
+
+    public long addGroup(ContactsKey key, String name, String alias, String statusMsg) {
+        ContactInfo contacts =
+            new ContactInfo(key, name, alias, statusMsg, ContactType.GROUP.getType());
+        return contactsDao.insert(contacts);
+    }
+
+    public LiveData<List<ContactInfo>> friendList() {
         return contactsDao.contactsListObserver(ContactType.FRIEND.getType());
     }
 
-    public LiveData<List<ContactsInfo>> groupList() {
+    public LiveData<List<ContactInfo>> groupList() {
         return contactsDao.contactsListObserver(ContactType.GROUP.getType());
     }
 
@@ -282,7 +303,7 @@ public class InfoRepository {
     }
 
     public int updateContact(String friendKey, String key, Object value) {
-        ContactsInfo info = contactsDao.contactsInfo(friendKey);
+        ContactInfo info = contactsDao.contactsInfo(friendKey);
         if (info != null) {
             switch (key) {
                 case DBConstants.COLUMN_NOTE:
@@ -305,6 +326,9 @@ public class InfoRepository {
                     break;
                 case DBConstants.COLUMN_NAME:
                     info.setName(ToxNickname.unsafeFromValue(((String) value).getBytes()));
+                    break;
+                case DBConstants.COLUMN_HAS_OFFLINE_BOT:
+                    info.setHasOfflineBot((Boolean) value);
                     break;
             }
             return contactsDao.update(info);
@@ -342,6 +366,10 @@ public class InfoRepository {
         return updateContact(contactKey, DBConstants.COLUMN_ALIAS, alias);
     }
 
+    public int updateHasOfflineBot(String contactKey, boolean hasOfflineBot) {
+        return updateContact(contactKey, DBConstants.COLUMN_HAS_OFFLINE_BOT, hasOfflineBot);
+    }
+
     public int setAllFriendReceivedAvatar(boolean receivedAvatar) {
         return contactsDao.setAllFriendReceivedAvatar(receivedAvatar);
     }
@@ -354,15 +382,15 @@ public class InfoRepository {
         return msgDao.getAllMsgLive(key);
     }
 
-    public ContactsInfo getFriendInfo(String key) {
+    public ContactInfo getFriendInfo(String key) {
         return contactsDao.contactsInfo(key);
     }
 
-    public LiveData<ContactsInfo> getFriendInfoLive(String key) {
+    public LiveData<ContactInfo> getFriendInfoLive(String key) {
         return contactsDao.friendInfoObserver(key);
     }
 
-    public List<ContactsInfo> getUnsendAvatarFriend() {
+    public List<ContactInfo> getUnsendAvatarFriend() {
         return contactsDao.getUnsendAvatarFriendList();
     }
 
@@ -385,12 +413,12 @@ public class InfoRepository {
     }
 
     public boolean isContactMute(String key) {
-        ContactsInfo friendInfo = contactsDao.contactsInfo(key);
+        ContactInfo friendInfo = contactsDao.contactsInfo(key);
         return friendInfo != null && friendInfo.isMute();
     }
 
     public boolean isContactBlocked(String key) {
-        ContactsInfo friendInfo = contactsDao.contactsInfo(key);
+        ContactInfo friendInfo = contactsDao.contactsInfo(key);
         return friendInfo != null && friendInfo.isBlocked();
     }
 

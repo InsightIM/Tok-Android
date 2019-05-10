@@ -10,15 +10,23 @@ public enum ToxMessageType {
     /**
      * Normal text message. Similar to PRIVMSG on IRC.
      */
-    NORMAL,
+    NORMAL(0),
     /**
      * A message describing an user action. This is similar to /me (CTCP ACTION)
      * on IRC.
      */
-    ACTION,
-    BOT,
-    FORWARD,
-    GROUP,
-    HELLO,
-    DRAFT
-}
+    ACTION(1),
+    BOT(2),
+    FORWARD(3),
+    GROUP(4),
+    OFF_LINE(6);
+
+    private int type;
+
+    ToxMessageType(int type) {
+        this.type = type;
+    }
+
+    public int getType() {
+        return type;
+    }}

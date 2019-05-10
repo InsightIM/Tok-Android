@@ -13,15 +13,17 @@ import com.client.tok.utils.ViewUtil;
 public class ProgressView extends RelativeLayout {
     // progress show in text:image or file progress
     public static final int TYPE_TXT = 1;
-    //progress show in imge:audio prgogress/sender
+    //progress show in image:audio progress/sender
     public static final int TYPE_IMG_SENDER = 2;
-    //progress show in imge:audio prgogress/receiver
+    //progress show in image:audio progress/receiver
     public static final int TYPE_IMG_RECEIVER = 3;
-    private Context mContext;
     private View mTxtLayout;
     private TextView mTxtProTv;
     private ImageView mImgProTv;
+    private ImageView mFinishIconIv;
     private int mProType = TYPE_TXT;
+    //if file transfer finished,what icon show. this is useful to video, show the play icon
+    private int finishShowIconId = 0;
 
     public ProgressView(Context context) {
         this(context, null);
@@ -37,7 +39,6 @@ public class ProgressView extends RelativeLayout {
 
     public ProgressView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        mContext = context;
         initView(context);
     }
 
@@ -47,10 +48,15 @@ public class ProgressView extends RelativeLayout {
         mTxtLayout = rootView.findViewById(R.id.id_txt_pro_layout);
         mTxtProTv = rootView.findViewById(R.id.id_txt_pro_tv);
         mImgProTv = rootView.findViewById(R.id.id_img_pro_iv);
+        mFinishIconIv = rootView.findViewById(R.id.id_finish_show_icon_iv);
     }
 
     public void setProType(int proType) {
         mProType = proType;
+    }
+
+    public void setFinishIcon(int iconId) {
+        finishShowIconId = iconId;
     }
 
     public void setProgress(long total, long curPosition) {
@@ -58,6 +64,7 @@ public class ProgressView extends RelativeLayout {
         if (curPosition >= total) {
             setSuccess();
         } else {
+            mFinishIconIv.setVisibility(View.GONE);
             if (mProType == TYPE_IMG_SENDER || mProType == TYPE_IMG_RECEIVER) {
                 mImgProTv.setImageResource(R.drawable.msg_sending);
             } else {
@@ -72,7 +79,15 @@ public class ProgressView extends RelativeLayout {
         if (mProType == TYPE_IMG_SENDER) {
             mImgProTv.setImageResource(R.drawable.msg_success);
         } else {
-            this.setVisibility(View.GONE);
+            mImgProTv.setVisibility(GONE);
+            mTxtLayout.setVisibility(GONE);
+            mTxtProTv.setVisibility(GONE);
+        }
+        if (finishShowIconId > 0) {
+            mFinishIconIv.setImageResource(finishShowIconId);
+            mFinishIconIv.setVisibility(View.VISIBLE);
+        } else {
+            mFinishIconIv.setVisibility(View.GONE);
         }
     }
 

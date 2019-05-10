@@ -1,6 +1,7 @@
 package com.client.tok.widget.dialog;
 
 import android.app.Activity;
+import android.support.v4.widget.TextViewCompat;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -43,15 +44,19 @@ public class DialogFactory {
         inputEt.setSelection(msg.length());
         DialogView dialogView = new DialogView(activity, view, false);
         dialogView.setLeftOnClickListener(leftListener);
-        dialogView.setRightOnClickListener((View v) -> {
-            AddFriendsModel model = new AddFriendsModel();
-            boolean success = model.addFriendById(friendId, alias, inputEt.getText().toString());
-            if (success) {
-                if (rightListener != null) {
-                    rightListener.onClick(v);
+        dialogView.setRightOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AddFriendsModel model = new AddFriendsModel();
+                boolean success =
+                    model.addFriendById(friendId, alias, inputEt.getText().toString());
+                if (success) {
+                    if (rightListener != null) {
+                        rightListener.onClick(v);
+                    }
+                } else {
+                    ToastUtils.show(R.string.tok_id_invalid);
                 }
-            } else {
-                ToastUtils.show(R.string.tok_id_invalid);
             }
         });
         dialogView.setTitle_(R.string.confirm_add_friends);
@@ -63,20 +68,20 @@ public class DialogFactory {
         return dialogView;
     }
 
-    public static DialogView importAccountDialog(Activity activity, String userName,
-        boolean encrypt, final InputCallBack inputCallBack) {
+    public static DialogView importAccountDialog(Activity activity, final String userName,
+        final boolean encrypt, final InputCallBack inputCallBack) {
         View view = ViewUtil.inflateViewById(activity, R.layout.dialog_import_account);
         //
-        EditText nameEt = view.findViewById(R.id.id_user_name_et);
+        final EditText nameEt = view.findViewById(R.id.id_user_name_et);
         nameEt.setText(userName);
         nameEt.setSelection(nameEt.length());
 
         LinearLayout pwdLayout = view.findViewById(R.id.id_pwd_layout);
-        EditText pwdEt = view.findViewById(R.id.id_pwd_et);
+        final EditText pwdEt = view.findViewById(R.id.id_pwd_et);
 
         LinearLayout newPwdLayout = view.findViewById(R.id.id_new_pwd_layout);
-        EditText newPwdEt = view.findViewById(R.id.id_new_pwd_et);
-        EditText repeatPwdEt = view.findViewById(R.id.id_new_pwd_again_et);
+        final EditText newPwdEt = view.findViewById(R.id.id_new_pwd_et);
+        final EditText repeatPwdEt = view.findViewById(R.id.id_new_pwd_again_et);
 
         EditText actionEt;
         if (encrypt) {
@@ -89,9 +94,13 @@ public class DialogFactory {
             actionEt = repeatPwdEt;
         }
 
-        actionEt.setOnEditorActionListener((TextView v, int actionId, KeyEvent event) -> {
-            importConfirm(userName, encrypt, inputCallBack, nameEt, pwdEt, newPwdEt, repeatPwdEt);
-            return false;
+        actionEt.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                importConfirm(userName, encrypt, inputCallBack, nameEt, pwdEt, newPwdEt,
+                    repeatPwdEt);
+                return false;
+            }
         });
 
         DialogView dialogView = new DialogView(activity, view, false);
@@ -99,8 +108,12 @@ public class DialogFactory {
         dialogView.setLeftButtonTxt(R.string.cancel);
         dialogView.setRightButtonTxt(R.string.confirm);
 
-        dialogView.setRightOnClickListener((View v) -> {
-            importConfirm(userName, encrypt, inputCallBack, nameEt, pwdEt, newPwdEt, repeatPwdEt);
+        dialogView.setRightOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                importConfirm(userName, encrypt, inputCallBack, nameEt, pwdEt, newPwdEt,
+                    repeatPwdEt);
+            }
         });
         dialogView.setTitle_(R.string.import_account2);
         dialogView.setCanCancel(false);
@@ -156,18 +169,21 @@ public class DialogFactory {
         }
 
         DialogView dialogView = new DialogView(activity, view, false);
-        dialogView.setRightOnClickListener((View v) -> {
-            String data = inputEt.getText().toString();
-            if (StringUtils.isEmpty(data)) {
-                ToastUtils.show(R.string.input_msg);
-                return;
-            }
-            if (data.equals(originData)) {
-                ToastUtils.show(R.string.input_msg_same_to_origin);
-                return;
-            }
-            if (inputCallBack != null) {
-                inputCallBack.input(data);
+        dialogView.setRightOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String data = inputEt.getText().toString();
+                if (StringUtils.isEmpty(data)) {
+                    ToastUtils.show(R.string.input_msg);
+                    return;
+                }
+                if (data.equals(originData)) {
+                    ToastUtils.show(R.string.input_msg_same_to_origin);
+                    return;
+                }
+                if (inputCallBack != null) {
+                    inputCallBack.input(data);
+                }
             }
         });
         dialogView.setTitle_(title);
@@ -197,15 +213,21 @@ public class DialogFactory {
         return dialogView;
     }
 
-    public static DialogView showSelImgMethodDialog(Activity activity, String title,
+    public static DialogView showSelImgMethodDialog(final Activity activity, String title,
         View.OnClickListener delListener) {
         return showMenuDialog(activity, STYLE_NORMAL_2_CHOOSE_WARNING, title,
             StringUtils.getTextFromResId(R.string.album),
             StringUtils.getTextFromResId(R.string.camera),
-            StringUtils.getTextFromResId(R.string.delete), (View v) -> {
-                FilePicker.openGallery(activity);
-            }, (View v) -> {
-                FilePicker.openCamera(activity);
+            StringUtils.getTextFromResId(R.string.delete), new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FilePicker.openGallery(activity, true);
+                }
+            }, new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FilePicker.openCamera(activity);
+                }
             }, delListener);
     }
 
@@ -303,10 +325,11 @@ public class DialogFactory {
                 cancelStyle = R.style.DialogMenuNormal;
                 break;
         }
-        titleTv.setTextAppearance(titleStyle);
-        menu1Tv.setTextAppearance(menu1Style);
-        menu2Tv.setTextAppearance(menu2Style);
-        cancelTv.setTextAppearance(cancelStyle);
+
+        TextViewCompat.setTextAppearance(titleTv, titleStyle);
+        TextViewCompat.setTextAppearance(menu1Tv, menu1Style);
+        TextViewCompat.setTextAppearance(menu2Tv, menu2Style);
+        TextViewCompat.setTextAppearance(cancelTv, cancelStyle);
 
         if (!StringUtils.isEmpty(title)) {
             titleTv.setText(title);
@@ -339,24 +362,33 @@ public class DialogFactory {
         final DialogView dialogView = new DialogView(activity, view, true);
 
         //listener
-        menu1Tv.setOnClickListener((View v) -> {
-            dialogView.dismiss();
-            if (menu1Listener != null) {
-                menu1Listener.onClick(v);
+        menu1Tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogView.dismiss();
+                if (menu1Listener != null) {
+                    menu1Listener.onClick(v);
+                }
             }
         });
 
-        menu2Tv.setOnClickListener((View v) -> {
-            dialogView.dismiss();
-            if (menu2Listener != null) {
-                menu2Listener.onClick(v);
+        menu2Tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogView.dismiss();
+                if (menu2Listener != null) {
+                    menu2Listener.onClick(v);
+                }
             }
         });
 
-        cancelTv.setOnClickListener((View v) -> {
-            dialogView.dismiss();
-            if (cancelListener != null) {
-                cancelListener.onClick(v);
+        cancelTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogView.dismiss();
+                if (cancelListener != null) {
+                    cancelListener.onClick(v);
+                }
             }
         });
         dialogView.setBtnLayout(false);

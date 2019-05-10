@@ -48,15 +48,23 @@ public class LoginActivity extends BaseCommonTitleActivity
         mPwdEt = $(R.id.id_login_pwd_et);
         mLoginBt = $(R.id.id_login_bt);
         addKeyboardAction(mPwdEt);
-        mUsernameEt.setOnDrawableRightListener(() -> {
-            List<UserInfo> userList = mLoginPresenter.getUserList();
-            if (userList != null && userList.size() > 0) {
-                final PopupWindow popupWindow = LoginUserPopWindow.showLoginUsers(this, userList,
-                    (AdapterView<?> parent, View view, int position, long id) -> {
-                        mUsernameEt.setText(userList.get(position).getProfileName());
-                        mUsernameEt.setSelection(mUsernameEt.getText().length());
-                    });
-                popupWindow.showAsDropDown(mUsernameEt);
+        mUsernameEt.setOnDrawableRightListener(new TextInputDrawableEt.OnDrawableRightListener() {
+            @Override
+            public void onDrawableRightClick() {
+                final List<UserInfo> userList = mLoginPresenter.getUserList();
+                if (userList != null && userList.size() > 0) {
+                    final PopupWindow popupWindow =
+                        LoginUserPopWindow.showLoginUsers(LoginActivity.this, userList,
+                            new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                                    mUsernameEt.setText(userList.get(position).getProfileName());
+                                    mUsernameEt.setSelection(mUsernameEt.getText().length());
+                                }
+                            });
+                    popupWindow.showAsDropDown(mUsernameEt);
+                }
             }
         });
         mLoginBt.setOnClickListener(this);

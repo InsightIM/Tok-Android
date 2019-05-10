@@ -7,13 +7,14 @@ import android.view.ViewGroup;
 import com.client.tok.R;
 import com.client.tok.bean.Message;
 import com.client.tok.constant.MessageType;
-import com.client.tok.media.player.audio.AudioUtil;
+import com.client.tok.media.MediaUtil;
 import com.client.tok.ui.chat2.holders.BaseMsgHolder;
 import com.client.tok.ui.chat2.holders.MsgAudioHolder;
 import com.client.tok.ui.chat2.holders.MsgFileHolder;
-import com.client.tok.ui.chat2.holders.MsgHelloHolder;
 import com.client.tok.ui.chat2.holders.MsgImgHolder;
+import com.client.tok.ui.chat2.holders.MsgPromptHolder;
 import com.client.tok.ui.chat2.holders.MsgTextHolder;
+import com.client.tok.ui.chat2.holders.MsgVideoHolder;
 import com.client.tok.utils.ImageUtils;
 import com.client.tok.utils.LogUtil;
 import com.client.tok.utils.ViewUtil;
@@ -30,9 +31,13 @@ public class MsgAdapter extends RecyclerView.Adapter<BaseMsgHolder> {
     private final int FILE_IMG = 3;//file:image
     private final int FILE_AUDIO = 4;//file:audio
     private final int FILE_VIDEO = 5;//file:video
-    private final int FILE = 5;//other file
-    private final int CALL_INFO = 6;
-    private final int HELLO_JOIN = 7;//hello message
+    private final int FILE = 6;//other file
+    private final int CALL_INFO = 7;
+    /**
+     * prompt message,include hello message,friend no has offlinebot, add offlinebot ...
+     * {@link MessageType.PROMPT_NORMAL,MessageType.PROMPT_ADD_OFFLINE_BOT}
+     */
+    private final int PROMPT = 8;
 
     private Contract.IChatPresenter mPresenter;
 
@@ -55,9 +60,9 @@ public class MsgAdapter extends RecyclerView.Adapter<BaseMsgHolder> {
                 holderView = ViewUtil.inflateViewById(mContext, R.layout.chat_msg_text);
                 msgHolder = new MsgTextHolder(holderView, mPresenter);
                 break;
-            case HELLO_JOIN:
-                holderView = ViewUtil.inflateViewById(mContext, R.layout.chat_hello_text);
-                msgHolder = new MsgHelloHolder(holderView, mPresenter);
+            case PROMPT:
+                holderView = ViewUtil.inflateViewById(mContext, R.layout.chat_prompt_text);
+                msgHolder = new MsgPromptHolder(holderView, mPresenter);
                 break;
             case ACTION:
                 break;
@@ -68,6 +73,10 @@ public class MsgAdapter extends RecyclerView.Adapter<BaseMsgHolder> {
             case FILE_AUDIO:
                 holderView = ViewUtil.inflateViewById(mContext, R.layout.chat_msg_audio);
                 msgHolder = new MsgAudioHolder(holderView, mPresenter);
+                break;
+            case FILE_VIDEO:
+                holderView = ViewUtil.inflateViewById(mContext, R.layout.chat_msg_video);
+                msgHolder = new MsgVideoHolder(holderView, mPresenter);
                 break;
             case FILE:
                 holderView = ViewUtil.inflateViewById(mContext, R.layout.chat_msg_file);
@@ -113,16 +122,19 @@ public class MsgAdapter extends RecyclerView.Adapter<BaseMsgHolder> {
         if (typeVal == MessageType.MESSAGE.getType()
             || typeVal == MessageType.GROUP_MESSAGE.getType()) {
             result = TEXT;
-        } else if (typeVal == MessageType.HELLO_JOIN.getType()) {
-            result = HELLO_JOIN;
+        } else if (typeVal == MessageType.PROMPT_NORMAL.getType()
+            || typeVal == MessageType.PROMPT_ADD_OFFLINE_BOT.getType()) {
+            result = PROMPT;
         } else if (typeVal == MessageType.ACTION.getType()
             || typeVal == MessageType.GROUP_ACTION.getType()) {
             result = ACTION;
         } else if (typeVal == MessageType.FILE_TRANSFER.getType()) {
             if (ImageUtils.isImgFile(msg.getMessage())) {
                 result = FILE_IMG;
-            } else if (AudioUtil.isAudio(msg.getMessage())) {
+            } else if (MediaUtil.isAudio(msg.getMessage())) {
                 result = FILE_AUDIO;
+            } else if (MediaUtil.isVideo(msg.getMessage())) {
+                result = FILE_VIDEO;
             } else {
                 result = FILE;
             }

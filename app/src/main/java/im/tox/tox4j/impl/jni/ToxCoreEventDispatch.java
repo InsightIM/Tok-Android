@@ -26,8 +26,7 @@ public class ToxCoreEventDispatch {
 
     public static void dispatch(ToxCoreEventListener listener, byte[] eventData) {
         try {
-            LogUtil.i(TAG,"========================="+(eventData==null));
-            if (eventData != null) { // scalastyle:ignore null
+            if (eventData != null) { // scala style:ignore null
                 Core.CoreEvents events = Core.CoreEvents.parseFrom(eventData);
                 dispatchEvents(listener, events);
             }
@@ -52,11 +51,12 @@ public class ToxCoreEventDispatch {
         dispatchFileRecvChunk(listener, events.getFileRecvChunkList());
         dispatchFriendLossyPacket(listener, events.getFriendLossyPacketList());
         dispatchFriendLosslessPacket(listener, events.getFriendLosslessPacketList());
+        dispatchOfflineMessage(listener, events.getFriendMessageOfflineList());
     }
 
     private static void dispatchSelfConnectionStatus(ToxCoreEventListener handler,
         List<Core.SelfConnectionStatus> selfConnectionStatus) {
-        log("dispatchSelfConnectionStatus",selfConnectionStatus);
+        LogUtil.i(TAG, "dispatchSelfConnectionStatus" + selfConnectionStatus);
         if (selfConnectionStatus != null && selfConnectionStatus.size() > 0) {
             for (Core.SelfConnectionStatus status : selfConnectionStatus) {
                 handler.selfConnectionStatus(convert(status.getConnectionStatus()));
@@ -66,7 +66,7 @@ public class ToxCoreEventDispatch {
 
     private static void dispatchFriendName(ToxCoreEventListener handler,
         List<Core.FriendName> friendNameList) {
-        log("dispatchFriendName",friendNameList);
+        LogUtil.i(TAG, "dispatchFriendName" + friendNameList);
         if (friendNameList != null && friendNameList.size() > 0) {
             for (Core.FriendName name : friendNameList) {
                 handler.friendName(ToxFriendNumber.unsafeFromInt(name.getFriendNumber()),
@@ -77,7 +77,7 @@ public class ToxCoreEventDispatch {
 
     private static void dispatchFriendStatusMessage(ToxCoreEventListener handler,
         List<Core.FriendStatusMessage> statusMsgList) {
-        log("dispatchFriendStatusMessage",statusMsgList);
+        LogUtil.i(TAG, "dispatchFriendStatusMessage" + statusMsgList);
         if (statusMsgList != null && statusMsgList.size() > 0) {
             for (Core.FriendStatusMessage statusMsg : statusMsgList) {
                 handler.friendStatusMessage(
@@ -89,7 +89,7 @@ public class ToxCoreEventDispatch {
 
     private static void dispatchFriendStatus(ToxCoreEventListener handler,
         List<Core.FriendStatus> friendStatus) {
-        log("dispatchFriendStatus",friendStatus);
+        LogUtil.i(TAG, "dispatchFriendStatus" + friendStatus);
         if (friendStatus != null && friendStatus.size() > 0) {
             for (Core.FriendStatus status : friendStatus) {
                 handler.friendStatus(ToxFriendNumber.unsafeFromInt(status.getFriendNumber()),
@@ -100,7 +100,7 @@ public class ToxCoreEventDispatch {
 
     private static void dispatchFriendConnectionStatus(ToxCoreEventListener handler,
         List<Core.FriendConnectionStatus> connectionStatusList) {
-        log("dispatchFriendConnectionStatus",connectionStatusList);
+        LogUtil.i(TAG, "dispatchFriendConnectionStatus" + connectionStatusList);
         if (connectionStatusList != null && connectionStatusList.size() > 0) {
             for (Core.FriendConnectionStatus status : connectionStatusList) {
                 handler.friendConnectionStatus(
@@ -112,7 +112,7 @@ public class ToxCoreEventDispatch {
 
     private static void dispatchFriendTyping(ToxCoreEventListener handler,
         List<Core.FriendTyping> typingList) {
-        log("dispatchFriendTyping",typingList);
+        LogUtil.i(TAG, "dispatchFriendTyping" + typingList);
         if (typingList != null && typingList.size() > 0) {
             for (Core.FriendTyping typing : typingList) {
                 handler.friendTyping(ToxFriendNumber.unsafeFromInt(typing.getFriendNumber()),
@@ -123,7 +123,7 @@ public class ToxCoreEventDispatch {
 
     private static void dispatchFriendReadReceipt(ToxCoreEventListener handler,
         List<Core.FriendReadReceipt> friendReadReceiptList) {
-        log("dispatchFriendReadReceipt",friendReadReceiptList);
+        LogUtil.i(TAG, "dispatchFriendReadReceipt" + friendReadReceiptList);
         if (friendReadReceiptList != null && friendReadReceiptList.size() > 0) {
             for (Core.FriendReadReceipt receipt : friendReadReceiptList) {
                 handler.friendReadReceipt(ToxFriendNumber.unsafeFromInt(receipt.getFriendNumber()),
@@ -134,7 +134,7 @@ public class ToxCoreEventDispatch {
 
     private static void dispatchFriendRequest(ToxCoreEventListener handler,
         List<Core.FriendRequest> friendRequestList) {
-        log("dispatchFriendRequest",friendRequestList);
+        LogUtil.i(TAG, "dispatchFriendRequest" + friendRequestList);
         if (friendRequestList != null && friendRequestList.size() > 0) {
             for (Core.FriendRequest request : friendRequestList) {
                 handler.friendRequest(
@@ -147,7 +147,7 @@ public class ToxCoreEventDispatch {
 
     private static void dispatchFriendMessage(ToxCoreEventListener handler,
         List<Core.FriendMessage> friendMsgList) {
-        log("dispatchFriendMessage",friendMsgList);
+        LogUtil.i(TAG, "dispatchFriendMessage" + friendMsgList);
         if (friendMsgList != null && friendMsgList.size() > 0) {
             for (Core.FriendMessage friendMsg : friendMsgList) {
                 handler.friendMessage(ToxFriendNumber.unsafeFromInt(friendMsg.getFriendNumber()),
@@ -168,7 +168,7 @@ public class ToxCoreEventDispatch {
 
     private static void dispatchFileRecvControl(ToxCoreEventListener handler,
         List<Core.FileRecvControl> fileRecvControlList) {
-        log("dispatchFileRecvControl",fileRecvControlList);
+        LogUtil.i(TAG, "dispatchFileRecvControl" + fileRecvControlList);
         if (fileRecvControlList != null && fileRecvControlList.size() > 0) {
             for (Core.FileRecvControl control : fileRecvControlList) {
                 handler.fileRecvControl(ToxFriendNumber.unsafeFromInt(control.getFriendNumber()),
@@ -179,7 +179,7 @@ public class ToxCoreEventDispatch {
 
     private static void dispatchFileChunkRequest(ToxCoreEventListener handler,
         List<Core.FileChunkRequest> fileChunkRequestList) {
-        log("dispatchFileChunkRequest",fileChunkRequestList);
+        LogUtil.i(TAG, "dispatchFileChunkRequest" + fileChunkRequestList);
         if (fileChunkRequestList != null && fileChunkRequestList.size() > 0) {
             for (Core.FileChunkRequest request : fileChunkRequestList) {
                 handler.fileChunkRequest(ToxFriendNumber.unsafeFromInt(request.getFriendNumber()),
@@ -190,7 +190,7 @@ public class ToxCoreEventDispatch {
 
     private static void dispatchFileRecv(ToxCoreEventListener handler,
         List<Core.FileRecv> fileRecvList) {
-        log("dispatchFileRecv",fileRecvList);
+        LogUtil.i(TAG, "dispatchFileRecv" + fileRecvList);
         if (fileRecvList != null && fileRecvList.size() > 0) {
             for (Core.FileRecv fileRecv : fileRecvList) {
                 handler.fileRecv(ToxFriendNumber.unsafeFromInt(fileRecv.getFriendNumber()),
@@ -202,7 +202,7 @@ public class ToxCoreEventDispatch {
 
     private static void dispatchFileRecvChunk(ToxCoreEventListener handler,
         List<Core.FileRecvChunk> fileRecvChunkList) {
-        log("dispatchFileRecvChunk",fileRecvChunkList);
+        LogUtil.i(TAG, "dispatchFileRecvChunk" + fileRecvChunkList);
         if (fileRecvChunkList != null && fileRecvChunkList.size() > 0) {
             for (Core.FileRecvChunk chunk : fileRecvChunkList) {
                 handler.fileRecvChunk(ToxFriendNumber.unsafeFromInt(chunk.getFriendNumber()),
@@ -213,7 +213,7 @@ public class ToxCoreEventDispatch {
 
     private static void dispatchFriendLossyPacket(ToxCoreEventListener handler,
         List<Core.FriendLossyPacket> friendLossyPacketList) {
-        log("dispatchFriendLossyPacket",friendLossyPacketList);
+        LogUtil.i(TAG, "dispatchFriendLossyPacket" + friendLossyPacketList);
         if (friendLossyPacketList != null && friendLossyPacketList.size() > 0) {
             for (Core.FriendLossyPacket packet : friendLossyPacketList) {
                 handler.friendLossyPacket(ToxFriendNumber.unsafeFromInt(packet.getFriendNumber()),
@@ -224,12 +224,25 @@ public class ToxCoreEventDispatch {
 
     private static void dispatchFriendLosslessPacket(ToxCoreEventListener handler,
         List<Core.FriendLosslessPacket> friendLosslessPacketList) {
-        log("dispatchFriendLosslessPacket",friendLosslessPacketList);
+        LogUtil.i(TAG, "dispatchFriendLosslessPacket" + friendLosslessPacketList);
         if (friendLosslessPacketList != null && friendLosslessPacketList.size() > 0) {
             for (Core.FriendLosslessPacket packet : friendLosslessPacketList) {
                 handler.friendLosslessPacket(
                     ToxFriendNumber.unsafeFromInt(packet.getFriendNumber()),
                     ToxLosslessPacket.unsafeFromValue(packet.getData().toByteArray()));
+            }
+        }
+    }
+
+    private static void dispatchOfflineMessage(ToxCoreEventListener handler,
+        List<Core.FriendMessageOffline> offlineInfos) {
+        LogUtil.i(TAG,
+            "dispatchOfflineMessage" + offlineInfos + ",size:" + (offlineInfos == null ? "null"
+                : offlineInfos.size()));
+        if (offlineInfos != null && offlineInfos.size() > 0) {
+            for (Core.FriendMessageOffline offlineInfo : offlineInfos) {
+                handler.offlineMessage(offlineInfo.getCmd(),
+                    offlineInfo.getMessage().toByteArray());
             }
         }
     }
@@ -293,12 +306,14 @@ public class ToxCoreEventDispatch {
             return ToxMessageType.FORWARD;
         } else if (Core.MessageType.Type.GROUP == messageType) {
             return ToxMessageType.GROUP;
+        } else if (Core.MessageType.Type.OFFLINE == messageType) {
+            return ToxMessageType.OFF_LINE;
         } else {
             return ToxMessageType.NORMAL;
         }
     }
 
-    private static void log(String method,List list){
-        LogUtil.i(TAG,"method:"+method+"size:"+list.size());
+    private static void log(String method, List list) {
+        LogUtil.i(TAG, "method:" + method + "size:" + list.size());
     }
 }

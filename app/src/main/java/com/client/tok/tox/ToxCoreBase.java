@@ -8,6 +8,7 @@ import com.client.tok.rx.RxBus;
 import com.client.tok.utils.FileUtilsJ;
 import com.client.tok.utils.LogUtil;
 import im.tox.core.network.Port;
+import im.tox.proto.Core;
 import im.tox.tox4j.core.callbacks.ToxCoreEventListener;
 import im.tox.tox4j.core.data.ToxFileId;
 import im.tox.tox4j.core.data.ToxFilename;
@@ -51,6 +52,10 @@ public class ToxCoreBase {
         LogUtil.i(TAG, "ToxCoreBase init ToxCoreImpl has option," + mToxCoreImpl.hashCode());
     }
 
+    public int getInstanceNumber() {
+        return mToxCoreImpl.getInstanceNumber();
+    }
+
     public void close() {
         mSelfToxConnection = ToxConnection.NONE;
         RxBus.publish(mSelfToxConnection);
@@ -86,7 +91,7 @@ public class ToxCoreBase {
 
     public void iterate(ToxCoreEventListener eventListener) {
         try {
-            LogUtil.i(TAG, "ToxCoreBase iterate hashCode," + mToxCoreImpl.hashCode());
+            //LogUtil.i(TAG, "ToxCoreBase iterate hashCode," + mToxCoreImpl.hashCode());
             mToxCoreImpl.iterate(eventListener);
         } catch (Exception e) {
             e.printStackTrace();
@@ -203,13 +208,22 @@ public class ToxCoreBase {
         }
     }
 
-    public int friendSendMessage(ContactsKey receiverKey, boolean isOnline,
-        ToxFriendMessage message, ToxMessageType messageType) {
+    public int friendSendMessage(ContactsKey receiverKey, ToxFriendMessage message,
+        ToxMessageType messageType) {
         try {
-            if (isOnline) {
-                return mToxCoreImpl.friendSendMessage(getFriendNumber(receiverKey), messageType, 0,
-                    message);
-            }
+            return mToxCoreImpl.friendSendMessage(getFriendNumber(receiverKey), messageType, 0,
+                message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return SEND_MSG_FAIL;
+    }
+
+    public int friendSendMessageOffline(ContactsKey receiverKey,
+        Core.FriendMessageOffline offlineInfo) {
+        try {
+            return mToxCoreImpl.friendSendMessageOffline(getFriendNumber(receiverKey),
+                offlineInfo.getCmd(), 0, offlineInfo.getMessage().toByteArray());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -258,5 +272,26 @@ public class ToxCoreBase {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public byte[] encryptMsg(int friendNumber, byte[] bytes) {
+        byte[] result = mToxCoreImpl.encryptMsg(friendNumber, bytes);
+        LogUtil.i(TAG, "before encrypt:" + bytes.length + ",after encrypt:" + result.length);
+        return result;
+    }
+
+    public byte[] decryptMsg(int friendNumber, byte[] bytes) {
+        byte[] result = mToxCoreImpl.decryptMsg(friendNumber, bytes);
+        LogUtil.i(TAG, "before decrypt:" + bytes.length + ",after decrypt:" + result.length);
+        return result;
+    }
+
+    public long generateUniqueId(ContactsKey friendKey) {
+        try {
+            return mToxCoreImpl.generateUniqueId(getFriendNumber(friendKey).value);
+        } catch (ToxFriendByPublicKeyException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

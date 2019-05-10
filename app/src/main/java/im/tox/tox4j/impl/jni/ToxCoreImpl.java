@@ -82,14 +82,9 @@ public class ToxCoreImpl implements IToxCore {
     @Override
     public void close() {
         LogCoreUtil.i(TAG, "ToxCoreImpl close toxKill," + instanceNumber);
-        ToxCoreJni.toxKill(instanceNumber);
-    }
-
-    @Override
-    public void finalize() {
         try {
             baseLog("finalize");
-            close();
+            ToxCoreJni.toxKill(instanceNumber);
             ToxCoreJni.toxFinalize(instanceNumber);
         } catch (Exception e) {
             e.printStackTrace();
@@ -295,15 +290,15 @@ public class ToxCoreImpl implements IToxCore {
         int timeDelta, ToxFriendMessage message) throws ToxFriendSendMessageException {
         LogCoreUtil.i(TAG, "ToxCoreImpl friendSendMessage");
         return ToxCoreJni.toxFriendSendMessage(instanceNumber, friendNumber.value,
-            messageType.ordinal(), timeDelta, message.value);
+            messageType.getType(), timeDelta, message.value);
     }
 
     @Override
-    public int friendSendOfflineMessage(ToxFriendNumber receiverNumber, ToxFriendNumber proxyNumber,
-        ToxFriendMessage message) throws ToxFriendSendMessageException {
-        LogCoreUtil.i(TAG, "ToxCoreImpl friendSendOffMessage");
-        return ToxCoreJni.toxFriendSendOfflineMessage(instanceNumber, receiverNumber.value,
-            proxyNumber.value, message.value);
+    public int friendSendMessageOffline(ToxFriendNumber friendNumber, int cmd, int timeDelta,
+        byte[] message) throws ToxFriendSendMessageException {
+        LogCoreUtil.i(TAG, "ToxCoreImpl friendSendOffMessage,cmd:" + cmd);
+        return ToxCoreJni.toxFriendSendMessageOffline(instanceNumber, friendNumber.value, cmd,
+            timeDelta, message);
     }
 
     @Override
@@ -406,7 +401,7 @@ public class ToxCoreImpl implements IToxCore {
     public void invokeFriendMessage(ToxFriendNumber friendNumber, ToxMessageType messageType,
         int timeDelta, byte[] message) {
         LogCoreUtil.i(TAG, "ToxCoreImpl invokeFriendMessage");
-        ToxCoreJni.invokeFriendMessage(instanceNumber, friendNumber.value, messageType.ordinal(),
+        ToxCoreJni.invokeFriendMessage(instanceNumber, friendNumber.value, messageType.getType(),
             timeDelta, message);
     }
 
@@ -486,6 +481,24 @@ public class ToxCoreImpl implements IToxCore {
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public byte[] encryptMsg(int friendNumber, byte[] bytes) {
+        baseLog("encryptMsg,friendNumber:" + friendNumber);
+        return ToxCoreJni.toxEncryptMessageOffline(instanceNumber, friendNumber, bytes);
+    }
+
+    @Override
+    public byte[] decryptMsg(int friendNumber, byte[] bytes) {
+        baseLog("decryptMsg,friendNumber:" + friendNumber);
+        return ToxCoreJni.toxDecryptMessageOffline(instanceNumber, friendNumber, bytes);
+    }
+
+    @Override
+    public long generateUniqueId(int friendNumber) {
+        baseLog("generateUniqueId,friendNumber:" + friendNumber);
+        return ToxCoreJni.toxLocalMsgId(instanceNumber, friendNumber);
     }
 
     private void baseLog(String method) {

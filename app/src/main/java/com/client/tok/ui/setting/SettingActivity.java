@@ -23,6 +23,8 @@ public class SettingActivity extends BaseCommonTitleActivity
     private ItemInfoView mExportFileIiv;
 
     private ItemInfoView mResetIdIiv;
+    private ItemInfoView mNotifyIiv;
+
     private ItemInfoView mAutoReceiveFileIiv;
 
     private ItemInfoView mClearChatLogoutIiv;
@@ -48,6 +50,9 @@ public class SettingActivity extends BaseCommonTitleActivity
 
         mResetIdIiv = $(R.id.id_setting_reset_id_iiv);
         mResetIdIiv.setOnClickListener(this);
+        mNotifyIiv = $(R.id.id_setting_notify_iiv);
+        mNotifyIiv.setOnClickListener(this);
+
         mAutoReceiveFileIiv = $(R.id.id_setting_auto_file_iiv);
         mAutoReceiveFileIiv.setToggleEnable(
             PreferenceUtils.getBoolean(PreferenceUtils.AUTO_RECEIVE_FILE, true));
@@ -108,9 +113,15 @@ public class SettingActivity extends BaseCommonTitleActivity
                 DialogFactory.show2BtnDialog(this,
                     StringUtils.getTextFromResId(R.string.reset_tox_id),
                     StringUtils.getTextFromResId(R.string.reset_tox_id_message),
-                    StringUtils.getTextFromResId(R.string.reset), (View view) -> {
-                        mSettingPresenter.setNospam();
+                    StringUtils.getTextFromResId(R.string.reset), new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            mSettingPresenter.setNospam();
+                        }
                     });
+                break;
+            case R.id.id_setting_notify_iiv:
+                PageJumpIn.jumpSetNotificationPage(this);
                 break;
             case R.id.id_setting_auto_file_iiv:
                 if (v instanceof ToggleButton) {
@@ -128,16 +139,22 @@ public class SettingActivity extends BaseCommonTitleActivity
                 DialogFactory.showPromptDialog(this,
                     StringUtils.getTextFromResId(R.string.clear_msg_confirm_prompt),
                     StringUtils.getTextFromResId(R.string.delete),
-                    StringUtils.getTextFromResId(R.string.cancel), (View view) -> {
-                        mSettingPresenter.clearMsgHistory();
+                    StringUtils.getTextFromResId(R.string.cancel), new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            mSettingPresenter.clearMsgHistory();
+                        }
                     });
                 break;
             case R.id.id_setting_del_profile_iiv:
                 DialogFactory.showPromptDialog(this,
                     StringUtils.getTextFromResId(R.string.del_profile_confirm_prompt),
                     StringUtils.getTextFromResId(R.string.delete),
-                    StringUtils.getTextFromResId(R.string.cancel), (View view) -> {
-                        mSettingPresenter.delProfile();
+                    StringUtils.getTextFromResId(R.string.cancel), new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            mSettingPresenter.delProfile();
+                        }
                     });
                 break;
             case R.id.id_setting_logout_btn:
@@ -147,10 +164,13 @@ public class SettingActivity extends BaseCommonTitleActivity
     }
 
     @Override
-    public void showExportSuccess(String msg, String folder) {
+    public void showExportSuccess(String msg, final String folder) {
         DialogFactory.showPromptDialog(this, msg, StringUtils.getTextFromResId(R.string.check),
-            StringUtils.getTextFromResId(R.string.ok), (View v) -> {
-                FilePicker.openFolder(SettingActivity.this, folder);
+            StringUtils.getTextFromResId(R.string.ok), new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FilePicker.openFolder(SettingActivity.this, folder);
+                }
             });
     }
 

@@ -23,6 +23,7 @@ public class MineFragment extends BaseFragment
     private TextView mSignatureTv;
     private ItemInfoView mTokIdTv;
     private ItemInfoView mFindFriendBotIIV;
+    private ItemInfoView mOfflineBotIIV;
     private ItemInfoView mUserStatusTv;
 
     private View mSafeLayout;
@@ -45,12 +46,14 @@ public class MineFragment extends BaseFragment
         mMineInfoLayout = $(view, R.id.id_mine_me_layout);
         mMineInfoLayout.setOnClickListener(this);
         mAvatarIv = $(view, R.id.id_mine_avatar_civ);
-        mUsernameTv = $(view, R.id.id_mine_user_name_tv);
         mNickNameTv = $(view, R.id.id_mine_nick_name_tv);
+        mUsernameTv = $(view, R.id.id_mine_user_name_tv);
         mTokIdTv = $(view, R.id.id_mine_tok_id_iiv);
         mTokIdTv.setOnClickListener(this);
         mFindFriendBotIIV = $(view, R.id.id_mine_find_friend_iiv);
         mFindFriendBotIIV.setOnClickListener(this);
+        mOfflineBotIIV = $(view, R.id.id_mine_offline_iiv);
+        mOfflineBotIIV.setOnClickListener(this);
 
         mUserStatusTv = $(view, R.id.id_mine_status_iiv);
         mSignatureTv = $(view, R.id.id_mine_signature_tv);
@@ -77,9 +80,10 @@ public class MineFragment extends BaseFragment
             //BitmapManager.load(fileOption.get(), true);
             //BitmapManager.load(avatar, isAvatar = true).foreach(avatarView.setImageBitmap)
             mAvatarIv.setText(new String(userInfo.getNickname().value));
-
-            mUsernameTv.setText(userInfo.getToxMeName().getUserName());
             mNickNameTv.setText(new String(userInfo.getNickname().value));
+            mUsernameTv.setText(StringUtils.formatTxFromResId(R.string.user_name_prompt,
+                userInfo.getToxMeName().getUserName()));
+
             String signature = new String(userInfo.getStatusMessage().value);
             if (StringUtils.isEmpty(signature)) {
                 mSignatureTv.setVisibility(View.GONE);
@@ -116,6 +120,11 @@ public class MineFragment extends BaseFragment
     }
 
     @Override
+    public void showOfflineBotNew(String content, int style, int bg) {
+        mOfflineBotIIV.setContent(content, style, bg);
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
         if (mMinePresenter != null) {
@@ -139,10 +148,13 @@ public class MineFragment extends BaseFragment
                 PageJumpIn.jumpMyInfoPage(getActivity());
                 break;
             case R.id.id_mine_tok_id_iiv:
-                PageJumpIn.jumpMyChatIdPage(getActivity());
+                PageJumpIn.jumpMyTokIdPage(getActivity());
                 break;
             case R.id.id_mine_find_friend_iiv:
                 mMinePresenter.showFindFriendBot();
+                break;
+            case R.id.id_mine_offline_iiv:
+                mMinePresenter.showOfflineBot();
                 break;
             case R.id.id_mine_safe_layout:
                 PageJumpIn.jumpSafePage(getActivity());

@@ -70,43 +70,46 @@ public class ClipImgActivity extends BaseTitleFullScreenActivity implements View
     }
 
     private void setImageAndClipParams() {
-        mClipImageView.post(() -> {
-            mClipImageView.setMaxOutputWidth(mMaxWidth);
+        mClipImageView.post(new Runnable() {
+            @Override
+            public void run() {
+                mClipImageView.setMaxOutputWidth(mMaxWidth);
 
-            mDegree = readPictureDegree(mInput);
+                mDegree = readPictureDegree(mInput);
 
-            final boolean isRotate = (mDegree == 90 || mDegree == 270);
+                final boolean isRotate = (mDegree == 90 || mDegree == 270);
 
-            final BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inJustDecodeBounds = true;
-            BitmapFactory.decodeFile(mInput, options);
+                final BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inJustDecodeBounds = true;
+                BitmapFactory.decodeFile(mInput, options);
 
-            mSourceWidth = options.outWidth;
-            mSourceHeight = options.outHeight;
+                mSourceWidth = options.outWidth;
+                mSourceHeight = options.outHeight;
 
-            int w = isRotate ? options.outHeight : options.outWidth;
+                int w = isRotate ? options.outHeight : options.outWidth;
 
-            mSampleSize = findBestSample(w, mClipImageView.getClipBorder().width());
+                mSampleSize = findBestSample(w, mClipImageView.getClipBorder().width());
 
-            options.inJustDecodeBounds = false;
-            options.inSampleSize = mSampleSize;
-            options.inPreferredConfig = Bitmap.Config.RGB_565;
-            final Bitmap source = BitmapFactory.decodeFile(mInput, options);
+                options.inJustDecodeBounds = false;
+                options.inSampleSize = mSampleSize;
+                options.inPreferredConfig = Bitmap.Config.RGB_565;
+                final Bitmap source = BitmapFactory.decodeFile(mInput, options);
 
-            Bitmap target;
-            if (mDegree == 0) {
-                target = source;
-            } else {
-                final Matrix matrix = new Matrix();
-                matrix.postRotate(mDegree);
-                target =
-                    Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(), matrix,
-                        false);
-                if (target != source && !source.isRecycled()) {
-                    source.recycle();
+                Bitmap target;
+                if (mDegree == 0) {
+                    target = source;
+                } else {
+                    final Matrix matrix = new Matrix();
+                    matrix.postRotate(mDegree);
+                    target =
+                        Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(),
+                            matrix, false);
+                    if (target != source && !source.isRecycled()) {
+                        source.recycle();
+                    }
                 }
+                mClipImageView.setImageBitmap(target);
             }
-            mClipImageView.setImageBitmap(target);
         });
     }
 

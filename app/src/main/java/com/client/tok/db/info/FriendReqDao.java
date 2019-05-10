@@ -16,10 +16,13 @@ public interface FriendReqDao extends BaseDao<FriendRequest> {
     List<FriendRequest> getAll();
 
     @Query("select count(*) from friend_requests where has_read=0")
-    LiveData<Integer> getUnReadCount();
+    LiveData<Integer> getUnReadCountLive();
 
-    @Query("update friend_requests set has_read=1 where has_read=0")
-    int setHasRead();
+    @Query("select count(*) from friend_requests where has_read=0")
+    int getUnReadCount();
+
+    @Query("update friend_requests set has_read=1 where has_read=0 and tox_key=:key")
+    int setHasRead(String key);
 
     @Query("select * from friend_requests where tox_key=:key")
     FriendRequest queryByKey(String key);

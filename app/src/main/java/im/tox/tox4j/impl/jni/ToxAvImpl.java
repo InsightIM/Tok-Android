@@ -20,24 +20,14 @@ import im.tox.tox4j.core.IToxCore;
 import im.tox.tox4j.core.data.ToxFriendNumber;
 
 public class ToxAvImpl implements IToxAv {
-    private ToxCoreImpl toxCore;
     private int instanceNumber;
 
-    public ToxAvImpl(ToxCoreImpl toxCore) {
+    public ToxAvImpl(int instanceNumber) {
         try {
-            this.toxCore = toxCore;
-            instanceNumber = ToxAvJni.toxavNew(toxCore.getInstanceNumber());
+            this.instanceNumber = instanceNumber;
+            ToxAvJni.toxavNew(instanceNumber);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-
-    @Override
-    public IToxAv create(IToxCore tox) throws ToxavNewException {
-        try {
-            return new ToxAvImpl((ToxCoreImpl) tox);
-        } catch (ClassCastException e) {
-            throw new ToxavNewException(ToxavNewException.Code.INCOMPATIBLE, tox.toString());
         }
     }
 

@@ -1,6 +1,7 @@
 package com.client.tok.pagejump;
 
 import com.client.tok.BuildConfig;
+import com.client.tok.bot.BotManager;
 
 public class GlobalParams {
     //broadcast action when login success
@@ -26,15 +27,20 @@ public class GlobalParams {
     public static final String TYPE_FRIEND = "2";
 
 
-
     /**
      * chat to
      * friend or group
      */
     public static final String CHAT_FRIEND = "0";
+    /**
+     * message assistant:off line message or group message
+     */
+    public static final String FIND_FRIEND_BOT_TOK_ID =
+        BotManager.getInstance().getFindFriendBotTokId();
+    public static final String OFFLINE_BOT_TOK_ID = BotManager.getInstance().getOfflineBotTokId();
 
     public static final String CUSTOMER_SERVICE_TOK_ID =
-        "3415845A7145854DE91046FF4666503A83EED05BC47CA222644C5F47A8E0F072938433360B34";
+        "D1BCA4E4D9C620FE0BF815D8C8A2317AF79266F5F2750B909ED2BABDF6AC6264741BACF56B53";
 
     /**
      * provider authority
@@ -63,14 +69,14 @@ public class GlobalParams {
     /**
      * time out of message send failed
      */
-    public final static int MSG_OUT_TIME = 5 * 1000;
-
+    public final static int MSG_OUT_TIME = 10 * 1000;
 
 
     /**
      * avatar request code
      */
     public final static int REQ_CODE_PORTRAIT = 10001;
+    public final static int REQ_CODE_RECORD_VIDEO = 20001;
 
     //address length and pk length
     public static int ADDRESS_LENGTH = 76;
@@ -85,4 +91,6 @@ public class GlobalParams {
     public static int PASSWORD_LENGTH = 50;
 
     public static int DELAY_ENTER_HOME = 500;//ms
+
+    public static int MAX_VIDEO_TIME = 15;//second
 }

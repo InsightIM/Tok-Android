@@ -5,7 +5,7 @@ import com.client.tok.TokApplication;
 import com.client.tok.pagejump.PageJumpIn;
 import com.client.tok.pagejump.SharePKeys;
 import com.client.tok.service.ServiceManager;
-import com.client.tok.tox.CoreManager;
+import com.client.tok.tox.ToxManager;
 import com.client.tok.tox.State;
 import com.client.tok.ui.login.login.UserModel;
 import com.client.tok.utils.LogUtil;
@@ -14,8 +14,10 @@ import com.client.tok.utils.StorageUtil;
 import com.client.tok.utils.StringUtils;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import java.util.Random;
 
@@ -52,7 +54,7 @@ public class SettingPresenter implements SettingContract.ISettingPresenter {
         if (result) {
             mSettingView.showExportSuccess(
                 StringUtils.formatTxFromResId(R.string.export_profile_path,
-                    CoreManager.getManager().toxData.getProfileName(), profileFolder),
+                    ToxManager.getManager().toxData.getProfileName(), profileFolder),
                 profileFolder);
         } else {
             mSettingView.showMsg(StringUtils.getTextFromResId(R.string.export_failed));
@@ -74,25 +76,31 @@ public class SettingPresenter implements SettingContract.ISettingPresenter {
         int maxNospam = 1234567890;
         int nospam = random.nextInt(maxNospam);
         LogUtil.i(TAG, "nospam:" + nospam);
-        CoreManager.getManager().toxBase.setNospam(nospam);
+        ToxManager.getManager().toxBase.setNospam(nospam);
         mSettingView.showMsg(StringUtils.getTextFromResId(R.string.successful));
         PreferenceUtils.saveString(SharePKeys.CHAT_ID,
-            CoreManager.getManager().toxBase.getSelfAddress().toString());
+            ToxManager.getManager().toxBase.getSelfAddress().toString());
         mSettingModel.exportAccountInfo();
     }
 
     @Override
     public void clearMsgHistory() {
         mSettingView.showLoading();
-        mCleanHisDis = Observable.create((ObservableEmitter<Boolean> emitter) -> {
-            boolean result = mUserModel.clearChatHistory();
-            emitter.onNext(result);
+        mCleanHisDis = Observable.create(new ObservableOnSubscribe<Boolean>() {
+            @Override
+            public void subscribe(ObservableEmitter<Boolean> emitter) throws Exception {
+                boolean result = mUserModel.clearChatHistory();
+                emitter.onNext(result);
+            }
         })
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe((Boolean aBoolean) -> {
-                mSettingView.hideLoading();
-                mSettingView.showMsg(StringUtils.getTextFromResId(R.string.successful));
+            .subscribe(new Consumer<Boolean>() {
+                @Override
+                public void accept(Boolean o) throws Exception {
+                    mSettingView.hideLoading();
+                    mSettingView.showMsg(StringUtils.getTextFromResId(R.string.successful));
+                }
             });
     }
 
@@ -100,16 +108,22 @@ public class SettingPresenter implements SettingContract.ISettingPresenter {
     public void delProfile() {
         mSettingView.showLoading();
 
-        mDelProfileDis = Observable.create((ObservableEmitter<Boolean> emitter) -> {
-            boolean result = mUserModel.destroyAccount();
-            emitter.onNext(result);
+        mDelProfileDis = Observable.create(new ObservableOnSubscribe<Boolean>() {
+            @Override
+            public void subscribe(ObservableEmitter<Boolean> emitter) throws Exception {
+                boolean result = mUserModel.destroyAccount();
+                emitter.onNext(result);
+            }
         })
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe((Boolean aBoolean) -> {
-                mSettingView.hideLoading();
-                mSettingView.showMsg(StringUtils.getTextFromResId(R.string.successful));
-                logout();
+            .subscribe(new Consumer<Boolean>() {
+                @Override
+                public void accept(Boolean aBoolean) throws Exception {
+                    mSettingView.hideLoading();
+                    mSettingView.showMsg(StringUtils.getTextFromResId(R.string.successful));
+                    SettingPresenter.this.logout();
+                }
             });
     }
 
@@ -117,24 +131,30 @@ public class SettingPresenter implements SettingContract.ISettingPresenter {
     public void logout() {
         mSettingView.showLoading();
 
-        mLogoutDis = Observable.create((ObservableEmitter<Boolean> emitter) -> {
-            boolean result = true;
-            if (PreferenceUtils.getBoolean(PreferenceUtils.CLEAR_MSG_LOGOUT, false)) {
-                result = mUserModel.clearChatHistory();
+        mLogoutDis = Observable.create(new ObservableOnSubscribe<Boolean>() {
+            @Override
+            public void subscribe(ObservableEmitter<Boolean> emitter) throws Exception {
+                boolean result = true;
+                if (PreferenceUtils.getBoolean(PreferenceUtils.CLEAR_MSG_LOGOUT, false)) {
+                    result = mUserModel.clearChatHistory();
+                }
+                if (State.isLoggedIn()) {
+                    State.logout();
+                }
+                emitter.onNext(result);
             }
-            if (State.isLoggedIn()) {
-                State.logout();
-            }
-            emitter.onNext(result);
         })
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe((Boolean aBoolean) -> {
-                mSettingView.hideLoading();
-                ServiceManager.stopToxService();
-                TokApplication.getInstance().finishOpenedActivities();
-                PageJumpIn.jumpLoginPage(mSettingView.getActivity());
-                mSettingView.viewDestroy();
+            .subscribe(new Consumer<Boolean>() {
+                @Override
+                public void accept(Boolean aBoolean) throws Exception {
+                    mSettingView.hideLoading();
+                    ServiceManager.stopToxService();
+                    TokApplication.getInstance().finishOpenedActivities();
+                    PageJumpIn.jumpLoginPage(mSettingView.getActivity());
+                    mSettingView.viewDestroy();
+                }
             });
     }
 

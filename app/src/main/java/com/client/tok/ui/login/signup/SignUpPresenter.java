@@ -61,10 +61,13 @@ public class SignUpPresenter implements SignUpContract.ISignUpPresenter {
 
     private void signUpSuccess() {
         ServiceManager.startToxService();
-        new Handler().postDelayed(() -> {
-            mSignUpView.viewDestroy();
-            LocalBroaderUtils.sendLocalBroadcast(GlobalParams.ACTION_LOGIN_SUCCESS, null);
-            PageJumpIn.jumpHomePage(mSignUpView.getActivity());
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mSignUpView.viewDestroy();
+                LocalBroaderUtils.sendLocalBroadcast(GlobalParams.ACTION_LOGIN_SUCCESS, null);
+                PageJumpIn.jumpHomePage(mSignUpView.getActivity());
+            }
         }, GlobalParams.DELAY_ENTER_HOME);
     }
 

@@ -14,6 +14,7 @@ public class DBConstants {
     public static final String COLUMN_RECEIVED_AVATAR = "received_avatar";
     public static final String COLUMN_ALIAS = "alias";
     public static final String COLUMN_NAME = "name";
+    public static final String COLUMN_HAS_OFFLINE_BOT = "has_offline_bot";
 
     public static final String TABLE_GROUP_PEERS = "group_peers";
 

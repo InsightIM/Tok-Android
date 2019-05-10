@@ -1,7 +1,9 @@
 package com.client.tok.ui.home;
 
+import android.arch.lifecycle.Observer;
+import android.support.annotation.Nullable;
 import com.client.tok.R;
-import com.client.tok.bean.ContactsInfo;
+import com.client.tok.bean.ContactInfo;
 import com.client.tok.bot.BotManager;
 import com.client.tok.db.repository.InfoRepository;
 import com.client.tok.tox.State;
@@ -35,22 +37,35 @@ public class HomePresenter implements HomeContract.IHomePresenter {
      * listen un read message
      */
     private void observerUnReadMsg() {
-        mInfoRepo.totalUnreadMsg().observe(mHomeView, (Integer integer) -> {
-            mHomeView.showUnReadMsg(integer != null ? integer : 0);
-        });
+        if (mInfoRepo != null) {
+            mInfoRepo.totalUnreadMsg().observe(mHomeView, new Observer<Integer>() {
+                @Override
+                public void onChanged(@Nullable Integer integer) {
+                    mHomeView.showUnReadMsg(integer != null ? integer : 0);
+                }
+            });
+        }
     }
 
     /**
      * listen new friend requset
      */
     private void observerFriendReq() {
-        mInfoRepo.totalUnreadMsg().observe(mHomeView, (Integer integer) -> {
-            mHomeView.showUnReadMsg(integer != null ? integer : 0);
-        });
+        if (mInfoRepo != null) {
+            mInfoRepo.totalUnreadMsg().observe(mHomeView, new Observer<Integer>() {
+                @Override
+                public void onChanged(@Nullable Integer integer) {
+                    mHomeView.showUnReadMsg(integer != null ? integer : 0);
+                }
+            });
 
-        mInfoRepo.getFriendReqUnReadCount().observe(mHomeView, (Integer integer) -> {
-            mHomeView.showFriendReqCount(integer != null ? integer : 0);
-        });
+            mInfoRepo.getFriendReqUnReadCount().observe(mHomeView, new Observer<Integer>() {
+                @Override
+                public void onChanged(@Nullable Integer integer) {
+                    mHomeView.showFriendReqCount(integer != null ? integer : 0);
+                }
+            });
+        }
     }
 
     @Override
@@ -74,10 +89,13 @@ public class HomePresenter implements HomeContract.IHomePresenter {
     }
 
     private void checkNewFeature() {
-        ContactsInfo info = mInfoRepo.getFriendInfo(BotManager.getInstance().getAddFriendBotPk());
-        boolean show = PreferenceUtils.hasShowFindFriendBotFeat() || info != null;
-        mHomeView.showFindFriendBotFeature(
-            show ? "" : StringUtils.getTextFromResId(R.string.new_tag));
+        if (mInfoRepo != null) {
+            ContactInfo info =
+                mInfoRepo.getFriendInfo(BotManager.getInstance().getFindFriendBotPk());
+            boolean show = PreferenceUtils.hasShowFindFriendBotFeat() || info != null;
+            mHomeView.showFindFriendBotFeature(
+                show ? "" : StringUtils.getTextFromResId(R.string.new_tag));
+        }
     }
 
     @Override

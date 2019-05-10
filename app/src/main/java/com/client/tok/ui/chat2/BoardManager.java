@@ -68,46 +68,52 @@ public class BoardManager implements KeyboardRecordSwitchView.SwitchListener {
     public BoardManager bindToEditText(EditText editText) {
         mInputEt = editText;
         mInputEt.requestFocus();
-        mInputEt.setOnTouchListener((View v, MotionEvent event) -> {
-            if (event.getAction() == MotionEvent.ACTION_UP) {
-                View curShowLayout = null;
-                if (mEmotionLayout != null && mEmotionLayout.isShown()) {
-                    curShowLayout = mEmotionLayout;
-                } else if (mExtendFileLayout != null && mExtendFileLayout.isShown()) {
-                    curShowLayout = mExtendFileLayout;
+        mInputEt.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    View curShowLayout = null;
+                    if (mEmotionLayout != null && mEmotionLayout.isShown()) {
+                        curShowLayout = mEmotionLayout;
+                    } else if (mExtendFileLayout != null && mExtendFileLayout.isShown()) {
+                        curShowLayout = mExtendFileLayout;
+                    }
+                    if (curShowLayout != null) {
+                        BoardManager.this.lockContentHeight();
+                        BoardManager.this.hideExtendLayout(curShowLayout, true);
+                        mInputEt.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                unlockContentHeightDelayed();
+                            }
+                        }, 200L);
+                    }
                 }
-                if (curShowLayout != null) {
-                    lockContentHeight();
-                    hideExtendLayout(curShowLayout, true);
-                    mInputEt.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            unlockContentHeightDelayed();
-                        }
-                    }, 200L);
-                }
+                return false;
             }
-            return false;
         });
         return this;
     }
 
     public BoardManager bindToEmotionBtn(View emotionBtn) {
-        emotionBtn.setOnClickListener((View v) -> {
-            if (mEmotionLayout != null && mEmotionLayout.isShown()) {
-                lockContentHeight();
-                hideExtendLayout(mEmotionLayout, true);
-                unlockContentHeightDelayed();
-            } else {
-                if (isSoftInputShown()) {
-                    lockContentHeight();
-                    showExtendLayout(mEmotionLayout);
-                    unlockContentHeightDelayed();
+        emotionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mEmotionLayout != null && mEmotionLayout.isShown()) {
+                    BoardManager.this.lockContentHeight();
+                    BoardManager.this.hideExtendLayout(mEmotionLayout, true);
+                    BoardManager.this.unlockContentHeightDelayed();
                 } else {
-                    if (mExtendFileLayout.isShown()) {
-                        hideExtendLayout(mExtendFileLayout, false);
+                    if (BoardManager.this.isSoftInputShown()) {
+                        BoardManager.this.lockContentHeight();
+                        BoardManager.this.showExtendLayout(mEmotionLayout);
+                        BoardManager.this.unlockContentHeightDelayed();
+                    } else {
+                        if (mExtendFileLayout.isShown()) {
+                            BoardManager.this.hideExtendLayout(mExtendFileLayout, false);
+                        }
+                        BoardManager.this.showExtendLayout(mEmotionLayout);
                     }
-                    showExtendLayout(mEmotionLayout);
                 }
             }
         });
@@ -120,21 +126,24 @@ public class BoardManager implements KeyboardRecordSwitchView.SwitchListener {
     }
 
     public BoardManager bindToExtendBtn(View addExtendFileBtn) {
-        addExtendFileBtn.setOnClickListener((View view) -> {
-            if (mExtendFileLayout != null && mExtendFileLayout.isShown()) {
-                lockContentHeight();
-                hideExtendLayout(mExtendFileLayout, true);
-                unlockContentHeightDelayed();
-            } else {
-                if (isSoftInputShown()) {
-                    lockContentHeight();
-                    showExtendLayout(mExtendFileLayout);
-                    unlockContentHeightDelayed();
+        addExtendFileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mExtendFileLayout != null && mExtendFileLayout.isShown()) {
+                    BoardManager.this.lockContentHeight();
+                    BoardManager.this.hideExtendLayout(mExtendFileLayout, true);
+                    BoardManager.this.unlockContentHeightDelayed();
                 } else {
-                    if (mEmotionLayout != null && mEmotionLayout.isShown()) {
-                        hideExtendLayout(mEmotionLayout, false);
+                    if (BoardManager.this.isSoftInputShown()) {
+                        BoardManager.this.lockContentHeight();
+                        BoardManager.this.showExtendLayout(mExtendFileLayout);
+                        BoardManager.this.unlockContentHeightDelayed();
+                    } else {
+                        if (mEmotionLayout != null && mEmotionLayout.isShown()) {
+                            BoardManager.this.hideExtendLayout(mEmotionLayout, false);
+                        }
+                        BoardManager.this.showExtendLayout(mExtendFileLayout);
                     }
-                    showExtendLayout(mExtendFileLayout);
                 }
             }
         });
@@ -170,8 +179,11 @@ public class BoardManager implements KeyboardRecordSwitchView.SwitchListener {
     }
 
     private void unlockContentHeightDelayed() {
-        mInputEt.postDelayed(() -> {
-            ((LinearLayout.LayoutParams) mContentView.getLayoutParams()).weight = 1.0F;
+        mInputEt.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ((LinearLayout.LayoutParams) mContentView.getLayoutParams()).weight = 1.0F;
+            }
         }, 200L);
     }
 

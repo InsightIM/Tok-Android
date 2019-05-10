@@ -98,7 +98,9 @@
     <color name="c_e1e1e1">#e1e1e1</color>
     <color name="c_fff7ad">#fff7ad</color>
     <color name="c_ff4a40">#ff4a40</color>
+    <color name="c_ee0000">#ee0000</color>
     <color name="c_999999">#ff999999</color>
+    <color name="c_dedede">#ffdedede</color>
 
 
     <color name="online">@color/c_4cd964</color>

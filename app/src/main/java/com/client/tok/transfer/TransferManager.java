@@ -1,13 +1,16 @@
 package com.client.tok.transfer;
 
-import com.client.tok.bean.ContactsInfo;
+import com.client.tok.bean.ContactInfo;
 import com.client.tok.bean.ContactsKey;
+import com.client.tok.bean.ToxAddress;
 import com.client.tok.constant.FileKind;
 import com.client.tok.constant.Intervals;
 import com.client.tok.pagejump.GlobalParams;
-import com.client.tok.tox.CoreManager;
+import com.client.tok.tox.ToxManager;
 import com.client.tok.tox.State;
 import com.client.tok.tox.ToxCoreBase;
+import com.client.tok.ui.filecore.TransFileInfo;
+import com.client.tok.ui.filecore.TransFilePbUtil;
 import com.client.tok.utils.FileUtilsJ;
 import com.client.tok.utils.LogUtil;
 import com.client.tok.utils.StorageUtil;
@@ -23,7 +26,7 @@ import java.util.Map;
 
 public class TransferManager {
     private String TAG = "TransferManager";
-    private CoreManager coreManager = CoreManager.getManager();
+    private ToxManager coreManager = ToxManager.getManager();
     /**
      * key  dbId
      * value fileTransfer
@@ -88,7 +91,7 @@ public class TransferManager {
      * @param friendKey custom friend key
      */
     public void updateSelfAvatar2Friend(String friendKey) {
-        ContactsInfo friend = State.infoRepo().getFriendInfo(friendKey);
+        ContactInfo friend = State.infoRepo().getFriendInfo(friendKey);
         updateSelfAvatar2Friend(friend);
     }
 
@@ -96,16 +99,17 @@ public class TransferManager {
      * updata my avatar to custom friend
      */
     public void updateSelfAvatar2All() {
-        List<ContactsInfo> list = State.infoRepo().getUnsendAvatarFriend();
-        for (ContactsInfo friend : list) {
+        List<ContactInfo> list = State.infoRepo().getUnsendAvatarFriend();
+        for (ContactInfo friend : list) {
             updateSelfAvatar2Friend(friend);
         }
     }
 
-    private void updateSelfAvatar2Friend(ContactsInfo friend) {
+    private void updateSelfAvatar2Friend(ContactInfo friend) {
         if (friend.isOnline()) {
             File avatarFile =
                 FileKind.AVATAR.getFile(coreManager.toxBase.getSelfKey().key + ".png");
+            State.infoRepo().delAvatarMessage(friend.getKey().key);
             if (avatarFile != null && avatarFile.exists()) {
                 byte[] hashBytes = coreManager.toxBase.hashFile(avatarFile);
                 sendFileSendRequest(avatarFile.getPath(), friend.getKey(), FileKind.AVATAR,
@@ -158,9 +162,15 @@ public class TransferManager {
         long length = file.length();
         fileId = reInitFileId(path, fileId);
 
-        ContactsKey proxyReceiverKey;
+        /**
+         * init send message info
+         * 1.friend + online
+         * 2.friend + offline
+         * 3.group
+         */
+        ContactsKey proxyReceiverKey = receiverKey;
         byte[] transFileName = fileName.getBytes();
-        proxyReceiverKey = receiverKey;
+
         addSendFileInfo(receiverKey, proxyReceiverKey, path, fileKind, fileId, transFileName, file,
             length);
     }
@@ -236,7 +246,7 @@ public class TransferManager {
         long dbId = State.infoRepo().getFileId(realReceiverKey, fileNumber);
         if (dbId != -1) {
             coreManager.toxBase.fileControl(proxyKey, fileNumber,
-                accept ? ToxFileControl.RESUME : ToxFileControl.CANCEL);
+                (accept ? ToxFileControl.RESUME : ToxFileControl.CANCEL));
             if (accept) {
                 State.infoRepo().fileTransferStarted(realReceiverKey.getKey(), fileNumber);
             } else {

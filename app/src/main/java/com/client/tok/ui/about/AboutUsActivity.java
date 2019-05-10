@@ -24,8 +24,12 @@ public class AboutUsActivity extends BaseCommonTitleActivity {
 
     public void initView() {
         mContactUsIiv = $(R.id.id_about_contact_iiv);
-        mContactUsIiv.setOnClickListener((View v) -> {
-            PageJumpIn.jumpAddFriendsPage(this, GlobalParams.CUSTOMER_SERVICE_TOK_ID);
+        mContactUsIiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PageJumpIn.jumpAddFriendsPage(AboutUsActivity.this,
+                    GlobalParams.CUSTOMER_SERVICE_TOK_ID);
+            }
         });
         mVersionTv = $(R.id.id_about_us_version_tv);
         mVersionTv.setText(

@@ -1,6 +1,7 @@
 package com.client.tok.utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -25,11 +26,15 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.RandomAccessFile;
 import java.math.BigInteger;
-import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.util.UUID;
 
 public class FileUtilsJ {
+
+    public static boolean exist(String path) {
+        return new File(path).exists();
+    }
+
     /**
      * read String from raw
      */
@@ -99,33 +104,40 @@ public class FileUtilsJ {
         return TokApplication.getInstance().getFilesDir().getPath();
     }
 
-    public static String saveFile(String filePath) {
-        String saveFolder = getAppPath();
-        File file = new File(saveFolder);
-        if (!file.exists()) {
-            file.mkdirs();
-        }
-        String saveFile = saveFolder + UUID.randomUUID() + ".jpg";
-        compress(filePath, saveFile);
+    public static String saveBitmap(Bitmap bitmap) {
+        String saveFile = StorageUtil.getFilesFolder() + UUID.randomUUID() + ".jpg";
+        compress(bitmap, saveFile);
+        return saveFile;
+    }
+
+    public static String saveFile(String resPath) {
+        String saveFile = StorageUtil.getFilesFolder() + UUID.randomUUID() + ".jpg";
+        compress(resPath, saveFile);
         return saveFile;
     }
 
     public static boolean compress(String inFilePath, String outFilePath) {
         boolean ret = false;
         Bitmap bitmap = convertToBitmap(inFilePath);
+        return compress(bitmap, outFilePath);
+    }
+
+    public static boolean compress(Bitmap bitmap, String outFilePath) {
+        boolean result = false;
         File saveFile = new File(outFilePath);
         OutputStream outStream = null;
         try {
             outStream = new FileOutputStream(saveFile);
             bitmap.compress(Bitmap.CompressFormat.JPEG, 75, outStream);
+            result = true;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            ret = false;
+            result = false;
         } finally {
             close(outStream);
         }
 
-        return ret;
+        return result;
     }
 
     /**
@@ -220,8 +232,6 @@ public class FileUtilsJ {
             if (inputStream == null) return;
             OutputStream outputStream = new FileOutputStream(dstFile);
             copy(inputStream, outputStream);
-            close(inputStream);
-            close(outputStream);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -232,33 +242,55 @@ public class FileUtilsJ {
             FileInputStream inStream = new FileInputStream(source);
             FileOutputStream outStream = new FileOutputStream(destination);
             copy(inStream, outStream);
-            close(inStream);
-            close(outStream);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * @param srcPath src file
+     * @param destFolder must include '/' at the end
+     * @return copy to name;
+     */
+    public static String copy(String srcPath, String destFolder) {
+        try {
+            File srcFile = new File(srcPath);
+            String srcName = srcFile.getName();
+            File destFile = new File(destFolder + srcName);
+            FileInputStream inStream = new FileInputStream(srcFile);
+            FileOutputStream outStream = new FileOutputStream(destFile);
+            copy(inStream, outStream);
+            return destFile.getAbsolutePath();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public static void copy(InputStream inputStream, OutputStream outputStream) {
         try {
-            byte[] buffer = new byte[1024];
+            byte[] buffer = new byte[inputStream.available()];
             while (inputStream.read(buffer) != -1) {
                 outputStream.write(buffer);
             }
+            close(inputStream);
+            close(outputStream);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public static byte[] readToBytes(String source) {
-        byte[] data = null;
-        try {
-            File file = new File(source);
-            data = Files.readAllBytes(file.toPath());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return data;
+        //byte[] data = null;
+        //try {
+        //    File file = new File(source);
+        //NOTE on some device ,Files.readAllBytes make a crash:NoSuchMethodException
+        //    data = Files.readAllBytes(file.toPath());
+        //} catch (IOException e) {
+        //    e.printStackTrace();
+        //}
+        //return data;
+        return readToBytes(new File(source));
     }
 
     public static byte[] readToBytes(File source) {
@@ -436,5 +468,32 @@ public class FileUtilsJ {
             return split[split.length - 1];
         }
         return "";
+    }
+
+    public static boolean save2Download(Context context, String srcFile, String destFolder) {
+        if (exist(srcFile)) {
+            //some file from download folders,so no need save,return true
+            if (!new File(destFolder).getPath().equals(new File(srcFile).getParent())) {
+                //insert file to gallery
+                String result = copy(srcFile, destFolder);
+                try {
+                    if (ImageUtils.isImgFile(result)) {
+                        File file = new File(result);
+                        // this will copy a new file to sdcard/pictures,no need
+                        //MediaStore.Images.Media.insertImage(context.getContentResolver(), srcFile,
+                        //    file.getName(), null);
+                        //send broadcast,update gallery
+                        Uri uri = Uri.fromFile(file);
+                        context.sendBroadcast(
+                            new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, uri));
+                        return true;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            return true;
+        }
+        return false;
     }
 }

@@ -7,7 +7,7 @@ import android.arch.persistence.room.RoomDatabase;
 import android.arch.persistence.room.migration.Migration;
 import android.content.Context;
 import android.support.annotation.NonNull;
-import com.client.tok.bean.ContactsInfo;
+import com.client.tok.bean.ContactInfo;
 import com.client.tok.bean.Conversation;
 import com.client.tok.bean.FriendRequest;
 import com.client.tok.bean.Message;
@@ -17,8 +17,8 @@ import com.client.tok.utils.PreferenceUtils;
  * message infoRepo
  */
 @Database(entities = {
-    Conversation.class, ContactsInfo.class, Message.class, FriendRequest.class
-}, version = 34, exportSchema = false)
+    Conversation.class, ContactInfo.class, Message.class, FriendRequest.class
+}, version = 35, exportSchema = false)
 public abstract class InfoDB extends RoomDatabase {
 
     private static InfoDB INSTANCE;
@@ -31,7 +31,7 @@ public abstract class InfoDB extends RoomDatabase {
                 INSTANCE =
                     Room.databaseBuilder(context.getApplicationContext(), InfoDB.class, dbName)
                         .allowMainThreadQueries()
-                        .addMigrations(MIGRATION_32_33, MIGRATION_33_34)
+                        .addMigrations(MIGRATION_32_33, MIGRATION_33_34, MIGRATION_34_35)
                         .build();
             }
             return INSTANCE;
@@ -81,7 +81,16 @@ public abstract class InfoDB extends RoomDatabase {
     static final Migration MIGRATION_33_34 = new Migration(33, 34) {
         @Override
         public void migrate(@NonNull SupportSQLiteDatabase database) {
+            //TODO
             database.execSQL("DROP TABLE IF EXISTS `group_peers`");
+        }
+    };
+
+    static final Migration MIGRATION_34_35 = new Migration(34, 35) {
+        @Override
+        public void migrate(@NonNull SupportSQLiteDatabase database) {
+            //add column(friend_contacts) on TABLE 'friend_contacts'
+            database.execSQL("ALTER TABLE `friend_contacts` ADD `has_offline_bot` INTEGER NOT NULL default 0");
         }
     };
 

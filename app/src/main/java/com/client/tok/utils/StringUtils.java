@@ -5,6 +5,7 @@ import android.text.Html;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.widget.TextView;
+import com.client.tok.BuildConfig;
 import com.client.tok.TokApplication;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayOutputStream;
@@ -94,6 +95,13 @@ public class StringUtils {
         return "";
     }
 
+    public static String byte2Str(byte[] bytes) {
+        if (bytes != null) {
+            return new String(bytes);
+        }
+        return "";
+    }
+
     public static String removeNewLines(String str) {
         return str.replace("\n", "").replace("\r", "");
     }
@@ -125,5 +133,16 @@ public class StringUtils {
             e.printStackTrace();
         }
         return str.getBytes();
+    }
+
+    public static int getDrawableIdByName(String resName) {
+        try {
+            return TokApplication.getInstance()
+                .getResources()
+                .getIdentifier(resName, "drawable", BuildConfig.APPLICATION_ID);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

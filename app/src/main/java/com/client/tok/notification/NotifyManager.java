@@ -11,12 +11,13 @@ import android.graphics.Color;
 import android.os.Build;
 import com.client.tok.R;
 import com.client.tok.TokApplication;
-import com.client.tok.bean.ContactsInfo;
-import com.client.tok.bean.ToxKey;
 import com.client.tok.pagejump.IntentConstants;
 import com.client.tok.ui.chat2.Chat2Activity;
+import com.client.tok.ui.contactreqdetail.ContactReqDetailActivity;
 import com.client.tok.ui.home.HomeActivity;
 import com.client.tok.utils.LogUtil;
+import com.client.tok.utils.NotificationBadge;
+import com.client.tok.utils.PreferenceUtils;
 import com.client.tok.utils.StringUtils;
 
 public class NotifyManager {
@@ -36,8 +37,15 @@ public class NotifyManager {
     private String mChannelServiceName = "channel_service";
     private String mChannelServiceDes = "Tok Service";
 
+    private int lastBadgeCount;
+
+    private boolean newMsgNotify;
+    private boolean newFriendReqNotify;
+    private boolean notifyCenter;
+
     private NotifyManager(Context context) {
         this.mContext = context;
+        initNotifyToggle();
     }
 
     public static NotifyManager getInstance() {
@@ -51,6 +59,17 @@ public class NotifyManager {
         mNotificationManager =
             (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         createNotifyChannel();
+    }
+
+    private void initNotifyToggle() {
+        newMsgNotify = PreferenceUtils.getBoolean(PreferenceUtils.GLOBAL_MSG_NOTIFY, true);
+        newFriendReqNotify =
+            PreferenceUtils.getBoolean(PreferenceUtils.NEW_FRIEND_REQ_NOTIFY, true);
+        notifyCenter = PreferenceUtils.getBoolean(PreferenceUtils.NOTIFY_CENTER, false);
+    }
+
+    public void updateNotifyToggle() {
+        initNotifyToggle();
     }
 
     private void createNotifyChannel() {
@@ -115,36 +134,62 @@ public class NotifyManager {
         return builder;
     }
 
-    public void createMsgNotify(String chatType, ContactsInfo contactInfo, String content,
+    public void createFriendReqNotify(String reqKey, String content, int count) {
+        if (newFriendReqNotify) {
+            Intent intent = new Intent(mContext, ContactReqDetailActivity.class);
+            intent.putExtra(IntentConstants.REQ_FRIEND_KEY, reqKey);
+            if (!notifyCenter) {
+                content = "";
+            }
+            createBaseNotify(intent, StringUtils.getTextFromResId(R.string.new_friends_request),
+                content, generateNotifyId(reqKey));
+        }
+        setBadge(count);
+    }
+
+    public void createMsgNotify(String chatType, String contactKey, String sendName, String content,
         int count) {
+        if (newMsgNotify) {
+            Intent intent = new Intent(mContext, Chat2Activity.class);
+            intent.putExtra(IntentConstants.PK, contactKey);
+            intent.putExtra(IntentConstants.FROM_NOTIFICATION, true);
+            intent.putExtra(IntentConstants.CHAT_TYPE, chatType);
+            if (!notifyCenter) {
+                sendName = StringUtils.getTextFromResId(R.string.new_message);
+                content = "";
+            }
+            createBaseNotify(intent, sendName, content, generateNotifyId(contactKey));
+        }
+        setBadge(count);
+    }
+
+    private void createBaseNotify(Intent intent, String title, String content, int notifyId) {
         Notification.Builder builder =
             getMsgNotificationBuilder().setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle(contactInfo.getDisplayName())
-                .setContentText(content)
+                .setContentTitle(title)
                 .setAutoCancel(true)
                 .setOngoing(false);
-        LogUtil.i(TAG, "createMsgNotify unread count:" + count);
-        if (count > 0) {
-            builder.setContentInfo(count < 1000 ? String.valueOf(count) : "999+");
-        } else {
-            builder.setContentInfo("");
+        if (!StringUtils.isEmpty(content)) {
+            builder.setContentText(content);
         }
-        ToxKey key = contactInfo.getKey();
-        Intent intent = new Intent(mContext, Chat2Activity.class);
-        intent.putExtra(IntentConstants.TOK_ID, key.key);
-        intent.putExtra(IntentConstants.FROM_NOTIFICATION, true);
-        intent.putExtra(IntentConstants.CHAT_TYPE, chatType);
-
         PendingIntent pendingIntent =
             PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         builder.setContentIntent(pendingIntent);
         Notification notification = builder.build();
-        mNotificationManager.notify(generateNotifyId(key), notification);
+        mNotificationManager.notify(notifyId, notification);
     }
 
-    public int generateNotifyId(ToxKey key) {
-        return key.toString().hashCode();
+    public void setBadge(final int count) {
+        if (lastBadgeCount == count) {
+            return;
+        }
+        lastBadgeCount = count;
+        NotificationBadge.applyCount(count);
+    }
+
+    public int generateNotifyId(String key) {
+        return key.hashCode();
     }
 
     /**

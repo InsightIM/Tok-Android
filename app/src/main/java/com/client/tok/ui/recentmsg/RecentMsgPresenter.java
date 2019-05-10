@@ -1,7 +1,11 @@
 package com.client.tok.ui.recentmsg;
 
+import android.arch.lifecycle.Observer;
+import android.support.annotation.Nullable;
 import android.support.v7.util.DiffUtil;
 import com.client.tok.bean.ConversationItem;
+import com.client.tok.db.repository.InfoRepository;
+import com.client.tok.notification.NotifyManager;
 import com.client.tok.tox.State;
 import com.client.tok.utils.LogUtil;
 import java.util.List;
@@ -10,6 +14,7 @@ class RecentMsgPresenter implements RecentMsgContract.IRecentMsgPresenter {
     private String TAG = "RecentMsgFragment";
     private RecentMsgContract.IRecentMsgView mRecentMsgView;
     private List<ConversationItem> mCurConversationList;
+    private InfoRepository mInfoRepo = State.infoRepo();
 
     public RecentMsgPresenter(RecentMsgContract.IRecentMsgView recentMsgView) {
         this.mRecentMsgView = recentMsgView;
@@ -25,8 +30,11 @@ class RecentMsgPresenter implements RecentMsgContract.IRecentMsgPresenter {
     private void registerObserver() {
         State.infoRepo()
             .conversationLive()
-            .observe(mRecentMsgView, (List<ConversationItem> conversationList) -> {
-                updateByCondition(conversationList);
+            .observe(mRecentMsgView, new Observer<List<ConversationItem>>() {
+                @Override
+                public void onChanged(@Nullable List<ConversationItem> conversationList) {
+                    RecentMsgPresenter.this.updateByCondition(conversationList);
+                }
             });
     }
 
@@ -52,12 +60,14 @@ class RecentMsgPresenter implements RecentMsgContract.IRecentMsgPresenter {
 
     @Override
     public void delConversation(String key) {
-        State.infoRepo().delConversation(key);
+        mInfoRepo.delConversation(key);
+        NotifyManager.getInstance().setBadge(mInfoRepo.totalUnreadCount());
     }
 
     @Override
     public void markReaded(String key) {
-        State.infoRepo().markReaded(key);
+        mInfoRepo.markReaded(key);
+        NotifyManager.getInstance().setBadge(mInfoRepo.totalUnreadCount());
     }
 
     public class RecentMsgDiff extends DiffUtil.Callback {

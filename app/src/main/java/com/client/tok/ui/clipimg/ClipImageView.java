@@ -307,8 +307,11 @@ public class ClipImageView extends android.support.v7.widget.AppCompatImageView
         if (getWidth() != 0) {
             resetImageMatrix();
         } else {
-            post(() -> {
-                resetImageMatrix();
+            post(new Runnable() {
+                @Override
+                public void run() {
+                    ClipImageView.this.resetImageMatrix();
+                }
             });
         }
     }

@@ -21,6 +21,7 @@ public class FilePicker {
     public static final int REQ_IMG_GALLERY = 2001;
     public static final int REQ_FILE_SEL = 2002;
     public static final int REQ_FOLDER_SEL = 2003;
+    public static final int REQ_FILE_TXT = 2004;
     private static Uri imgCameraUri;
 
     public static void openCamera(final Activity activity) {
@@ -38,36 +39,42 @@ public class FilePicker {
         }
     }
 
-    public static void openGallery(final Activity activity) {
+    public static void openGallery(final Activity activity, final boolean onlyImg) {
         if (PermissionModel.hasPermissions(PermissionModel.PERMISSION_STORAGE)) {
-            jumpGallery(activity);
+            jumpGallery(activity, onlyImg);
         } else {
             PermissionModel.requestPermissions(PermissionModel.PERMISSION_STORAGE,
                 new PermissionCallBack() {
                     @Override
                     public void onPermissionsAllGranted(int requestCode,
                         @NonNull List<String> grantedPers) {
-                        jumpGallery(activity);
+                        jumpGallery(activity, onlyImg);
                     }
                 });
         }
     }
 
     public static void openFileSel(final Activity activity) {
-        if (PermissionModel.hasPermissions(PermissionModel.PERMISSION_STORAGE)) {
-            jumpFileOrFolderSel(activity, true);
-        } else {
-            PermissionModel.requestPermissions(PermissionModel.PERMISSION_STORAGE,
-                new PermissionCallBack() {
-                    @Override
-                    public void onPermissionsAllGranted(int requestCode,
-                        @NonNull List<String> grantedPers) {
-                        jumpFileOrFolderSel(activity, true);
-                    }
-                });
-        }
+        //if (PermissionModel.hasPermissions(PermissionModel.PERMISSION_STORAGE)) {
+        //    jumpFileOrFolderSel(activity, true);
+        //} else {
+        //    PermissionModel.requestPermissions(PermissionModel.PERMISSION_STORAGE,
+        //        new PermissionCallBack() {
+        //            @Override
+        //            public void onPermissionsAllGranted(int requestCode,
+        //                @NonNull List<String> grantedPers) {
+        //                jumpFileOrFolderSel(activity, true);
+        //            }
+        //        });
+        //}
+        jumpSelectDocument(activity);
     }
 
+    public static void openTxtDoc(final Activity activity) {
+        jumpSelectTxtDoc(activity);
+    }
+
+    @Deprecated
     public static void openFolderSel(final Activity activity) {
         if (PermissionModel.hasPermissions(PermissionModel.PERMISSION_STORAGE)) {
             jumpFileOrFolderSel(activity, false);
@@ -83,7 +90,7 @@ public class FilePicker {
         }
     }
 
-    public static void openFolder(final Activity activity, String folder) {
+    public static void openFolder(final Activity activity, final String folder) {
         if (PermissionModel.hasPermissions(PermissionModel.PERMISSION_STORAGE)) {
             jumpFolderSee(activity, folder);
         } else {
@@ -118,11 +125,71 @@ public class FilePicker {
         }
     }
 
-    private static void jumpGallery(Activity activity) {
-        final Intent intent = new Intent();
-        intent.setType("image/*");
+    private static void jumpGallery(Activity activity, boolean onlyImg) {
+
+        //1. this method open gallery is Only show pictures,can't show videos
+        if (onlyImg) {
+            final Intent intent = new Intent();
+            intent.setType("image/*");
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            activity.startActivityForResult(Intent.createChooser(intent, null), REQ_IMG_GALLERY);
+        } else {
+            //2.this method will lost picture,the picture size is not same to Gallery
+            //final Intent intent = new Intent(Intent.ACTION_PICK,
+            //    android.provider.MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
+            //activity.startActivityForResult(Intent.createChooser(intent, null), REQ_IMG_GALLERY);
+
+            //3.this method open gallery contains video/image,and size same;but two choose
+            //Intent videoPickerIntent = new Intent();
+            //videoPickerIntent.setType("video/*");
+            //videoPickerIntent.setAction(Intent.ACTION_GET_CONTENT);
+            //videoPickerIntent.putExtra(MediaStore.EXTRA_SIZE_LIMIT, (long) (1024 * 1024 * 1536));
+            //
+            //Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+            //photoPickerIntent.setType("image/*");
+            //
+            //Intent chooserIntent = Intent.createChooser(photoPickerIntent, null);
+            //chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS,
+            //    new Intent[] { videoPickerIntent });
+            //activity.startActivityForResult(chooserIntent, REQ_IMG_GALLERY);
+
+            //4.this method open gallery contains video/image,and one choose,
+            // but it not useful in OPPO:setType ,the first type useful,but the second ignore
+            Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+            photoPickerIntent.setType("image/*;video/*");
+
+            Intent chooserIntent = Intent.createChooser(photoPickerIntent, null);
+            activity.startActivityForResult(chooserIntent, REQ_IMG_GALLERY);
+        }
+    }
+
+    public static void jumpSelectDocument(Activity activity) {
+        selectMediaType(activity, "*/*", REQ_FILE_SEL, "*/*");
+    }
+
+    public static void jumpSelectTxtDoc(Activity activity) {
+        selectMediaType(activity, "text/*", REQ_FILE_TXT, "*/*");
+    }
+
+    private static void selectMediaType(Activity activity, String type, int requestCode,
+        String... extraMimeType) {
+        Intent intent = new Intent();
+        intent.setType(type);
+        intent.putExtra(Intent.EXTRA_MIME_TYPES, extraMimeType);
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        activity.startActivityForResult(Intent.createChooser(intent, null), REQ_IMG_GALLERY);
+        try {
+            activity.startActivityForResult(intent, requestCode);
+            return;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
+        try {
+            activity.startActivityForResult(intent, requestCode);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private static void jumpFileOrFolderSel(Activity activity, boolean isFileModel) {

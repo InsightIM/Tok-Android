@@ -5,7 +5,7 @@ import com.client.tok.bean.ContactsKey;
 import com.client.tok.bean.ToxAddress;
 import com.client.tok.db.repository.InfoRepository;
 import com.client.tok.notification.NotifyManager;
-import com.client.tok.tox.CoreManager;
+import com.client.tok.tox.ToxManager;
 import com.client.tok.tox.State;
 import com.client.tok.utils.PkUtils;
 import com.client.tok.utils.StringUtils;
@@ -26,10 +26,10 @@ public class AddFriendsModel {
             msg = StringUtils.getTextFromResId(R.string.default_signature);
         }
         try {
-            ToxFriendNumber number = CoreManager.getManager().toxBase.sendAddFriendRequest(address,
+            ToxFriendNumber number = ToxManager.getManager().toxBase.sendAddFriendRequest(address,
                 ToxFriendRequestMessage.unsafeFromValue(msg.getBytes()));
             if (number.value >= 0) {
-                CoreManager.getManager().save();
+                ToxManager.getManager().save();
                 infoRepo.addFriend(key, "", alias,
                     StringUtils.getTextFromResId(R.string.add_friend_request_has_send));
 
@@ -69,7 +69,7 @@ public class AddFriendsModel {
 
     public boolean isMyOwnChatId(String chatId) {
         String ownChatId =
-            CoreManager.getManager().toxBase.getSelfAddress().getAddress().toUpperCase();
+            ToxManager.getManager().toxBase.getSelfAddress().getAddress().toUpperCase();
         return ownChatId.equals(chatId);
     }
 

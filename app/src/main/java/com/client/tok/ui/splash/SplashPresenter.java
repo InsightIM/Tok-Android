@@ -61,9 +61,12 @@ public class SplashPresenter implements SplashContract.ISplashPresenter {
             if (State.userRepo().loggedIn()) {
                 if (!ChatMainService.isRunning) {
                     ServiceManager.startToxService();
-                    new Handler().postDelayed(() -> {
-                        PageJumpIn.jumpHomePage(mSplashView.getActivity());
-                        mSplashView.viewDestroy();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            PageJumpIn.jumpHomePage(mSplashView.getActivity());
+                            mSplashView.viewDestroy();
+                        }
                     }, GlobalParams.DELAY_ENTER_HOME);
                 } else {
                     PageJumpIn.jumpHomePage(mSplashView.getActivity());
@@ -75,5 +78,7 @@ public class SplashPresenter implements SplashContract.ISplashPresenter {
         } else {
             mSplashView.showGuideView();
         }
+        //PageJumpIn.jumpVideoRecordPage(mSplashView.getActivity());
+        //mSplashView.viewDestroy();
     }
 }

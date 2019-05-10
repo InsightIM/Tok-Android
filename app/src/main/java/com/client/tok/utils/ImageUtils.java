@@ -11,7 +11,6 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.text.TextUtils;
 import com.client.tok.TokApplication;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -21,6 +20,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.List;
+import top.zibin.luban.CompressionPredicate;
 import top.zibin.luban.Luban;
 import top.zibin.luban.OnCompressListener;
 
@@ -42,7 +42,60 @@ public class ImageUtils {
         return IMG_TAG_LIST.contains(suffix.toLowerCase());
     }
 
-    public static String getImgPathFromUri(Context context, Uri uri) {
+    public static String getPath(Context context, Uri uri) {
+        final boolean needToCheckUri = Build.VERSION.SDK_INT >= 19;
+        String selection = null;
+        String[] selectionArgs = null;
+        // Uri is different in versions after KITKAT (Android 4.4), we need to
+        // deal with different Uris.
+        if (needToCheckUri && DocumentsContract.isDocumentUri(context.getApplicationContext(),
+            uri)) {
+            if (isExternalStorageDocument(uri)) {
+                final String docId = DocumentsContract.getDocumentId(uri);
+                final String[] split = docId.split(":");
+                return Environment.getExternalStorageDirectory() + "/" + split[1];
+            } else if (isDownloadsDocument(uri)) {
+                final String id = DocumentsContract.getDocumentId(uri);
+                uri = ContentUris.withAppendedId(Uri.parse("content://downloads/public_downloads"),
+                    Long.valueOf(id));
+            } else if (isMediaDocument(uri)) {
+                final String docId = DocumentsContract.getDocumentId(uri);
+                final String[] split = docId.split(":");
+                final String type = split[0];
+                if ("image".equals(type)) {
+                    uri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+                } else if ("video".equals(type)) {
+                    uri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
+                } else if ("audio".equals(type)) {
+                    uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
+                }
+                selection = "_id=?";
+                selectionArgs = new String[] { split[1] };
+            }
+        }
+        if ("content".equalsIgnoreCase(uri.getScheme())) {
+            if (uri.toString().contains(StorageUtil.ROOT_PROVIDER_NAME)) {
+                //如果是自己目录下的，直接拼接路径
+                return StorageUtil.getFilesFolder() + uri.getLastPathSegment();
+            }
+            String[] projection = { MediaStore.Images.Media.DATA };
+            Cursor cursor = null;
+            try {
+                cursor = context.getContentResolver()
+                    .query(uri, projection, selection, selectionArgs, null);
+                int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+                if (cursor.moveToFirst()) {
+                    return cursor.getString(column_index);
+                }
+            } catch (Exception e) {
+            }
+        } else if ("file".equalsIgnoreCase(uri.getScheme())) {
+            return uri.getPath();
+        }
+        return null;
+    }
+
+    public static String getPathFromUri(Context context, Uri uri) {
         String photoPath = "";
         if (context == null || uri == null) {
             return photoPath;
@@ -62,7 +115,9 @@ public class ImageUtils {
                 } else if (isDownloadsDocument(uri)) {
                     Uri contentUri = ContentUris.withAppendedId(
                         Uri.parse("content://downloads/public_downloads"), Long.valueOf(docId));
-                    photoPath = getDataColumn(context, contentUri, null, null);
+                    // getDataColumn is not useful
+                    //photoPath = getDataColumn(context, contentUri, null, null);
+                    photoPath = getFilePathFromURI(context, contentUri);
                 } else if (isMediaDocument(uri)) {
                     String[] split = docId.split(":");
                     if (split.length >= 2) {
@@ -97,23 +152,27 @@ public class ImageUtils {
         return photoPath;
     }
 
-    public static String getFilePathFromURI(Context context, Uri contentUri) {
-        if (contentUri.toString().contains(StorageUtil.ROOT_PROVIDER_NAME)) {
+    private static String getFilePathFromURI(Context context, Uri uri) {
+        String data = null;
+
+        if (uri.toString().contains(StorageUtil.ROOT_PROVIDER_NAME)) {
             //如果是自己目录下的，直接拼接路径
-            return StorageUtil.getFilesFolder() + contentUri.getLastPathSegment();
-        } else {
-            //copy file and send new file path
-            String fileName = getFileName(contentUri);
-            if (contentUri.toString().toLowerCase().contains("image")) {
-                fileName += ".jpg";
-            }
-            if (!TextUtils.isEmpty(fileName)) {
-                File copyFile = new File(StorageUtil.getFilesFolder() + fileName);
-                FileUtilsJ.copy(context, contentUri, copyFile);
-                return copyFile.getAbsolutePath();
-            }
-            return null;
+            return StorageUtil.getFilesFolder() + uri.getLastPathSegment();
         }
+        //this is not useful when the uri is this app
+        Cursor cursor = context.getContentResolver()
+            .query(uri, new String[] { MediaStore.Images.ImageColumns.DATA }, null, null, null);
+        if (null != cursor) {
+            if (cursor.moveToFirst()) {
+                int index = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+                if (index > -1) {
+                    data = cursor.getString(index);
+                }
+            }
+            cursor.close();
+        }
+        LogUtil.i(TAG, "getFilePathFromURI:" + data);
+        return data;
     }
 
     public static String getFileName(Uri uri) {
@@ -197,7 +256,7 @@ public class ImageUtils {
         int quality = 90;
         bitmap.compress(Bitmap.CompressFormat.JPEG, quality, baos);
         LogUtil.i(TAG, "origin size:" + baos.size());
-          //TODO has problem
+        //TODO has problem
         while (baos.size() / 1024 > sizeLimit) {
             LogUtil.i(TAG, "after size:" + baos.size());
             // 清空baos
@@ -257,8 +316,22 @@ public class ImageUtils {
             .load(sourcePath)
             .ignoreBy(IMG_LIMIT_SIZE)
             .setTargetDir(targetPath)
-            .filter((String path) -> isCompressImg(path))
+            .filter(new CompressionPredicate() {
+                @Override
+                public boolean apply(String path) {
+                    return isCompressImg(path);
+                }
+            })
             .setCompressListener(compressListener)
             .launch();
+    }
+
+    public static String getImgPath(String path) {
+        LogUtil.i(TAG, "getImgPath:" + path);
+        if (path.contains(File.separator)) {
+            return path;
+        } else {
+            return StorageUtil.getFilesFolder() + path;
+        }
     }
 }

@@ -21,6 +21,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/s_8"
-        android:text="@string/p2p_encryp_chat" />
+        android:text="@string/p2p_encrypt_chat" />
 
 </LinearLayout>

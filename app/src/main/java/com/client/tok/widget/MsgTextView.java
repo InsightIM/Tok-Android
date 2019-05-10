@@ -67,14 +67,17 @@ public class MsgTextView extends android.support.v7.widget.AppCompatTextView {
     }
 
     @Override
-    public void setOnLongClickListener(View.OnLongClickListener longClickListener) {
-        super.setOnLongClickListener((View v) -> {
-            if (longClickListener != null) {
-                setTag(R.id.id_long_click_tag, true);
-                longClickListener.onLongClick(v);
-                return true;
+    public void setOnLongClickListener(final View.OnLongClickListener longClickListener) {
+        super.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (longClickListener != null) {
+                    MsgTextView.this.setTag(R.id.id_long_click_tag, true);
+                    longClickListener.onLongClick(v);
+                    return true;
+                }
+                return false;
             }
-            return false;
         });
     }
 

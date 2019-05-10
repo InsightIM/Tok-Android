@@ -11,10 +11,14 @@ public class MineContract {
         void showStatus(String status);
 
         void showFindFriendBotNew(String content, int style, int bg);
+
+        void showOfflineBotNew(String content, int style, int bg);
     }
 
     public interface IMinePresenter extends BaseContract.IBasePresenter {
         void showFindFriendBot();
+
+        void showOfflineBot();
 
         void observerFindFriendBot();
 

@@ -2,6 +2,7 @@ package com.client.tok.utils;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.media.MediaMetadataRetriever;
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
 import com.bumptech.glide.Glide;
@@ -16,6 +17,8 @@ import com.bumptech.glide.request.target.Target;
 import com.client.tok.R;
 import jp.wasabeef.glide.transformations.MaskTransformation;
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+
+import static com.bumptech.glide.load.resource.bitmap.VideoDecoder.FRAME_OPTION;
 
 public class ImageLoadUtils {
     private static String TAG = "ImageLoadUtils";
@@ -40,6 +43,16 @@ public class ImageLoadUtils {
         return requestOptions;
     }
 
+    private static RequestOptions getVideoOptions() {
+        RequestOptions requestOptions = RequestOptions.frameOf(1);
+        requestOptions.set(FRAME_OPTION, MediaMetadataRetriever.OPTION_CLOSEST);
+        //requestOptions.placeholder(R.drawable.img_place_holder);
+        requestOptions.error(R.drawable.img_error);
+        requestOptions.diskCacheStrategy(DiskCacheStrategy.RESOURCE);
+        requestOptions.skipMemoryCache(true);
+        return requestOptions;
+    }
+
     /**
      * 加载缩略图
      *
@@ -56,6 +69,17 @@ public class ImageLoadUtils {
             .into(imgView);
     }
 
+    public static void loadVideoMask(Context context, String path, ImageView imgView, int maskResId) {
+        LogUtil.i(TAG, "loadMask video path:" + path);
+        Glide.with(context)
+            .setDefaultRequestOptions(getVideoOptions())
+            .load(path)
+            .apply(RequestOptions.bitmapTransform(
+                new MultiTransformation<>(new CenterCrop(), new MaskTransformation(maskResId))))
+            .thumbnail(THUMB_NAIL)
+            .into(imgView);
+    }
+
     public static void loadMask(Context context, String path, ImageView imgView, int maskResId) {
         LogUtil.i(TAG, "loadMask path:" + path);
         Glide.with(context)
@@ -68,7 +92,7 @@ public class ImageLoadUtils {
     }
 
     public static void loadRoundImg(Context context, String path, ImageView imgView,
-        LoadListener listener) {
+        final LoadListener listener) {
         LogUtil.i(TAG, "loadMask path:" + path);
         Glide.with(context)
             .setDefaultRequestOptions(getPortraitOptions())

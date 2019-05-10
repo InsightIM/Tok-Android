@@ -24,10 +24,14 @@ public class CopyTextView extends MsgTextView {
     }
 
     private void addLongClickListener() {
-        this.setOnLongClickListener((View v) -> {
-            SystemUtils.copyTxt2Clipboard(getContext(), getText().toString());
-            ToastUtils.show(R.string.copy_success);
-            return true;
+        this.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                SystemUtils.copyTxt2Clipboard(CopyTextView.this.getContext(),
+                    CopyTextView.this.getText().toString());
+                ToastUtils.show(R.string.copy_success);
+                return true;
+            }
         });
     }
 }

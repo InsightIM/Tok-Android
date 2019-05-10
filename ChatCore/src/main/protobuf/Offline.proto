@@ -1,0 +1,51 @@
+syntax = "proto3";
+package im.tox.proto;
+
+message QueryFriendReq {
+    bytes pk = 1; // hex show
+}
+
+message QueryFriendRes {
+    uint32 exist = 1;
+    bytes pk = 2; // hex show
+}
+
+message OfflineMessageReq {
+    int64 local_msg_id = 1;
+    bytes to_pk = 2;
+    bytes crypto_message = 3;
+}
+
+message OfflineMessageRes {
+    int64 local_msg_id = 1;
+}
+
+message OfflineMessageReadNotice {
+    uint64 latest_msg_id = 1;
+}
+
+message OfflineMessage {
+    int64 local_msg_id = 1; //general by local
+    uint64 msg_id = 2; //general by offlinebot, may be local_msg_id and msg_id are duplicated
+    bytes fr_pk = 3; //which friend does this message from
+    bytes to_pk = 4;
+    bytes content = 5;
+    uint64 create_time = 6;
+}
+
+message OfflineMessagePullReq {
+}
+
+message OfflineMessagePullRes {
+    repeated OfflineMessage msg = 1;
+    uint32 left_count = 2;
+}
+
+message OfflineMessageDelReq {
+    uint64 last_msg_id = 2; // last of message id to be deleted
+}
+
+message DeviceUpdateReq {
+    uint32 type = 1; // for push, 1 is ios, 2 is android
+    bytes identifier = 2;
+}

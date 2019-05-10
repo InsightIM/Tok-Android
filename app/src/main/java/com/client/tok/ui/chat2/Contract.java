@@ -12,7 +12,7 @@ public class Contract {
 
         void setSafeViewVisible(boolean isVisible);
 
-        void showOnlineStatus(Boolean isOnLine);
+        void showOnlineStatus(boolean isOnline, String statusPrompt);
 
         void showErrorMsg(String msg);
 
@@ -50,6 +50,8 @@ public class Contract {
 
         void sendMsgText(String msg);
 
+        void resentSendMsgText(String msg);
+
         void addFriendOrder(String tokId);
 
         void sendFile(String path);
@@ -63,6 +65,8 @@ public class Contract {
         String getSenderName(String key);
 
         void del(int msgId);
+
+        void save(String filePath);
 
         void onMsgFailDeal(Message msg);
 

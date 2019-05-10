@@ -32,6 +32,10 @@ public class PermissionModel {
         Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE,
         Manifest.permission.CAMERA
     };
+
+    public static final String[] PERMISSION_CAMERA_AUDIO = {
+        Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO
+    };
     public static final String[] PERMISSION_LOCATION = {
         Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION
     };

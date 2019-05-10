@@ -196,7 +196,6 @@
     </style>
 
 
-
     <style name="TvFontBlackFun">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/spacing_14</item>
@@ -254,41 +253,6 @@
         <item name="android:background">@color/divider_line</item>
     </style>
 
-    <declare-styleable name="fc">
-        <attr name="promptId" format="reference" />
-        <attr name="contentId" format="reference" />
-        <attr name="contentMaxLine" format="integer" />
-        <attr name="lefIconId" format="reference" />
-        <attr name="funTxtId" format="reference" />
-        <attr name="functionIconId" format="reference" />
-        <attr name="rightIconId" format="reference" />
-        <attr name="lefIconVisible" format="integer" />
-        <attr name="tbVisible" format="integer" />
-        <attr name="rightIconVisible" format="integer" />
-    </declare-styleable>
-
-    <declare-styleable name="empty">
-        <attr name="mainContentId" format="reference" />
-        <attr name="subContentId" format="reference" />
-        <attr name="btnTxtId1" format="reference" />
-        <attr name="btnTxtId2" format="reference" />
-    </declare-styleable>
-
-    <declare-styleable name="tab">
-        <attr name="iconId" format="reference" />
-        <attr name="txtId" format="reference" />
-        <attr name="txtColorId" format="color" />
-        <attr name="txtSizeId" format="dimension" />
-        <attr name="isSelected" format="boolean" />
-    </declare-styleable>
-
-    <declare-styleable name="guide">
-        <attr name="gTitleId" format="reference" />
-        <attr name="gContentId" format="reference" />
-        <attr name="gImgId" format="reference" />
-    </declare-styleable>
-
-
     <style name="AppName">
         <item name="android:textColor">@color/c_ffffff</item>
         <item name="android:textSize">@dimen/f_70</item>
@@ -323,6 +287,46 @@
         <item name="android:textColor">@color/c_18181d</item>
         <item name="android:textSize">@dimen/f_16</item>
         <item name="android:autoLink">all</item>
+    </style>
+
+    <style name="HeadInfoTitle">
+        <item name="android:textColor">@color/c_18181d</item>
+        <item name="android:textSize">@dimen/f_17</item>
+    </style>
+
+    <style name="HeadInfoContent">
+        <item name="android:textColor">@color/c_999999</item>
+        <item name="android:textSize">@dimen/f_15</item>
+    </style>
+
+    <style name="ContentTitle">
+        <item name="android:textColor">@color/c_333333</item>
+        <item name="android:textSize">@dimen/f_17</item>
+    </style>
+
+    <style name="ContentWarningTitle">
+        <item name="android:textColor">@color/c_ee0000</item>
+        <item name="android:textSize">@dimen/f_17</item>
+    </style>
+
+    <style name="ContentInfo">
+        <item name="android:textColor">@color/c_333333</item>
+        <item name="android:textSize">@dimen/f_15</item>
+    </style>
+
+    <style name="ContentBtnInfo">
+        <item name="android:textColor">@color/c_333333</item>
+        <item name="android:textSize">@dimen/f_14</item>
+    </style>
+
+    <style name="ModelTitleBig">
+        <item name="android:textColor">@color/c_999999</item>
+        <item name="android:textSize">@dimen/f_14</item>
+    </style>
+
+    <style name="ModelTitle">
+        <item name="android:textColor">@color/c_999999</item>
+        <item name="android:textSize">@dimen/f_12</item>
     </style>
 
     <style name="ItemMainTitle">
@@ -379,6 +383,11 @@
     <style name="ChatTime">
         <item name="android:textColor">@color/c_555567</item>
         <item name="android:textSize">@dimen/f_11</item>
+    </style>
+
+    <style name="ChatPrompt">
+        <item name="android:textColor">@color/c_ffffff</item>
+        <item name="android:textSize">@dimen/f_14</item>
     </style>
 
     <style name="AudioTime">

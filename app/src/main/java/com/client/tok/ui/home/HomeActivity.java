@@ -164,10 +164,14 @@ public class HomeActivity extends BaseCommonTitleActivity
 
     @Override
     public void showAddFriend(String friendPk) {
-        DialogFactory.addFriendDialog(this, friendPk, null, true, null, null, (View v) -> {
-            ToastUtils.show(R.string.add_friend_request_has_send);
-            viewDestroy();
-        });
+        DialogFactory.addFriendDialog(this, friendPk, null, true, null, null,
+            new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ToastUtils.show(R.string.add_friend_request_has_send);
+                    HomeActivity.this.viewDestroy();
+                }
+            });
     }
 
     @Override

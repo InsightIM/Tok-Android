@@ -1,6 +1,6 @@
 package com.client.tok.msg.callbacks;
 
-import com.client.tok.bean.ContactsInfo;
+import com.client.tok.bean.ContactInfo;
 import com.client.tok.tox.State;
 import com.client.tok.transfer.FileStatus;
 import com.client.tok.transfer.FileTransfer;
@@ -10,7 +10,7 @@ import im.tox.tox4j.core.enums.ToxFileControl;
 public class AntoxOnFileRecvControlCallback {
     private String TAG = "AntoxOnFileRecvControlCallback";
 
-    public void fileRecvControl(ContactsInfo friendInfo, int fileNumber, ToxFileControl control) {
+    public void fileRecvControl(ContactInfo friendInfo, int fileNumber, ToxFileControl control) {
         FileTransfer transfer = State.transfers.get(friendInfo.getKey(), fileNumber);
         if (transfer != null) {
             LogUtil.i(TAG, "fileRecvControl friendKey:"

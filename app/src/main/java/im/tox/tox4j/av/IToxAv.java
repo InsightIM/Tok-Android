@@ -11,9 +11,7 @@ import im.tox.tox4j.av.exceptions.ToxavAnswerException;
 import im.tox.tox4j.av.exceptions.ToxavBitRateSetException;
 import im.tox.tox4j.av.exceptions.ToxavCallControlException;
 import im.tox.tox4j.av.exceptions.ToxavCallException;
-import im.tox.tox4j.av.exceptions.ToxavNewException;
 import im.tox.tox4j.av.exceptions.ToxavSendFrameException;
-import im.tox.tox4j.core.IToxCore;
 import im.tox.tox4j.core.data.ToxFriendNumber;
 
 /**
@@ -36,13 +34,6 @@ import im.tox.tox4j.core.data.ToxFriendNumber;
  * notifying peers.
  */
 public interface IToxAv extends ToxAvEventSynth {
-    /**
-     * Start new A/V session. There can only be only one session per Tox instance.
-     *
-     * @param tox A compatible ToxCore implementation.
-     * @return the new A/V session.
-     */
-    IToxAv create(IToxCore tox) throws ToxavNewException;
 
     /**
      * Releases all resources associated with the A/V session.

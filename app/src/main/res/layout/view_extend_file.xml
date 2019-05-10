@@ -1,27 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="@dimen/s_30">
+    android:paddingTop="@dimen/s_30"
+    android:weightSum="4">
 
-    <ImageView
-        android:id="@+id/id_album_iv"
-        style="@style/SelAttachment"
-        android:layout_alignParentStart="true"
-        app:srcCompat="@drawable/open_album" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center">
 
-    <ImageView
-        android:id="@+id/id_camera_iv"
-        style="@style/SelAttachment"
-        android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/open_camera" />
+        <ImageView
+            android:id="@+id/id_album_iv"
+            style="@style/SelAttachment"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/open_album" />
+    </LinearLayout>
 
-    <ImageView
-        android:id="@+id/id_file_iv"
-        style="@style/SelAttachment"
-        android:layout_alignParentRight="true"
-        app:srcCompat="@drawable/open_file" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center">
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/id_camera_iv"
+            style="@style/SelAttachment"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/open_camera" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/id_video_iv"
+            style="@style/SelAttachment"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/open_video" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/id_file_iv"
+            style="@style/SelAttachment"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/open_file" />
+    </LinearLayout>
+
+
+</LinearLayout>

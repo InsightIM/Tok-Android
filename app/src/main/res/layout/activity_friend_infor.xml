@@ -1,106 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:id="@+id/id_friend_info_layout"
+    <com.client.tok.widget.HeadInfoView
+        android:id="@+id/id_contact_info_hiv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_10"
+        android:layout_marginTop="@dimen/s_10"
         android:background="@drawable/item_ripple_bg"
-        android:paddingStart="@dimen/spacing_10"
-        android:paddingTop="@dimen/spacing_10"
-        android:paddingEnd="@dimen/spacing_20"
-        android:paddingBottom="@dimen/spacing_10">
+        app:hRightIconId="@drawable/arrow_right_grey" />
 
-        <com.client.tok.widget.PortraitView
-            android:id="@+id/id_friend_info_portrait_civ"
-            android:layout_width="@dimen/portrait_width"
-            android:layout_height="@dimen/portrait_height"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true" />
+    <TextView
+        style="@style/ModelTitleBig"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/s_16"
+        android:layout_marginTop="@dimen/s_5"
+        android:text="@string/bio" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/spacing_10"
-            android:layout_marginRight="@dimen/spacing_10"
-            android:layout_toEndOf="@+id/id_friend_info_portrait_civ"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/id_friend_info_nick_name_tv"
-                style="@style/StyleLevelInfo1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="NickName" />
-
-            <TextView
-                android:id="@+id/id_friend_info_name_tv"
-                style="@style/StyleLevelInfo2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Tok name" />
-        </LinearLayout>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/info_item_arrow" />
-    </RelativeLayout>
-
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/id_friend_bio_tv"
+        style="@style/ContentInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_marginTop="@dimen/s_6"
-        android:layout_toEndOf="@+id/id_friend_info_portrait_civ"
-        android:orientation="vertical">
-
-        <TextView
-            style="@style/StyleLevelInfo1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/s_14"
-            android:text="@string/bio" />
-
-        <TextView
-            android:id="@+id/id_friend_bio_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/s_6"
-            android:background="@color/white_absolute"
-            android:paddingStart="@dimen/s_14"
-            android:paddingTop="@dimen/s_8"
-            android:paddingEnd="@dimen/s_14"
-            android:paddingBottom="@dimen/s_8"
-            android:textColor="@color/black"
-            android:textSize="@dimen/font_16"
-            tools:text="Tok name" />
-    </LinearLayout>
-
+        android:background="@color/white_absolute"
+        android:paddingStart="@dimen/s_16"
+        android:paddingTop="@dimen/s_6"
+        android:paddingEnd="@dimen/s_16"
+        android:paddingBottom="@dimen/s_6"
+        tools:text="Bio" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/s_16"
+        android:layout_marginTop="@dimen/s_5"
         android:orientation="vertical">
 
         <TextView
+            style="@style/ModelTitleBig"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="@dimen/s_14"
-            android:text="@string/public_key"
-            android:textColor="@color/black"
-            android:textSize="@dimen/font_16" />
+            android:layout_marginStart="@dimen/s_16"
+            android:text="@string/public_key" />
 
         <TextView
             android:id="@+id/id_friend_info_fid_copy_tv"
@@ -111,31 +58,33 @@
             android:paddingRight="@dimen/s_14"
             android:text="@string/copy"
             android:textColor="@color/brand_primary"
-            android:textSize="@dimen/font_16" />
+            android:textSize="@dimen/font_16"
+            android:visibility="gone" />
 
     </RelativeLayout>
 
 
     <TextView
         android:id="@+id/id_friend_info_fid_tv"
+        style="@style/ContentInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/s_6"
+        android:layout_marginTop="@dimen/s_5"
         android:background="@color/white_absolute"
-        android:gravity="center"
-        android:padding="@dimen/s_8"
-        android:textColor="@color/black"
-        android:textSize="@dimen/font_16"
+        android:paddingStart="@dimen/s_16"
+        android:paddingTop="@dimen/s_5"
+        android:paddingEnd="@dimen/s_16"
+        android:paddingBottom="@dimen/s_5"
         tools:text="pk" />
 
     <TextView
         android:id="@+id/id_friend_info_msg_tv"
+        style="@style/BtBgBlueFontWhite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/spacing_30"
-        android:layout_marginTop="@dimen/spacing_40"
-        android:layout_marginRight="@dimen/spacing_30"
+        android:layout_marginLeft="@dimen/s_30"
+        android:layout_marginTop="@dimen/s_40"
+        android:layout_marginRight="@dimen/s_30"
         android:gravity="center"
-        android:text="@string/message"
-        android:theme="@style/BtBgBlueFontWhite" />
+        android:text="@string/message" />
 </LinearLayout>

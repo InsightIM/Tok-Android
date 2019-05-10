@@ -3,6 +3,7 @@ package com.client.tok.ui.scan;
 import com.client.tok.R;
 import com.client.tok.ui.addfriends.AddFriendsBasePresenter;
 import com.client.tok.ui.addfriends.AddFriendsModel;
+import com.client.tok.ui.scan.decoder.Decoder;
 import com.client.tok.utils.LogUtil;
 import com.client.tok.utils.PkUtils;
 import io.reactivex.disposables.Disposable;
@@ -14,6 +15,7 @@ public class ScanPresenter extends AddFriendsBasePresenter implements ScanContra
     private Disposable mDisposable;
     private int mGroupNumber;
     private int RESCAN_DELAY_MILLS = 1000;
+    private Decoder mDecoder;
 
     public ScanPresenter(ScanContract.IScanView scanView) {
         this.mScanView = scanView;
@@ -27,13 +29,13 @@ public class ScanPresenter extends AddFriendsBasePresenter implements ScanContra
 
     @Override
     public void onScanResult(String scanResult) {
+        LogUtil.i(TAG, "scanResult:" + scanResult);
         if (scanResult == null) {
             mScanView.showErr(R.string.qr_code_not_found);
-            mScanView.reStartScan(RESCAN_DELAY_MILLS);
+            mScanView.setScanable(true, RESCAN_DELAY_MILLS);
         } else {
-            LogUtil.i(TAG, "scanResult:" + scanResult);
-            mScanView.stopScan();
-            //好友
+            mScanView.setScanable(false, -1);
+            //friend tokId
             checkId(scanResult);
         }
     }
@@ -43,10 +45,11 @@ public class ScanPresenter extends AddFriendsBasePresenter implements ScanContra
         String tokId = PkUtils.getAddressFromContent(scanResult).toUpperCase();
         int checkResult = checkIdValid(tokId.toUpperCase());
         if (checkResult == AddFriendsModel.TOK_ID_VALID) {
+            mScanView.setScanable(false, -1);
             mScanView.showMsgDialog(tokId, null, null);
         } else {
+            mScanView.setScanable(true, -1);
             mScanView.showErr(checkResult);
-            mScanView.reStartScan(RESCAN_DELAY_MILLS);
         }
     }
 
@@ -66,6 +69,23 @@ public class ScanPresenter extends AddFriendsBasePresenter implements ScanContra
         }
     }
 
+    private void joinGroup(String scanResult) {
+        mScanView.showErr(R.string.not_support_group);
+        //try {
+        //    mGroupNumber =
+        //        Integer.valueOf(scanResult.substring(GlobalParams.GROUP_ID_PRE_SUFFIX.length()));
+        //    FriendKey beInvitedKey = FriendKey.apply(ToxSingleton.tox().getSelfKey().toString());
+        //    GroupMsgSender.invitePeer(mGroupNumber,
+        //        FriendKey.apply(ToxSingleton.tox().getSelfKey().toString()));
+        //    LogUtil.i(TAG, "join group:" + beInvitedKey.toString());
+        //    //GroupMsgSender.getPeerList(mGroupNumber);
+        //    listen();
+        //} catch (Exception e) {
+        //    e.printStackTrace();
+        //    mScanView.showErr(R.string.scan_content_invalid);
+        //}
+    }
+
     private void stopListen() {
         if (mDisposable != null && !mDisposable.isDisposed()) {
             mDisposable.dispose();
@@ -77,6 +97,10 @@ public class ScanPresenter extends AddFriendsBasePresenter implements ScanContra
     public void onDestroy() {
         if (mScanView != null) {
             mScanView = null;
+        }
+        if (mDecoder != null) {
+            mDecoder.destroy();
+            mDecoder = null;
         }
         stopListen();
     }

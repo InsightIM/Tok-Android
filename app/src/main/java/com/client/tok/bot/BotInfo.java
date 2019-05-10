@@ -3,6 +3,7 @@ package com.client.tok.bot;
 public class BotInfo {
     private String tokId;
     private String name;
+    private String provider;
     private int type;
     private String signature;
 
@@ -28,6 +29,14 @@ public class BotInfo {
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    public String getProvider() {
+        return provider;
+    }
+
+    public void setProvider(String provider) {
+        this.provider = provider;
     }
 
     public String getSignature() {

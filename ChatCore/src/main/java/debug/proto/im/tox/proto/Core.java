@@ -599,6 +599,10 @@ public final class Core {
        * <code>GROUP = 4;</code>
        */
       GROUP(4),
+      /**
+       * <code>OFFLINE = 6;</code>
+       */
+      OFFLINE(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -622,6 +626,10 @@ public final class Core {
        * <code>GROUP = 4;</code>
        */
       public static final int GROUP_VALUE = 4;
+      /**
+       * <code>OFFLINE = 6;</code>
+       */
+      public static final int OFFLINE_VALUE = 6;
 
 
       public final int getNumber() {
@@ -643,6 +651,7 @@ public final class Core {
           case 2: return BOT;
           case 3: return FORWARD;
           case 4: return GROUP;
+          case 6: return OFFLINE;
           default: return null;
         }
       }
@@ -6936,6 +6945,405 @@ public final class Core {
     }
   }
 
+  public interface FriendMessageOfflineOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:im.tox.proto.FriendMessageOffline)
+      com.google.protobuf.MessageLiteOrBuilder {
+
+    /**
+     * <code>optional uint32 cmd = 1;</code>
+     */
+    int getCmd();
+
+    /**
+     * <code>optional uint32 friend_number = 2;</code>
+     */
+    int getFriendNumber();
+
+    /**
+     * <code>optional bytes message = 3;</code>
+     */
+    com.google.protobuf.ByteString getMessage();
+  }
+  /**
+   * Protobuf type {@code im.tox.proto.FriendMessageOffline}
+   */
+  public  static final class FriendMessageOffline extends
+      com.google.protobuf.GeneratedMessageLite<
+          FriendMessageOffline, FriendMessageOffline.Builder> implements
+      // @@protoc_insertion_point(message_implements:im.tox.proto.FriendMessageOffline)
+      FriendMessageOfflineOrBuilder {
+    private FriendMessageOffline() {
+      message_ = com.google.protobuf.ByteString.EMPTY;
+    }
+    public static final int CMD_FIELD_NUMBER = 1;
+    private int cmd_;
+    /**
+     * <code>optional uint32 cmd = 1;</code>
+     */
+    public int getCmd() {
+      return cmd_;
+    }
+    /**
+     * <code>optional uint32 cmd = 1;</code>
+     */
+    private void setCmd(int value) {
+      
+      cmd_ = value;
+    }
+    /**
+     * <code>optional uint32 cmd = 1;</code>
+     */
+    private void clearCmd() {
+      
+      cmd_ = 0;
+    }
+
+    public static final int FRIEND_NUMBER_FIELD_NUMBER = 2;
+    private int friendNumber_;
+    /**
+     * <code>optional uint32 friend_number = 2;</code>
+     */
+    public int getFriendNumber() {
+      return friendNumber_;
+    }
+    /**
+     * <code>optional uint32 friend_number = 2;</code>
+     */
+    private void setFriendNumber(int value) {
+      
+      friendNumber_ = value;
+    }
+    /**
+     * <code>optional uint32 friend_number = 2;</code>
+     */
+    private void clearFriendNumber() {
+      
+      friendNumber_ = 0;
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString message_;
+    /**
+     * <code>optional bytes message = 3;</code>
+     */
+    public com.google.protobuf.ByteString getMessage() {
+      return message_;
+    }
+    /**
+     * <code>optional bytes message = 3;</code>
+     */
+    private void setMessage(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      message_ = value;
+    }
+    /**
+     * <code>optional bytes message = 3;</code>
+     */
+    private void clearMessage() {
+      
+      message_ = getDefaultInstance().getMessage();
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (cmd_ != 0) {
+        output.writeUInt32(1, cmd_);
+      }
+      if (friendNumber_ != 0) {
+        output.writeUInt32(2, friendNumber_);
+      }
+      if (!message_.isEmpty()) {
+        output.writeBytes(3, message_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (cmd_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, cmd_);
+      }
+      if (friendNumber_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, friendNumber_);
+      }
+      if (!message_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, message_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    public static im.tox.proto.Core.FriendMessageOffline parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static im.tox.proto.Core.FriendMessageOffline parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static im.tox.proto.Core.FriendMessageOffline parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data);
+    }
+    public static im.tox.proto.Core.FriendMessageOffline parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, data, extensionRegistry);
+    }
+    public static im.tox.proto.Core.FriendMessageOffline parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static im.tox.proto.Core.FriendMessageOffline parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static im.tox.proto.Core.FriendMessageOffline parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input);
+    }
+    public static im.tox.proto.Core.FriendMessageOffline parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+    public static im.tox.proto.Core.FriendMessageOffline parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input);
+    }
+    public static im.tox.proto.Core.FriendMessageOffline parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageLite.parseFrom(
+          DEFAULT_INSTANCE, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(im.tox.proto.Core.FriendMessageOffline prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    /**
+     * Protobuf type {@code im.tox.proto.FriendMessageOffline}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          im.tox.proto.Core.FriendMessageOffline, Builder> implements
+        // @@protoc_insertion_point(builder_implements:im.tox.proto.FriendMessageOffline)
+        im.tox.proto.Core.FriendMessageOfflineOrBuilder {
+      // Construct using im.tox.proto.Core.FriendMessageOffline.newBuilder()
+      private Builder() {
+        super(DEFAULT_INSTANCE);
+      }
+
+
+      /**
+       * <code>optional uint32 cmd = 1;</code>
+       */
+      public int getCmd() {
+        return instance.getCmd();
+      }
+      /**
+       * <code>optional uint32 cmd = 1;</code>
+       */
+      public Builder setCmd(int value) {
+        copyOnWrite();
+        instance.setCmd(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 cmd = 1;</code>
+       */
+      public Builder clearCmd() {
+        copyOnWrite();
+        instance.clearCmd();
+        return this;
+      }
+
+      /**
+       * <code>optional uint32 friend_number = 2;</code>
+       */
+      public int getFriendNumber() {
+        return instance.getFriendNumber();
+      }
+      /**
+       * <code>optional uint32 friend_number = 2;</code>
+       */
+      public Builder setFriendNumber(int value) {
+        copyOnWrite();
+        instance.setFriendNumber(value);
+        return this;
+      }
+      /**
+       * <code>optional uint32 friend_number = 2;</code>
+       */
+      public Builder clearFriendNumber() {
+        copyOnWrite();
+        instance.clearFriendNumber();
+        return this;
+      }
+
+      /**
+       * <code>optional bytes message = 3;</code>
+       */
+      public com.google.protobuf.ByteString getMessage() {
+        return instance.getMessage();
+      }
+      /**
+       * <code>optional bytes message = 3;</code>
+       */
+      public Builder setMessage(com.google.protobuf.ByteString value) {
+        copyOnWrite();
+        instance.setMessage(value);
+        return this;
+      }
+      /**
+       * <code>optional bytes message = 3;</code>
+       */
+      public Builder clearMessage() {
+        copyOnWrite();
+        instance.clearMessage();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:im.tox.proto.FriendMessageOffline)
+    }
+    protected final Object dynamicMethod(
+        com.google.protobuf.GeneratedMessageLite.MethodToInvoke method,
+        Object arg0, Object arg1) {
+      switch (method) {
+        case NEW_MUTABLE_INSTANCE: {
+          return new im.tox.proto.Core.FriendMessageOffline();
+        }
+        case IS_INITIALIZED: {
+          return DEFAULT_INSTANCE;
+        }
+        case MAKE_IMMUTABLE: {
+          return null;
+        }
+        case NEW_BUILDER: {
+          return new Builder();
+        }
+        case VISIT: {
+          Visitor visitor = (Visitor) arg0;
+          im.tox.proto.Core.FriendMessageOffline other = (im.tox.proto.Core.FriendMessageOffline) arg1;
+          cmd_ = visitor.visitInt(cmd_ != 0, cmd_,
+              other.cmd_ != 0, other.cmd_);
+          friendNumber_ = visitor.visitInt(friendNumber_ != 0, friendNumber_,
+              other.friendNumber_ != 0, other.friendNumber_);
+          message_ = visitor.visitByteString(message_ != com.google.protobuf.ByteString.EMPTY, message_,
+              other.message_ != com.google.protobuf.ByteString.EMPTY, other.message_);
+          if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
+              .INSTANCE) {
+          }
+          return this;
+        }
+        case MERGE_FROM_STREAM: {
+          com.google.protobuf.CodedInputStream input =
+              (com.google.protobuf.CodedInputStream) arg0;
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry =
+              (com.google.protobuf.ExtensionRegistryLite) arg1;
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!input.skipField(tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 8: {
+
+                  cmd_ = input.readUInt32();
+                  break;
+                }
+                case 16: {
+
+                  friendNumber_ = input.readUInt32();
+                  break;
+                }
+                case 26: {
+
+                  message_ = input.readBytes();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw new RuntimeException(e.setUnfinishedMessage(this));
+          } catch (java.io.IOException e) {
+            throw new RuntimeException(
+                new com.google.protobuf.InvalidProtocolBufferException(
+                    e.getMessage()).setUnfinishedMessage(this));
+          } finally {
+          }
+        }
+        case GET_DEFAULT_INSTANCE: {
+          return DEFAULT_INSTANCE;
+        }
+        case GET_PARSER: {
+          if (PARSER == null) {    synchronized (im.tox.proto.Core.FriendMessageOffline.class) {
+              if (PARSER == null) {
+                PARSER = new DefaultInstanceBasedParser(DEFAULT_INSTANCE);
+              }
+            }
+          }
+          return PARSER;
+        }
+      }
+      throw new UnsupportedOperationException();
+    }
+
+
+    // @@protoc_insertion_point(class_scope:im.tox.proto.FriendMessageOffline)
+    private static final im.tox.proto.Core.FriendMessageOffline DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new FriendMessageOffline();
+      DEFAULT_INSTANCE.makeImmutable();
+    }
+
+    public static im.tox.proto.Core.FriendMessageOffline getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static volatile com.google.protobuf.Parser<FriendMessageOffline> PARSER;
+
+    public static com.google.protobuf.Parser<FriendMessageOffline> parser() {
+      return DEFAULT_INSTANCE.getParserForType();
+    }
+  }
+
   public interface CoreEventsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:im.tox.proto.CoreEvents)
       com.google.protobuf.MessageLiteOrBuilder {
@@ -7149,6 +7557,20 @@ public final class Core {
      * <code>repeated .im.tox.proto.FriendLosslessPacket friend_lossless_packet = 15;</code>
      */
     int getFriendLosslessPacketCount();
+
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    java.util.List<im.tox.proto.Core.FriendMessageOffline> 
+        getFriendMessageOfflineList();
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    im.tox.proto.Core.FriendMessageOffline getFriendMessageOffline(int index);
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    int getFriendMessageOfflineCount();
   }
   /**
    * Protobuf type {@code im.tox.proto.CoreEvents}
@@ -7174,6 +7596,7 @@ public final class Core {
       fileRecvChunk_ = emptyProtobufList();
       friendLossyPacket_ = emptyProtobufList();
       friendLosslessPacket_ = emptyProtobufList();
+      friendMessageOffline_ = emptyProtobufList();
     }
     public static final int SELF_CONNECTION_STATUS_FIELD_NUMBER = 1;
     private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.SelfConnectionStatus> selfConnectionStatus_;
@@ -8975,6 +9398,126 @@ public final class Core {
       friendLosslessPacket_.remove(index);
     }
 
+    public static final int FRIEND_MESSAGE_OFFLINE_FIELD_NUMBER = 16;
+    private com.google.protobuf.Internal.ProtobufList<im.tox.proto.Core.FriendMessageOffline> friendMessageOffline_;
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    public java.util.List<im.tox.proto.Core.FriendMessageOffline> getFriendMessageOfflineList() {
+      return friendMessageOffline_;
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    public java.util.List<? extends im.tox.proto.Core.FriendMessageOfflineOrBuilder> 
+        getFriendMessageOfflineOrBuilderList() {
+      return friendMessageOffline_;
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    public int getFriendMessageOfflineCount() {
+      return friendMessageOffline_.size();
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    public im.tox.proto.Core.FriendMessageOffline getFriendMessageOffline(int index) {
+      return friendMessageOffline_.get(index);
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    public im.tox.proto.Core.FriendMessageOfflineOrBuilder getFriendMessageOfflineOrBuilder(
+        int index) {
+      return friendMessageOffline_.get(index);
+    }
+    private void ensureFriendMessageOfflineIsMutable() {
+      if (!friendMessageOffline_.isModifiable()) {
+        friendMessageOffline_ =
+            com.google.protobuf.GeneratedMessageLite.mutableCopy(friendMessageOffline_);
+       }
+    }
+
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void setFriendMessageOffline(
+        int index, im.tox.proto.Core.FriendMessageOffline value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFriendMessageOfflineIsMutable();
+      friendMessageOffline_.set(index, value);
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void setFriendMessageOffline(
+        int index, im.tox.proto.Core.FriendMessageOffline.Builder builderForValue) {
+      ensureFriendMessageOfflineIsMutable();
+      friendMessageOffline_.set(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void addFriendMessageOffline(im.tox.proto.Core.FriendMessageOffline value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFriendMessageOfflineIsMutable();
+      friendMessageOffline_.add(value);
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void addFriendMessageOffline(
+        int index, im.tox.proto.Core.FriendMessageOffline value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureFriendMessageOfflineIsMutable();
+      friendMessageOffline_.add(index, value);
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void addFriendMessageOffline(
+        im.tox.proto.Core.FriendMessageOffline.Builder builderForValue) {
+      ensureFriendMessageOfflineIsMutable();
+      friendMessageOffline_.add(builderForValue.build());
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void addFriendMessageOffline(
+        int index, im.tox.proto.Core.FriendMessageOffline.Builder builderForValue) {
+      ensureFriendMessageOfflineIsMutable();
+      friendMessageOffline_.add(index, builderForValue.build());
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void addAllFriendMessageOffline(
+        java.lang.Iterable<? extends im.tox.proto.Core.FriendMessageOffline> values) {
+      ensureFriendMessageOfflineIsMutable();
+      com.google.protobuf.AbstractMessageLite.addAll(
+          values, friendMessageOffline_);
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void clearFriendMessageOffline() {
+      friendMessageOffline_ = emptyProtobufList();
+    }
+    /**
+     * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+     */
+    private void removeFriendMessageOffline(int index) {
+      ensureFriendMessageOfflineIsMutable();
+      friendMessageOffline_.remove(index);
+    }
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < selfConnectionStatus_.size(); i++) {
@@ -9021,6 +9564,9 @@ public final class Core {
       }
       for (int i = 0; i < friendLosslessPacket_.size(); i++) {
         output.writeMessage(15, friendLosslessPacket_.get(i));
+      }
+      for (int i = 0; i < friendMessageOffline_.size(); i++) {
+        output.writeMessage(16, friendMessageOffline_.get(i));
       }
     }
 
@@ -9088,6 +9634,10 @@ public final class Core {
       for (int i = 0; i < friendLosslessPacket_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, friendLosslessPacket_.get(i));
+      }
+      for (int i = 0; i < friendMessageOffline_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, friendMessageOffline_.get(i));
       }
       memoizedSerializedSize = size;
       return size;
@@ -10630,6 +11180,103 @@ public final class Core {
         return this;
       }
 
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public java.util.List<im.tox.proto.Core.FriendMessageOffline> getFriendMessageOfflineList() {
+        return java.util.Collections.unmodifiableList(
+            instance.getFriendMessageOfflineList());
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public int getFriendMessageOfflineCount() {
+        return instance.getFriendMessageOfflineCount();
+      }/**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public im.tox.proto.Core.FriendMessageOffline getFriendMessageOffline(int index) {
+        return instance.getFriendMessageOffline(index);
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder setFriendMessageOffline(
+          int index, im.tox.proto.Core.FriendMessageOffline value) {
+        copyOnWrite();
+        instance.setFriendMessageOffline(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder setFriendMessageOffline(
+          int index, im.tox.proto.Core.FriendMessageOffline.Builder builderForValue) {
+        copyOnWrite();
+        instance.setFriendMessageOffline(index, builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder addFriendMessageOffline(im.tox.proto.Core.FriendMessageOffline value) {
+        copyOnWrite();
+        instance.addFriendMessageOffline(value);
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder addFriendMessageOffline(
+          int index, im.tox.proto.Core.FriendMessageOffline value) {
+        copyOnWrite();
+        instance.addFriendMessageOffline(index, value);
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder addFriendMessageOffline(
+          im.tox.proto.Core.FriendMessageOffline.Builder builderForValue) {
+        copyOnWrite();
+        instance.addFriendMessageOffline(builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder addFriendMessageOffline(
+          int index, im.tox.proto.Core.FriendMessageOffline.Builder builderForValue) {
+        copyOnWrite();
+        instance.addFriendMessageOffline(index, builderForValue);
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder addAllFriendMessageOffline(
+          java.lang.Iterable<? extends im.tox.proto.Core.FriendMessageOffline> values) {
+        copyOnWrite();
+        instance.addAllFriendMessageOffline(values);
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder clearFriendMessageOffline() {
+        copyOnWrite();
+        instance.clearFriendMessageOffline();
+        return this;
+      }
+      /**
+       * <code>repeated .im.tox.proto.FriendMessageOffline friend_message_offline = 16;</code>
+       */
+      public Builder removeFriendMessageOffline(int index) {
+        copyOnWrite();
+        instance.removeFriendMessageOffline(index);
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:im.tox.proto.CoreEvents)
     }
     protected final Object dynamicMethod(
@@ -10658,6 +11305,7 @@ public final class Core {
           fileRecvChunk_.makeImmutable();
           friendLossyPacket_.makeImmutable();
           friendLosslessPacket_.makeImmutable();
+          friendMessageOffline_.makeImmutable();
           return null;
         }
         case NEW_BUILDER: {
@@ -10681,6 +11329,7 @@ public final class Core {
           fileRecvChunk_= visitor.visitList(fileRecvChunk_, other.fileRecvChunk_);
           friendLossyPacket_= visitor.visitList(friendLossyPacket_, other.friendLossyPacket_);
           friendLosslessPacket_= visitor.visitList(friendLosslessPacket_, other.friendLosslessPacket_);
+          friendMessageOffline_= visitor.visitList(friendMessageOffline_, other.friendMessageOffline_);
           if (visitor == com.google.protobuf.GeneratedMessageLite.MergeFromVisitor
               .INSTANCE) {
           }
@@ -10838,6 +11487,15 @@ public final class Core {
                   }
                   friendLosslessPacket_.add(
                       input.readMessage(im.tox.proto.Core.FriendLosslessPacket.parser(), extensionRegistry));
+                  break;
+                }
+                case 130: {
+                  if (!friendMessageOffline_.isModifiable()) {
+                    friendMessageOffline_ =
+                        com.google.protobuf.GeneratedMessageLite.mutableCopy(friendMessageOffline_);
+                  }
+                  friendMessageOffline_.add(
+                      input.readMessage(im.tox.proto.Core.FriendMessageOffline.parser(), extensionRegistry));
                   break;
                 }
               }

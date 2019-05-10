@@ -12,31 +12,43 @@ import com.client.tok.pagejump.PageJumpIn;
 import com.client.tok.utils.ScreenUtils;
 
 public class HomeMenuWindow {
-    public static PopupWindow getHomeMenu(Context context) {
+    public static PopupWindow getHomeMenu(final Context context) {
         LayoutInflater inflater =
             (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View contentView = inflater.inflate(R.layout.view_home_menu, null);
 
-        PopupWindow popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.WRAP_CONTENT,
+        final PopupWindow popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT);
         popupWindow.setBackgroundDrawable(
             new ColorDrawable(context.getColor(R.color.pop_window_bg)));
         popupWindow.setFocusable(true);
         popupWindow.setOutsideTouchable(true);
-        contentView.findViewById(R.id.id_menu_add_friend_tv).setOnClickListener((View v) -> {
-            popupWindow.dismiss();
-            PageJumpIn.jumpAddFriendsPage(context);
-        });
+        contentView.findViewById(R.id.id_menu_add_friend_tv).setOnClickListener(
+            new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    popupWindow.dismiss();
+                    PageJumpIn.jumpAddFriendsPage(context);
+                }
+            });
 
-        contentView.findViewById(R.id.id_menu_scan_tv).setOnClickListener((View v) -> {
-            popupWindow.dismiss();
-            PageJumpIn.jumpScanPage(context);
-        });
-        contentView.findViewById(R.id.id_menu_my_id_tv).setOnClickListener((View v) -> {
-            popupWindow.dismiss();
-            //myChatId
-            PageJumpIn.jumpMyChatIdPage(context);
-        });
+        contentView.findViewById(R.id.id_menu_scan_tv).setOnClickListener(
+            new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    popupWindow.dismiss();
+                    PageJumpIn.jumpScanPage(context);
+                }
+            });
+        contentView.findViewById(R.id.id_menu_my_id_tv).setOnClickListener(
+            new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    popupWindow.dismiss();
+                    //myChatId
+                    PageJumpIn.jumpMyTokIdPage(context);
+                }
+            });
         return popupWindow;
     }
 

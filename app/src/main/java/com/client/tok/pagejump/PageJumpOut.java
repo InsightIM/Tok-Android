@@ -19,7 +19,8 @@ public class PageJumpOut extends BasePageJump {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && MimeTypeUtil.APK_TYPE.equals(
             fileType)) {
             if (!context.getPackageManager().canRequestPackageInstalls()) {
-                jump(context, new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES));
+                Uri packageURI = Uri.parse("package:" + context.getPackageName());
+                jump(context, new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, packageURI));
                 return;
             }
         }

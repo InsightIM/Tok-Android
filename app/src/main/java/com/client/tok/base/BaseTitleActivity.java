@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NavUtils;
+import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -166,8 +167,11 @@ public abstract class BaseTitleActivity extends BasePermissionActivity {
     private void initToolbar() {
         if (isShowToolBar()) {
             setSupportActionBar(mToolbar);
-            mBackIv.setOnClickListener((View v) -> {
-                onBackClick();
+            mBackIv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    BaseTitleActivity.this.onBackClick();
+                }
             });
             mActionbar = getSupportActionBar();
             //set toolbar style
@@ -182,8 +186,11 @@ public abstract class BaseTitleActivity extends BasePermissionActivity {
     private void initMenu() {
         setMenuImgId(getMenuImgId());
         setMenuTxtId(getMenuTxtId());
-        mMenuLayout.setOnClickListener((View v) -> {
-            onMenuClick();
+        mMenuLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BaseTitleActivity.this.onMenuClick();
+            }
         });
     }
 
@@ -367,6 +374,7 @@ public abstract class BaseTitleActivity extends BasePermissionActivity {
             } else if (TOOL_BAR_STYLE_BLACK == style) {
                 backIconId = R.drawable.arrow_back_white;
             } else if (TOOL_BAR_TRANSLATE == style) {
+                backIconId = R.drawable.arrow_back_white;
                 toolbarBg = R.color.transparent;
             }
             if (getBackIcon() > 0) {
@@ -383,16 +391,20 @@ public abstract class BaseTitleActivity extends BasePermissionActivity {
                 mToolbar.setBackgroundResource(toolbarBg);
                 try {
                     //this method is useful above android 21,but crash at SamSung Galaxy TabA6(from google play console)
-                    getWindow().setStatusBarColor(getColor(toolbarBg));
-                } catch (Exception e) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        getWindow().setStatusBarColor(getColor(toolbarBg));
+                    }
+                } catch (Throwable e) {
                     e.printStackTrace();
                 }
             }
             if (mainTitleStyle > 0) {
-                mMainTitle.setTextAppearance(mainTitleStyle);
+                TextViewCompat.setTextAppearance(mMainTitle, mainTitleStyle);
             }
             if (subTitleStyle > 0) {
-                mSubTitle.setTextAppearance(subTitleStyle);
+                //setTextAppearance is deprecation,and crash on some device of android 5.0
+                //mSubTitle.setTextAppearance(subTitleStyle);
+                TextViewCompat.setTextAppearance(mSubTitle, subTitleStyle);
             }
             //TODO how to set menuItem and collsapingLayout color
         }
@@ -432,10 +444,13 @@ public abstract class BaseTitleActivity extends BasePermissionActivity {
      */
     public void addKeyboardAction(TextView textView) {
         if (textView != null) {
-            textView.setOnEditorActionListener((TextView v, int actionId, KeyEvent event) -> {
-                SystemUtils.hideSoftKeyBoard(BaseTitleActivity.this);
-                onKeyboardAction(v, actionId);
-                return false;
+            textView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                @Override
+                public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                    SystemUtils.hideSoftKeyBoard(BaseTitleActivity.this);
+                    BaseTitleActivity.this.onKeyboardAction(v, actionId);
+                    return false;
+                }
             });
         }
     }

@@ -9,7 +9,6 @@
     <string name="status_busy">Busy</string>
     <string name="status_offline">Offline</string>
 
-    <string name="app_name">Tok</string>
     <string name="permission_location">Location</string>
     <string name="permission_camera">Camera</string>
     <string name="permission_storage">Storage</string>
@@ -23,22 +22,21 @@
     <string name="logout">Logout</string>
     <string name="input_user_name_prompt">Please input your user name!</string>
     <string name="input_user_pwd_prompt">Please input your password!</string>
-    <string name="user_not_exist">Sorry,The user %1$s Not Exist,Please check it!</string>
+    <string name="user_not_exist">Sorry, the user %1$s Not Exist,Please check it!</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
     <string name="oops">Oops</string>
     <string name="import_account">Import Account > </string>
-    <string name="have_account_login">Have account,Login > </string>
     <string name="select_file">Select File</string>
     <string name="select_folder">Select Folder</string>
     <string name="import_profile_invalid_file">The chosen file is not a valid Tok/Tox profile </string>
-    <string name="user_has_exist">User has exist,Please login!</string>
-    <string name="sign_up_failed">Sorry,Create Account Failed</string>
-    <string name="login_from_file_failed">Sorry,import file Failed</string>
+    <string name="user_has_exist">User already exists, please login!</string>
+    <string name="sign_up_failed">Sorry, create Account Failed</string>
+    <string name="login_from_file_failed">Sorry, import file Failed</string>
     <string name="message">Message</string>
     <string name="contacts">Contacts</string>
     <string name="mine">Mine</string>
-    <string name="default_signature">I\'m using Tok</string>
+    <string name="default_signature">Hey! I\'m using Tok</string>
     <string name="status">Status</string>
     <string name="off_line">Offline</string>
     <string name="on_line">Online</string>
@@ -70,7 +68,7 @@
     <string name="qr_code_not_found">Didn\'t found QR code</string>
     <string name="account_info">Account Info</string>
     <string name="account_name">Account Name</string>
-    <string name="export_profile"> Export Profile</string>
+    <string name="export_profile">Export Profile</string>
     <!-- Export profile -->
     <string name="export_success">Exported data file to %s</string>
     <string name="export_failed">Error: Could not export data file.</string>
@@ -82,7 +80,7 @@
     <string name="share_with">Share with</string>
     <string name="request_msg">Request Message</string>
     <string name="friend_accepted_default_status">Friend Accepted</string>
-    <string name="fail_try_again">Sorry,failed.Please try again!</string>
+    <string name="fail_try_again">Sorry, failed. Please try again!</string>
     <string name="successful">Successful</string>
     <string name="send">Send</string>
     <string name="share_my_id">I\'m %1$s,I\'m using Tok,and my Tok ID is:%2$s</string>
@@ -94,13 +92,13 @@
     <string name="my_avatar">Avatar</string>
     <string name="nick_name">Nickname</string>
     <string name="bio">Bio</string>
-    <string name="nick_name_prompt">Nick name: %1$s</string>
+    <string name="user_name_prompt">Username: %1$s</string>
     <string name="group_nick_name">Group NickName: %1$s</string>
     <string name="friend_is_online">Your friend is online</string>
     <string name="friend_is_offline">Your friend is offline</string>
     <string name="input_msg">Please input your message!</string>
     <string name="file_sel_wrong">Something is wrong with the File or Folder which your selected,Try again!</string>
-    <string name="send_file_need_online">Sorry,send file need your friend online!</string>
+    <string name="send_file_need_online">Sorry, send file need your friend online!</string>
     <string name="create_group">Create Group</string>
     <string name="my_group">My Group</string>
     <string name="group_info">Group Info</string>
@@ -119,17 +117,17 @@
     <string name="del_member">Delete %1$s</string>
     <string name="member_edit">Member Edit</string>
     <string name="choose_member">Choose Member</string>
-    <string name="choose_one_friend">Choose one friend at least,please</string>
+    <string name="choose_one_friend">Choose one friend at least, please</string>
     <string name="select">Select</string>
     <string name="input_msg_same_to_origin">Input message is same to origin message!</string>
 
     <string name="service_notify_title">Tok</string>
     <string name="service_notify_content">Tok is running</string>
-    <string name="file_not_exist">Sorry,File not exist</string>
-    <string name="play_failed">Sorry,File play failed!</string>
+    <string name="file_not_exist">Sorry, file not exist</string>
+    <string name="play_failed">Sorry, file play failed!</string>
     <string name="time_second">%1$s″</string>
     <string name="default_group_title">Group%1$s</string>
-    <string name="default_group_signature">Tok Group,Talk Free</string>
+    <string name="default_group_signature">Tok Group, talk free</string>
     <string name="scan_content_invalid">Scan content invalid</string>
     <string name="not_support_group">Scan not support Group</string>
     <string name="more">More</string>
@@ -141,6 +139,7 @@
     <string name="type_photo">[Photo]</string>
     <string name="type_file">[File]</string>
     <string name="type_audio">[Audio]</string>
+    <string name="type_video">[Video]</string>
     <string name="type_draft"> <Data><![CDATA[<font color="#e52828">[Draft]</font>]]></Data> %1$s</string>
 
     <string name="group_name">Group Name</string>
@@ -157,7 +156,7 @@
     <string name="alias_name">Alias Name</string>
     <string name="profile_edit">Profile Edit</string>
     <string name="save">Save</string>
-    <string name="send_txt_need_online">Send message need your friend online</string>
+    <string name="send_txt_need_online">Send message need your friend or OfflineBot online</string>
     <string name="album">Album</string>
     <string name="camera">Camera</string>
     <string name="edit_avatar">Edit Avatar</string>
@@ -170,14 +169,14 @@
     <string name="remove_leave">Remove and Leave</string>
     <string name="ok">OK</string>
     <string name="confirm_remove">Confirm Remove?</string>
-    <string name="p2p_encryp_empty">Peer-to-peer communication, end-to-end encryption, click for more information></string>
-    <string name="p2p_encryp_chat">Messages to this chat and calls are now secured with peer-to-peer communication, end-to-end encryption.Tap for more information ></string>
-    <string name="friend_chat_safe">Secure chat, No third party listen in</string>
+    <string name="p2p_encrypt_empty">Peer-to-peer communication, end-to-end encryption, click for more information></string>
+    <string name="p2p_encrypt_chat">Messages to this chat and calls are now secured with peer-to-peer communication, end-to-end encryption. Tap for more information ></string>
+    <string name="friend_chat_safe">Secure chat, no third party listen in</string>
     <string name="chat_safe_file_name">tok_safe.html</string><!--no need translate-->
     <string name="slogon">Make the world connect freely!</string>
     <string name="share_qr_content">https://www.tok.life?#%1$s#</string><!--no need translate-->
-    <string name="share_info_add_me">Hello,I\'m <Data><![CDATA[<font color="#000000"><b>%1$s</b></font><br>I'm in Tok,peer-to-peer encrypted chat!]]></Data></string>
-    <string name="share_txt_prompt">Peer-to-peer encrypted chat, I’m in Tok, click https://www.tok.life,free download Tok app. If you installed it, please copy this text $%1$s$, open Tok can add me as friends</string>
+    <string name="share_info_add_me">Hello,I\'m <Data><![CDATA[<font color="#000000"><b>%1$s</b></font><br>I\'m in Tok,peer-to-peer encrypted chat!]]></Data></string>
+    <string name="share_txt_prompt">Peer-to-peer encrypted chat, I\'m in Tok, click https://www.tok.life,free download Tok app. If you installed it, please copy this text $%1$s$, open Tok can add me as friends</string>
     <string name="share_way_txt">Share by Text</string>
     <string name="share_way_img">Share by Image</string>
     <string name="share_long_click_info">Long press this picture a minute, extract the QR code, download the app\n Open Tok and scan this QR code, add me as a friend</string>
@@ -189,9 +188,8 @@
     <string name="guide_title2">invisible IP</string>
     <string name="guide_content2">Hidden IP address by onion routing, unable to track your location </string>
     <string name="guide_title3">peer-to-peer encrypted message</string>
-    <string name="guide_content3">automatically generates super-long key, It takes 9.9 billions years to violently crack-copy version</string>
+    <string name="guide_content3">automatically generates super-long key, it takes 9.9 billions years to violently crack-copy version</string>
     <string name="enter_app">Enter the Tok</string>
-    <string name="pref_default_status_message">Hey! I\'m using Tok</string>
 
 
     <string name="hint_confirm_pwd">Repeat Password</string>
@@ -211,15 +209,15 @@
     <string name="no_new_friend_request">No new friends request</string>
     <string name="resend">Resend</string>
     <string name="public_key">Public Key</string>
-    <string name="find_friend_bot">FindFriendsBot</string>
+    <string name="find_friend_bot">FindFriendBot</string>
     <string name="add_bot">Add Bot</string>
     <string name="bot_list_file">bot_list.json</string><!--no need translate-->
     <string name="new_tag">NEW</string><!--no need translate-->
 
 
-    <string name="user_or_pwd_error">Sorry,Username or password error!</string>
-    <string name="setting_pwd">setting password</string>
-    <string name="change_pwd">change Password</string>
+    <string name="user_or_pwd_error">Sorry, username or password error!</string>
+    <string name="setting_pwd">Setting password</string>
+    <string name="change_pwd">Change Password</string>
     <string name="done">Done</string>
     <string name="original_pwd">Original password</string>
     <string name="new_pwd">New password</string>
@@ -235,7 +233,7 @@
     <string name="name_invalid">Username can\'t contains /</string>
     <string name="failed">Failed</string>
 
-    <string name="reset_tox_id">reset Tox ID</string>
+    <string name="reset_tox_id">Reset Tox ID</string>
     <string name="reset">Reset</string>
     <string name="pwd_require">Password is required to encrypt your data</string>
     <string name="import_account2">Import Account</string>
@@ -244,5 +242,39 @@
     <string name="contact_us">Contact us</string>
     <string name="tok_user">Tok user</string><!--no need translate-->
 
+    <string name="new_message">New Message</string>
+    <string name="notifications">Notifications</string>
+    <string name="manager_notifications">Manage Notifications</string>
+    <string name="new_msg_alerts">New Message Alerts</string>
+    <string name="new_friend_req_alerts">New Friend Request Alerts</string>
+    <string name="notification_center">Notification Center</string>
+    <string name="notification_center_detail">If turned off, notifications for Tok messages will not contain the sender and summary.</string>
+    <string name="save_to">Save to:%1$s</string>
+
+    <!--v1.1.3-->
+    <string name="off_line_bot">OfflineMessageBot</string>
+    <string name="how_to_send_offline_msg">How to send offline Messages</string>
+    <string name="how_to_send_offline_msg_content">1. Add this bot on both sides.
+        \n2. You can send text messages when your friend\'s status is \'OfflineMessageBot online\'.</string>
+
+    <string name="add_offline_bot_title">Add this bot to send offline messages with friends</string>
+    <string name="warning">Warning</string>
+    <string name="offline_bot_warning">This is a temporary solution to send offline messages in TOK.\nYou have to know that the bot will store your encrypted messages on a server, and forward your encrypted text messages while your friend is online. The bot won\'t and can\'t decrypt your message. If this solution is acceptable, you can add this bot to send offline messages,or just delete this bot from contact list.</string>
+    <string name="more_about_offline_bot">More about OfflineMessageBot</string>
+    <string name="more_about_offline_bot_123">1. Please be noted that this feature works only when both sides in the conversation add this bot.\n2. This bot is simply forwarding your encrypted text messages.\n3. This bot works as illustrated in this figure:</string>
+    <string name="more_about_offline_bot_45">4. This bot deletes the encrypted message immediately after it reaches the recipient. If the recipient is offline, the encrypted message is kept for up to 30 days, and the encrypted message makes absolutely nonsense to any third party.\n5. The bot we provide is the only valid choice for now.</string>
+    <string name="more_about_offline_bot_6">6. The code of bot is published on github </string>
+    <string name="git_hub">https://github.com/InsightIM</string><!--no need translate-->
+    <string name="copy_link">Copy Link</string>
+
+    <string name="prompt_add_offline_bot">No offline message bots are available. \nClick to add>> </string>
+    <string name="prompt_friend_not_has_offline_bot">Your friend didn\'t add an offline messaging bot</string>
+    <string name="prompt_offline_text_only">Only text offline messages are supported</string>
+    <string name="offline_bot_online">OfflineMessageBot Online</string>
+    <string name="can_not_send_file_to_bot">Sorry, can\'t send file to FindFriendBot!</string>
+
+    <string name="del_contact_prompt">Delete this contact?\nYour chat history will be lost.</string>
+    <string name="del_offline_bot_prompt">Delete this bot?\nYou offline messages will be lost.</string>
+    <string name="friend_has_add_offline_bot">Your friend has add the OfflineMessageBot\nyou can send offline messages now.</string>
 
 </resources>

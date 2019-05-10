@@ -3,6 +3,7 @@ package com.client.tok.ui.contactreqdetail;
 import android.content.Intent;
 import com.client.tok.R;
 import com.client.tok.bean.FriendRequest;
+import com.client.tok.notification.NotifyManager;
 import com.client.tok.pagejump.IntentConstants;
 import com.client.tok.tox.State;
 import com.client.tok.ui.contactreq.ContactModel;
@@ -38,6 +39,8 @@ public class ContactReqDetailPresenter
             if (mFriendRequest != null) {
                 mContactReqDetailView.showContactDetail(mFriendRequest);
             }
+            State.infoRepo().setFriendReqRead(mReqKey);
+            NotifyManager.getInstance().setBadge(State.infoRepo().totalUnreadCount());
         }
     }
 
@@ -54,7 +57,6 @@ public class ContactReqDetailPresenter
             }
         }
     }
-
 
     @Override
     public void refuseFriend() {

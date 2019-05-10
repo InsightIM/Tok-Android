@@ -77,18 +77,25 @@ public class BasePermissionActivity extends AppCompatActivity {
     public void showPermissionSetting() {
         if (isShowRationale()) {
             if (mPermissionDialog == null) {
-                mPermissionDialog =
-                    DialogFactory.showTwoBtErrorDialog(this, mRationale, (View v) -> {
-                        mPermissionDialog.dismiss();
-                        onCancelPermissionRationale();
-                    }, (View v) -> {
-                        mPermissionDialog.dismiss();
-                        if (!PermissionModel.somePermissionNeverPrompt(mActivity, mPermissions)) {
-                            PermissionModel.requestPermissions(mRequestPerCode, mPermissions,
-                                mRationale, mCallBack);
-                        } else {
-                            PermissionSetting.startSettingForResult(mActivity,
-                                PermissionSetting.REQ_CODE_SETTING);
+                mPermissionDialog = DialogFactory.showTwoBtErrorDialog(this, mRationale,
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            mPermissionDialog.dismiss();
+                            BasePermissionActivity.this.onCancelPermissionRationale();
+                        }
+                    }, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            mPermissionDialog.dismiss();
+                            if (!PermissionModel.somePermissionNeverPrompt(mActivity,
+                                mPermissions)) {
+                                PermissionModel.requestPermissions(mRequestPerCode, mPermissions,
+                                    mRationale, mCallBack);
+                            } else {
+                                PermissionSetting.startSettingForResult(mActivity,
+                                    PermissionSetting.REQ_CODE_SETTING);
+                            }
                         }
                     });
             } else if (!mPermissionDialog.isShowing()) {
@@ -119,7 +126,6 @@ public class BasePermissionActivity extends AppCompatActivity {
 
     /**
      * permission denied
-     *
      */
     private void onPermissionsDenied(int requestCode, @NonNull List<String> deniedPers) {
         LogUtil.i(TAG, "onPermissionsDenied");

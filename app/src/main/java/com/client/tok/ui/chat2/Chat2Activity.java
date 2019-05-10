@@ -17,11 +17,12 @@ import com.client.tok.TokApplication;
 import com.client.tok.base.BaseCommonTitleActivity;
 import com.client.tok.bean.Message;
 import com.client.tok.media.player.audio.AudioPlayer;
-import com.client.tok.media.recorder.OpusAudioRecorder;
+import com.client.tok.media.recorder.audio.OpusAudioRecorder;
 import com.client.tok.pagejump.GlobalParams;
 import com.client.tok.pagejump.IntentConstants;
 import com.client.tok.pagejump.PageJumpIn;
 import com.client.tok.utils.FilePicker;
+import com.client.tok.utils.FileUtilsJ;
 import com.client.tok.utils.ImageUtils;
 import com.client.tok.utils.LogUtil;
 import com.client.tok.utils.StringUtils;
@@ -33,7 +34,7 @@ import com.client.tok.widget.dialog.DialogFactory;
 import java.util.List;
 
 public class Chat2Activity extends BaseCommonTitleActivity implements Contract.IChatView {
-    private String TAG = "Chat2Activity";
+    private String TAG = "Chat2UI";
     private LinearLayoutManager mLayoutManager;
     private SafePromptView mSafeView;
     private RecyclerView mMsgRv;
@@ -58,7 +59,7 @@ public class Chat2Activity extends BaseCommonTitleActivity implements Contract.I
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         mIntent = intent;
-        String newKey = mIntent.getStringExtra(IntentConstants.TOK_ID);
+        String newKey = mIntent.getStringExtra(IntentConstants.PK);
         if (!mKey.equals(newKey)) {
             finish();
             String type = mIntent.getStringExtra(IntentConstants.CHAT_TYPE);
@@ -85,7 +86,7 @@ public class Chat2Activity extends BaseCommonTitleActivity implements Contract.I
     }
 
     private void readData() {
-        mKey = mIntent.getStringExtra(IntentConstants.TOK_ID);
+        mKey = mIntent.getStringExtra(IntentConstants.PK);
     }
 
     @Override
@@ -124,15 +125,17 @@ public class Chat2Activity extends BaseCommonTitleActivity implements Contract.I
         mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mLayoutManager.setStackFromEnd(true);
         mMsgRv.setLayoutManager(mLayoutManager);
-        mMsgRv.setOnTouchListener((View view, MotionEvent event) -> {
-            if (event.getAction() == MotionEvent.ACTION_DOWN
-                && (view.getId() == R.id.id_chat_list)
-                && isBottomLayoutShowing()) {
-                LogUtil.i(TAG, "onTouch :hide softKeyboard");
-                hideBottomLayout();
+        mMsgRv.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN && (view.getId()
+                    == R.id.id_chat_list) && Chat2Activity.this.isBottomLayoutShowing()) {
+                    LogUtil.i(TAG, "onTouch :hide softKeyboard");
+                    Chat2Activity.this.hideBottomLayout();
+                }
+                view.performClick();
+                return false;
             }
-            view.performClick();
-            return false;
         });
         new ChatPresenter(this, mIntent);
         initMsgLayout();
@@ -160,17 +163,9 @@ public class Chat2Activity extends BaseCommonTitleActivity implements Contract.I
     }
 
     @Override
-    public void showOnlineStatus(Boolean isOnline) {
-        setSubTitle(getLinePrompt(isOnline));
+    public void showOnlineStatus(boolean isOnline, String statusPrompt) {
         setUserStatus(isOnline);
-    }
-
-    public int getLinePrompt(Boolean isOnline) {
-        if (isOnline == null) {
-            return -1;
-        } else {
-            return isOnline ? R.string.on_line : R.string.off_line;
-        }
+        setSubTitle(statusPrompt);
     }
 
     @Override
@@ -180,9 +175,13 @@ public class Chat2Activity extends BaseCommonTitleActivity implements Contract.I
 
     @Override
     public void showAddFriend(String tokId) {
-        DialogFactory.addFriendDialog(this, tokId, null, true, null, null, (View v) -> {
-            ToastUtils.show(R.string.add_friend_request_has_send);
-        });
+        DialogFactory.addFriendDialog(this, tokId, null, true, null, null,
+            new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ToastUtils.show(R.string.add_friend_request_has_send);
+                }
+            });
     }
 
     @Override
@@ -205,15 +204,21 @@ public class Chat2Activity extends BaseCommonTitleActivity implements Contract.I
     }
 
     @Override
-    public void showTxtFail(Message msg) {
+    public void showTxtFail(final Message msg) {
         if (msg != null) {
             DialogFactory.showNormal2ChooseDialog(this, null,
                 StringUtils.getTextFromResId(R.string.resend),
-                StringUtils.getTextFromResId(R.string.delete), (View v) -> {
-                    mChatPresenter.del(msg.getId());
-                    mChatPresenter.sendMsgText(msg.getMessage());
-                }, (View v) -> {
-                    mChatPresenter.del(msg.getId());
+                StringUtils.getTextFromResId(R.string.delete), new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mChatPresenter.del(msg.getId());
+                        mChatPresenter.resentSendMsgText(msg.getMessage());
+                    }
+                }, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mChatPresenter.del(msg.getId());
+                    }
                 });
         }
     }
@@ -237,12 +242,18 @@ public class Chat2Activity extends BaseCommonTitleActivity implements Contract.I
             if (requestCode == FilePicker.REQ_IMG_GALLERY && data != null) {
                 fileUri = data.getData();
                 sendFile(fileUri);
+            }
+            if (requestCode == FilePicker.REQ_FILE_SEL && data != null) {
+                fileUri = data.getData();
+                sendFile(fileUri);
             } else if (requestCode == FilePicker.REQ_IMG_CAMERA) {
                 fileUri = FilePicker.getImgCameraUri();
                 sendFile(fileUri);
-            } else if (requestCode == FilePicker.REQ_FILE_SEL) {
-                List<String> list = data.getStringArrayListExtra("paths");
-                sendFile(list);
+            } else if (requestCode == GlobalParams.REQ_CODE_RECORD_VIDEO) {
+                String videoPath = data.getStringExtra(IntentConstants.FILE);
+                if (FileUtilsJ.exist(videoPath)) {
+                    sendFile(videoPath);
+                }
             }
         }
     }
@@ -264,7 +275,7 @@ public class Chat2Activity extends BaseCommonTitleActivity implements Contract.I
 
     private void sendFile(Uri fileUri) {
         if (fileUri != null) {
-            String imgPath = ImageUtils.getImgPathFromUri(this, fileUri);
+            String imgPath = ImageUtils.getPath(this, fileUri);
             LogUtil.i(TAG, "imgPath:" + imgPath);
             mChatPresenter.sendFile(imgPath);
         }

@@ -59,8 +59,8 @@ public class State {
 
     public static void logout() {
         NotifyManager.getInstance().cleanAllNotify();
-        infoRepository.synchroniseWithTox(CoreManager.getManager().toxBase.getFriendList());
-        CoreManager.getManager().saveAndClose();
+        infoRepository.synchroniseWithTox(ToxManager.getManager().toxBase.getFriendList());
+        ToxManager.getManager().saveAndClose();
         userRepository.logout();
         infoRepository.destroy();
         userRepository.destroy();

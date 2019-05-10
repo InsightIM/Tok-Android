@@ -16,7 +16,7 @@ static inline void set_bits(uint8_t *bytes, int32_t bitOffset, int32_t value) {
     *((int32_t *) bytes) |= (value << bitOffset);
 }
 
-JNIEXPORT jint Java_com_client_tok_media_recorder_OpusAudioRecorder_startRecord(JNIEnv *env, jclass clazz, jstring path) {
+JNIEXPORT jint Java_com_client_tok_media_recorder_audio_OpusAudioRecorder_startRecord(JNIEnv *env, jclass clazz, jstring path) {
     const char *pathStr = (*env)->GetStringUTFChars(env, path, 0);
     if (!pathStr) {
         LOGE("Error path");
@@ -36,21 +36,21 @@ JNIEXPORT jint Java_com_client_tok_media_recorder_OpusAudioRecorder_startRecord(
     return OPE_OK;
 }
 
-JNIEXPORT jint Java_com_client_tok_media_recorder_OpusAudioRecorder_writeFrame(JNIEnv *env, jclass clazz, jobject frame, jint len) {
+JNIEXPORT jint Java_com_client_tok_media_recorder_audio_OpusAudioRecorder_writeFrame(JNIEnv *env, jclass clazz, jobject frame, jint len) {
     jshort *sampleBuffer = (*env) -> GetShortArrayElements(env, frame, 0);
     int result = ope_encoder_write(enc, sampleBuffer, len);
     (*env)->ReleaseShortArrayElements(env, frame, sampleBuffer, 0);
     return result;
 }
 
-JNIEXPORT void Java_com_client_tok_media_recorder_OpusAudioRecorder_stopRecord(JNIEnv *env, jclass clazz) {
+JNIEXPORT void Java_com_client_tok_media_recorder_audio_OpusAudioRecorder_stopRecord(JNIEnv *env, jclass clazz) {
     ope_encoder_drain(enc);
     ope_encoder_destroy(enc);
     ope_comments_destroy(comments);
     LOGI("ope encoder destroy");
 }
 
-JNIEXPORT jbyteArray Java_com_client_tok_media_recorder_OpusAudioRecorder_getWaveform2(JNIEnv *env, jclass clazz, jshortArray array, jint length) {
+JNIEXPORT jbyteArray Java_com_client_tok_media_recorder_audio_OpusAudioRecorder_getWaveform2(JNIEnv *env, jclass clazz, jshortArray array, jint length) {
     jshort *sampleBuffer = (*env)->GetShortArrayElements(env, array, 0);
     const int32_t resultSamples = 100;
     uint16_t *samples = malloc(100 * 2);

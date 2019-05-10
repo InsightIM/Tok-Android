@@ -114,8 +114,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/id_mine_status_iiv"
-            fc:lefIconId="@drawable/bot"
+            fc:lefIconId="@drawable/bot_find_friend"
             fc:promptId="@string/find_friend_bot" />
+
+        <View
+            style="@style/StyleDividerLine"
+            android:layout_marginStart="@dimen/spacing_16" />
+
+        <com.client.tok.widget.ItemInfoView
+            android:id="@+id/id_mine_offline_iiv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/id_mine_status_iiv"
+            fc:lefIconId="@drawable/bot_offline"
+            fc:promptId="@string/off_line_bot" />
 
     </LinearLayout>
 

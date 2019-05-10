@@ -2,13 +2,13 @@ package com.client.tok.ui.profileedit;
 
 import android.content.Intent;
 import com.client.tok.R;
-import com.client.tok.bean.ContactsInfo;
+import com.client.tok.bean.ContactInfo;
 import com.client.tok.bean.UserInfo;
 import com.client.tok.db.DBConstants;
 import com.client.tok.db.repository.InfoRepository;
 import com.client.tok.db.repository.UserRepository;
 import com.client.tok.pagejump.IntentConstants;
-import com.client.tok.tox.CoreManager;
+import com.client.tok.tox.ToxManager;
 import com.client.tok.tox.State;
 import com.client.tok.utils.StringUtils;
 import im.tox.tox4j.core.data.ToxNickname;
@@ -32,19 +32,21 @@ public class ProfileEditPresenter implements ProfileEditContract.IProfileEditPre
 
     private void start() {
         Intent intent = mProfileEditView.getDataIntent();
-        mKey = intent.getStringExtra(IntentConstants.TOK_ID);
+        mKey = intent.getStringExtra(IntentConstants.PK);
         mWhatToDo = intent.getIntExtra(IntentConstants.WHAT_TODO, EDIT_NAME);
-        mIsMine = mKey.equals(CoreManager.getManager().toxBase.getSelfKey().getKey());
+        mIsMine = mKey.equals(ToxManager.getManager().toxBase.getSelfKey().getKey());
 
-        String name;
+        String name = "";
         String signature = null;
         if (mIsMine) {
             UserInfo userInfo = mUserRepo.getActiveUserDetails();
             name = userInfo.getNickname().toString();
             signature = new String(userInfo.getStatusMessage().value);
         } else {
-            ContactsInfo friendInfo = mInfoRepo.getFriendInfo(mKey);
-            name = friendInfo.getDisplayName();
+            ContactInfo friendInfo = mInfoRepo.getFriendInfo(mKey);
+            if (friendInfo != null) {
+                name = friendInfo.getDisplayName();
+            }
         }
 
         switch (mWhatToDo) {
@@ -71,7 +73,7 @@ public class ProfileEditPresenter implements ProfileEditContract.IProfileEditPre
                         content = StringUtils.getTextFromResId(R.string.tok_user);
                     }
                     mUserRepo.updateActiveUserDetail(DBConstants.COLUMN_NICK_NAME, content);
-                    CoreManager.getManager().toxBase.setName(
+                    ToxManager.getManager().toxBase.setName(
                         ToxNickname.unsafeFromValue(content.getBytes()));
                 } else {
                     mInfoRepo.updateAlias(mKey, content);
@@ -79,7 +81,7 @@ public class ProfileEditPresenter implements ProfileEditContract.IProfileEditPre
                 break;
             case EDIT_SIGNATURE:
                 mUserRepo.updateActiveUserDetail(DBConstants.COLUMN_STATUS_MESSAGE, content);
-                CoreManager.getManager().toxBase.setSignature(
+                ToxManager.getManager().toxBase.setSignature(
                     ToxStatusMessage.unsafeFromValue(content.getBytes()));
                 break;
         }

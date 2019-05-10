@@ -4,8 +4,6 @@ import com.client.tok.bean.ContactsKey;
 import im.tox.core.network.Port;
 import im.tox.tox4j.core.callbacks.ToxCoreEventListener;
 import im.tox.tox4j.core.callbacks.ToxCoreEventSynth;
-import im.tox.tox4j.core.data.GroupMessage;
-import im.tox.tox4j.core.data.GroupNumber;
 import im.tox.tox4j.core.data.ToxFileId;
 import im.tox.tox4j.core.data.ToxFilename;
 import im.tox.tox4j.core.data.ToxFriendAddress;
@@ -21,7 +19,6 @@ import im.tox.tox4j.core.data.ToxStatusMessage;
 import im.tox.tox4j.core.enums.ToxFileControl;
 import im.tox.tox4j.core.enums.ToxMessageType;
 import im.tox.tox4j.core.enums.ToxUserStatus;
-import im.tox.tox4j.core.exceptions.GroupGetPublicKeyException;
 import im.tox.tox4j.core.exceptions.ToxBootstrapException;
 import im.tox.tox4j.core.exceptions.ToxFileControlException;
 import im.tox.tox4j.core.exceptions.ToxFileGetException;
@@ -93,8 +90,6 @@ public interface IToxCore extends ToxCoreEventSynth {
      * created.
      */
     void close();
-
-    void finalize();
 
     /**
      * Bootstrap into the tox network.
@@ -406,9 +401,8 @@ public interface IToxCore extends ToxCoreEventSynth {
     int friendSendMessage(ToxFriendNumber friendNumber, ToxMessageType messageType, int timeDelta,
         ToxFriendMessage message) throws ToxFriendSendMessageException;
 
-
-     int friendSendOfflineMessage(ToxFriendNumber proxyNumber,
-         ToxFriendNumber receiverNumber, ToxFriendMessage message) throws ToxFriendSendMessageException;
+    int friendSendMessageOffline(ToxFriendNumber friendNumber, int cmd, int timeDelta,
+        byte[] message) throws ToxFriendSendMessageException;
 
     /**
      * Sends a file control command to a friend for a given file transfer.
@@ -555,6 +549,11 @@ public interface IToxCore extends ToxCoreEventSynth {
     void friendSendLosslessPacket(ToxFriendNumber friendNumber, ToxLosslessPacket data)
         throws ToxFriendCustomPacketException;
 
-
     void tox4jLastLog();
+
+    byte[] encryptMsg(int friendNumber, byte[] bytes);
+
+    byte[] decryptMsg(int friendNumber, byte[] bytes);
+
+    long generateUniqueId(int friendNumber);
 }

@@ -2,6 +2,7 @@ package com.client.tok.widget;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,20 +30,22 @@ public class MenuPopWindow {
 
     //chat:file long click menu: copy+delete
     public static final String TYPE_MSG_FILE = "4";
-    private static List<Integer> TYPE_MSG_FILE_MENU = Arrays.asList(R.id.id_menu_del_tv);
+    private static List<Integer> TYPE_MSG_FILE_MENU =
+        Arrays.asList(R.id.id_menu_del_tv, R.id.id_menu_save_tv);
 
     public static View mContentView;
 
     public static PopupWindow getMenuView(Context context, String type,
-        MenuClickListener listener) {
+        final MenuClickListener listener) {
         LayoutInflater inflater =
             (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mContentView = inflater.inflate(R.layout.view_click_menu, null);
 
-        PopupWindow popupWindow = new PopupWindow(mContentView, ViewGroup.LayoutParams.WRAP_CONTENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT);
+        final PopupWindow popupWindow =
+            new PopupWindow(mContentView, ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
         popupWindow.setBackgroundDrawable(
-            new ColorDrawable(context.getColor(R.color.pop_window_bg)));
+            new ColorDrawable(ContextCompat.getColor(context, R.color.pop_window_bg)));
         popupWindow.setFocusable(true);
         popupWindow.setOutsideTouchable(true);
 
@@ -73,30 +76,52 @@ public class MenuPopWindow {
             mContentView.findViewById(R.id.id_menu_mark_layout)
                 .setVisibility(
                     typeMenu.contains(R.id.id_menu_mark_read_tv) ? View.VISIBLE : View.GONE);
+            mContentView.findViewById(R.id.id_menu_save_layout)
+                .setVisibility(typeMenu.contains(R.id.id_menu_save_tv) ? View.VISIBLE : View.GONE);
         }
 
         TextView copyTv = mContentView.findViewById(R.id.id_menu_copy_tv);
-        copyTv.setOnClickListener((View v) -> {
-            if (listener != null) {
-                listener.onCopy();
+        copyTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onCopy();
+                }
+                popupWindow.dismiss();
             }
-            popupWindow.dismiss();
         });
 
         TextView delTv = mContentView.findViewById(R.id.id_menu_del_tv);
-        delTv.setOnClickListener((View v) -> {
-            if (listener != null) {
-                listener.onDel();
+        delTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onDel();
+                }
+                popupWindow.dismiss();
             }
-            popupWindow.dismiss();
         });
 
         TextView markRead = mContentView.findViewById(R.id.id_menu_mark_read_tv);
-        markRead.setOnClickListener((View v) -> {
-            if (listener != null) {
-                listener.onMarkRead();
+        markRead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onMarkRead();
+                }
+                popupWindow.dismiss();
             }
-            popupWindow.dismiss();
+        });
+
+        TextView save = mContentView.findViewById(R.id.id_menu_save_tv);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onSave();
+                }
+                popupWindow.dismiss();
+            }
         });
         return popupWindow;
     }
@@ -112,6 +137,10 @@ public class MenuPopWindow {
         }
 
         public void onMarkRead() {
+
+        }
+
+        public void onSave() {
 
         }
 

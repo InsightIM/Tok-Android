@@ -3,6 +3,7 @@ package com.client.tok;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.multidex.MultiDexApplication;
 import android.support.v7.app.AppCompatDelegate;
 import com.client.tok.booter.KeepAliveJobService;
@@ -16,6 +17,7 @@ public class TokApplication extends MultiDexApplication
     implements Application.ActivityLifecycleCallbacks {
     private String TAG = "TokApplication";
     private static TokApplication instance;
+    private Handler handler;
     private int activityCounter = 0;
     private List<Activity> activities = new ArrayList<>();
 
@@ -23,6 +25,7 @@ public class TokApplication extends MultiDexApplication
     public void onCreate() {
         super.onCreate();
         instance = this;
+        handler = new Handler(this.getMainLooper());
         initImgZoomLoader();
         initNotification();
         registerMultiReceiver();
@@ -34,6 +37,10 @@ public class TokApplication extends MultiDexApplication
 
     public static TokApplication getInstance() {
         return instance;
+    }
+
+    public Handler getHandler() {
+        return handler;
     }
 
     //TODO ??
@@ -64,6 +71,7 @@ public class TokApplication extends MultiDexApplication
         KeepAliveJobService.startKeepAliveService();
     }
 
+    // 遍历所有Activity并finish
     public void exit() {
         finishOpenedActivities();
     }

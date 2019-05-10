@@ -1,7 +1,9 @@
 package com.client.tok.ui.mine;
 
+import android.arch.lifecycle.Observer;
+import android.support.annotation.Nullable;
 import com.client.tok.R;
-import com.client.tok.bean.ContactsInfo;
+import com.client.tok.bean.ContactInfo;
 import com.client.tok.bean.ToxAddress;
 import com.client.tok.bean.UserInfo;
 import com.client.tok.bot.BotManager;
@@ -19,6 +21,7 @@ import im.tox.tox4j.core.enums.ToxConnection;
 import im.tox.tox4j.core.enums.ToxUserStatus;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 
 public class MinePresenter implements MineContract.IMinePresenter {
     private String TAG = "MinePresenter";
@@ -26,6 +29,7 @@ public class MinePresenter implements MineContract.IMinePresenter {
     private Disposable mConnectionDis;
     private UserRepository mUserRepo = State.userRepo();
     private String mFindFriendBotPk;
+    private String mOfflineBotPk;
 
     public MinePresenter(MineContract.IMineView iMineView) {
         this.mMineView = iMineView;
@@ -35,7 +39,8 @@ public class MinePresenter implements MineContract.IMinePresenter {
 
     @Override
     public void start() {
-        mFindFriendBotPk = BotManager.getInstance().getAddFriendBotPk();
+        mFindFriendBotPk = BotManager.getInstance().getFindFriendBotPk();
+        mOfflineBotPk = BotManager.getInstance().getOfflineBotPk();
         getUserInfo();
         getUserStatus();
         observerFindFriendBot();
@@ -43,8 +48,11 @@ public class MinePresenter implements MineContract.IMinePresenter {
 
     private void getUserInfo() {
         LogUtil.i(TAG, "getUserInfo start");
-        mUserRepo.activeUserDetailsObservable().observe(mMineView, (UserInfo userInfo) -> {
-            mMineView.showUserInfo(userInfo);
+        mUserRepo.activeUserDetailsObservable().observe(mMineView, new Observer<UserInfo>() {
+            @Override
+            public void onChanged(@Nullable UserInfo userInfo) {
+                mMineView.showUserInfo(userInfo);
+            }
         });
     }
 
@@ -52,46 +60,54 @@ public class MinePresenter implements MineContract.IMinePresenter {
         mMineView.showStatus(GlobalParams.OFF_LINE);
         mConnectionDis = RxBus.listen(ToxConnection.class)
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe((ToxConnection toxConnection) -> {
-                LogUtil.i(TAG, toxConnection.toString());
-                String userStatus;
-                ToxUserStatus status;
-                try {
-                    status = UserStatus.getUserStatusFromString(
-                        mUserRepo.getActiveUserDetails().getStatus());
-                    LogUtil.i(TAG, "toxConnection:"
-                        + toxConnection
-                        + ",status:"
-                        + status); //先判断toxConnection状态
-                    if (toxConnection == ToxConnection.NONE) {
-                        userStatus = GlobalParams.OFF_LINE;
-                    } else {
-                        switch (status) {
-                            case NONE:
-                                userStatus = GlobalParams.ON_LINE;
-                                break;
-                            case AWAY:
-                                userStatus = GlobalParams.AWAY;
-                                break;
-                            case BUSY:
-                                userStatus = GlobalParams.BUSY;
-                                break;
-                            default:
-                                userStatus = GlobalParams.OFF_LINE;
+            .subscribe(new Consumer<ToxConnection>() {
+                @Override
+                public void accept(ToxConnection toxConnection) throws Exception {
+                    LogUtil.i(TAG, toxConnection.toString());
+                    String userStatus;
+                    ToxUserStatus status;
+                    try {
+                        status = UserStatus.getUserStatusFromString(
+                            mUserRepo.getActiveUserDetails().getStatus());
+                        LogUtil.i(TAG, "toxConnection:"
+                            + toxConnection
+                            + ",status:"
+                            + status); //先判断toxConnection状态
+                        if (toxConnection == ToxConnection.NONE) {
+                            userStatus = GlobalParams.OFF_LINE;
+                        } else {
+                            switch (status) {
+                                case NONE:
+                                    userStatus = GlobalParams.ON_LINE;
+                                    break;
+                                case AWAY:
+                                    userStatus = GlobalParams.AWAY;
+                                    break;
+                                case BUSY:
+                                    userStatus = GlobalParams.BUSY;
+                                    break;
+                                default:
+                                    userStatus = GlobalParams.OFF_LINE;
+                            }
                         }
+                    } catch (Exception e) {
+                        userStatus = GlobalParams.OFF_LINE;
                     }
-                } catch (Exception e) {
-                    userStatus = GlobalParams.OFF_LINE;
+                    mMineView.showStatus(userStatus);
                 }
-                mMineView.showStatus(userStatus);
             });
     }
-
 
     @Override
     public void showFindFriendBot() {
         PageJumpIn.jumpFriendInfoPage(mMineView.getActivity(), "-1", mFindFriendBotPk);
         PreferenceUtils.setHasShowFindFriendBotFeat();
+    }
+
+    @Override
+    public void showOfflineBot() {
+        PageJumpIn.jumpOfflineBotInfoPage(mMineView.getActivity());
+        PreferenceUtils.setHasShowOfflineBotFeat();
     }
 
     @Override
@@ -105,13 +121,32 @@ public class MinePresenter implements MineContract.IMinePresenter {
         //}
         State.infoRepo()
             .getFriendInfoLive(mFindFriendBotPk)
-            .observe(mMineView, (ContactsInfo contactsInfo) -> {
-                LogUtil.i(TAG, "observer find friend bot:" + (contactsInfo == null));
-                if (contactsInfo == null) {
-                    mMineView.showFindFriendBotNew(StringUtils.getTextFromResId(R.string.new_tag),
-                        R.style.UnReadMsgRed, R.drawable.unread_num_indicator_red);
-                } else {
-                    mMineView.showFindFriendBotNew(null, -1, -1);
+            .observe(mMineView, new Observer<ContactInfo>() {
+                @Override
+                public void onChanged(@Nullable ContactInfo contactInfo) {
+                    LogUtil.i(TAG, "observer find friend bot:" + (contactInfo == null));
+                    if (contactInfo == null) {
+                        mMineView.showFindFriendBotNew(
+                            StringUtils.getTextFromResId(R.string.new_tag), R.style.UnReadMsgRed,
+                            R.drawable.unread_num_indicator_red);
+                    } else {
+                        mMineView.showFindFriendBotNew(null, -1, -1);
+                    }
+                }
+            });
+
+        State.infoRepo()
+            .getFriendInfoLive(mOfflineBotPk)
+            .observe(mMineView, new Observer<ContactInfo>() {
+                @Override
+                public void onChanged(@Nullable ContactInfo contactInfo) {
+                    LogUtil.i(TAG, "observer offline  bot:" + (contactInfo == null));
+                    if (contactInfo == null) {
+                        mMineView.showOfflineBotNew(StringUtils.getTextFromResId(R.string.new_tag),
+                            R.style.UnReadMsgRed, R.drawable.unread_num_indicator_red);
+                    } else {
+                        mMineView.showOfflineBotNew(null, -1, -1);
+                    }
                 }
             });
     }

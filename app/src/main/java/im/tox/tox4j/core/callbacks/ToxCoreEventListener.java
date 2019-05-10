@@ -5,5 +5,5 @@ public interface ToxCoreEventListener
     FileRecvChunkCallback, FileChunkRequestCallback, FriendConnectionStatusCallback,
     FriendMessageCallback, FriendNameCallback, FriendRequestCallback, FriendStatusCallback,
     FriendStatusMessageCallback, FriendTypingCallback, FriendLosslessPacketCallback,
-    FriendLossyPacketCallback, FriendReadReceiptCallback,GroupMessageCallBack {
+    FriendLossyPacketCallback, FriendReadReceiptCallback,OfflineMessageCallback {
 }

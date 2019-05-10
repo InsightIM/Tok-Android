@@ -1,12 +1,15 @@
 package com.client.tok.ui.chat2;
 
+import android.arch.lifecycle.Observer;
 import android.content.Intent;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.support.v7.util.DiffUtil;
 import com.client.tok.R;
-import com.client.tok.bean.ContactsInfo;
+import com.client.tok.bean.ContactInfo;
 import com.client.tok.bean.ContactsKey;
 import com.client.tok.bean.Message;
+import com.client.tok.bean.ToxAddress;
 import com.client.tok.bot.BotManager;
 import com.client.tok.constant.BotType;
 import com.client.tok.constant.FileKind;
@@ -18,20 +21,23 @@ import com.client.tok.pagejump.IntentConstants;
 import com.client.tok.pagejump.PageJumpIn;
 import com.client.tok.rx.RxBus;
 import com.client.tok.rx.event.ContactEvent;
-import com.client.tok.tox.CoreManager;
 import com.client.tok.tox.MsgHelper;
 import com.client.tok.tox.State;
+import com.client.tok.tox.ToxManager;
 import com.client.tok.ui.addfriends.AddFriendsModel;
 import com.client.tok.ui.chat2.Contract.IChatPresenter;
+import com.client.tok.ui.offlinecore.OfflineSender;
+import com.client.tok.utils.FileUtilsJ;
 import com.client.tok.utils.ImageUtils;
 import com.client.tok.utils.LogUtil;
 import com.client.tok.utils.MimeTypeUtil;
+import com.client.tok.utils.StorageUtil;
 import com.client.tok.utils.StringUtils;
 import im.tox.tox4j.core.data.ToxFileId;
 import im.tox.tox4j.core.data.ToxNickname;
-import im.tox.tox4j.core.enums.ToxMessageType;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 import java.io.File;
 import java.util.HashMap;
 import java.util.List;
@@ -47,11 +53,10 @@ public class ChatPresenter implements IChatPresenter {
     private ContactsKey mContactsKey;
     private boolean mFromNotification;
     private String mChatType;
-    private boolean mHasUpdateGroup = false;
     //friend is online
     private boolean mFriendOnline;
     //message assistant is online
-    private boolean mMsgAssistantOnline = false;
+    private boolean mOfflineBotOnline = false;
     //friendName
     private Map<String, String> mKeyNameMap = new HashMap<String, String>();
     private List<Message> mCurMsgList;
@@ -69,8 +74,16 @@ public class ChatPresenter implements IChatPresenter {
     private DiffUtil.DiffResult mDiffResult = null;
 
     private Disposable mDelContactDis;
-
+    //curent chat friend is FindFriendBot
     private boolean mIsFindFriendBot;
+    //current chat friend is bot(FindFriendBot,OfflineBot...) ?
+    private boolean mIsBot = false;
+    //Am I have add OfflineBot
+    private boolean mIHaveOfflineBot = false;
+    //Is current chat friend has add OfflineBot
+    private boolean mHasQueryFriendOfflineBot = false;
+    private boolean mFriendHasOfflineBot = false;
+    private boolean mIsShowFriendHasAddOfflineBotPrompt = false;
 
     protected ChatPresenter(Contract.IChatView chatView, Intent intent) {
         mChatView = chatView;
@@ -84,7 +97,7 @@ public class ChatPresenter implements IChatPresenter {
     }
 
     private void readIntentData() {
-        mKey = mIntent.getStringExtra(IntentConstants.TOK_ID);
+        mKey = mIntent.getStringExtra(IntentConstants.PK);
         mFromNotification = mIntent.getBooleanExtra(IntentConstants.FROM_NOTIFICATION, false);
         mChatType = mIntent.getStringExtra(IntentConstants.CHAT_TYPE);
         LogUtil.i(TAG, "chatPresenter ContactsKey:"
@@ -96,8 +109,9 @@ public class ChatPresenter implements IChatPresenter {
         mContactsKey = new ContactsKey(mKey);
         State.setChatKey(mContactsKey.key);
 
-        ContactsInfo bot = BotManager.getInstance().getAddFriendBotInfo(mKey);
+        ContactInfo bot = BotManager.getInstance().getBotContactInfo(mKey);
         mIsFindFriendBot = bot != null && bot.getBotType() == BotType.FIND_FRIEND_BOT.getType();
+        mIsBot = (bot != null);
     }
 
     private void start() {
@@ -124,6 +138,7 @@ public class ChatPresenter implements IChatPresenter {
     public void onResume() {
         State.setChatPageActive(true);
         mInfoRepo.markReaded(mContactsKey.key);
+        NotifyManager.getInstance().setBadge(mInfoRepo.totalUnreadCount());
     }
 
     @Override
@@ -132,48 +147,100 @@ public class ChatPresenter implements IChatPresenter {
     }
 
     private void subNameAndState() {
-        mChatView.showOnlineStatus(mFriendOnline);
-
-        mInfoRepo.getFriendInfoLive(mKey).observe(mChatView, (ContactsInfo contactsInfo) -> {
-            if (contactsInfo != null) {//if delete group,it will be here，info isnull
-                mChatView.setContactName(contactsInfo.getDisplayName());
-                if (GlobalParams.CHAT_FRIEND.equals(mChatType)) {
-                    updateFriend(contactsInfo.isOnline());
+        updateStatusPrompt();
+        mInfoRepo.getFriendInfoLive(mKey).observe(mChatView, new Observer<ContactInfo>() {
+            @Override
+            public void onChanged(@Nullable ContactInfo contactInfo) {
+                if (contactInfo != null) {//if delete group,it will be here，info isnull
+                    mChatView.setContactName(contactInfo.getDisplayName());
+                    mFriendOnline = contactInfo.isOnline();
+                    ChatPresenter.this.initKeyNames(contactInfo);
+                    mFriendHasOfflineBot = contactInfo.isHasOfflineBot();
+                } else {
+                    mFriendOnline = false;
+                    mFriendHasOfflineBot = false;
                 }
-                initKeyNames(contactsInfo);
+                dealHasAddOfflineBotPrompt();
+                updateStatusPrompt();
             }
         });
-    }
 
-    private void updateFriend(boolean newStatus) {
-        if (mFriendOnline != newStatus) {
-            mFriendOnline = newStatus;
-            mChatView.showOnlineStatus(mFriendOnline);
+        if (!mIsBot) {
+            String offlineBotPk =
+                new ToxAddress(GlobalParams.OFFLINE_BOT_TOK_ID).getKey().toString();
+            mInfoRepo.getFriendInfoLive(offlineBotPk)
+                .observe(mChatView, new Observer<ContactInfo>() {
+                    @Override
+                    public void onChanged(@Nullable ContactInfo contactInfo) {
+                        if (contactInfo != null) {
+                            mOfflineBotOnline = contactInfo.isOnline();
+                            mIHaveOfflineBot = true;
+                        } else {
+                            mOfflineBotOnline = false;
+                            mIHaveOfflineBot = false;
+                        }
+                        queryFriendOfflineBot();
+                        updateStatusPrompt();
+                    }
+                });
         }
     }
 
+    private void queryFriendOfflineBot() {
+        if (!mHasQueryFriendOfflineBot && mIHaveOfflineBot && mOfflineBotOnline && mChatType.equals(
+            GlobalParams.CHAT_FRIEND)) {
+            OfflineSender.sendQueryFriend(mKey);
+            mHasQueryFriendOfflineBot = true;
+        }
+    }
+
+    private void updateStatusPrompt() {
+        if (mFriendOnline) {
+            mChatView.showOnlineStatus(true, StringUtils.getTextFromResId(R.string.on_line));
+        } else if (mOfflineBotOnline && mFriendHasOfflineBot) {
+            mChatView.showOnlineStatus(true,
+                StringUtils.getTextFromResId(R.string.offline_bot_online));
+        } else {
+            mChatView.showOnlineStatus(false, StringUtils.getTextFromResId(R.string.off_line));
+        }
+    }
+
+    private void dealHasAddOfflineBotPrompt() {
+        if (mFriendHasOfflineBot && mIsShowFriendHasAddOfflineBotPrompt) {
+            mIsShowFriendHasAddOfflineBotPrompt = false;
+            savePrompt(MessageType.PROMPT_NORMAL,
+                StringUtils.getTextFromResId(R.string.friend_has_add_offline_bot));
+        }
+    }
 
     private void subMsg() {
         NotifyManager.getInstance().cleanNotify(mContactsKey.toString().hashCode());
 
         mInfoRepo.getMessageByKeyLive(mContactsKey.getKey())
-            .observe(mChatView, (List<Message> newMsgList) -> {
-                new Thread(() -> {
-                    LogUtil.i(TAG, "messageSeq size:" + newMsgList.size());
-                    if (mHandler != null) {
-                        if (newMsgList.size() < 10) {
-                            mSafeWarningShow = true;
-                            mHandler.sendEmptyMessage(MSG_UPDATE_SAFE_WARNING);
-                        } else if (mSafeWarningShow) {
-                            mSafeWarningShow = false;
-                            mHandler.sendEmptyMessage(MSG_UPDATE_SAFE_WARNING);
+            .observe(mChatView, new Observer<List<Message>>() {
+                @Override
+                public void onChanged(@Nullable final List<Message> newMsgList) {
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            LogUtil.i(TAG, "messageSeq size:" + newMsgList.size());
+                            if (mHandler != null) {
+                                if (newMsgList.size() < 10) {
+                                    mSafeWarningShow = true;
+                                    mHandler.sendEmptyMessage(MSG_UPDATE_SAFE_WARNING);
+                                } else if (mSafeWarningShow) {
+                                    mSafeWarningShow = false;
+                                    mHandler.sendEmptyMessage(MSG_UPDATE_SAFE_WARNING);
+                                }
+                                mDiffResult =
+                                    DiffUtil.calculateDiff(new MsgDiff(mCurMsgList, newMsgList),
+                                        true);
+                                mCurMsgList = newMsgList;
+                                mHandler.sendEmptyMessage(MSG_UPDATE_LIST);
+                            }
                         }
-                        mDiffResult =
-                            DiffUtil.calculateDiff(new MsgDiff(mCurMsgList, newMsgList), true);
-                        mCurMsgList = newMsgList;
-                        mHandler.sendEmptyMessage(MSG_UPDATE_LIST);
-                    }
-                }).start();
+                    }).start();
+                }
             });
     }
 
@@ -227,9 +294,9 @@ public class ChatPresenter implements IChatPresenter {
 
     @Override
     public void saveDraft(String draft) {
-        mInfoRepo.addMessage2(mContactsKey, CoreManager.getManager().toxBase.getSelfKey(),
+        mInfoRepo.addMessage2(mContactsKey, ToxManager.getManager().toxBase.getSelfKey(),
             ToxNickname.unsafeFromValue("".getBytes()), draft, System.currentTimeMillis(),
-            GlobalParams.SEND_SUCCESS, true, ToxMessageType.DRAFT, -1);
+            GlobalParams.SEND_SUCCESS, true, MessageType.DRAFT, -1);
     }
 
     @Override
@@ -245,7 +312,7 @@ public class ChatPresenter implements IChatPresenter {
         }
     }
 
-    private void initKeyNames(ContactsInfo friendInfo) {
+    private void initKeyNames(ContactInfo friendInfo) {
         if (GlobalParams.CHAT_FRIEND.equals(mChatType)) {
             mKeyNameMap.put(friendInfo.getKey().getKey(), friendInfo.getDisplayName());
         }
@@ -253,18 +320,60 @@ public class ChatPresenter implements IChatPresenter {
 
     @Override
     public boolean canSendFile() {
-        if (!mMsgAssistantOnline && !mFriendOnline) {
-            mChatView.showErrorMsg(StringUtils.getTextFromResId(R.string.send_file_need_online));
+        if (mIsFindFriendBot) {
+            // if find friend bot,can't send file to it
+            mChatView.showErrorMsg(StringUtils.getTextFromResId(R.string.can_not_send_file_to_bot));
+            return false;
         }
-        return mMsgAssistantOnline || mFriendOnline;
+
+        if (!mFriendOnline) {
+            if (!mOfflineBotOnline) {
+                mChatView.showErrorMsg(
+                    StringUtils.getTextFromResId(R.string.send_file_need_online));
+                return false;
+            } else {
+                //add prompt to db
+                savePrompt(MessageType.PROMPT_NORMAL,
+                    StringUtils.getTextFromResId(R.string.prompt_offline_text_only));
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
     public boolean canSendTxt() {
-        if (!mMsgAssistantOnline && !mFriendOnline) {
-            mChatView.showErrorMsg(StringUtils.getTextFromResId(R.string.send_txt_need_online));
+        if (!mFriendOnline) {
+            if (mIsBot) {
+                mChatView.showErrorMsg(StringUtils.getTextFromResId(R.string.send_txt_need_online));
+                return false;
+            }
+            if (!mOfflineBotOnline) {
+                if (mIHaveOfflineBot) {
+                    mChatView.showErrorMsg(
+                        StringUtils.getTextFromResId(R.string.send_txt_need_online));
+                } else {
+                    savePrompt(MessageType.PROMPT_ADD_OFFLINE_BOT,
+                        StringUtils.getTextFromResId(R.string.prompt_add_offline_bot));
+                }
+                return false;
+            } else if (!mFriendHasOfflineBot) {
+                savePrompt(MessageType.PROMPT_NORMAL,
+                    StringUtils.getTextFromResId(R.string.prompt_friend_not_has_offline_bot));
+                //every prompt of friend not has offline bot =>check
+                mIsShowFriendHasAddOfflineBotPrompt = true;
+                mHasQueryFriendOfflineBot = false;
+                queryFriendOfflineBot();
+                return false;
+            }
         }
-        return mMsgAssistantOnline || mFriendOnline;
+        return true;
+    }
+
+    private void savePrompt(MessageType msgType, String content) {
+        State.infoRepo()
+            .addMessage2(mContactsKey, mContactsKey, ToxNickname.unsafeFromValue("".getBytes()),
+                content, 0L, GlobalParams.SEND_SUCCESS, true, msgType, -1);
     }
 
     /**
@@ -277,10 +386,17 @@ public class ChatPresenter implements IChatPresenter {
         if (StringUtils.isEmpty(msg)) {
             mChatView.showErrorMsg(StringUtils.getTextFromResId(R.string.input_msg));
         } else {
+            //TODO in the old Antox code, here is a deal on '/me' ？？
             if (GlobalParams.CHAT_FRIEND.equals(mChatType)) {
-                MsgHelper.sendFriendMessage(mContactsKey, mFriendOnline, msg,
-                    ToxMessageType.NORMAL);
+                MsgHelper.sendFriendMessage(mContactsKey, mFriendOnline, msg, MessageType.MESSAGE);
             }
+        }
+    }
+
+    @Override
+    public void resentSendMsgText(String msg) {
+        if (canSendTxt()) {
+            sendMsgText(msg);
         }
     }
 
@@ -352,6 +468,19 @@ public class ChatPresenter implements IChatPresenter {
     }
 
     @Override
+    public void save(String filePath) {
+        String file = ImageUtils.getImgPath(filePath);
+        boolean result = FileUtilsJ.save2Download(mChatView.getActivity(), file,
+            StorageUtil.getDownloadFolder());
+        if (result) {
+            mChatView.showErrorMsg(
+                StringUtils.formatTxFromResId(R.string.save_to, StorageUtil.getDownloadFolder()));
+        } else {
+            mChatView.showErrorMsg(StringUtils.formatTxFromResId(R.string.failed));
+        }
+    }
+
+    @Override
     public void onMsgFailDeal(Message msg) {
         if (msg != null) {
             int typeVal = msg.getMsgTypeVal();
@@ -377,11 +506,14 @@ public class ChatPresenter implements IChatPresenter {
         if (mDelContactDis == null) {
             mDelContactDis = RxBus.listen(ContactEvent.class)
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe((ContactEvent contactEvent) -> {
-                    LogUtil.i(TAG, contactEvent.toString());
-                    if (contactEvent.getPk().equals(mKey)) {
-                        if (contactEvent.getEvent() == ContactEvent.DEL_CONTACT) {
-                            mChatView.onViewDestroy();
+                .subscribe(new Consumer<ContactEvent>() {
+                    @Override
+                    public void accept(ContactEvent contactEvent) throws Exception {
+                        LogUtil.i(TAG, contactEvent.toString());
+                        if (contactEvent.getPk().equals(mKey)) {
+                            if (contactEvent.getEvent() == ContactEvent.DEL_CONTACT) {
+                                mChatView.onViewDestroy();
+                            }
                         }
                     }
                 });
@@ -398,6 +530,7 @@ public class ChatPresenter implements IChatPresenter {
             mDelContactDis.dispose();
         }
         mDelContactDis = null;
+        mHasQueryFriendOfflineBot = false;
         LogUtil.i(TAG, "chatPresenter ondestroy");
     }
 }

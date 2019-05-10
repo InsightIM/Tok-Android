@@ -2,7 +2,17 @@
     {
         "name": "FindFriendBot",
         "type": "10001",
+        "provider": "Provided by Tok",
+        "defaultIcon": "avatar_find_friend_bot",
         "tokId": "3415845A7145854DE91046FF4666503A83EED05BC47CA222644C5F47A8E0F072938433360B34",
-        "signature": "What can I do? FindFriendBot can help you find more friends. Click or Type /help for a list of commands."
+        "signature": "What can I do? FindFriendBot can help you find more friends. Type '/help' for a list of commands in the input bar."
+    },
+    {
+        "name": "OfflineMessageBot",
+        "type": "10002",
+        "provider": "Provided by Tok",
+        "defaultIcon": "avatar_offline_bot",
+        "tokId": "EC6EFF1B9CA5E5C2E41715A187497094B9D61F1604FBC1B6F202B1F1C89B4501B4EB7E520B24",
+        "signature": "This bot is a temporary solution designed to send offline messages in Tok, and it works only when both side of the conversation add this bot"
     }
 ]

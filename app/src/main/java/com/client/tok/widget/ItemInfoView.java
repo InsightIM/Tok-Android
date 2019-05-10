@@ -2,6 +2,7 @@ package com.client.tok.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.v4.widget.TextViewCompat;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -21,10 +22,13 @@ public class ItemInfoView extends RelativeLayout {
     private ImageView mFunctionIv;
     private TextView mPromptTv;
     private TextView mContentTv;
+    private TextView mDetailTv;
     private PortraitView mPortraitView;
     private ToggleButton mTb;
+    private View mLineView;
     private int mPromptId;
     private int mContentId;
+    private int mDetailId;
     private int mLeftIconId;
     private int mFunIconId;
     private int mRightIconId;
@@ -32,6 +36,7 @@ public class ItemInfoView extends RelativeLayout {
     private int mContentMaxLine;
     private int mRightIconVisible;
     private int mTbVisible;
+    private int mLineVisible;
 
     public ItemInfoView(Context context) {
         super(context);
@@ -64,11 +69,13 @@ public class ItemInfoView extends RelativeLayout {
         mLeftIconId = ta.getResourceId(R.styleable.fc_lefIconId, 0);
         mPromptId = ta.getResourceId(R.styleable.fc_promptId, 0);
         mContentId = ta.getResourceId(R.styleable.fc_contentId, 0);
+        mDetailId = ta.getResourceId(R.styleable.fc_detail, 0);
         mContentMaxLine = ta.getInteger(R.styleable.fc_contentMaxLine, 1);
         mFunIconId = ta.getResourceId(R.styleable.fc_functionIconId, 0);
         mRightIconId = ta.getResourceId(R.styleable.fc_rightIconId, R.drawable.info_item_arrow);
         mRightIconVisible = ta.getInteger(R.styleable.fc_rightIconVisible, 1);
         mTbVisible = ta.getInteger(R.styleable.fc_tbVisible, 0);
+        mLineVisible = ta.getInteger(R.styleable.fc_lineVisible, 0);
         ta.recycle();
     }
 
@@ -94,8 +101,15 @@ public class ItemInfoView extends RelativeLayout {
 
         mContentTv = this.findViewById(R.id.id_info_item_content_iv);
         setContent(mContentId);
-
         mContentTv.setMaxLines(mContentMaxLine);
+
+        mDetailTv = this.findViewById(R.id.id_info_item_detail_tv);
+        if (mDetailId > 0) {
+            mDetailTv.setText(mDetailId);
+            mDetailTv.setVisibility(View.VISIBLE);
+        } else {
+            mDetailTv.setVisibility(View.GONE);
+        }
 
         mPortraitView = this.findViewById(R.id.id_info_item_portrait_view);
 
@@ -117,6 +131,13 @@ public class ItemInfoView extends RelativeLayout {
             mTb.setVisibility(View.VISIBLE);
         } else {
             mTb.setVisibility(View.GONE);
+        }
+
+        mLineView = this.findViewById(R.id.id_info_item_line);
+        if (SHOW == mLineVisible) {
+            mLineView.setVisibility(View.VISIBLE);
+        } else {
+            mLineView.setVisibility(View.GONE);
         }
     }
 
@@ -146,7 +167,7 @@ public class ItemInfoView extends RelativeLayout {
             mContentTv.setVisibility(View.VISIBLE);
             mContentTv.setText(content);
             if (style > 0) {
-                mContentTv.setTextAppearance(style);
+                TextViewCompat.setTextAppearance(mContentTv, style);
             }
             if (bg > 0) {
                 mContentTv.setBackgroundResource(bg);

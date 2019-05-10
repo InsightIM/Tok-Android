@@ -21,6 +21,6 @@
         android:visibility="gone"
         empty:btnTxtId1="@string/invite_friend"
         empty:btnTxtId2="@string/add_friends"
-        empty:mainContentId="@string/p2p_encryp_empty"
+        empty:mainContentId="@string/p2p_encrypt_empty"
         empty:subContentId="@string/friend_chat_safe" />
 </LinearLayout>

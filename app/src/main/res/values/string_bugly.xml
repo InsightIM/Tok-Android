@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bugly_app_id">acd003adce</string>
+    <!--banner id-->
+    <string name="bugly_app_key">548c2b44-1190-401d-964e-20e46b2d4b2f</string>
+    <string name="bugly_app_version">@string/bugly_version</string>
+    <string name="bugly_app_channel">FirIm</string>
+</resources>

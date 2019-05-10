@@ -1,6 +1,6 @@
 package com.client.tok.utils;
 
-import com.client.tok.bean.ContactsInfo;
+import com.client.tok.bean.ContactInfo;
 import com.client.tok.pagejump.GlobalParams;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -19,14 +19,17 @@ public class CollectionUtils {
         return list;
     }
 
-    public static Comparator<ContactsInfo> contactLetterComparator() {
-        return (a, b) -> {
-            if (!a.getFirstLetter().equals("#") && b.getFirstLetter().equals("#")) {
-                return -1;
-            } else if (a.getFirstLetter().equals("#") && !b.getFirstLetter().equals("#")) {
-                return 1;
-            } else {
-                return a.getFirstLetter().compareTo(b.getFirstLetter());
+    public static Comparator<ContactInfo> contactLetterComparator() {
+        return new Comparator<ContactInfo>() {
+            @Override
+            public int compare(ContactInfo a, ContactInfo b) {
+                if (!a.getFirstLetter().equals("#") && b.getFirstLetter().equals("#")) {
+                    return -1;
+                } else if (a.getFirstLetter().equals("#") && !b.getFirstLetter().equals("#")) {
+                    return 1;
+                } else {
+                    return a.getFirstLetter().compareTo(b.getFirstLetter());
+                }
             }
         };
     }

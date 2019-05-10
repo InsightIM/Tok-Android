@@ -14,14 +14,14 @@ import java.util.TimerTask;
  */
 public class MsgTimer {
     private static String TAG = "msgTimer";
-    private static Map<Integer, Timer> timerMap;
+    private static Map<Long, Timer> timerMap;
 
     /**
      * add timer
      *
      * @param receiptId message id
      */
-    public static void startTimer(int receiptId) {
+    public static void startTimer(final long receiptId) {
         if (timerMap == null) {
             timerMap = new HashMap<>();
         }
@@ -44,7 +44,7 @@ public class MsgTimer {
      *
      * @param receiptId message id
      */
-    public static void stopTimer(int receiptId) {
+    public static void stopTimer(long receiptId) {
         if (timerMap != null) {
             Timer timer = timerMap.get(receiptId);
             if (timer != null) {

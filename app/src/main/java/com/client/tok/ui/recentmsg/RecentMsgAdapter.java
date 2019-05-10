@@ -11,7 +11,7 @@ import com.client.tok.R;
 import com.client.tok.bean.ConversationItem;
 import com.client.tok.constant.ContactType;
 import com.client.tok.constant.MessageType;
-import com.client.tok.media.player.audio.AudioUtil;
+import com.client.tok.media.MediaUtil;
 import com.client.tok.msg.UserStatus;
 import com.client.tok.tox.State;
 import com.client.tok.utils.ImageUtils;
@@ -47,11 +47,11 @@ public class RecentMsgAdapter extends RecyclerView.Adapter<RecentMsgAdapter.Rece
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecentMsgHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final RecentMsgHolder holder, int position) {
         ConversationItem item = mConversationList.get(position);
         int contactType = item.getContactType();
         if (contactType == ContactType.GROUP.getType()) {
-            holder.portraitView.setPortraitResId(R.drawable.avator_group_defulat);
+            holder.portraitView.setPortraitResId(R.drawable.avatar_group_defulat);
             holder.lineStatus.setVisibility(View.GONE);
         } else if (contactType == ContactType.FRIEND.getType()) {
             holder.portraitView.setFriendText(item.cKey, item.getDisplayName());
@@ -65,16 +65,22 @@ public class RecentMsgAdapter extends RecyclerView.Adapter<RecentMsgAdapter.Rece
 
         holder.lastMsg.setText(formatLastMsg(item.lastMsg, item.msgType));
         holder.lastMsgTime.setText(TimeUtil.getTimePoint(item.lastMsgTime));
-        holder.itemView.setOnClickListener((View v) -> {
-            if (mItemClickListener != null) {
-                mItemClickListener.onItemClick(v, holder.getAdapterPosition());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mItemClickListener != null) {
+                    mItemClickListener.onItemClick(v, holder.getAdapterPosition());
+                }
             }
         });
-        holder.itemView.setOnLongClickListener((View v) -> {
-            if (mItemLongClickListener != null) {
-                mItemLongClickListener.onItemLongClick(v, holder.getAdapterPosition());
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (mItemLongClickListener != null) {
+                    mItemLongClickListener.onItemLongClick(v, holder.getAdapterPosition());
+                }
+                return true;
             }
-            return true;
         });
     }
 
@@ -84,8 +90,10 @@ public class RecentMsgAdapter extends RecyclerView.Adapter<RecentMsgAdapter.Rece
                 int resId = 0;
                 if (ImageUtils.isImgFile(msg)) {
                     resId = R.string.type_photo;
-                } else if (AudioUtil.isAudio(msg)) {
+                } else if (MediaUtil.isAudio(msg)) {
                     resId = R.string.type_audio;
+                } else if (MediaUtil.isVideo(msg)) {
+                    resId = R.string.type_video;
                 } else {
                     resId = R.string.type_file;
                 }
