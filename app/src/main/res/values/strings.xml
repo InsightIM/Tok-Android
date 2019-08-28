@@ -253,7 +253,7 @@
 
     <!--v1.1.3-->
     <string name="off_line_bot">OfflineMessageBot</string>
-    <string name="how_to_send_offline_msg">How to send offline Messages</string>
+    <string name="how_to_send_offline_msg">How to send offline Messages?</string>
     <string name="how_to_send_offline_msg_content">1. Add this bot on both sides.
         \n2. You can send text messages when your friend\'s status is \'OfflineMessageBot online\'.</string>
 
