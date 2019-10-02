@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="week">
+        <item>Pon.</item>
+        <item>Wt.</item>
+        <item>Śr.</item>
+        <item>Czw.</item>
+        <item>Pt.</item>
+        <item>Sob.</item>
+        <item>Nd.</item>
+    </array>
+</resources>
