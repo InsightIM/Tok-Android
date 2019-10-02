@@ -89,7 +89,7 @@
 
     <string name="personal_info">Informacje personalne</string>
     <string name="friend_info">Informacje o znajomym</string>
-    <string name="my_avatar">Moje zdjęcie</string>
+    <string name="my_avatar">Moj awatar</string>
     <string name="nick_name">Pseudonim</string>
     <string name="bio">Opis</string>
     <string name="user_name_prompt">Użytkownik: %1$s</string>
@@ -98,7 +98,7 @@
     <string name="friend_is_offline">Znajomy jest Niedostępny</string>
     <string name="input_msg">wpisz treść</string>
     <string name="file_sel_wrong">Coś jest nie tak z wybranym plikiem, spróbuj ponownie!</string>
-    <string name="send_file_need_online">Trzeba być onlinea aby wysłać plik!</string>
+    <string name="send_file_need_online">Trzeba być online aby wysłać plik!</string>
     <string name="create_group">Utwórz Grupę</string>
     <string name="my_group">Moja grupa</string>
     <string name="group_info">Informacje o grupie</string>
