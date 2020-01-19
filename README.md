@@ -53,5 +53,5 @@ facebook: [https://www.facebook.com/TokMessenger](https://www.facebook.com/TokMe
 
 reddit: [https://www.reddit.com/r/TokMessenger/](https://www.reddit.com/r/TokMessenger/)
 
-Tok ID: D1BCA4E4D9C620FE0BF815D8C8A2317AF79266F5F2750B909ED2BABDF6AC6264741BACF56B53
+Tok ID: `D1BCA4E4D9C620FE0BF815D8C8A2317AF79266F5F2750B909ED2BABDF6AC6264741BACF56B53`
 
