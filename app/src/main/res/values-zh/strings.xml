@@ -2,19 +2,16 @@
 <resources>
     <string name="create_account_encrypted_profile_error">Android版暂时不支持加密文件</string>
     <string name="create_account_load_profile_unknown">未知的文件加载异常</string>
-
     <!-- User Status -->
     <string name="status_online">在线</string>
     <string name="status_away">离开</string>
     <string name="status_busy">忙碌</string>
     <string name="status_offline">离线</string>
-
     <string name="permission_location">定位</string>
     <string name="permission_camera">相机</string>
     <string name="permission_storage">存储</string>
     <string name="permission_contacts">联系人</string>
     <string name="permission_deny_prompt">Tok正常运行需要获取<Data><![CDATA[<font color="#000000"><b>%1$s</b></font>]]></Data>权限. 请在手机设置中打开<Data><![CDATA[<font color="#000000"><b>%2$s</b></font>]]></Data>权限</string>
-
     <string name="create_account">生成账号</string>
     <string name="hint_account_name">用户名</string>
     <string name="hint_account_pwd">密码</string>
@@ -26,7 +23,7 @@
     <string name="confirm">确认</string>
     <string name="cancel">取消</string>
     <string name="oops">出错了</string>
-    <string name="import_account">导入账户 > </string>
+    <string name="import_account">导入账户 &gt; </string>
     <string name="select_file">选择一个文件</string>
     <string name="select_folder">选择文件夹</string>
     <string name="import_profile_invalid_file">选择的文件不是可用的Tok/Tox文件</string>
@@ -61,7 +58,6 @@
     <string name="add_friend_request_has_send">添加好友请求已发送</string>
     <string name="add_friend_msg_hint">输入信息</string>
     <string name="add_friend_in_id">添加好友Tok ID</string>
-
     <string name="invite_friend">邀请好友</string>
     <string name="scan">扫描</string>
     <string name="scan_prompt">请扫描二维码</string>
@@ -86,7 +82,6 @@
     <string name="share_my_id">我是 %1$s,我正在使用Tok,我的Tok ID 是:%2$s</string>
     <string name="share_my_group_id">我是 %1$s,我正在使用Tok,我的群Tok ID is:%2$s</string>
     <string name="version">版本号:%1$s</string>
-
     <string name="personal_info">个人信息</string>
     <string name="friend_info">好友信息</string>
     <string name="my_avatar">头像</string>
@@ -120,7 +115,6 @@
     <string name="choose_one_friend">请至少选择一个好友</string>
     <string name="select">请选择</string>
     <string name="input_msg_same_to_origin">昵称跟之前一样!</string>
-
     <string name="service_notify_title">Tok</string>
     <string name="service_notify_content">Tok正在运行</string>
     <string name="file_not_exist">对不起，文件不存在</string>
@@ -141,17 +135,14 @@
     <string name="type_audio">[语音]</string>
     <string name="type_video">[视频]</string>
     <string name="type_draft"><Data><![CDATA[<font color="#e52828">[Draft]</font>]]></Data> %1$s</string>
-
     <string name="group_name">群名称</string>
-    <string name="all_members">所有成员 ></string>
-
+    <string name="all_members">所有成员 &gt;</string>
     <string name="mute_notification">静音</string>
     <string name="hold_to_talk">按住说话</string>
     <string name="release_to_send">松手以发送</string>
     <string name="release_to_cancel">松手以取消</string>
     <string name="slide_to_cancel">滑动以取消</string>
     <string name="slide_up_to_cancel">向上滑动以取消</string>
-
     <string name="user_name">用户名</string>
     <string name="alias_name">昵称</string>
     <string name="profile_edit">信息编辑</string>
@@ -163,19 +154,18 @@
     <string name="clipping_image">裁剪图片</string>
     <string name="clip">裁剪</string>
     <string name="group_create_hello">你好! 欢迎来到 %1$s</string>
-
     <string name="add_contact">添加好友</string>
     <string name="remove_leave">删除并退出</string>
     <string name="ok">好</string>
     <string name="confirm_remove">确认删除吗?</string>
-
-    <string name="p2p_encrypt_empty">点对点通信，端到端加密，点击了解更多></string>
-    <string name="p2p_encrypt_chat">此对话中的信息和通话已使用点对点加密通信。点击获取更多信息 ></string>
+    <string name="p2p_encrypt_empty">点对点通信，端到端加密，点击此处了解更多相关内容.</string>
+    <string name="p2p_encrypt_chat">此对话中的信息和通话已使用点对点加密通信。点击此处了解更多相关内容.</string>
     <string name="friend_chat_safe">这里可以和朋友更加安全聊天</string>
-    <string name="chat_safe_file_name">tok_safe_cn.html</string><!--此句无需翻译-->
+    <string name="chat_safe_file_name">tok_safe_cn.html</string>
+    <!--此句无需翻译-->
     <string name="slogon">让世界自由连通！</string>
-    <string name="share_qr_content">https://www.tok.life?#%1$s#</string><!--此句无需翻译-->
-
+    <string name="share_qr_content">https://www.tok.life?#%1$s#</string>
+    <!--此句无需翻译-->
     <string name="share_info_add_me">你好，我是<Data><![CDATA[<font color="#000000"><b>%1$s</b></font><br>我在Tok,快来点对点加密聊天吧!]]></Data></string>
     <string name="share_txt_prompt">点对点加密聊天，我在 Tok。点击 https://www.tok.life,免费下载 Tok。如果你已经安装，请拷贝这段文字 $%1$s$，打开 Tok 即可加我为好友</string>
     <string name="share_way_txt">文本分享</string>
@@ -183,7 +173,8 @@
     <string name="share_long_click_info">长按图片，识别二维码下载软件。\n打开Tok软件扫描当前图片 即可加我为好友</string>
     <string name="scan_my_qr_prompt">扫一扫上面的二维码图案，加我Tok</string>
     <string name="add_friend_request">好友添加请求</string>
-    <string name="tok_id_prompt">Tok:ID</string><!--此句无需翻译-->
+    <string name="tok_id_prompt">Tok:ID</string>
+    <!--此句无需翻译-->
     <string name="guide_title1">无需手机号</string>
     <string name="guide_content1">自动生成随机超长ID，不关联任何实名信息</string>
     <string name="guide_title2">隐藏IP地址</string>
@@ -191,17 +182,14 @@
     <string name="guide_title3">点对点加密通信</string>
     <string name="guide_content3">自动生成超长密钥，需要9.9亿亿亿年方能暴力破解</string>
     <string name="enter_app">进入Tok</string>
-
     <string name="hint_confirm_pwd">密码确认</string>
     <string name="input_exceed_length">输入内容不能超过 %1$s 字符</string>
     <string name="sel_tok_file">请选择 Tok/Tox 文件</string>
-
     <string name="clear_chat_history">粉碎所有聊天记录</string>
     <string name="del_profile">销毁帐户</string>
     <string name="export_profile_path">%1$s 已经存储到\n%2$s</string>
     <string name="check">查看</string>
     <string name="file_check">文件查看</string>
-
     <string name="clear_msg_confirm_prompt">粉碎所有聊天记录吗?</string>
     <string name="del_profile_confirm_prompt">注销该帐户吗?\n此操作将无法恢复</string>
     <string name="logout_clear_msg">退出时删除聊天数据</string>
@@ -211,10 +199,10 @@
     <string name="public_key">公钥</string>
     <string name="find_friend_bot">添加朋友机器人</string>
     <string name="add_bot">添加机器人</string>
-    <string name="bot_list_file">bot_list_cn.json</string><!--no need translate-->
-    <string name="new_tag">NEW</string><!--no need translate-->
-
-
+    <string name="bot_list_file">bot_list_cn.json</string>
+    <!--no need translate-->
+    <string name="new_tag">NEW</string>
+    <!--no need translate-->
     <string name="user_or_pwd_error">很抱歉，用户名或密码有误!</string>
     <string name="setting_pwd">设置密码</string>
     <string name="change_pwd">修改密码</string>
@@ -232,15 +220,14 @@
     <string name="pwd_not_match">密码不一致</string>
     <string name="name_invalid">用户名不能包含 /</string>
     <string name="failed">失败</string>
-
     <string name="reset_tox_id">重置Tok ID</string>
     <string name="reset">重置</string>
     <string name="import_account2">导入帐户</string>
     <string name="auto_receive_file">Auto receive files</string>
     <string name="reset_tox_id_message">重置你的Tok ID（PK 不变，重置随机码），你的Tok ID 将被改变，请确认！ 重置ID后，你能够保留当前所有的好友列表，但是其他人不能再通过你的旧ID加你为好友</string>
     <string name="contact_us">联系我们</string>
-    <string name="tok_user">Tok user</string><!--no need translate-->
-
+    <string name="tok_user">Tok user</string>
+    <!--no need translate-->
     <string name="new_message">新消息</string>
     <string name="notifications">消息提醒</string>
     <string name="manager_notifications">通知开关</string>
@@ -248,30 +235,28 @@
     <string name="new_friend_req_alerts">好友请求通知</string>
     <string name="notification_center">通知显示消息详情</string>
     <string name="notification_center_detail">关闭后，当收到Tok消息时，通知提示将不显示发信人和内容摘要。</string>
-    <string name="save_to">保存到:%1$s</string>
-
+    <string name="save_to">保存到: %1$s</string>
     <!--v1.1.3-->
     <string name="off_line_bot">离线消息机器人</string>
     <string name="how_to_send_offline_msg">如何向朋友发送离线消息？</string>
     <string name="how_to_send_offline_msg_content">1. 会话双方都已添加这个机器人。\n2. 当好友状态是“离线机器人在线”时，你可以发送消息给他。</string>
     <string name="add_offline_bot_title">添加此机器人可以向好友发送离线消息</string>
     <string name="warning">警示</string>
-    <string name="offline_bot_warning">这是一个解决离线信息发送问题的临时方案。<br />机器人会在服务器中储存你的加密信息，当你的好友上线后机器人将会转发加密信息，机器人无法解密您的信息。如果您接受这个方案，添加机器人后您就可以和好友发送离线消息了，如果不能接受，请不要添加或者从联系人列表删除即可。</string>
+    <string name="offline_bot_warning">这是一个解决离线信息发送问题的临时方案。<br/>机器人会在服务器中储存你的加密信息，当你的好友上线后机器人将会转发加密信息，机器人无法解密您的信息。如果您接受这个方案，添加机器人后您就可以和好友发送离线消息了，如果不能接受，请不要添加或者从联系人列表删除即可。</string>
     <string name="more_about_offline_bot">更多信息</string>
     <string name="more_about_offline_bot_123">1. 只有当会话双方都添加了机器人，离线消息功能才会生效。\n2. 机器人只转发消息。\n3. 机器人工作原理如下图所示：</string>
     <string name="more_about_offline_bot_45">4. 当你的好友收到信息后机器人会立刻删除储存的加密信息，如果你的好友再也不上线了，加密数据最多保存30天，这些加密信息对任何第三方来说都是没有意义的。\n5. 目前你只能选择我们提供的机器人。</string>
     <string name="more_about_offline_bot_6">6. 代码已经在github开源 </string>
-    <string name="git_hub">https://github.com/InsightIM</string><!--no need translate-->
+    <string name="git_hub">https://github.com/InsightIM</string>
+    <!--no need translate-->
     <string name="copy_link">复制链接</string>
-
-    <string name="prompt_add_offline_bot">未开启离线信息功能，点击去开启 >> </string>
+    <string name="prompt_add_offline_bot">未开启离线信息功能，点击去开启 &gt;&gt; </string>
     <string name="prompt_friend_not_has_offline_bot">对方未开启离线消息功能，您可以提醒他开启功能</string>
     <string name="prompt_offline_text_only">只支持离线文本信息</string>
     <string name="offline_bot_online">离线消息机器人在线</string>
     <string name="can_not_send_file_to_bot">报歉，不能向添加好友机器人发送文件。</string>
-
     <string name="del_contact_prompt">删除这个联系人\n你和他的聊天记录将全部丢失。</string>
     <string name="del_offline_bot_prompt">确定删除离线机器人?\n你的离线信息将会丢失。</string>
     <string name="friend_has_add_offline_bot">您的好友已添加离线消息机器人\n可以发送离线消息了。</string>
-
+    <string name="pwd_require">需要创建密码来加密您的数据</string>
 </resources>
